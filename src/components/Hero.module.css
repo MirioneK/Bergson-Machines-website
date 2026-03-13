@@ -18,12 +18,19 @@
 
 .bgBase {
   z-index: -3;
-  background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-deep) 100%);
+  background:
+    radial-gradient(
+      circle at 82% 50%,
+      rgba(255, 255, 255, 0.04) 0,
+      rgba(255, 255, 255, 0.02) 18%,
+      transparent 42%
+    ),
+    linear-gradient(180deg, var(--bg-base) 0%, var(--bg-deep) 100%);
 }
 
 .bgGrid {
   z-index: -2;
-  opacity: 0.22;
+  opacity: 0.16;
   background:
     repeating-linear-gradient(
       0deg,
@@ -46,10 +53,10 @@
   background:
     radial-gradient(
       circle at 74% 56%,
-      rgba(242, 101, 34, 0.12) 0,
-      rgba(242, 101, 34, 0.08) 16%,
-      rgba(242, 101, 34, 0.03) 30%,
-      transparent 52%
+      rgba(255, 255, 255, 0.14) 0,
+      rgba(255, 255, 255, 0.08) 18%,
+      rgba(255, 255, 255, 0.03) 32%,
+      transparent 56%
     );
 }
 
@@ -250,9 +257,9 @@
     background:
       radial-gradient(
         circle at 58% 28%,
-        rgba(242, 101, 34, 0.16) 0,
-        rgba(242, 101, 34, 0.11) 18%,
-        rgba(242, 101, 34, 0.04) 34%,
+        rgba(255, 255, 255, 0.12) 0,
+        rgba(255, 255, 255, 0.07) 18%,
+        rgba(255, 255, 255, 0.025) 34%,
         transparent 58%
       );
   }

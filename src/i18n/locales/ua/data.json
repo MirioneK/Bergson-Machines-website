@@ -1,0 +1,511 @@
+{
+  "modelAccordionTitles": {
+    "specification": "Специфікація",
+    "workingRange": "Робочий діапазон",
+    "dimensionsAndWeight": "Розміри та вага"
+  },
+  "modelSpecs": {
+    "operatingWeight": "Робоча маса",
+    "engine": "Двигун",
+    "diggingDepth": "Глибина копання",
+    "trackWidth": "Ширина гусениці",
+    "cabin": "Кабіна",
+    "bucketCapacity": "Обʼєм ковша",
+    "bucketWidth": "Ширина ковша",
+    "hydraulicPump": "Гідравлічний насос",
+    "hydraulicPressure": "Гідравлічний тиск",
+    "travelSpeed": "Швидкість руху",
+    "fuelTank": "Паливний бак",
+    "maxDiggingDepth": "Макс. глибина копання",
+    "maxDiggingHeight": "Макс. висота копання",
+    "maxDumpingHeight": "Макс. висота вивантаження",
+    "maxDiggingRadius": "Макс. радіус копання",
+    "upperStructureRotation": "Поворот надбудови",
+    "transportLength": "Довжина (у транспортному положенні)",
+    "width": "Ширина",
+    "height": "Висота",
+    "heightWithCabin": "Висота (з кабіною)",
+    "trackWheelbase": "База гусениць",
+    "groundPressure": "Тиск на ґрунт"
+  },
+  "models": {
+    "bm10": {
+      "subtitle": "Мініекскаватор 1 тонна · Ідеально для саду та вузьких в'їздів",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1 000 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Дизель 10 к.с."
+        },
+        {
+          "key": "diggingDepth",
+          "value": "1 600 mm"
+        },
+        {
+          "key": "trackWidth",
+          "value": "760 mm"
+        }
+      ],
+      "description": "BM10 — найменша машина в лінійці Bergson Machines, але аж ніяк не іграшка. Вона створена для робіт на приватних ділянках, у садах, під час ремонту території та всюди, де важливо мати змогу проїхати через стандартні ворота або хвіртку. Ширина гусениць усього 760 мм дозволяє працювати там, куди більші машини не дістануться. Дизельний двигун потужністю 10 к.с. забезпечує надійну роботу протягом усього сезону без надмірної витрати пального.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "operatingWeight",
+              "value": "1 000 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Дизель 10 к.с. / 3 600 об/хв"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,018 m³"
+            },
+            {
+              "key": "bucketWidth",
+              "value": "300 mm"
+            },
+            {
+              "key": "hydraulicPump",
+              "value": "Шестеренчастий насос"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "14 MPa"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "1,5 km/h"
+            },
+            {
+              "key": "fuelTank",
+              "value": "8 l"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1 600 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 400 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 650 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "2 600 mm"
+            },
+            {
+              "key": "upperStructureRotation",
+              "value": "360°"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "2 500 mm"
+            },
+            {
+              "key": "width",
+              "value": "760 mm"
+            },
+            {
+              "key": "height",
+              "value": "2 050 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "760 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "560 mm"
+            },
+            {
+              "key": "groundPressure",
+              "value": "22 kPa"
+            }
+          ]
+        }
+      ]
+    },
+    "bm12": {
+      "subtitle": "Мініекскаватор 1,2 тонни · Найкраще співвідношення ціни та можливостей",
+      "badge": "Бестселер",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1 200 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Дизель 13,5 к.с."
+        },
+        {
+          "key": "diggingDepth",
+          "value": "1 850 mm"
+        },
+        {
+          "key": "trackWidth",
+          "value": "980 mm"
+        }
+      ],
+      "description": "BM12 — бестселер Bergson Machines, і не випадково. Він поєднує достатню робочу масу для серйозних земляних робіт із компактними габаритами, які дозволяють заїхати на типову будівельну ділянку або пройти через ворота житлового комплексу. Дизельний двигун потужністю 13,5 к.с. працює в парі з надійною гідравлічною системою, забезпечуючи впевнену та стабільну роботу протягом багатьох сезонів. Це машина для малих і середніх будівельно-монтажних компаній, яким потрібна якість без переплати за бренд.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "operatingWeight",
+              "value": "1 200 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Дизель 13,5 к.с. / 3 600 об/хв"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bucketWidth",
+              "value": "300 mm"
+            },
+            {
+              "key": "hydraulicPump",
+              "value": "Шестеренчастий насос"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "16 MPa"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "2,0 km/h"
+            },
+            {
+              "key": "fuelTank",
+              "value": "10 l"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1 850 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 700 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 900 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "3 100 mm"
+            },
+            {
+              "key": "upperStructureRotation",
+              "value": "360°"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "2 850 mm"
+            },
+            {
+              "key": "width",
+              "value": "980 mm"
+            },
+            {
+              "key": "height",
+              "value": "2 200 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "980 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "740 mm"
+            },
+            {
+              "key": "groundPressure",
+              "value": "26 kPa"
+            }
+          ]
+        }
+      ]
+    },
+    "bm12c": {
+      "subtitle": "Мініекскаватор 1,2 тонни з кабіною · Комфорт протягом усього року",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1 200 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Дизель 13,5 к.с."
+        },
+        {
+          "key": "cabin",
+          "value": "Закрита, з обігрівом"
+        },
+        {
+          "key": "trackWidth",
+          "value": "980 mm"
+        }
+      ],
+      "description": "BM12C — це версія моделі BM12, оснащена закритою опалюваною кабіною оператора. Для компаній, що працюють цілий рік — включно з пізньою осінню та зимою — це рішення безпосередньо впливає на продуктивність і комфорт роботи. Кабіна ефективно захищає від дощу, вітру та низьких температур, при цьому не збільшуючи суттєво габарити машини. Робочі параметри ідентичні BM12; різниця лише в оснащенні кабіни та власній масі.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "operatingWeight",
+              "value": "1 200 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Дизель 13,5 к.с. / 3 600 об/хв"
+            },
+            {
+              "key": "cabin",
+              "value": "Закрита, з обігрівом"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bucketWidth",
+              "value": "300 mm"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "16 MPa"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "2,0 km/h"
+            },
+            {
+              "key": "fuelTank",
+              "value": "10 l"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1 850 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 700 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 900 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "3 100 mm"
+            },
+            {
+              "key": "upperStructureRotation",
+              "value": "360°"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "2 980 mm"
+            },
+            {
+              "key": "width",
+              "value": "980 mm"
+            },
+            {
+              "key": "heightWithCabin",
+              "value": "2 400 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "980 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "740 mm"
+            },
+            {
+              "key": "groundPressure",
+              "value": "26 kPa"
+            }
+          ]
+        }
+      ]
+    },
+    "bm12cc": {
+      "subtitle": "Мініекскаватор 1,2 тонни з кабіною · Комфорт протягом усього року",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1 200 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Дизель 13,5 к.с."
+        },
+        {
+          "key": "cabin",
+          "value": "Закрита, з обігрівом"
+        },
+        {
+          "key": "trackWidth",
+          "value": "980 mm"
+        }
+      ],
+      "description": "BM12C — це версія моделі BM12, оснащена закритою опалюваною кабіною оператора. Для компаній, що працюють цілий рік — включно з пізньою осінню та зимою — це рішення безпосередньо впливає на продуктивність і комфорт роботи. Кабіна ефективно захищає від дощу, вітру та низьких температур, при цьому не збільшуючи суттєво габарити машини. Робочі параметри ідентичні BM12; різниця лише в оснащенні кабіни та власній масі.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "operatingWeight",
+              "value": "1 200 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Дизель 13,5 к.с. / 3 600 об/хв"
+            },
+            {
+              "key": "cabin",
+              "value": "Закрита, з обігрівом"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bucketWidth",
+              "value": "300 mm"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "16 MPa"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "2,0 km/h"
+            },
+            {
+              "key": "fuelTank",
+              "value": "10 l"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1 850 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 700 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 900 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "3 100 mm"
+            },
+            {
+              "key": "upperStructureRotation",
+              "value": "360°"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "2 980 mm"
+            },
+            {
+              "key": "width",
+              "value": "980 mm"
+            },
+            {
+              "key": "heightWithCabin",
+              "value": "2 400 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "980 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "740 mm"
+            },
+            {
+              "key": "groundPressure",
+              "value": "26 kPa"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "accessories": {
+    "bucket-200": {
+      "name": "Ківш 200 mm"
+    },
+    "bucket-500": {
+      "name": "Ківш 500 mm"
+    },
+    "bucket-800": {
+      "name": "Ківш 800 mm"
+    },
+    "hydraulic-bucket-800": {
+      "name": "Гідравлічний ківш 800 mm"
+    },
+    "hydraulic-bucket-600": {
+      "name": "Гідравлічний ківш 600 mm"
+    }
+  }
+}

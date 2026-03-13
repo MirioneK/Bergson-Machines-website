@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { useLangPath } from '../hooks/useLangPath'
 import styles from './StickyCTA.module.css'
 
+function getInitialMenuState() {
+  if (typeof document === 'undefined') return false
+  return document.body.classList.contains('nav-menu-open')
+}
+
 export default function StickyCTA() {
+  const { t } = useTranslation()
+  const langPath = useLangPath()
   const { pathname, hash } = useLocation()
 
   const [hideForContact, setHideForContact] = useState(false)
   const [hideForFooter, setHideForFooter] = useState(false)
-  const [hideForMenu, setHideForMenu] = useState(
-    document.body.classList.contains('nav-menu-open')
-  )
+  const [hideForMenu, setHideForMenu] = useState(getInitialMenuState)
 
   useEffect(() => {
     let contactObserver = null
@@ -81,11 +88,11 @@ export default function StickyCTA() {
 
   return (
     <Link
-      to="/#kontakt"
+      to={langPath('/', '#kontakt')}
       className={`${styles.cta} ${visible ? styles.show : styles.hide}`}
-      aria-label="Przejdź do formularza kontaktowego"
+      aria-label={t('stickyCta.ariaLabel')}
     >
-      📞 Zadzwoń
+      📞 {t('stickyCta.label')}
     </Link>
   )
 }

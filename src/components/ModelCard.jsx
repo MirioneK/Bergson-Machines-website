@@ -1,51 +1,41 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { calcBrutto } from '../data'
+import { useTranslation } from 'react-i18next'
+import { calcBrutto, formatPrice } from '../data'
+import { useLangPath } from '../hooks/useLangPath'
 import styles from './ModelCard.module.css'
 
-const SPEC_LABEL_MAP = {
-  'Masa robocza': 'Masa robocza',
-  'Silnik': 'Silnik',
-  'Głębokość kopania': 'Głęb. kopania',
-  'Szerokość gąsienicy': 'Szer. gąsienicy',
-  'Kabina': 'Kabina',
-}
-
-const CARD_SPEC_ORDER = [
-  'Masa robocza',
-  'Silnik',
-  'Głębokość kopania',
-  'Kabina',
-  'Szerokość gąsienicy',
-]
-
-function getCardSpecs(specs) {
-  const byLabel = new Map(specs.map((item) => [item.label, item.value]))
-
-  return CARD_SPEC_ORDER
-    .filter((label) => byLabel.has(label))
-    .slice(0, 4)
-    .map((label) => ({
-      label: SPEC_LABEL_MAP[label] ?? label,
-      value: byLabel.get(label),
-    }))
-}
-
-function formatPriceCompact(amount) {
-  return amount.toLocaleString('pl-PL') + ' zł'
-}
-
 export default function ModelCard({ model }) {
-  const { id, name, subtitle, image, badge, priceNetto, specs } = model
+  const { t, i18n } = useTranslation()
+  const langPath = useLangPath()
+
+  const { id, name, image, priceNetto } = model
   const priceBrutto = calcBrutto(priceNetto)
-  const cardSpecs = getCardSpecs(specs)
+
+  const subtitle = t(`models.${id}.subtitle`, {
+    ns: 'data',
+    defaultValue: '',
+  })
+
+  const badge = t(`models.${id}.badge`, {
+    ns: 'data',
+    defaultValue: '',
+  })
+
+  const cardSpecsRaw = t(`models.${id}.cardSpecs`, {
+    ns: 'data',
+    returnObjects: true,
+    defaultValue: [],
+  })
+
+  const cardSpecs = Array.isArray(cardSpecsRaw) ? cardSpecsRaw : []
 
   return (
     <Link
-      to={`/modele/${id}`}
+      to={langPath(`/modele/${id}`)}
       className={styles.card}
       aria-labelledby={`model-${id}-title`}
-      aria-label={`Poznaj model ${name}`}
+      aria-label={t('modelCard.ariaLabel', { name })}
     >
       {badge && (
         <span className={styles.badge}>
@@ -57,7 +47,7 @@ export default function ModelCard({ model }) {
       <div className={styles.media}>
         <img
           src={image}
-          alt={`${name} minikoparka`}
+          alt={t('modelCard.imageAlt', { name })}
           className={styles.image}
           loading="lazy"
           decoding="async"
@@ -72,10 +62,14 @@ export default function ModelCard({ model }) {
           <p className={styles.subtitle}>{subtitle}</p>
         </header>
 
-        <ul className={styles.specs} aria-label={`Specyfikacja modelu ${name}`}>
-          {cardSpecs.map(({ label, value }) => (
-            <li key={label} className={styles.specRow}>
-              <span className={styles.specKey}>{label}</span>
+        <ul className={styles.specs} aria-label={t('modelCard.specsAriaLabel', { name })}>
+          {cardSpecs.map(({ key, value }, index) => (
+            <li key={`${key}-${index}`} className={styles.specRow}>
+              <span className={styles.specKey}>
+                {t(`modelCard.specLabels.${key}`, {
+                  defaultValue: key,
+                })}
+              </span>
               <span className={styles.specVal}>{value}</span>
             </li>
           ))}
@@ -84,17 +78,19 @@ export default function ModelCard({ model }) {
         <div className={styles.footer}>
           <div className={styles.priceBlock}>
             <div className={styles.priceLine}>
-              <span className={styles.pricePrefix}>od</span>
-              <span className={styles.price}>{formatPriceCompact(priceNetto)}</span>
-              <span className={styles.priceLabel}>NETTO</span>
+              <span className={styles.pricePrefix}>{t('modelCard.pricePrefix')}</span>
+              <span className={styles.price}>{formatPrice(priceNetto, i18n.resolvedLanguage)}</span>
+              <span className={styles.priceLabel}>{t('modelCard.priceNettoLabel')}</span>
             </div>
             <span className={styles.priceBrutto}>
-              od {formatPriceCompact(priceBrutto)} brutto
+              {t('modelCard.priceBrutto', {
+                price: formatPrice(priceBrutto, i18n.resolvedLanguage),
+              })}
             </span>
           </div>
 
           <span className={styles.cta}>
-            Poznaj model
+            {t('modelCard.cta')}
           </span>
         </div>
       </div>

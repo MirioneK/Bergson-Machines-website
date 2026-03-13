@@ -10,8 +10,17 @@ import Process     from '../components/Process'
 import Service     from '../components/Service'
 import FAQ         from '../components/FAQ'
 import Contact     from '../components/Contact'
+import { useTranslation } from 'react-i18next'
+import { usePageMeta } from '../hooks/usePageMeta'
 
 export default function HomePage() {
+  const { t } = useTranslation()
+
+  usePageMeta(
+    t('meta.home.title'),
+    t('meta.home.description')
+  )
+  
   return (
     <main>
       <Hero />

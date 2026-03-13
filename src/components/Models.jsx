@@ -1,10 +1,12 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { MODELS } from '../data'
 import { useReveal } from '../hooks/useReveal'
 import ModelCard from './ModelCard'
 import styles from './Models.module.css'
 
 export default function Models() {
+  const { t } = useTranslation()
   const [headerRef, headerVisible] = useReveal()
 
   return (
@@ -14,9 +16,9 @@ export default function Models() {
           ref={headerRef}
           className={`${styles.header} reveal ${headerVisible ? 'visible' : ''}`}
         >
-          <span className={styles.label}>Nasze maszyny</span>
+          <span className={styles.label}>{t('models.label')}</span>
           <h2 className={styles.title} id="models-title">
-            Wybierz swój model
+            {t('models.title')}
           </h2>
         </header>
 

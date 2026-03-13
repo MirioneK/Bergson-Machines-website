@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { usePageMeta } from '../hooks/usePageMeta'
 import {
   MODELS,
   ACCESSORY_PREVIEW,
   formatPrice,
   calcBrutto,
 } from '../data'
+import { useLangPath } from '../hooks/useLangPath'
 import { useReveal } from '../hooks/useReveal'
 import styles from './ModelPage.module.css'
 
 export default function ModelPage() {
   const { id } = useParams()
+  const { t, i18n } = useTranslation()
+  const langPath = useLangPath()
+
   const model = MODELS.find((m) => m.id === id)
 
   useEffect(() => {
@@ -27,15 +33,62 @@ export default function ModelPage() {
   const [otherInnerRef, otherInnerVisible] = useReveal()
   const [ctaBarRef, ctaBarVisible] = useReveal()
 
-  if (!model) return <Navigate to="/" replace />
+  if (!model) return <Navigate to={langPath('/')} replace />
 
   const others = MODELS.filter((m) => m.id !== id)
   const priceBrutto = calcBrutto(model.priceNetto)
-  const quickSpecs = model.specs.slice(0, 4)
+
+  const metaTitle = model
+    ? t('meta.model.title', { name: model.name })
+    : t('meta.home.title')
+
+  const metaDescription = model
+    ? t(`models.${id}.description`, {
+        ns: 'data',
+        defaultValue: t('meta.home.description'),
+      })
+    : t('meta.home.description')
+
+  usePageMeta(metaTitle, metaDescription)
+
+  const modelSubtitle = t(`models.${id}.subtitle`, {
+    ns: 'data',
+    defaultValue: '',
+  })
+
+  const modelBadge = t(`models.${id}.badge`, {
+    ns: 'data',
+    defaultValue: '',
+  })
+
+  const modelDescription = t(`models.${id}.description`, {
+    ns: 'data',
+    defaultValue: '',
+  })
+
+  const quickSpecsRaw = t(`models.${id}.cardSpecs`, {
+    ns: 'data',
+    returnObjects: true,
+    defaultValue: [],
+  })
+
+  const quickSpecs = Array.isArray(quickSpecsRaw) ? quickSpecsRaw.slice(0, 4) : []
+
+  const accordionsRaw = t(`models.${id}.accordions`, {
+    ns: 'data',
+    returnObjects: true,
+    defaultValue: [],
+  })
+
+  const accordions = Array.isArray(accordionsRaw) ? accordionsRaw : []
+
   const sideImages =
     model.gallery && model.gallery.length >= 2
       ? model.gallery.slice(0, 2)
       : [model.image, model.image]
+
+  const formattedNetto = formatPrice(model.priceNetto, i18n.resolvedLanguage)
+  const formattedBrutto = formatPrice(priceBrutto, i18n.resolvedLanguage)
 
   return (
     <main className={styles.page}>
@@ -44,12 +97,12 @@ export default function ModelPage() {
           ref={breadcrumbRef}
           className={`page-shell ${styles.breadcrumbBar} reveal ${breadcrumbVisible ? 'visible' : ''}`}
         >
-          <Link to="/" className={styles.breadcrumbLink}>
-            Strona główna
+          <Link to={langPath('/')} className={styles.breadcrumbLink}>
+            {t('modelPage.breadcrumb.home')}
           </Link>
           <span className={styles.breadcrumbSep}>›</span>
-          <Link to="/#modele" className={styles.breadcrumbLink}>
-            Minikoparki
+          <Link to={langPath('/', '#modele')} className={styles.breadcrumbLink}>
+            {t('modelPage.breadcrumb.models')}
           </Link>
           <span className={styles.breadcrumbSep}>›</span>
           <span className={styles.breadcrumbCurrent}>{model.name}</span>
@@ -63,17 +116,17 @@ export default function ModelPage() {
             ref={heroMediaRef}
             className={`${styles.heroMedia} reveal ${heroMediaVisible ? 'visible' : ''}`}
           >
-            {model.badge && (
+            {modelBadge && (
               <span className={styles.heroBadge}>
                 <span className={styles.badgeStar} aria-hidden="true">★</span>
-                {model.badge}
+                {modelBadge}
               </span>
             )}
 
             <div className={styles.heroImageWrap}>
               <img
                 src={model.image}
-                alt={`${model.name} minikoparka`}
+                alt={t('modelPage.heroImageAlt', { name: model.name })}
                 className={styles.heroImage}
               />
             </div>
@@ -84,27 +137,30 @@ export default function ModelPage() {
             className={`${styles.heroInfo} reveal ${heroInfoVisible ? 'visible' : ''}`}
             style={{ transitionDelay: '120ms' }}
           >
-            <span className={styles.label}>Minikoparki Bergson Machines</span>
+            <span className={styles.label}>{t('modelPage.heroLabel')}</span>
 
             <h1 className={styles.heroName}>{model.name}</h1>
-            <p className={styles.heroSubtitle}>{model.subtitle}</p>
+            <p className={styles.heroSubtitle}>{modelSubtitle}</p>
 
             <div className={styles.priceBlock}>
               <div className={styles.priceNetto}>
-                <span className={styles.pricePrefix}>od</span>
-                {formatPrice(model.priceNetto)}
-                <span className={styles.priceUnit}>netto</span>
+                <span className={styles.pricePrefix}>{t('modelPage.pricePrefix')}</span>
+                {formattedNetto}
+                <span className={styles.priceUnit}>{t('modelPage.priceNettoUnit')}</span>
               </div>
               <div className={styles.priceBrutto}>
-                od {formatPrice(priceBrutto)} brutto
+                {t('modelPage.priceGross', { price: formattedBrutto })}
               </div>
             </div>
 
             <div className={styles.quickGrid}>
-              {quickSpecs.map(({ label, value }, index) => (
+              {quickSpecs.map(({ key, value }, index) => (
                 <QuickSpecCell
-                  key={label}
-                  label={label}
+                  key={`${key}-${index}`}
+                  label={t(`modelSpecs.${key}`, {
+                    ns: 'data',
+                    defaultValue: key,
+                  })}
                   value={value}
                   delay={180 + index * 80}
                 />
@@ -112,11 +168,11 @@ export default function ModelPage() {
             </div>
 
             <div className={styles.heroCtas}>
-              <Link to="/#kontakt" className="btn-primary">
-                Skontaktuj się
+              <Link to={langPath('/', '#kontakt')} className="btn-primary">
+                {t('modelPage.actions.contact')}
               </Link>
-              <Link to="/#modele" className="btn-outline">
-                ← Wszystkie modele
+              <Link to={langPath('/', '#modele')} className="btn-outline">
+                {t('modelPage.actions.allModels')}
               </Link>
             </div>
           </div>
@@ -129,8 +185,8 @@ export default function ModelPage() {
             ref={overviewDescRef}
             className={`${styles.descCard} reveal ${overviewDescVisible ? 'visible' : ''}`}
           >
-            <h2 className={styles.descTitle}>Minikoparka {model.name}</h2>
-            <p className={styles.descText}>{model.detail.description}</p>
+            <h2 className={styles.descTitle}>{t('modelPage.overviewTitle', { name: model.name })}</h2>
+            <p className={styles.descText}>{modelDescription}</p>
           </div>
 
           <div className={styles.sideGallery}>
@@ -153,16 +209,26 @@ export default function ModelPage() {
             ref={specsHeaderRef}
             className={`${styles.specsHeader} reveal ${specsHeaderVisible ? 'visible' : ''}`}
           >
-            <span className={styles.label}>Dane techniczne</span>
-            <h2 className={styles.specsTitle}>Specyfikacja modelu {model.name}</h2>
+            <span className={styles.label}>{t('modelPage.specsLabel')}</span>
+            <h2 className={styles.specsTitle}>{t('modelPage.specsTitle', { name: model.name })}</h2>
           </header>
 
           <div className={styles.specAccordions}>
-            {model.detail.accordions.map((acc, index) => (
+            {accordions.map((acc, index) => (
               <RevealAccordion
-                key={acc.title}
-                title={acc.title}
-                rows={acc.rows}
+                key={`${acc.titleKey}-${index}`}
+                title={t(`modelAccordionTitles.${acc.titleKey}`, {
+                  ns: 'data',
+                  defaultValue: acc.titleKey,
+                })}
+                rows={(acc.rows || []).map((row) => ({
+                  key: row.key,
+                  label: t(`modelSpecs.${row.key}`, {
+                    ns: 'data',
+                    defaultValue: row.key,
+                  }),
+                  value: row.value,
+                }))}
                 defaultOpen={index === 0}
                 delay={120 + index * 100}
               />
@@ -176,14 +242,14 @@ export default function ModelPage() {
               style={{ transitionDelay: '180ms' }}
             >
               <div className={styles.drawingHead}>
-                <span className={styles.label}>Rysunek techniczny</span>
-                <h3 className={styles.drawingTitle}>Wymiary i geometria pracy</h3>
+                <span className={styles.label}>{t('modelPage.drawingLabel')}</span>
+                <h3 className={styles.drawingTitle}>{t('modelPage.drawingTitle')}</h3>
               </div>
 
               <div className={styles.drawingCard}>
                 <img
                   src={model.techDrawing}
-                  alt={`Rysunek techniczny ${model.name}`}
+                  alt={t('modelPage.drawingImageAlt', { name: model.name })}
                   className={styles.drawingImage}
                 />
               </div>
@@ -198,10 +264,10 @@ export default function ModelPage() {
             ref={accessoriesHeaderRef}
             className={`${styles.accessoriesHeader} reveal ${accessoriesHeaderVisible ? 'visible' : ''}`}
           >
-            <span className={styles.label}>Osprzęt dodatkowy</span>
-            <h2 className={styles.accessoriesTitle}>Dodatkowy osprzęt</h2>
+            <span className={styles.label}>{t('modelPage.accessoriesLabel')}</span>
+            <h2 className={styles.accessoriesTitle}>{t('modelPage.accessoriesTitle')}</h2>
             <p className={styles.accessoriesSub}>
-              Przykładowe akcesoria kompatybilne z modelem {model.name}.
+              {t('modelPage.accessoriesSubtitle', { name: model.name })}
             </p>
           </header>
 
@@ -222,7 +288,7 @@ export default function ModelPage() {
           ref={otherInnerRef}
           className={`page-shell ${styles.otherInner} reveal ${otherInnerVisible ? 'visible' : ''}`}
         >
-          <span className={styles.otherLabel}>Odkryj pozostałe modele</span>
+          <span className={styles.otherLabel}>{t('modelPage.otherLabel')}</span>
 
           <div className={styles.otherGrid}>
             {others.map((other, index) => (
@@ -243,15 +309,15 @@ export default function ModelPage() {
         >
           <div>
             <div className={styles.ctaBarTitle}>
-              Masz pytania dotyczące {model.name}?
+              {t('modelPage.ctaBarTitle', { name: model.name })}
             </div>
             <div className={styles.ctaBarSub}>
-              Odpowiemy w ciągu 2 godzin w dni robocze
+              {t('modelPage.ctaBarSub')}
             </div>
           </div>
 
-          <Link to="/#kontakt" className={styles.ctaBarBtn}>
-            Przejdź do formularza
+          <Link to={langPath('/', '#kontakt')} className={styles.ctaBarBtn}>
+            {t('modelPage.ctaBarButton')}
           </Link>
         </div>
       </section>
@@ -275,6 +341,7 @@ function QuickSpecCell({ label, value, delay }) {
 }
 
 function SideGalleryCard({ src, modelName, index, delay }) {
+  const { t } = useTranslation()
   const [ref, visible] = useReveal()
 
   return (
@@ -285,7 +352,7 @@ function SideGalleryCard({ src, modelName, index, delay }) {
     >
       <img
         src={src}
-        alt={`${modelName} zdjęcie ${index + 1}`}
+        alt={t('modelPage.galleryImageAlt', { name: modelName, index: index + 1 })}
         className={styles.galleryImage}
       />
     </div>
@@ -307,7 +374,13 @@ function RevealAccordion({ title, rows, defaultOpen = false, delay }) {
 }
 
 function AccessoryPreviewCard({ item, delay }) {
+  const { t, i18n } = useTranslation()
   const [ref, visible] = useReveal()
+
+  const name = t(`accessories.${item.id}.name`, {
+    ns: 'data',
+    defaultValue: item.id,
+  })
 
   return (
     <article
@@ -318,47 +391,69 @@ function AccessoryPreviewCard({ item, delay }) {
       <div className={styles.accessoryMedia}>
         <img
           src={item.image}
-          alt={item.name}
+          alt={t('modelPage.accessoryImageAlt', { name })}
           className={styles.accessoryImage}
         />
       </div>
 
       <div className={styles.accessoryBody}>
-        <div className={styles.accessoryName}>{item.name}</div>
-        <div className={styles.accessoryPrice}>{item.priceNetto}</div>
+        <div className={styles.accessoryName}>{name}</div>
+        <div className={styles.accessoryPrice}>
+          {t('modelPage.accessoryPrice', {
+            price: formatPrice(item.priceNetto, i18n.resolvedLanguage),
+          })}
+        </div>
       </div>
     </article>
   )
 }
 
 function OtherModelCard({ other, delay }) {
+  const { t, i18n } = useTranslation()
+  const langPath = useLangPath()
   const [ref, visible] = useReveal()
+
+  const badge = t(`models.${other.id}.badge`, {
+    ns: 'data',
+    defaultValue: '',
+  })
+
+  const subtitle = t(`models.${other.id}.subtitle`, {
+    ns: 'data',
+    defaultValue: '',
+  })
 
   return (
     <Link
       ref={ref}
-      to={`/modele/${other.id}`}
+      to={langPath(`/modele/${other.id}`)}
       className={`${styles.otherCard} reveal ${visible ? 'visible' : ''}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className={styles.otherImgWrap}>
-        <img src={other.image} alt={other.name} className={styles.otherImg} />
+        <img
+          src={other.image}
+          alt={t('modelPage.otherModelImageAlt', { name: other.name })}
+          className={styles.otherImg}
+        />
       </div>
 
       <div className={styles.otherBody}>
-        {other.badge && (
+        {badge && (
           <span className={styles.otherBadge}>
             <span className={styles.badgeStar} aria-hidden="true">★</span>
-            {other.badge}
+            {badge}
           </span>
         )}
 
         <div className={styles.otherName}>{other.name}</div>
-        <div className={styles.otherSub}>{other.subtitle}</div>
+        <div className={styles.otherSub}>{subtitle}</div>
         <div className={styles.otherPrice}>
-          od {formatPrice(other.priceNetto)} netto
+          {t('modelPage.otherPrice', {
+            price: formatPrice(other.priceNetto, i18n.resolvedLanguage),
+          })}
         </div>
-        <span className={styles.otherCta}>Poznaj model →</span>
+        <span className={styles.otherCta}>{t('modelPage.otherCta')}</span>
       </div>
     </Link>
   )
@@ -382,8 +477,8 @@ function Accordion({ title, rows, defaultOpen = false }) {
       {open && (
         <div className={styles.accBody}>
           <div className={styles.specRows}>
-            {rows.map(({ label, value }) => (
-              <div key={label} className={styles.specRow}>
+            {rows.map(({ key, label, value }, index) => (
+              <div key={`${key}-${index}`} className={styles.specRow}>
                 <div className={styles.specKey}>{label}</div>
                 <div className={styles.specVal}>{value}</div>
               </div>

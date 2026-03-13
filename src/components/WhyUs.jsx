@@ -1,9 +1,14 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { WHY_CARDS } from '../data'
+import { useLangPath } from '../hooks/useLangPath'
 import { useReveal } from '../hooks/useReveal'
 import styles from './WhyUs.module.css'
 
 export default function WhyUs() {
+  const { t } = useTranslation()
+  const langPath = useLangPath()
+
   const [leftRef, leftVisible] = useReveal()
   const [rightRef, rightVisible] = useReveal()
 
@@ -16,22 +21,18 @@ export default function WhyUs() {
           ref={leftRef}
           className={`${styles.copy} reveal ${leftVisible ? 'visible' : ''}`}
         >
-          <span className={styles.label}>Dlaczego Bergson Machines</span>
+          <span className={styles.label}>{t('whyUs.label')}</span>
 
           <h2 className={styles.title} id="whyus-title">
-            Nie jesteśmy
+            {t('whyUs.titleLine1')}
             <br />
-            „Januszem Biznesu”
+            {t('whyUs.titleLine2')}
           </h2>
 
-          <p className={styles.sub}>
-            Kupujesz od firmy z polskim adresem, KRS, NIP i magazynem części.
-            Wystawiamy fakturę VAT bez dopłat, dowozimy maszynę pod wskazany adres
-            i jesteśmy dostępni po sprzedaży — nie tylko przed nią.
-          </p>
+          <p className={styles.sub}>{t('whyUs.sub')}</p>
 
-          <a href="#kontakt" className={styles.cta}>
-            Porozmawiaj z nami
+          <a href={langPath('/', '#kontakt')} className={styles.cta}>
+            {t('whyUs.cta')}
           </a>
         </div>
 
@@ -43,7 +44,8 @@ export default function WhyUs() {
           {WHY_CARDS.map((card, index) => (
             <WhyCard
               key={card.id}
-              {...card}
+              id={card.id}
+              icon={card.icon}
               delay={200 + index * 90}
             />
           ))}
@@ -53,7 +55,8 @@ export default function WhyUs() {
   )
 }
 
-function WhyCard({ icon, title, desc, delay }) {
+function WhyCard({ id, icon, delay }) {
+  const { t } = useTranslation()
   const [ref, visible] = useReveal()
 
   return (
@@ -65,8 +68,8 @@ function WhyCard({ icon, title, desc, delay }) {
       <span className={styles.cardIcon} aria-hidden="true">
         {icon}
       </span>
-      <h3 className={styles.cardTitle}>{title}</h3>
-      <p className={styles.cardDesc}>{desc}</p>
+      <h3 className={styles.cardTitle}>{t(`whyUs.cards.${id}.title`)}</h3>
+      <p className={styles.cardDesc}>{t(`whyUs.cards.${id}.desc`)}</p>
     </article>
   )
 }

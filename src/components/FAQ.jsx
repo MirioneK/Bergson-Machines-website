@@ -1,12 +1,15 @@
 import React, { useId, useState } from 'react'
-import { FAQ as FAQ_DATA } from '../data'
+import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/useReveal'
 import styles from './FAQ.module.css'
 
 export default function FAQ() {
-  const mid = Math.ceil(FAQ_DATA.length / 2)
-  const left = FAQ_DATA.slice(0, mid)
-  const right = FAQ_DATA.slice(mid)
+  const { t } = useTranslation()
+  const items = t('faq.items', { returnObjects: true })
+
+  const mid = Math.ceil(items.length / 2)
+  const left = items.slice(0, mid)
+  const right = items.slice(mid)
 
   const [headerRef, headerVisible] = useReveal()
   const [leftColRef, leftColVisible] = useReveal()
@@ -19,9 +22,9 @@ export default function FAQ() {
           ref={headerRef}
           className={`${styles.header} reveal ${headerVisible ? 'visible' : ''}`}
         >
-          <span className={styles.label}>Najczęstsze pytania</span>
+          <span className={styles.label}>{t('faq.label')}</span>
           <h2 className={styles.title} id="faq-title">
-            FAQ
+            {t('faq.title')}
           </h2>
         </header>
 
@@ -32,7 +35,12 @@ export default function FAQ() {
             style={{ transitionDelay: '100ms' }}
           >
             {left.map((item, index) => (
-              <FaqItem key={item.id} {...item} delay={180 + index * 70} />
+              <FaqItem
+                key={item.id}
+                q={item.q}
+                a={item.a}
+                delay={180 + index * 70}
+              />
             ))}
           </div>
 
@@ -42,7 +50,12 @@ export default function FAQ() {
             style={{ transitionDelay: '180ms' }}
           >
             {right.map((item, index) => (
-              <FaqItem key={item.id} {...item} delay={260 + index * 70} />
+              <FaqItem
+                key={item.id}
+                q={item.q}
+                a={item.a}
+                delay={260 + index * 70}
+              />
             ))}
           </div>
         </div>

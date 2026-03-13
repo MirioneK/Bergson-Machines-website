@@ -1,19 +1,20 @@
 import React from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 import styles from './Hero.module.css'
 import { useReveal } from '../hooks/useReveal'
-
-const STATS = [
-  { value: '3', label: 'Modele w ofercie' },
-  { value: '24h', label: 'Czas reakcji serwisu' },
-  { value: '2 lata', label: 'Gwarancja' },
-]
+import { useLangPath } from '../hooks/useLangPath'
 
 export default function Hero() {
+  const { t } = useTranslation()
+  const langPath = useLangPath()
+
   const [badgeRef, badgeVisible] = useReveal()
   const [titleRef, titleVisible] = useReveal()
   const [leadRef, leadVisible] = useReveal()
   const [actionsRef, actionsVisible] = useReveal()
   const [mediaRef, mediaVisible] = useReveal()
+
+  const stats = t('hero.stats', { returnObjects: true })
 
   return (
     <section className={styles.hero} id="hero" aria-labelledby="hero-title">
@@ -28,7 +29,7 @@ export default function Hero() {
             className={`${styles.badge} ${styles.reveal} ${badgeVisible ? styles.visible : ''}`}
             style={{ transitionDelay: '0ms' }}
           >
-            Dostawa w Polsce · Gwarancja 2 lata · Serwis mobilny
+            {t('hero.badge')}
           </p>
 
           <h1
@@ -37,9 +38,9 @@ export default function Hero() {
             className={`${styles.title} ${styles.reveal} ${titleVisible ? styles.visible : ''}`}
             style={{ transitionDelay: '80ms' }}
           >
-            <span>Profesjonalna</span>
-            <span className={styles.titleAccent}>Minikoparka</span>
-            <span className={styles.titlePrice}>Od 26 900 zł netto</span>
+            <span>{t('hero.titleLine1')}</span>
+            <span className={styles.titleAccent}>{t('hero.titleLine2')}</span>
+            <span className={styles.titlePrice}>{t('hero.titlePrice')}</span>
           </h1>
 
           <p
@@ -47,9 +48,10 @@ export default function Hero() {
             className={`${styles.lead} ${styles.reveal} ${leadVisible ? styles.visible : ''}`}
             style={{ transitionDelay: '160ms' }}
           >
-            Przestań wynajmować. <strong>Kup maszynę, która zwróci się po pierwszym sezonie.</strong>{' '}
-            Bergson Machines — pełna obsługa serwisowa, części zawsze na stanie,
-            dostawa pod drzwi.
+            <Trans
+              i18nKey="hero.lead"
+              components={{ strong: <strong /> }}
+            />
           </p>
 
           <div
@@ -57,13 +59,17 @@ export default function Hero() {
             className={`${styles.actions} ${styles.reveal} ${actionsVisible ? styles.visible : ''}`}
             style={{ transitionDelay: '240ms' }}
           >
-            <a href="#modele" className="btn-primary">Zobacz modele</a>
-            <a href="#kontakt" className="btn-outline">Bezpłatna konsultacja</a>
+            <a href={langPath('/', '#modele')} className="btn-primary">
+              {t('hero.actions.models')}
+            </a>
+            <a href={langPath('/', '#kontakt')} className="btn-outline">
+              {t('hero.actions.consultation')}
+            </a>
           </div>
 
-          <ul className={styles.stats} aria-label="Najważniejsze informacje">
-            {STATS.map((item, index) => (
-              <HeroStat key={item.label} item={item} delay={320 + index * 80} />
+          <ul className={styles.stats} aria-label={t('hero.statsAriaLabel')}>
+            {stats.map((item, index) => (
+              <HeroStat key={`${item.value}-${index}`} item={item} delay={320 + index * 80} />
             ))}
           </ul>
         </div>
@@ -76,7 +82,7 @@ export default function Hero() {
           <div className={styles.mediaInner}>
             <img
               src="/images/hero.png"
-              alt="Bergson Machines BM12"
+              alt={t('hero.imageAlt')}
               className={styles.image}
               loading="eager"
               decoding="async"

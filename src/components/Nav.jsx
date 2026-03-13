@@ -1,64 +1,70 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import React, { useEffect, useMemo, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { buildLangPath, getLangFromPath } from '../i18n/routing'
 import styles from './Nav.module.css'
 
 const NAV_LINKS = [
-  { to: '/#modele', label: 'Modele' },
-  { to: '/#serwis', label: 'Serwis' },
-  { to: '/#faq', label: 'FAQ' },
+  { key: 'nav.models', hash: '#modele' },
+  { key: 'nav.service', hash: '#serwis' },
+  { key: 'nav.faq', hash: '#faq' },
 ]
 
 const LANGUAGES = [
-  { code: 'PL', htmlLang: 'pl' },
-  { code: 'ENG', htmlLang: 'en' },
-  { code: 'UA', htmlLang: 'uk' },
+  { code: 'pl', label: 'PL', htmlLang: 'pl' },
+  { code: 'en', label: 'ENG', htmlLang: 'en' },
+  { code: 'ua', label: 'UA', htmlLang: 'uk' },
 ]
 
 const WHATSAPP_URL = 'https://wa.me/48600507816'
 
 export default function Nav() {
+  const { t, i18n } = useTranslation()
+  const location = useLocation()
+  const navigate = useNavigate()
+
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [language, setLanguage] = useState(() => {
-    return localStorage.getItem('site-language') || 'PL'
-  })
 
-  const location = useLocation()
+  const currentLang = useMemo(() => {
+    return getLangFromPath(location.pathname)
+  }, [location.pathname])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
+    onScroll()
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('site-language', language)
-
-    const selected = LANGUAGES.find((item) => item.code === language)
-    if (selected) {
-      document.documentElement.lang = selected.htmlLang
+    if (i18n.language !== currentLang) {
+      i18n.changeLanguage(currentLang)
     }
 
-    window.dispatchEvent(
-      new CustomEvent('languagechange', {
-        detail: { language },
-      })
-    )
-  }, [language])
+    const selected = LANGUAGES.find((item) => item.code === currentLang)
+    document.documentElement.lang = selected?.htmlLang || 'pl'
+
+    const storageMap = {
+      pl: 'PL',
+      en: 'ENG',
+      ua: 'UA',
+    }
+
+    localStorage.setItem('site-language', storageMap[currentLang] || 'PL')
+  }, [currentLang, i18n])
 
   useEffect(() => {
     setMenuOpen(false)
   }, [location.pathname, location.hash])
 
   useEffect(() => {
-    const previousOverflow = document.body.style.overflow
-
-    if (menuOpen) {
-      document.body.style.overflow = 'hidden'
-    }
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    document.body.classList.toggle('nav-menu-open', menuOpen)
 
     return () => {
-      document.body.style.overflow = previousOverflow
+      document.body.style.overflow = ''
+      document.body.classList.remove('nav-menu-open')
     }
   }, [menuOpen])
 
@@ -74,51 +80,36 @@ export default function Nav() {
   }, [])
 
   useEffect(() => {
-  setMenuOpen(false)
-}, [location.pathname, location.hash])
+    const media = window.matchMedia('(min-width: 1025px)')
 
-useEffect(() => {
-  document.body.style.overflow = menuOpen ? 'hidden' : ''
-
-  return () => {
-    document.body.style.overflow = ''
-  }
-}, [menuOpen])
-
-useEffect(() => {
-  document.body.classList.toggle('nav-menu-open', menuOpen)
-
-  return () => {
-    document.body.classList.remove('nav-menu-open')
-  }
-}, [menuOpen])
-
-useEffect(() => {
-  const media = window.matchMedia('(min-width: 1025px)')
-
-  const closeMenuForDesktop = () => {
-    setMenuOpen(false)
-    document.body.style.overflow = ''
-  }
-
-  const handleChange = (event) => {
-    if (event.matches) {
-      closeMenuForDesktop()
+    const handleChange = (event) => {
+      if (event.matches) {
+        setMenuOpen(false)
+      }
     }
+
+    if (media.matches) {
+      setMenuOpen(false)
+    }
+
+    if (typeof media.addEventListener === 'function') {
+      media.addEventListener('change', handleChange)
+      return () => media.removeEventListener('change', handleChange)
+    }
+
+    media.addListener(handleChange)
+    return () => media.removeListener(handleChange)
+  }, [])
+
+  const goToLanguage = (nextLang) => {
+    if (nextLang === currentLang) return
+
+    const target = buildLangPath(nextLang, location.pathname, location.hash)
+    navigate(target)
   }
 
-  if (media.matches) {
-    closeMenuForDesktop()
-  }
-
-  if (typeof media.addEventListener === 'function') {
-    media.addEventListener('change', handleChange)
-    return () => media.removeEventListener('change', handleChange)
-  }
-
-  media.addListener(handleChange)
-  return () => media.removeListener(handleChange)
-}, [])
+  const homeLink = buildLangPath(currentLang, '/')
+  const contactLink = buildLangPath(currentLang, '/', '#kontakt')
 
   return (
     <>
@@ -127,7 +118,7 @@ useEffect(() => {
         aria-label="Nawigacja główna"
       >
         <div className={`page-shell ${styles.inner}`}>
-          <Link to="/" className={styles.logo} aria-label="Bergson Machines">
+          <Link to={homeLink} className={styles.logo} aria-label="Bergson Machines">
             <img
               src="/logo.svg"
               alt="Bergson Machines"
@@ -136,10 +127,13 @@ useEffect(() => {
           </Link>
 
           <ul className={styles.links}>
-            {NAV_LINKS.map(({ to, label }) => (
-              <li key={to}>
-                <Link to={to} className={styles.link}>
-                  {label}
+            {NAV_LINKS.map(({ key, hash }) => (
+              <li key={key}>
+                <Link
+                  to={buildLangPath(currentLang, '/', hash)}
+                  className={styles.link}
+                >
+                  {t(key)}
                 </Link>
               </li>
             ))}
@@ -149,19 +143,19 @@ useEffect(() => {
             <div
               className={styles.langSwitch}
               role="group"
-              aria-label="Wybór języka"
+              aria-label={t('nav.language')}
             >
-              {LANGUAGES.map(({ code }) => (
+              {LANGUAGES.map(({ code, label }) => (
                 <button
                   key={code}
                   type="button"
                   className={`${styles.langBtn} ${
-                    language === code ? styles.langBtnActive : ''
+                    currentLang === code ? styles.langBtnActive : ''
                   }`}
-                  onClick={() => setLanguage(code)}
-                  aria-pressed={language === code}
+                  onClick={() => goToLanguage(code)}
+                  aria-pressed={currentLang === code}
                 >
-                  {code}
+                  {label}
                 </button>
               ))}
             </div>
@@ -171,20 +165,20 @@ useEffect(() => {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.whatsappCta}
-              aria-label="Napisz na WhatsApp"
+              aria-label={t('nav.whatsapp')}
             >
               <WhatsAppIcon className={styles.whatsappIcon} />
-              <span>Napisz na WhatsApp</span>
+              <span>{t('nav.whatsapp')}</span>
             </a>
 
-            <Link to="/#kontakt" className={styles.cta}>
-              Skontaktuj się
+            <Link to={contactLink} className={styles.cta}>
+              {t('nav.contact')}
             </Link>
 
             <button
               type="button"
               className={styles.burger}
-              aria-label={menuOpen ? 'Zamknij menu' : 'Otwórz menu'}
+              aria-label={menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               onClick={() => setMenuOpen((prev) => !prev)}
@@ -213,29 +207,32 @@ useEffect(() => {
             <div
               className={styles.mobileLangSwitch}
               role="group"
-              aria-label="Wybór języka"
+              aria-label={t('nav.language')}
             >
-              {LANGUAGES.map(({ code }) => (
+              {LANGUAGES.map(({ code, label }) => (
                 <button
                   key={code}
                   type="button"
                   className={`${styles.langBtn} ${
-                    language === code ? styles.langBtnActive : ''
+                    currentLang === code ? styles.langBtnActive : ''
                   }`}
-                  onClick={() => setLanguage(code)}
-                  aria-pressed={language === code}
+                  onClick={() => goToLanguage(code)}
+                  aria-pressed={currentLang === code}
                 >
-                  {code}
+                  {label}
                 </button>
               ))}
             </div>
           </div>
 
           <ul className={styles.mobileLinks}>
-            {NAV_LINKS.map(({ to, label }) => (
-              <li key={to}>
-                <Link to={to} className={styles.mobileLink}>
-                  {label}
+            {NAV_LINKS.map(({ key, hash }) => (
+              <li key={key}>
+                <Link
+                  to={buildLangPath(currentLang, '/', hash)}
+                  className={styles.mobileLink}
+                >
+                  {t(key)}
                 </Link>
               </li>
             ))}
@@ -246,14 +243,14 @@ useEffect(() => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.mobileWhatsappCta}
-            aria-label="Napisz na WhatsApp"
+            aria-label={t('nav.whatsapp')}
           >
             <WhatsAppIcon className={styles.whatsappIcon} />
-            <span>Napisz na WhatsApp</span>
+            <span>{t('nav.whatsapp')}</span>
           </a>
 
-          <Link to="/#kontakt" className={styles.mobileCta}>
-            Skontaktuj się
+          <Link to={contactLink} className={styles.mobileCta}>
+            {t('nav.contact')}
           </Link>
         </div>
       </div>

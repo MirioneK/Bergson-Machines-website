@@ -1,9 +1,14 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { SERVICE_ITEMS } from '../data'
+import { useLangPath } from '../hooks/useLangPath'
 import { useReveal } from '../hooks/useReveal'
 import styles from './Service.module.css'
 
 export default function Service() {
+  const { t } = useTranslation()
+  const langPath = useLangPath()
+
   const [headerRef, headerVisible] = useReveal()
   const [innerRef, innerVisible] = useReveal()
   const [promiseRef, promiseVisible] = useReveal()
@@ -15,9 +20,9 @@ export default function Service() {
           ref={headerRef}
           className={`${styles.header} reveal ${headerVisible ? 'visible' : ''}`}
         >
-          <span className={styles.label}>Gwarancja i serwis</span>
+          <span className={styles.label}>{t('service.label')}</span>
           <h2 className={styles.title} id="service-title">
-            Kupujesz spokój ducha
+            {t('service.title')}
           </h2>
         </header>
 
@@ -30,7 +35,8 @@ export default function Service() {
             {SERVICE_ITEMS.map((item, index) => (
               <ServiceItem
                 key={item.id}
-                {...item}
+                id={item.id}
+                icon={item.icon}
                 delay={180 + index * 80}
               />
             ))}
@@ -40,24 +46,24 @@ export default function Service() {
             ref={promiseRef}
             className={`${styles.promise} reveal ${promiseVisible ? 'visible' : ''}`}
             style={{ transitionDelay: '220ms' }}
-            aria-label="Obietnica serwisowa"
+            aria-label={t('service.promise.ariaLabel')}
           >
             <div className={styles.metric}>
-              <div className={styles.promiseBig}>48h</div>
+              <div className={styles.promiseBig}>{t('service.promise.reactionTime.value')}</div>
               <div className={styles.promiseLabel}>
-                Maksymalny czas reakcji serwisu
+                {t('service.promise.reactionTime.label')}
               </div>
             </div>
 
             <div className={styles.metric}>
-              <div className={styles.promiseBig}>2 lata</div>
+              <div className={styles.promiseBig}>{t('service.promise.warranty.value')}</div>
               <div className={styles.promiseLabel}>
-                Pełna gwarancja bez wyjątków
+                {t('service.promise.warranty.label')}
               </div>
             </div>
 
-            <a href="#kontakt" className={styles.promiseCta}>
-              Zgłoś usterkę
+            <a href={langPath('/', '#kontakt')} className={styles.promiseCta}>
+              {t('service.promise.cta')}
             </a>
           </aside>
         </div>
@@ -66,7 +72,8 @@ export default function Service() {
   )
 }
 
-function ServiceItem({ icon, title, desc, delay }) {
+function ServiceItem({ id, icon, delay }) {
+  const { t } = useTranslation()
   const [ref, visible] = useReveal()
 
   return (
@@ -80,8 +87,8 @@ function ServiceItem({ icon, title, desc, delay }) {
       </span>
 
       <div className={styles.itemContent}>
-        <h3 className={styles.itemTitle}>{title}</h3>
-        <p className={styles.itemDesc}>{desc}</p>
+        <h3 className={styles.itemTitle}>{t(`service.items.${id}.title`)}</h3>
+        <p className={styles.itemDesc}>{t(`service.items.${id}.desc`)}</p>
       </div>
     </li>
   )

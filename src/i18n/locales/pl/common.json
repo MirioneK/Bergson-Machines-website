@@ -1,0 +1,568 @@
+{
+  "nav": {
+    "models": "Modele",
+    "service": "Serwis",
+    "faq": "FAQ",
+    "contact": "Skontaktuj się",
+    "whatsapp": "Napisz na WhatsApp",
+    "language": "Wybór języka",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu"
+  },
+  "hero": {
+    "badge": "Dostawa w Polsce · Gwarancja 2 lata · Serwis mobilny",
+    "titleLine1": "Profesjonalna",
+    "titleLine2": "Minikoparka",
+    "titlePrice": "Od 26 900 zł netto",
+    "lead": "Przestań wynajmować. <strong>Kup maszynę, która zwróci się po pierwszym sezonie.</strong> Bergson Machines - pełna obsługa serwisowa, części zawsze na stanie, dostawa pod drzwi.",
+    "actions": {
+      "models": "Zobacz modele",
+      "consultation": "Bezpłatna konsultacja"
+    },
+    "statsAriaLabel": "Najważniejsze informacje",
+    "imageAlt": "Minikoparka Bergson Machines BM12",
+    "stats": [
+      {
+        "value": "3",
+        "label": "Modele w ofercie"
+      },
+      {
+        "value": "24h",
+        "label": "Czas reakcji serwisu"
+      },
+      {
+        "value": "2 lata",
+        "label": "Gwarancja"
+      }
+    ]
+  },
+  "trustBar": {
+    "ariaLabel": "Najważniejsze korzyści",
+    "items": {
+      "mobileService": "Serwis mobilny w całej Polsce",
+      "stockParts": "Części na magazynie w Polsce",
+      "delivery": "Transport pod wskazany adres",
+      "vatInvoice": "Faktura VAT bez dopłat",
+      "financing": "Leasing i raty dostępne"
+    }
+  },
+  "models": {
+    "label": "Nasze maszyny",
+    "title": "Wybierz swój model"
+  },
+  "modelCard": {
+    "ariaLabel": "Poznaj model {{name}}",
+    "imageAlt": "Minikoparka {{name}}",
+    "specsAriaLabel": "Specyfikacja modelu {{name}}",
+    "pricePrefix": "od",
+    "priceNettoLabel": "NETTO",
+    "priceBrutto": "od {{price}} brutto",
+    "cta": "Poznaj model",
+    "specLabels": {
+      "operatingWeight": "Masa robocza",
+      "engine": "Silnik",
+      "diggingDepth": "Głęb. kopania",
+      "trackWidth": "Szer. gąsienicy",
+      "cabin": "Kabina"
+    }
+  },
+  "modelPage": {
+    "breadcrumb": {
+      "home": "Strona główna",
+      "models": "Minikoparki"
+    },
+    "heroLabel": "Minikoparki Bergson Machines",
+    "heroImageAlt": "Minikoparka {{name}}",
+    "pricePrefix": "od",
+    "priceNettoUnit": "netto",
+    "priceGross": "od {{price}} brutto",
+    "actions": {
+      "contact": "Skontaktuj się",
+      "allModels": "← Wszystkie modele"
+    },
+    "overviewTitle": "Minikoparka {{name}}",
+    "galleryImageAlt": "{{name}} zdjęcie {{index}}",
+    "specsLabel": "Dane techniczne",
+    "specsTitle": "Specyfikacja modelu {{name}}",
+    "drawingLabel": "Rysunek techniczny",
+    "drawingTitle": "Wymiary i geometria pracy",
+    "drawingImageAlt": "Rysunek techniczny {{name}}",
+    "accessoriesLabel": "Osprzęt dodatkowy",
+    "accessoriesTitle": "Dodatkowy osprzęt",
+    "accessoriesSubtitle": "Przykładowe akcesoria kompatybilne z modelem {{name}}.",
+    "accessoryImageAlt": "{{name}}",
+    "accessoryPrice": "{{price}} netto",
+    "otherLabel": "Odkryj pozostałe modele",
+    "otherModelImageAlt": "{{name}}",
+    "otherPrice": "od {{price}} netto",
+    "otherCta": "Poznaj model →",
+    "ctaBarTitle": "Masz pytania dotyczące {{name}}?",
+    "ctaBarSub": "Odpowiemy w ciągu 2 godzin w dni robocze",
+    "ctaBarButton": "Przejdź do formularza"
+  },
+  "gallery": {
+    "label": "Galeria",
+    "title": "Nasze maszyny z bliska",
+    "openPhotoAriaLabel": "Powiększ zdjęcie: {{label}}",
+    "closePreviewAriaLabel": "Zamknij podgląd zdjęcia",
+    "photos": {
+      "bm12cPhoto": {
+        "alt": "Minikoparka BM12C z kabiną",
+        "tag": "BM12C · Z kabiną",
+        "label": "BM12C - praca w każdą pogodę"
+      },
+      "bm10Photo": {
+        "alt": "Minikoparka BM10",
+        "tag": "BM10 · 1 tona",
+        "label": "BM10 - wąskie wjazdy, ogrody"
+      },
+      "bm12Photo": {
+        "alt": "Minikoparka BM12",
+        "tag": "BM12 · Bestseller",
+        "label": "BM12 - najlepszy wybór"
+      }
+    },
+    "infoTiles": {
+      "warranty": {
+        "number": "2 lata",
+        "sub": "Gwarancja",
+        "desc": "Pełna ochrona mechaniki i hydrauliki"
+      },
+      "trackWidth": {
+        "sub": "Szerokość gąsienicy",
+        "number": "od 760 mm",
+        "desc": "Mieści się przez standardową bramę garażową"
+      }
+    }
+  },
+  "accessories": {
+    "label": "Wyposażenie dodatkowe",
+    "title": "Osprzęt i akcesoria do minikoparek",
+    "sub": "Wszystkie akcesoria kompatybilne z każdym modelem. Dobierz osprzęt do rodzaju prac i rozbuduj możliwości maszyny.",
+    "controls": {
+      "prevAriaLabel": "Poprzedni osprzęt",
+      "nextAriaLabel": "Następny osprzęt"
+    },
+    "card": {
+      "imageAlt": "{{name}}",
+      "priceNettoLabel": "NETTO",
+      "priceBrutto": "{{price}} brutto"
+    }
+  },
+  "whyUs": {
+    "label": "Dlaczego Bergson Machines",
+    "titleLine1": "Nie jesteśmy",
+    "titleLine2": "„Januszem Biznesu”",
+    "sub": "Kupujesz od firmy z polskim adresem, KRS, NIP i magazynem części. Wystawiamy fakturę VAT bez dopłat, dowozimy maszynę pod wskazany adres i jesteśmy dostępni po sprzedaży - nie tylko przed nią.",
+    "cta": "Porozmawiaj z nami",
+    "cards": {
+      "fv": {
+        "title": "Zawsze Faktura VAT",
+        "desc": "Każda sprzedaż dokumentowana fakturą bez ukrytych dopłat. Odlicz VAT, skorzystaj z amortyzacji."
+      },
+      "parts": {
+        "title": "Magazyn Części w Polsce",
+        "desc": "Kluczowe podzespoły trzymamy w polskim magazynie. Brak przestojów na przesyłkę z Chin."
+      },
+      "service": {
+        "title": "Mobilny Serwis",
+        "desc": "Technik przyjedzie do Ciebie. Nie tracisz czasu na transport maszyny do serwisu."
+      },
+      "leasing": {
+        "title": "Leasing i Raty",
+        "desc": "Współpracujemy z firmami leasingowymi. Maszyna zarabia zanim skończy się pierwsza rata."
+      },
+      "advisory": {
+        "title": "Doradztwo Techniczne",
+        "desc": "Nie wiesz, który model wybrać? Nasz specjalista pomoże dobrać maszynę do Twoich prac."
+      },
+      "delivery": {
+        "title": "Dostawa Pod Adres",
+        "desc": "Dowozimy maszynę na plac budowy lub posesję. Transport wliczony w cenę do 200 km."
+      }
+    }
+  },
+  "objections": {
+    "label": "Masz wątpliwości?",
+    "title": "Odpowiadamy na wprost",
+    "items": [
+      {
+        "id": "parts-wait",
+        "question": "\"A co z częściami zamiennymi z Chin? Będę czekał miesiąc?\"",
+        "answer": "<strong>Nie.</strong> Trzymamy w Polsce magazyn kluczowych części - uszczelnień, filtrów, łyżek i elementów hydraulicznych. Dla minikoparek 1–1,5 t używamy podzespołów kompatybilnych z Kubotą i Yanmarem, dostępnych u polskich dystrybutorów. Czas realizacji naprawy: zazwyczaj <strong>48–72 godziny</strong>."
+      },
+      {
+        "id": "service-who",
+        "question": "\"Kto mi to naprawi? Żaden serwis nie zna tych maszyn.\"",
+        "answer": "<strong>My.</strong> Posiadamy własny mobilny serwis techniczny. Do każdej maszyny dostarczamy kompletną dokumentację serwisową po polsku. Silniki diesel w naszych maszynach to standardowe jednostki - każdy doświadczony mechanik je obsłuży. Do każdej maszyny dołączamy <strong>polskojęzyczną instrukcję obsługi i katalog części</strong>."
+      },
+      {
+        "id": "quality",
+        "question": "\"Chińska koparka to zabawka. Nie wytrzyma na budowie.\"",
+        "answer": "<strong>Sprawdź liczby.</strong> Rynek minikoparek chińskiej produkcji rośnie w Polsce o 30–40% rok do roku. Liderzy tacy jak Gunter Shop, XTM czy Meyer Europe sprzedają wyłącznie maszyny z Chin. Różnica? Nasze maszyny kosztują <strong>30–40% mniej</strong> przy identycznych parametrach roboczych."
+      }
+    ]
+  },
+  "process": {
+    "label": "Prosty zakup",
+    "title": "Od zapytania do dostawy",
+    "steps": [
+      {
+        "num": "1",
+        "title": "Kontakt",
+        "desc": "Wypełnij formularz lub zadzwoń. Odpiszemy w ciągu 2 godzin w dni robocze."
+      },
+      {
+        "num": "2",
+        "title": "Konsultacja",
+        "desc": "Dobieramy model i osprzęt do Twoich konkretnych prac i budżetu."
+      },
+      {
+        "num": "3",
+        "title": "Zamówienie i FV",
+        "desc": "Podpisujemy umowę, wystawiamy fakturę. Leasing i raty możliwe."
+      },
+      {
+        "num": "4",
+        "title": "Dostawa",
+        "desc": "Dowozimy maszynę pod wskazany adres. Szkolenie z obsługi w cenie."
+      },
+      {
+        "num": "5",
+        "title": "Serwis Pogwarancyjny",
+        "desc": "Jesteśmy z Tobą długoterminowo. Serwis, części, doradztwo."
+      }
+    ]
+  },
+  "service": {
+    "label": "Gwarancja i serwis",
+    "title": "Kupujesz spokój ducha",
+    "items": {
+      "warranty": {
+        "title": "2-letnia Gwarancja",
+        "desc": "Pełna gwarancja na wszystkie podzespoły mechaniczne i hydrauliczne. Żadnych gwiazdek, żadnych ukrytych wyjątków."
+      },
+      "mobile": {
+        "title": "Mobilny Serwis Przyjazdowy",
+        "desc": "Technik przyjeżdża do Ciebie - na plac budowy, na posesję. Ty nie tracisz ani dnia pracy na logistykę."
+      },
+      "stock": {
+        "title": "Magazyn Części w Polsce",
+        "desc": "Filtry, uszczelniacze, elementy hydrauliczne, łyżki - wszystko na stanie. Czas oczekiwania: max 48–72 h."
+      },
+      "hotline": {
+        "title": "Linia Techniczna",
+        "desc": "Bezpłatna konsultacja telefoniczna dla klientów. Pomożemy zdiagnozować problem zanim wyślemy technika."
+      },
+      "docs": {
+        "title": "Dokumentacja po Polsku",
+        "desc": "Pełna instrukcja obsługi, DTR i katalog części zamiennych w języku polskim przy każdej maszynie."
+      }
+    },
+    "promise": {
+      "ariaLabel": "Obietnica serwisowa",
+      "reactionTime": {
+        "value": "48h",
+        "label": "Maksymalny czas reakcji serwisu"
+      },
+      "warranty": {
+        "value": "2 lata",
+        "label": "Pełna gwarancja bez wyjątków"
+      },
+      "cta": "Zgłoś usterkę"
+    }
+  },
+  "faq": {
+    "label": "Najczęstsze pytania",
+    "title": "FAQ",
+    "items": [
+      {
+        "id": "registration",
+        "q": "Czy minikoparka wymaga rejestracji lub uprawnień?",
+        "a": "Minikoparki do 5 ton nie wymagają rejestracji ani uprawnień operatorskich do obsługi na własnej nieruchomości. Do pracy na drogach publicznych konieczne jest ubezpieczenie OC maszyny."
+      },
+      {
+        "id": "transport",
+        "q": "Jak przetransportować koparkę na plac budowy?",
+        "a": "Nasze minikoparki mieszczą się na typowej przyczepie samochodowej do 3,5 t DMC. Transport na przyczepie z samochodem osobowym nie stanowi problemu."
+      },
+      {
+        "id": "delivery-time",
+        "q": "Jak długo czeka się na dostawę maszyny?",
+        "a": "Maszyny ze stocku dostarczamy w ciągu 5–14 dni roboczych. Modele na zamówienie - do 3–4 tygodni. Aktualną dostępność podajemy przy wycenie."
+      },
+      {
+        "id": "leasing",
+        "q": "Czy mogę kupić na firmę i skorzystać z leasingu?",
+        "a": "Tak. Wystawiamy fakturę VAT na firmę i osobę prywatną. Współpracujemy z firmami leasingowymi - rata za maszynę BM12 to około 650–800 zł miesięcznie przy leasingu 60-miesięcznym."
+      },
+      {
+        "id": "after-warranty",
+        "q": "Co się stanie, gdy coś się zepsuje po roku?",
+        "a": "Gwarancja obejmuje 24 miesiące. Po jej zakończeniu oferujemy płatny serwis mobilny oraz sprzedaż części zamiennych z polskiego magazynu."
+      },
+      {
+        "id": "test-drive",
+        "q": "Czy mogę przetestować maszynę przed zakupem?",
+        "a": "Tak - zapraszamy na prezentację do naszego showroomu w Poznaniu. Możesz osobiście wypróbować maszynę w pracy. Skontaktuj się z nami, aby umówić termin."
+      },
+      {
+        "id": "gate-width",
+        "q": "Czy maszyna przejdzie przez wąską bramę lub furtkę?",
+        "a": "BM10 ma szerokość gąsienic 760 mm i mieści się przez większość standardowych bram. BM12 i BM12C mają 980 mm."
+      },
+      {
+        "id": "new-ce",
+        "q": "Czy minikoparki są nowe? Czy mają certyfikaty CE?",
+        "a": "Wszystkie maszyny są fabrycznie nowe, z deklaracją zgodności CE. Dostarczamy pełną dokumentację techniczną oraz instrukcję obsługi w języku polskim."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Skontaktuj się",
+    "title": "Wycena bezpłatna. Odpowiedź dziś.",
+    "sub": "Opisz czego potrzebujesz, a wrócimy z konkretną odpowiedzią i doborem modelu pod Twoje prace.",
+    "form": {
+      "fields": {
+        "name": {
+          "label": "Imię i nazwisko *",
+          "placeholder": "Jan Kowalski"
+        },
+        "phone": {
+          "label": "Telefon *",
+          "placeholder": "+48 600 000 000"
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "jan@firma.pl"
+        },
+        "model": {
+          "label": "Interesujący model",
+          "placeholder": "Wybierz"
+        },
+        "message": {
+          "label": "Pytanie lub opis prac *",
+          "placeholder": "Opisz do czego potrzebujesz koparki, jakie masz pytania i jaki zakres prac planujesz."
+        }
+      },
+      "modelOptions": [
+        {
+          "value": "bm10",
+          "label": "BM10 – 1 tona"
+        },
+        {
+          "value": "bm12",
+          "label": "BM12 – 1,2 tony"
+        },
+        {
+          "value": "bm12c",
+          "label": "BM12C – 1,2 tony z kabiną"
+        },
+        {
+          "value": "advisory",
+          "label": "Potrzebuję doradztwa"
+        }
+      ],
+      "modelSelectionPrefix": "Interesujący model: {{model}}",
+      "consentText": "Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę Better Solutions Sp. z o.o. z siedzibą przy ul. Poznańska 7, 61-160 Czapury, NIP: 7252298652 w celu udzielenia odpowiedzi, w tym przedłożenia oferty jeśli o nią pytam.",
+      "recaptchaText": "Ta strona jest chroniona przez reCAPTCHA, a także obowiązują <privacyLink>Polityka prywatności</privacyLink> oraz <termsLink>Warunki korzystania z usługi</termsLink> Google.",
+      "submit": {
+        "default": "Wyślij zapytanie",
+        "loading": "Wysyłanie…"
+      },
+      "messages": {
+        "fixErrors": "Uzupełnij wymagane pola, popraw e-mail lub telefon i zaznacz zgodę na kontakt.",
+        "genericError": "Nie udało się wysłać wiadomości. Spróbuj ponownie za chwilę lub skontaktuj się z nami telefonicznie lub mailowo.",
+        "success": "Dziękujemy! Twoje zapytanie zostało wysłane."
+      },
+      "errors": {
+        "name": "Podaj imię i nazwisko.",
+        "phone": "Podaj poprawny numer telefonu.",
+        "email": "Podaj poprawny adres e-mail.",
+        "message": "Opisz, czego potrzebujesz.",
+        "consent": "Zaznacz zgodę na kontakt."
+      }
+    },
+    "info": {
+      "title": "Porozmawiajmy",
+      "text": "Nie zmuszamy do zakupu przez internet. Wolisz zadzwonić? Chcesz zobaczyć maszynę na żywo? Przyjedź do nas lub zamów wizytę demonstracyjną.",
+      "details": {
+        "phone": {
+          "label": "Telefon"
+        },
+        "email": {
+          "label": "E-mail"
+        },
+        "address": {
+          "label": "Adres"
+        },
+        "hours": {
+          "label": "Godziny pracy",
+          "value": "Pon–Pt: 8:00–17:00 · Sob: 9:00–13:00"
+        }
+      },
+      "whatsapp": {
+        "label": "Napisz na WhatsApp",
+        "ariaLabel": "Napisz do nas na WhatsApp"
+      }
+    },
+    "map": {
+      "iframeTitle": "Bergson Machines - Pobórka Wielka",
+      "barText": "{{location}}, {{locationSub}}",
+      "open": "Otwórz mapę"
+    }
+  },
+  "stickyCta": {
+    "label": "Zadzwoń",
+    "ariaLabel": "Przejdź do formularza kontaktowego"
+  },
+  "footer": {
+    "logoAriaLabel": "Bergson Machines",
+    "logoAlt": "Bergson Machines",
+    "note": "Minikoparki dla profesjonalistów. Sprzedaż, osprzęt, serwis i wsparcie techniczne.",
+    "customerService": {
+      "title": "Obsługa klienta",
+      "links": {
+        "warranty": "Gwarancja",
+        "returns": "Zwroty i reklamacje",
+        "delivery": "Dostawa"
+      }
+    },
+    "legal": {
+      "title": "Informacje prawne",
+      "links": {
+        "terms": "Regulamin",
+        "paymentMethods": "Formy płatności",
+        "privacyPolicy": "Polityka prywatności"
+      }
+    },
+    "copy": "© 2026 Better Solutions Sp. z o.o. Wszelkie prawa zastrzeżone.",
+    "tax": "NIP: 725-229-86-52"
+  },
+  "legal": {
+    "label": "Informacje",
+    "backLink": "← Wróć do strony głównej",
+    "pages": {
+      "gwarancja": {
+        "title": "Gwarancja",
+        "intro": "Ta strona stanowi miejsce na docelowe warunki gwarancji dla maszyn i osprzętu Bergson Machines.",
+        "sections": [
+          {
+            "heading": "Zakres gwarancji",
+            "body": "W tym miejscu należy opisać, jakie elementy produktu objęte są gwarancją, jaki jest okres obowiązywania oraz od kiedy liczony jest bieg gwarancji."
+          },
+          {
+            "heading": "Wyłączenia odpowiedzialności",
+            "body": "Tutaj warto wskazać przypadki, w których gwarancja nie obowiązuje, np. uszkodzenia wynikające z niewłaściwej eksploatacji, braku przeglądów lub samodzielnych przeróbek."
+          },
+          {
+            "heading": "Procedura zgłoszenia",
+            "body": "W tej sekcji należy opisać sposób zgłaszania usterek, wymagane informacje od klienta oraz przewidywany sposób i termin rozpatrzenia zgłoszenia."
+          }
+        ]
+      },
+      "zwroty-i-reklamacje": {
+        "title": "Zwroty i reklamacje",
+        "intro": "Ta strona stanowi miejsce na docelowe zasady dotyczące zwrotów, odstąpienia od umowy oraz składania reklamacji.",
+        "sections": [
+          {
+            "heading": "Reklamacje",
+            "body": "W tej sekcji należy opisać, w jaki sposób klient może złożyć reklamację, jakie dane powinien przekazać oraz w jakim terminie sprzedawca odpowiada na zgłoszenie."
+          },
+          {
+            "heading": "Zwroty",
+            "body": "Tutaj należy wskazać, kiedy klientowi przysługuje prawo zwrotu lub odstąpienia od umowy oraz jakie warunki muszą zostać spełnione."
+          },
+          {
+            "heading": "Forma kontaktu",
+            "body": "W tym miejscu można wskazać preferowaną drogę kontaktu: formularz, e-mail, telefon lub adres korespondencyjny do obsługi reklamacji."
+          }
+        ]
+      },
+      "dostawa": {
+        "title": "Dostawa",
+        "intro": "Ta strona stanowi miejsce na opis warunków dostawy maszyn, osprzętu i części zamiennych.",
+        "sections": [
+          {
+            "heading": "Obszar dostawy",
+            "body": "W tej sekcji należy wskazać, na jakim obszarze realizowana jest dostawa oraz czy obowiązują dodatkowe warunki dla wybranych lokalizacji."
+          },
+          {
+            "heading": "Czas realizacji",
+            "body": "Tutaj warto opisać standardowe terminy dostawy dla produktów dostępnych od ręki oraz dla maszyn sprowadzanych lub konfigurowanych na zamówienie."
+          },
+          {
+            "heading": "Koszty i odbiór",
+            "body": "W tym miejscu można wskazać zasady naliczania kosztów transportu, warunki odbioru oraz obowiązki klienta przy przyjęciu towaru."
+          }
+        ]
+      },
+      "regulamin": {
+        "title": "Regulamin",
+        "intro": "Ta strona stanowi miejsce na regulamin sprzedaży i korzystania ze strony internetowej Bergson Machines.",
+        "sections": [
+          {
+            "heading": "Postanowienia ogólne",
+            "body": "Tutaj należy opisać podstawowe zasady działania sklepu lub serwisu, definicje używanych pojęć oraz dane identyfikacyjne sprzedawcy."
+          },
+          {
+            "heading": "Składanie zamówień",
+            "body": "W tej sekcji warto opisać, w jaki sposób dochodzi do złożenia zamówienia, potwierdzenia warunków oraz zawarcia umowy."
+          },
+          {
+            "heading": "Postanowienia końcowe",
+            "body": "Tutaj można wskazać zasady zmian regulaminu, właściwość prawa oraz sposób publikacji aktualnej wersji dokumentu."
+          }
+        ]
+      },
+      "formy-platnosci": {
+        "title": "Formy płatności",
+        "intro": "Ta strona stanowi miejsce na opis dostępnych metod płatności oraz warunków rozliczenia zamówienia.",
+        "sections": [
+          {
+            "heading": "Dostępne metody",
+            "body": "W tej sekcji należy opisać, czy dostępny jest przelew tradycyjny, płatność gotówką, leasing, raty lub inne formy finansowania."
+          },
+          {
+            "heading": "Termin płatności",
+            "body": "Tutaj warto wskazać, kiedy płatność powinna zostać dokonana i jakie są konsekwencje jej braku w określonym czasie."
+          },
+          {
+            "heading": "Rozliczenia indywidualne",
+            "body": "W tym miejscu można opisać warunki płatności ustalane indywidualnie przy zakupie maszyn, osprzętu lub większych zamówień."
+          }
+        ]
+      },
+      "polityka-prywatnosci": {
+        "title": "Polityka prywatności",
+        "intro": "Ta strona stanowi miejsce na opis zasad przetwarzania danych osobowych użytkowników strony i klientów.",
+        "sections": [
+          {
+            "heading": "Administrator danych",
+            "body": "W tej sekcji należy wskazać dane administratora, dane kontaktowe oraz podstawowe informacje o przetwarzaniu danych osobowych."
+          },
+          {
+            "heading": "Cele i podstawy przetwarzania",
+            "body": "Tutaj należy opisać, w jakich celach dane są przetwarzane, np. obsługa zapytań, przygotowanie oferty, kontakt handlowy lub wykonanie umowy."
+          },
+          {
+            "heading": "Prawa użytkownika",
+            "body": "W tym miejscu należy wskazać prawa osoby, której dane dotyczą, w tym prawo dostępu, sprostowania, usunięcia, ograniczenia przetwarzania i wniesienia skargi."
+          }
+        ]
+      }
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "Bergson Machines | Minikoparki, osprzęt i serwis",
+      "description": "Sprzedaż minikoparek, osprzętu i wsparcia serwisowego. Dobierz model do swoich prac i otrzymaj bezpłatną wycenę."
+    },
+    "model": {
+      "title": "{{name}} | Bergson Machines"
+    },
+    "legal": {
+      "title": "{{title}} | Bergson Machines"
+    }
+  }
+}

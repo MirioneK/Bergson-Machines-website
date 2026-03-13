@@ -1,63 +1,41 @@
 import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/useReveal'
 import styles from './Gallery.module.css'
 
 const PHOTO_TILES = [
   {
-    id: 'bm12c-photo',
+    id: 'bm12cPhoto',
     src: '/images/BM12C.jpeg',
-    alt: 'Minikoparka BM12C z kabiną',
-    tag: 'BM12C · Z kabiną',
-    label: 'BM12C — praca w każdą pogodę',
     featured: true,
   },
   {
-    id: 'bm10-photo',
+    id: 'bm10Photo',
     src: '/images/BM10.jpeg',
-    alt: 'Minikoparka BM10',
-    tag: 'BM10 · 1 tona',
-    label: 'BM10 — wąskie wjazdy, ogrody',
   },
   {
-    id: 'bm12-photo',
+    id: 'bm12Photo',
     src: '/images/BM12.jpeg',
-    alt: 'Minikoparka BM12',
-    tag: 'BM12 · Bestseller',
-    label: 'BM12 — najlepszy wybór',
     imgStyle: { objectPosition: 'center 20%' },
   },
 ]
 
 const INFO_TILES = [
   {
-    id: 'warranty-info',
+    id: 'warranty',
     theme: 'grad',
-    content: (
-      <>
-        <div className={styles.infoNum}>2 lata</div>
-        <div className={styles.infoSub}>Gwarancja</div>
-        <div className={styles.infoLine} />
-        <div className={styles.infoDesc}>Pełna ochrona mechaniki i hydrauliki</div>
-      </>
-    ),
+    variant: 'warranty',
   },
   {
-    id: 'track-width-info',
+    id: 'trackWidth',
     theme: 'dark',
-    content: (
-      <>
-        <span className={styles.infoIcon} aria-hidden="true">📐</span>
-        <div className={`${styles.infoSub} ${styles.orange}`}>Szerokość gąsienicy</div>
-        <div className={styles.infoNumSmall}>od 760 mm</div>
-        <div className={styles.infoDesc}>
-          Mieści się przez standardową bramę garażową
-        </div>
-      </>
-    ),
+    variant: 'trackWidth',
+    icon: '📐',
   },
 ]
 
 export default function Gallery() {
+  const { t } = useTranslation()
   const [activePhoto, setActivePhoto] = useState(null)
   const [headerRef, headerVisible] = useReveal()
 
@@ -88,9 +66,9 @@ export default function Gallery() {
           ref={headerRef}
           className={`${styles.header} reveal ${headerVisible ? 'visible' : ''}`}
         >
-          <span className={styles.label}>Galeria</span>
+          <span className={styles.label}>{t('gallery.label')}</span>
           <h2 className={styles.title} id="gallery-title">
-            Nasze maszyny z bliska
+            {t('gallery.title')}
           </h2>
         </header>
 
@@ -123,14 +101,14 @@ export default function Gallery() {
           className={styles.lightbox}
           role="dialog"
           aria-modal="true"
-          aria-label={activePhoto.label}
+          aria-label={t(`gallery.photos.${activePhoto.id}.label`)}
           onClick={() => setActivePhoto(null)}
         >
           <button
             type="button"
             className={styles.lightboxClose}
             onClick={() => setActivePhoto(null)}
-            aria-label="Zamknij podgląd zdjęcia"
+            aria-label={t('gallery.closePreviewAriaLabel')}
           >
             ×
           </button>
@@ -141,12 +119,14 @@ export default function Gallery() {
           >
             <img
               src={activePhoto.src}
-              alt={activePhoto.alt}
+              alt={t(`gallery.photos.${activePhoto.id}.alt`)}
               className={styles.lightboxImage}
             />
             <figcaption className={styles.lightboxCaption}>
-              <span className={styles.lightboxTag}>{activePhoto.tag}</span>
-              <span>{activePhoto.label}</span>
+              <span className={styles.lightboxTag}>
+                {t(`gallery.photos.${activePhoto.id}.tag`)}
+              </span>
+              <span>{t(`gallery.photos.${activePhoto.id}.label`)}</span>
             </figcaption>
           </figure>
         </div>
@@ -156,6 +136,7 @@ export default function Gallery() {
 }
 
 function PhotoTile({ tile, delay, onOpen }) {
+  const { t } = useTranslation()
   const [ref, visible] = useReveal()
 
   return (
@@ -165,23 +146,26 @@ function PhotoTile({ tile, delay, onOpen }) {
       className={`${styles.photoTile} ${tile.featured ? styles.featuredPhoto : ''} reveal ${visible ? 'visible' : ''}`}
       style={{ transitionDelay: `${delay}ms` }}
       onClick={onOpen}
-      aria-label={`Powiększ zdjęcie: ${tile.label}`}
+      aria-label={t('gallery.openPhotoAriaLabel', {
+        label: t(`gallery.photos.${tile.id}.label`),
+      })}
     >
       <img
         src={tile.src}
-        alt={tile.alt}
+        alt={t(`gallery.photos.${tile.id}.alt`)}
         className={styles.image}
         style={tile.imgStyle}
         loading="lazy"
         decoding="async"
       />
-      <span className={styles.tag}>{tile.tag}</span>
-      <div className={styles.labelOverlay}>{tile.label}</div>
+      <span className={styles.tag}>{t(`gallery.photos.${tile.id}.tag`)}</span>
+      <div className={styles.labelOverlay}>{t(`gallery.photos.${tile.id}.label`)}</div>
     </button>
   )
 }
 
 function InfoTile({ tile, delay }) {
+  const { t } = useTranslation()
   const [ref, visible] = useReveal()
 
   return (
@@ -190,7 +174,27 @@ function InfoTile({ tile, delay }) {
       className={`${styles.infoTile} ${styles[tile.theme]} reveal ${visible ? 'visible' : ''}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className={styles.infoContent}>{tile.content}</div>
+      <div className={styles.infoContent}>
+        {tile.variant === 'warranty' && (
+          <>
+            <div className={styles.infoNum}>{t(`gallery.infoTiles.${tile.id}.number`)}</div>
+            <div className={styles.infoSub}>{t(`gallery.infoTiles.${tile.id}.sub`)}</div>
+            <div className={styles.infoLine} />
+            <div className={styles.infoDesc}>{t(`gallery.infoTiles.${tile.id}.desc`)}</div>
+          </>
+        )}
+
+        {tile.variant === 'trackWidth' && (
+          <>
+            <span className={styles.infoIcon} aria-hidden="true">{tile.icon}</span>
+            <div className={`${styles.infoSub} ${styles.orange}`}>
+              {t(`gallery.infoTiles.${tile.id}.sub`)}
+            </div>
+            <div className={styles.infoNumSmall}>{t(`gallery.infoTiles.${tile.id}.number`)}</div>
+            <div className={styles.infoDesc}>{t(`gallery.infoTiles.${tile.id}.desc`)}</div>
+          </>
+        )}
+      </div>
     </div>
   )
 }

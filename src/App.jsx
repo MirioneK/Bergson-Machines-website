@@ -1,5 +1,13 @@
 import React, { useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import {
+  Routes,
+  Route,
+  useLocation,
+  Navigate,
+  Outlet,
+  useParams,
+} from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 import Nav from './components/Nav'
 import Footer from './components/Footer'
@@ -9,12 +17,21 @@ import HomePage from './pages/HomePage'
 import ModelPage from './pages/ModelPage'
 import LegalPage from './pages/LegalPage'
 
+import {
+  DEFAULT_LANG,
+  getPreferredLang,
+  isSupportedLang,
+  getDomIdFromHash,
+  getLocalizedRouteVariants,
+} from './i18n/routing'
+
 function ScrollManager() {
   const { pathname, hash } = useLocation()
+  const { lang } = useParams()
 
   useEffect(() => {
     if (hash) {
-      const id = hash.replace('#', '')
+      const id = getDomIdFromHash(hash, lang)
 
       const scrollToHash = () => {
         const element = document.getElementById(id)
@@ -34,38 +51,127 @@ function ScrollManager() {
     }
 
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-  }, [pathname, hash])
+  }, [pathname, hash, lang])
 
   return null
 }
 
-export default function App() {
+function LangLayout() {
+  const { lang } = useParams()
+  const { i18n } = useTranslation()
+
+  useEffect(() => {
+    if (!isSupportedLang(lang)) return
+
+    if (i18n.language !== lang) {
+      i18n.changeLanguage(lang)
+    }
+
+    document.documentElement.lang = lang === 'ua' ? 'uk' : lang
+  }, [lang, i18n])
+
+  if (!isSupportedLang(lang)) {
+    return <Navigate to={`/${DEFAULT_LANG}`} replace />
+  }
+
   return (
     <>
       <ScrollManager />
       <Nav />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/modele/:id" element={<ModelPage />} />
-        <Route path="*" element={<HomePage />} />
-        <Route path="/gwarancja" element={<LegalPage pageKey="gwarancja" />} />
-        <Route
-          path="/zwroty-i-reklamacje"
-          element={<LegalPage pageKey="zwroty-i-reklamacje" />}
-        />
-        <Route path="/dostawa" element={<LegalPage pageKey="dostawa" />} />
-        <Route path="/regulamin" element={<LegalPage pageKey="regulamin" />} />
-        <Route
-          path="/formy-platnosci"
-          element={<LegalPage pageKey="formy-platnosci" />}
-        />
-        <Route
-          path="/polityka-prywatnosci"
-          element={<LegalPage pageKey="polityka-prywatnosci" />}
-        />
-      </Routes>
+      <Outlet />
       <Footer />
       <StickyCTA />
     </>
+  )
+}
+
+function RootRedirect() {
+  const preferredLang = getPreferredLang()
+  return <Navigate to={`/${preferredLang}`} replace />
+}
+
+function LangFallbackRedirect() {
+  const { lang } = useParams()
+  const safeLang = isSupportedLang(lang) ? lang : DEFAULT_LANG
+  return <Navigate to={`/${safeLang}`} replace />
+}
+
+const modelRouteVariants = getLocalizedRouteVariants('/modele')
+const warrantyRouteVariants = getLocalizedRouteVariants('/gwarancja')
+const returnsRouteVariants = getLocalizedRouteVariants('/zwroty-i-reklamacje')
+const deliveryRouteVariants = getLocalizedRouteVariants('/dostawa')
+const termsRouteVariants = getLocalizedRouteVariants('/regulamin')
+const paymentRouteVariants = getLocalizedRouteVariants('/formy-platnosci')
+const privacyRouteVariants = getLocalizedRouteVariants('/polityka-prywatnosci')
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<RootRedirect />} />
+
+      <Route path="/:lang" element={<LangLayout />}>
+        <Route index element={<HomePage />} />
+
+        {modelRouteVariants.map((slug) => (
+          <Route
+            key={`models-${slug}`}
+            path={`${slug}/:id`}
+            element={<ModelPage />}
+          />
+        ))}
+
+        {warrantyRouteVariants.map((slug) => (
+          <Route
+            key={`warranty-${slug}`}
+            path={slug}
+            element={<LegalPage pageKey="gwarancja" />}
+          />
+        ))}
+
+        {returnsRouteVariants.map((slug) => (
+          <Route
+            key={`returns-${slug}`}
+            path={slug}
+            element={<LegalPage pageKey="zwroty-i-reklamacje" />}
+          />
+        ))}
+
+        {deliveryRouteVariants.map((slug) => (
+          <Route
+            key={`delivery-${slug}`}
+            path={slug}
+            element={<LegalPage pageKey="dostawa" />}
+          />
+        ))}
+
+        {termsRouteVariants.map((slug) => (
+          <Route
+            key={`terms-${slug}`}
+            path={slug}
+            element={<LegalPage pageKey="regulamin" />}
+          />
+        ))}
+
+        {paymentRouteVariants.map((slug) => (
+          <Route
+            key={`payment-${slug}`}
+            path={slug}
+            element={<LegalPage pageKey="formy-platnosci" />}
+          />
+        ))}
+
+        {privacyRouteVariants.map((slug) => (
+          <Route
+            key={`privacy-${slug}`}
+            path={slug}
+            element={<LegalPage pageKey="polityka-prywatnosci" />}
+          />
+        ))}
+
+        <Route path="*" element={<LangFallbackRedirect />} />
+      </Route>
+
+      <Route path="*" element={<Navigate to={`/${DEFAULT_LANG}`} replace />} />
+    </Routes>
   )
 }

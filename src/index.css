@@ -36,6 +36,27 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+  unicode-range:
+    U+0000-00FF,
+    U+0100-024F,
+    U+1E00-1EFF,
+    U+20A0-20CF,
+    U+2C60-2C7F,
+    U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('/fonts/RobotoCondensed-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0400-04FF,
+    U+0500-052F,
+    U+1C80-1C8F,
+    U+2DE0-2DFF,
+    U+A640-A69F;
 }
 
 @font-face {
@@ -44,6 +65,27 @@
   font-weight: 800;
   font-style: normal;
   font-display: swap;
+  unicode-range:
+    U+0000-00FF,
+    U+0100-024F,
+    U+1E00-1EFF,
+    U+20A0-20CF,
+    U+2C60-2C7F,
+    U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('/fonts/RobotoCondensed-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0400-04FF,
+    U+0500-052F,
+    U+1C80-1C8F,
+    U+2DE0-2DFF,
+    U+A640-A69F;
 }
 
 @font-face {
@@ -52,6 +94,27 @@
   font-weight: 900;
   font-style: normal;
   font-display: swap;
+  unicode-range:
+    U+0000-00FF,
+    U+0100-024F,
+    U+1E00-1EFF,
+    U+20A0-20CF,
+    U+2C60-2C7F,
+    U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('/fonts/RobotoCondensed-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0400-04FF,
+    U+0500-052F,
+    U+1C80-1C8F,
+    U+2DE0-2DFF,
+    U+A640-A69F;
 }
 
 /* ── DESIGN TOKENS ── */

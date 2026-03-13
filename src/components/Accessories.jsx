@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ACCESSORY_PREVIEW, calcBrutto, formatPrice } from '../data'
 import { useReveal } from '../hooks/useReveal'
 import styles from './Accessories.module.css'
@@ -23,6 +24,7 @@ function useVisibleSlides() {
 }
 
 export default function Accessories() {
+  const { t } = useTranslation()
   const [headerRef, headerVisible] = useReveal()
   const [carouselRef, carouselVisible] = useReveal()
 
@@ -113,14 +115,11 @@ export default function Accessories() {
           ref={headerRef}
           className={`${styles.header} reveal ${headerVisible ? 'visible' : ''}`}
         >
-          <span className={styles.label}>Wyposażenie dodatkowe</span>
+          <span className={styles.label}>{t('accessories.label')}</span>
           <h2 className={styles.title} id="accessories-title">
-            Osprzęt i akcesoria do minikoparek
+            {t('accessories.title')}
           </h2>
-          <p className={styles.sub}>
-            Wszystkie akcesoria kompatybilne z każdym modelem. Dobierz osprzęt
-            do rodzaju prac i rozbuduj możliwości maszyny.
-          </p>
+          <p className={styles.sub}>{t('accessories.sub')}</p>
         </header>
 
         <div
@@ -134,7 +133,7 @@ export default function Accessories() {
                 type="button"
                 className={`${styles.controlBtn} ${styles.controlPrev}`}
                 onClick={handlePrev}
-                aria-label="Poprzedni osprzęt"
+                aria-label={t('accessories.controls.prevAriaLabel')}
               >
                 <svg viewBox="0 0 24 24" className={styles.controlSvg} aria-hidden="true">
                   <path d="M14.5 5 8 12l6.5 7" />
@@ -164,7 +163,7 @@ export default function Accessories() {
                 type="button"
                 className={`${styles.controlBtn} ${styles.controlNext}`}
                 onClick={handleNext}
-                aria-label="Następny osprzęt"
+                aria-label={t('accessories.controls.nextAriaLabel')}
               >
                 <svg viewBox="0 0 24 24" className={styles.controlSvg} aria-hidden="true">
                   <path d="M9.5 5 16 12l-6.5 7" />
@@ -179,14 +178,20 @@ export default function Accessories() {
 }
 
 function PreviewCard({ item }) {
+  const { t, i18n } = useTranslation()
   const priceBrutto = calcBrutto(item.priceNetto)
+
+  const name = t(`accessories.${item.id}.name`, {
+    ns: 'data',
+    defaultValue: item.id,
+  })
 
   return (
     <article className={styles.previewCard}>
       <div className={styles.previewMedia}>
         <img
           src={item.image}
-          alt={item.name}
+          alt={t('accessories.card.imageAlt', { name })}
           className={styles.previewImage}
           loading="lazy"
           decoding="async"
@@ -194,16 +199,20 @@ function PreviewCard({ item }) {
       </div>
 
       <div className={styles.previewBody}>
-        <div className={styles.previewName}>{item.name}</div>
+        <div className={styles.previewName}>{name}</div>
 
         <div className={styles.priceBlock}>
           <div className={styles.priceLine}>
-            <span className={styles.previewPrice}>{formatPrice(item.priceNetto)}</span>
-            <span className={styles.priceLabel}>NETTO</span>
+            <span className={styles.previewPrice}>
+              {formatPrice(item.priceNetto, i18n.resolvedLanguage)}
+            </span>
+            <span className={styles.priceLabel}>{t('accessories.card.priceNettoLabel')}</span>
           </div>
 
           <div className={styles.previewPriceBrutto}>
-            {formatPrice(priceBrutto)} brutto
+            {t('accessories.card.priceBrutto', {
+              price: formatPrice(priceBrutto, i18n.resolvedLanguage),
+            })}
           </div>
         </div>
       </div>

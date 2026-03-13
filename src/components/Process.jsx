@@ -1,10 +1,12 @@
 import React from 'react'
-import { STEPS } from '../data'
+import { useTranslation } from 'react-i18next'
 import { useReveal } from '../hooks/useReveal'
 import styles from './Process.module.css'
 
 export default function Process() {
+  const { t } = useTranslation()
   const [headerRef, headerVisible] = useReveal()
+  const steps = t('process.steps', { returnObjects: true })
 
   return (
     <section className={styles.section} id="jak-kupic" aria-labelledby="process-title">
@@ -13,17 +15,19 @@ export default function Process() {
           ref={headerRef}
           className={`${styles.header} reveal ${headerVisible ? 'visible' : ''}`}
         >
-          <span className={styles.label}>Prosty zakup</span>
+          <span className={styles.label}>{t('process.label')}</span>
           <h2 className={styles.heading} id="process-title">
-            Od zapytania do dostawy
+            {t('process.title')}
           </h2>
         </header>
 
         <div className={styles.timeline}>
-          {STEPS.map((step, index) => (
+          {steps.map((step, index) => (
             <Step
               key={step.num}
-              {...step}
+              num={step.num}
+              title={step.title}
+              desc={step.desc}
               delay={120 + index * 100}
             />
           ))}

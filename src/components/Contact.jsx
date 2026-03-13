@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 import { CONTACT_INFO } from '../data'
 import { useReveal } from '../hooks/useReveal'
 import {
@@ -10,9 +11,6 @@ import styles from './Contact.module.css'
 
 const API_ENDPOINT = 'https://TWOJA-DOMENA.pl/api/contact'
 
-const GENERIC_ERROR_MESSAGE =
-  'Nie udało się wysłać wiadomości. Spróbuj ponownie za chwilę lub skontaktuj się z nami telefonicznie lub mailowo.'
-
 const INITIAL_FORM = {
   name: '',
   company: '',
@@ -23,23 +21,32 @@ const INITIAL_FORM = {
   consent: false,
 }
 
-const MODEL_OPTIONS = [
-  'BM10 – 1 tona',
-  'BM12 – 1,2 tony',
-  'BM12C – 1,2 tony z kabiną',
-  'Potrzebuję doradztwa',
-]
+function translateValidationErrors(errors, t) {
+  const translated = {}
+
+  if (errors.name) translated.name = t('contact.form.errors.name')
+  if (errors.phone) translated.phone = t('contact.form.errors.phone')
+  if (errors.email) translated.email = t('contact.form.errors.email')
+  if (errors.message) translated.message = t('contact.form.errors.message')
+  if (errors.consent) translated.consent = t('contact.form.errors.consent')
+
+  return translated
+}
 
 export default function Contact() {
+  const { t } = useTranslation()
+
   const [headerRef, headerVisible] = useReveal()
   const [formRef, formVisible] = useReveal()
   const [infoRef, infoVisible] = useReveal()
 
   const [form, setForm] = useState(INITIAL_FORM)
-  const [status, setStatus] = useState('idle') // idle | loading
+  const [status, setStatus] = useState('idle')
   const [fieldErrors, setFieldErrors] = useState({})
   const [globalError, setGlobalError] = useState('')
   const [success, setSuccess] = useState('')
+
+  const modelOptions = t('contact.form.modelOptions', { returnObjects: true })
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target
@@ -74,12 +81,13 @@ export default function Contact() {
     const { valid, errors, values } = validateContactForm(form)
 
     if (!valid) {
-      setFieldErrors(errors)
-      setGlobalError(
-        'Uzupełnij wymagane pola, popraw e-mail lub telefon i zaznacz zgodę na kontakt.'
-      )
+      setFieldErrors(translateValidationErrors(errors, t))
+      setGlobalError(t('contact.form.messages.fixErrors'))
       return
     }
+
+    const selectedModel = modelOptions.find((option) => option.value === form.model)
+    const selectedModelLabel = selectedModel?.label || ''
 
     try {
       setStatus('loading')
@@ -89,18 +97,20 @@ export default function Contact() {
         recaptchaToken = await getRecaptchaToken('contact_form_submit')
       } catch (err) {
         console.error('[contact-form] reCAPTCHA error:', err)
-        setGlobalError(GENERIC_ERROR_MESSAGE)
+        setGlobalError(t('contact.form.messages.genericError'))
         return
       }
 
       if (!recaptchaToken) {
-        setGlobalError(GENERIC_ERROR_MESSAGE)
+        setGlobalError(t('contact.form.messages.genericError'))
         return
       }
 
       const enrichedMessage = [
         values.message,
-        form.model ? `\n\nInteresujący model: ${form.model}` : '',
+        selectedModelLabel
+          ? `\n\n${t('contact.form.modelSelectionPrefix', { model: selectedModelLabel })}`
+          : '',
       ]
         .join('')
         .trim()
@@ -118,13 +128,13 @@ export default function Contact() {
             email: values.email,
             phone: values.phone,
             message: enrichedMessage,
-            model: form.model,
+            model: selectedModelLabel,
             recaptchaToken,
           }),
         })
       } catch (err) {
         console.error('[contact-form] network error:', err)
-        setGlobalError(GENERIC_ERROR_MESSAGE)
+        setGlobalError(t('contact.form.messages.genericError'))
         return
       }
 
@@ -143,12 +153,12 @@ export default function Contact() {
         throw new Error(data.error || 'API returned an error')
       }
 
-      setSuccess('Dziękujemy! Twoje zapytanie zostało wysłane.')
+      setSuccess(t('contact.form.messages.success'))
       setFieldErrors({})
       setForm(INITIAL_FORM)
     } catch (err) {
       console.error('[contact-form] submit error:', err)
-      setGlobalError(GENERIC_ERROR_MESSAGE)
+      setGlobalError(t('contact.form.messages.genericError'))
     } finally {
       setStatus('idle')
     }
@@ -161,14 +171,11 @@ export default function Contact() {
           ref={headerRef}
           className={`${styles.header} reveal ${headerVisible ? 'visible' : ''}`}
         >
-          <span className={styles.label}>Skontaktuj się</span>
+          <span className={styles.label}>{t('contact.label')}</span>
           <h2 className={styles.title} id="contact-title">
-            Wycena bezpłatna. Odpowiedź dziś.
+            {t('contact.title')}
           </h2>
-          <p className={styles.sub}>
-            Opisz czego potrzebujesz, a wrócimy z konkretną odpowiedzią i doborem
-            modelu pod Twoje prace.
-          </p>
+          <p className={styles.sub}>{t('contact.sub')}</p>
         </header>
 
         <div className={styles.inner}>
@@ -180,20 +187,20 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className={styles.form} noValidate>
               <div className={styles.row2}>
                 <Field
-                  label="Imię i nazwisko *"
+                  label={t('contact.form.fields.name.label')}
                   name="name"
                   type="text"
-                  placeholder="Jan Kowalski"
+                  placeholder={t('contact.form.fields.name.placeholder')}
                   value={form.name}
                   onChange={handleChange}
                   error={fieldErrors.name}
                 />
 
                 <Field
-                  label="Telefon *"
+                  label={t('contact.form.fields.phone.label')}
                   name="phone"
                   type="tel"
-                  placeholder="+48 600 000 000"
+                  placeholder={t('contact.form.fields.phone.placeholder')}
                   value={form.phone}
                   onChange={handleChange}
                   error={fieldErrors.phone}
@@ -201,32 +208,33 @@ export default function Contact() {
               </div>
 
               <Field
-                label="E-mail"
+                label={t('contact.form.fields.email.label')}
                 name="email"
                 type="email"
-                placeholder="jan@firma.pl"
+                placeholder={t('contact.form.fields.email.placeholder')}
                 value={form.email}
                 onChange={handleChange}
                 error={fieldErrors.email}
               />
 
               <SelectField
-                label="Interesujący model"
+                label={t('contact.form.fields.model.label')}
                 name="model"
                 value={form.model}
                 onChange={handleChange}
-                options={MODEL_OPTIONS}
+                placeholder={t('contact.form.fields.model.placeholder')}
+                options={modelOptions}
               />
 
               <div className={styles.fieldGroup}>
                 <label htmlFor="message" className={styles.fieldLabel}>
-                  Pytanie lub opis prac *
+                  {t('contact.form.fields.message.label')}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   className={`${styles.textarea} ${fieldErrors.message ? styles.inputInvalid : ''}`}
-                  placeholder="Opisz do czego potrzebujesz koparki, jakie masz pytania i jaki zakres prac planujesz."
+                  placeholder={t('contact.form.fields.message.placeholder')}
                   value={form.message}
                   onChange={handleChange}
                 />
@@ -245,7 +253,7 @@ export default function Contact() {
                     className={`${styles.checkbox} ${fieldErrors.consent ? styles.checkboxInvalid : ''}`}
                   />
                   <span className={styles.consentText}>
-                    Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę Better Solutions. z o.o. z siedzibą przy ul. Poznańska 7, 61-160 Czapury, NIP: 7252298652 w celu udzielenia odpowiedzi, w tym przedłożenia oferty jeśli o nią pytam.
+                    {t('contact.form.consentText')}
                   </span>
                 </label>
 
@@ -253,26 +261,7 @@ export default function Contact() {
                   <p className={styles.fieldError}>{fieldErrors.consent}</p>
                 )}
 
-                <p className={styles.recaptchaText}>
-                  This site is protected by reCAPTCHA and the Google{' '}
-                  <a
-                    href="https://policies.google.com/privacy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Privacy Policy
-                  </a>{' '}
-                  and{' '}
-                  <a
-                    href="https://policies.google.com/terms"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Terms of Service
-                  </a>{' '}
-                  apply.
-                </p>
-              </div>
+                <p className={styles.recaptchaText}> This site is protected by reCAPTCHA and the Google{' '} <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" > Privacy Policy </a>{' '} and{' '} <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" > Terms of Service </a>{' '} apply. </p> </div>
 
               <div className={styles.formFooter}>
                 {globalError && (
@@ -288,7 +277,9 @@ export default function Contact() {
                   disabled={status === 'loading'}
                   className={styles.submitBtn}
                 >
-                  {status === 'loading' ? 'Wysyłanie…' : 'Wyślij zapytanie'}
+                  {status === 'loading'
+                    ? t('contact.form.submit.loading')
+                    : t('contact.form.submit.default')}
                 </button>
               </div>
             </form>
@@ -300,24 +291,32 @@ export default function Contact() {
             style={{ transitionDelay: '180ms' }}
           >
             <div className={styles.infoTop}>
-              <h3 className={styles.infoTitle}>Porozmawiajmy</h3>
-              <p className={styles.infoText}>
-                Nie zmuszamy do zakupu przez internet. Wolisz zadzwonić? Chcesz
-                zobaczyć maszynę na żywo? Przyjedź do nas lub zamów wizytę
-                demonstracyjną.
-              </p>
+              <h3 className={styles.infoTitle}>{t('contact.info.title')}</h3>
+              <p className={styles.infoText}>{t('contact.info.text')}</p>
             </div>
 
             <ul className={styles.details}>
-              <Detail icon="📞" label="Telefon" value={CONTACT_INFO.phone} />
-              <Detail icon="📧" label="E-mail" value={CONTACT_INFO.email} />
+              <Detail
+                icon="📞"
+                label={t('contact.info.details.phone.label')}
+                value={CONTACT_INFO.phone}
+              />
+              <Detail
+                icon="📧"
+                label={t('contact.info.details.email.label')}
+                value={CONTACT_INFO.email}
+              />
               <Detail
                 icon="📍"
-                label="Adres"
+                label={t('contact.info.details.address.label')}
                 value={CONTACT_INFO.location}
                 sub={CONTACT_INFO.locationSub}
               />
-              <Detail icon="🕐" label="Godziny pracy" value={CONTACT_INFO.hours} />
+              <Detail
+                icon="🕐"
+                label={t('contact.info.details.hours.label')}
+                value={t('contact.info.details.hours.value')}
+              />
             </ul>
 
             <div className={styles.whatsappWrap}>
@@ -326,7 +325,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noreferrer"
                 className={styles.whatsappBtn}
-                aria-label="Napisz do nas na WhatsApp"
+                aria-label={t('contact.info.whatsapp.ariaLabel')}
               >
                 <span className={styles.whatsappIcon} aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none">
@@ -341,14 +340,14 @@ export default function Contact() {
                     />
                   </svg>
                 </span>
-                <span>Napisz na WhatsApp</span>
+                <span>{t('contact.info.whatsapp.label')}</span>
               </a>
             </div>
 
             <div className={styles.mapWrap}>
               <iframe
                 src={CONTACT_INFO.mapEmbedUrl}
-                title="Bergson Machines — Pobórka Wielka"
+                title={t('contact.map.iframeTitle')}
                 className={styles.mapFrame}
                 loading="lazy"
                 allowFullScreen
@@ -356,7 +355,10 @@ export default function Contact() {
               />
               <div className={styles.mapBar}>
                 <span className={styles.mapText}>
-                  Pobórka Wielka 2, 89-340 Pobórka Wielka
+                  {t('contact.map.barText', {
+                    location: CONTACT_INFO.location,
+                    locationSub: CONTACT_INFO.locationSub,
+                  })}
                 </span>
                 <a
                   href={CONTACT_INFO.mapLinkUrl}
@@ -364,7 +366,7 @@ export default function Contact() {
                   rel="noreferrer"
                   className={styles.mapLink}
                 >
-                  Otwórz mapę
+                  {t('contact.map.open')}
                 </a>
               </div>
             </div>
@@ -395,7 +397,7 @@ function Field({ label, name, type, placeholder, value, onChange, error }) {
   )
 }
 
-function SelectField({ label, name, value, onChange, options }) {
+function SelectField({ label, name, value, onChange, options, placeholder }) {
   return (
     <div className={styles.fieldGroup}>
       <label htmlFor={name} className={styles.fieldLabel}>
@@ -408,10 +410,10 @@ function SelectField({ label, name, value, onChange, options }) {
         onChange={onChange}
         className={styles.input}
       >
-        <option value="">Wybierz</option>
+        <option value="">{placeholder}</option>
         {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
+          <option key={option.value} value={option.value}>
+            {option.label}
           </option>
         ))}
       </select>
