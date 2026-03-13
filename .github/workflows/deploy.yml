@@ -1,0 +1,53 @@
+name: Build & Deploy (Cyber_Folks)
+
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      # <- NAZWA UJĘTA W CUDZYSŁOWY, ŻEBY DWUKROPEK NIE ROZWALAŁ YAML
+      - name: 'Build static (Next output: export)'
+        run: npm run build   # tworzy katalog "out/"
+
+      - name: List build dir (debug)
+        run: ls -la out
+
+      - name: Deploy via FTP (lftp)
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+          REMOTE_DIR: ${{ secrets.REMOTE_DIR }}  # np. /domains/dev.farmalert.eu/public_html
+        run: |
+          sudo apt-get update && sudo apt-get install -y lftp
+          lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" -e "
+          set ssl:verify-certificate no;
+          set ftp:passive-mode true;
+          set net:max-retries 2;
+          set net:timeout 20;
+          set cmd:fail-exit true;
+          cd $REMOTE_DIR;
+          mirror --reverse --delete --verbose --parallel=4 \
+                 --exclude-glob .DS_Store \
+                 --exclude-glob .git* \
+                 --exclude-glob .htaccess \
+                 ./out .;
+          bye
+          "

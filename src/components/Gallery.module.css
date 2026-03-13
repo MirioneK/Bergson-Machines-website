@@ -1,0 +1,355 @@
+.section {
+  background: var(--bg-deep);
+  padding-top: 0;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.header {
+  padding-top: 80px;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--orange);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 0.9fr);
+  gap: 10px;
+}
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: 260px 260px;
+  gap: 10px;
+}
+
+.photoTile {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 220px;
+  border: 1px solid rgba(242, 101, 34, 0.12);
+  background: var(--bg-base);
+  padding: 0;
+  cursor: zoom-in;
+  appearance: none;
+}
+
+.featuredPhoto {
+  grid-row: span 2;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.84) saturate(0.92);
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.photoTile:hover .image {
+  transform: scale(1.05);
+  filter: brightness(0.96) saturate(1.02);
+}
+
+.tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 10px;
+  background: var(--orange);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.labelOverlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 20px 18px 16px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.84) 100%);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.infoTile {
+  min-height: 255px;
+  border: 1px solid rgba(242, 101, 34, 0.12);
+}
+
+.dark {
+  background: var(--bg-soft);
+}
+
+.grad {
+  background: linear-gradient(135deg, var(--bg-surface), var(--bg-surface-2));
+}
+
+.infoContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.infoNum {
+  color: var(--orange);
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.infoNumSmall {
+  color: var(--orange);
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.infoSub {
+  color: var(--gray);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.orange {
+  color: var(--orange);
+}
+
+.infoLine {
+  width: 56px;
+  height: 3px;
+  background: var(--orange);
+}
+
+.infoDesc {
+  max-width: 260px;
+  color: var(--gray-light);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.infoIcon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 3vw, 32px);
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.lightboxFigure {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(94vw, 1400px);
+  max-height: 90svh;
+  margin: 0;
+}
+
+.lightboxImage {
+  width: 100%;
+  max-height: calc(90svh - 64px);
+  object-fit: contain;
+  background: #090909;
+  border: 1px solid rgba(242, 101, 34, 0.22);
+}
+
+.lightboxCaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  color: var(--white);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.lightboxTag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  background: var(--orange);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 210;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(10, 10, 10, 0.84);
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding-top: 60px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .photoGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 240px 240px;
+  }
+
+  .featuredPhoto {
+    grid-row: span 1;
+  }
+
+  .infoGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+
+  .infoTile {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner {
+    gap: 20px;
+  }
+
+  .photoGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .infoTile {
+    min-height: 180px;
+  }
+
+  .tag {
+    top: 12px;
+    left: 12px;
+    font-size: 0.66rem;
+  }
+
+  .labelOverlay {
+    padding: 16px 14px 14px;
+    font-size: 0.92rem;
+  }
+
+  .infoNum {
+    font-size: 2.6rem;
+  }
+
+  .infoNumSmall {
+    font-size: 1.8rem;
+  }
+
+  .lightbox {
+    padding: 12px;
+  }
+
+  .lightboxFigure {
+    width: 100%;
+    max-height: 92svh;
+  }
+
+  .lightboxImage {
+    max-height: calc(92svh - 76px);
+  }
+
+  .lightboxCaption {
+    font-size: 0.88rem;
+  }
+
+  .lightboxClose {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+  }
+}

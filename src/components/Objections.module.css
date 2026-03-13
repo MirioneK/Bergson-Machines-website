@@ -1,0 +1,144 @@
+.section {
+  background: var(--bg-deep);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.header {
+  max-width: 720px;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--orange);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 22px 24px;
+  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(242, 101, 34, 0.22);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+}
+
+.decor {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  color: rgba(242, 101, 34, 0.07);
+  font-family: var(--font-display);
+  font-size: 4.8rem;
+  font-weight: 900;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.question {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 14px;
+  padding-right: 28px;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.arrow {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--orange);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.answer {
+  position: relative;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.answer strong {
+  color: var(--white);
+}
+
+@media (max-width: 1180px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .inner {
+    gap: 22px;
+  }
+
+  .title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .card {
+    padding: 22px 18px 20px;
+  }
+
+  .decor {
+    font-size: 4rem;
+    top: 8px;
+    right: 12px;
+  }
+
+  .question {
+    font-size: 0.96rem;
+  }
+
+  .answer {
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+}

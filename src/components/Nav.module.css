@@ -1,0 +1,485 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background: rgba(var(--bg-nav-rgb), 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(242, 101, 34, 0.14);
+  transition:
+    background 0.24s ease,
+    border-color 0.24s ease,
+    box-shadow 0.24s ease;
+}
+
+.scrolled {
+  background: rgba(var(--bg-nav-rgb), 0.97);
+  border-bottom-color: rgba(242, 101, 34, 0.24);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+.inner {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 24px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.logoImage {
+  display: block;
+  height: 34px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 34px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.18s ease;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 1px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.18s ease;
+}
+
+.link:hover {
+  color: #ffffff;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.langSwitch,
+.mobileLangSwitch {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  gap: 4px;
+  transition:
+    opacity 0.18s ease,
+    visibility 0.18s ease,
+    transform 0.18s ease;
+}
+
+.langBtn {
+  min-width: 44px;
+  height: 34px;
+  padding: 0 10px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.68);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition:
+    color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.langBtn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.langBtnActive {
+  background: var(--orange);
+  color: #ffffff;
+}
+
+.cta,
+.mobileCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 20px;
+  border: 1px solid var(--orange);
+  background: var(--orange);
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    opacity 0.18s ease,
+    visibility 0.18s ease;
+}
+
+.cta:hover,
+.mobileCta:hover {
+  background: var(--orange-dark);
+  border-color: var(--orange-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(242, 101, 34, 0.22);
+}
+
+.whatsappCta,
+.mobileWhatsappCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid #25d366;
+  background: #25d366;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    opacity 0.18s ease,
+    visibility 0.18s ease;
+}
+
+.whatsappCta:hover,
+.mobileWhatsappCta:hover {
+  background: #1ebe5b;
+  border-color: #1ebe5b;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.28);
+}
+
+.whatsappIcon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  color: #ffffff;
+}
+
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.burgerLine {
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: #ffffff;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.burgerLine:nth-child(1) {
+  transform: translateY(-6px);
+}
+
+.burgerLine:nth-child(2) {
+  transform: translateY(0);
+}
+
+.burgerLine:nth-child(3) {
+  transform: translateY(6px);
+}
+
+.burgerLineTopOpen {
+  transform: translateY(0) rotate(45deg) !important;
+}
+
+.burgerLineMiddleOpen {
+  opacity: 0 !important;
+}
+
+.burgerLineBottomOpen {
+  transform: translateY(0) rotate(-45deg) !important;
+}
+
+.mobileOverlay {
+  position: fixed;
+  inset: var(--nav-height) 0 0 0;
+  z-index: 98;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.mobileOverlayOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: var(--nav-height);
+  right: 0;
+  z-index: 99;
+  width: min(90vw, 360px);
+  height: calc(100dvh - var(--nav-height));
+  background: var(--bg-base);
+  border-left: 1px solid rgba(242, 101, 34, 0.14);
+  transform: translateX(100%);
+  transition: transform 0.24s ease;
+  overflow-y: auto;
+}
+
+.mobileMenuOpen {
+  transform: translateX(0);
+}
+
+.mobileMenuInner {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mobileTop {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.mobileLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobileLink {
+  display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.mobileWhatsappCta,
+.mobileCta {
+  width: 100%;
+  min-height: 48px;
+}
+
+.actionsHidden .langSwitch,
+.actionsHidden .whatsappCta,
+.actionsHidden .cta {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-4px);
+}
+
+@media (max-width: 1180px) {
+  .links {
+    gap: 24px;
+  }
+
+  .actions {
+    gap: 10px;
+  }
+
+  .cta {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+  }
+
+  .actions {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex: 0 0 auto;
+  }
+
+  .logoImage {
+    height: 32px;
+    max-width: 190px;
+  }
+
+  .cta {
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 0.84rem;
+  }
+
+  .whatsappCta {
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 0.82rem;
+  }
+
+  .whatsappIcon {
+    width: 16px;
+    height: 16px;
+    flex-basis: 16px;
+  }
+
+  .langBtn {
+    min-width: 40px;
+    height: 32px;
+    font-size: 0.72rem;
+  }
+
+  .burger {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .whatsappCta,
+  .cta {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner {
+    gap: 10px;
+  }
+
+  .logoImage {
+    height: 30px;
+    max-width: 150px;
+  }
+
+  .actions {
+    gap: 8px;
+  }
+
+  .langSwitch,
+  .mobileLangSwitch {
+    padding: 3px;
+    gap: 3px;
+  }
+
+  .langBtn {
+    min-width: 34px;
+    height: 30px;
+    padding: 0 8px;
+    font-size: 0.66rem;
+  }
+
+  .burger {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobileMenuInner {
+    padding: 18px;
+  }
+
+  .mobileLink {
+    font-size: 0.92rem;
+  }
+
+  .mobileWhatsappCta,
+  .mobileCta {
+    min-height: 44px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .logoImage {
+    height: 28px;
+    max-width: 130px;
+  }
+
+  .langBtn {
+    min-width: 30px;
+    padding: 0 6px;
+    font-size: 0.62rem;
+  }
+
+  .burger {
+    width: 38px;
+    height: 38px;
+  }
+}

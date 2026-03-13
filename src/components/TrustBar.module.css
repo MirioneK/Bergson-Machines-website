@@ -1,0 +1,128 @@
+.bar {
+  position: relative;
+  padding-block: 0;
+  background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-soft) 100%);
+  border-top: 1px solid rgba(242, 101, 34, 0.16);
+  border-bottom: 1px solid rgba(242, 101, 34, 0.16);
+}
+
+.inner {
+  min-height: 84px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+  padding-block: 18px;
+}
+
+.item {
+  min-width: 0;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  text-align: center;
+}
+
+.icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(242, 101, 34, 0.24);
+  background: rgba(242, 101, 34, 0.08);
+  color: var(--orange);
+  overflow: hidden;
+}
+
+.iconGlyph {
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.text {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: normal;
+  text-wrap: balance;
+}
+
+/* tablet + mniejszy desktop */
+@media (max-width: 1200px) {
+  .inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 20px;
+    padding-block: 16px;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: start;
+    gap: 10px;
+  }
+
+  .icon {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .iconGlyph {
+    font-size: 1rem;
+  }
+
+  .text {
+    font-size: 0.84rem;
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 16px;
+    padding-block: 14px;
+  }
+
+  .text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-block: 12px;
+  }
+
+  .item {
+    gap: 8px;
+  }
+
+  .icon {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+  }
+
+  .iconGlyph {
+    font-size: 0.92rem;
+  }
+
+  .text {
+    font-size: 0.78rem;
+  }
+}

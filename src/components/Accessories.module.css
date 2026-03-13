@@ -1,0 +1,296 @@
+.section {
+  background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-soft) 100%);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.header {
+  max-width: 760px;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--orange);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0 0 14px;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.sub {
+  max-width: 640px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.carouselSection {
+  padding-top: 12px;
+  border-top: 1px solid rgba(242, 101, 34, 0.08);
+}
+
+.carouselShell {
+  --visible-slides: 4;
+  --carousel-gap: 18px;
+  --control-size: 54px;
+  --control-gap: 24px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: var(--control-gap);
+  container-type: inline-size;
+}
+
+.carouselViewport {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.carouselTrack {
+  --current-index: 0;
+
+  display: flex;
+  gap: var(--carousel-gap);
+  will-change: transform;
+  transform: translateX(
+    calc(
+      (
+        (
+          (100% - ((var(--visible-slides) - 1) * var(--carousel-gap)))
+          / var(--visible-slides)
+        ) + var(--carousel-gap)
+      ) * var(--current-index) * -1
+    )
+  );
+}
+
+.trackAnimated {
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.trackNoAnimation {
+  transition: none;
+}
+
+.slide {
+  flex: 0 0 calc(
+    (100% - ((var(--visible-slides) - 1) * var(--carousel-gap)))
+    / var(--visible-slides)
+  );
+  min-width: 0;
+}
+
+.previewCard {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.previewCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(242, 101, 34, 0.22);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.22);
+}
+
+.previewMedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.05), transparent 58%),
+    linear-gradient(180deg, var(--bg-media-top) 0%, var(--bg-media-bottom) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  aspect-ratio: 16 / 12;
+}
+
+.previewImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.22));
+}
+
+.previewBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 14px 16px;
+}
+
+.previewName {
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: auto;
+}
+
+.priceLine {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.previewPrice {
+  color: var(--orange);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.priceLabel {
+  color: rgba(255, 255, 255, 0.44);
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.previewPriceBrutto {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.controlBtn {
+  flex: 0 0 auto;
+  width: var(--control-size);
+  height: var(--control-size);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  margin-top: calc(
+    (
+      (
+        (
+          (
+            100cqw - (var(--control-size) * 2) - (var(--control-gap) * 2) - ((var(--visible-slides) - 1) * var(--carousel-gap))
+          ) / var(--visible-slides)
+        ) * 0.75
+      ) - var(--control-size)
+    ) / 2
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(var(--bg-nav-rgb), 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--white);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.controlBtn:hover {
+  border-color: rgba(242, 101, 34, 0.42);
+  background: rgba(242, 101, 34, 0.14);
+  color: var(--orange);
+  transform: scale(1.04);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.3);
+}
+
+.controlBtn:active {
+  transform: scale(0.97);
+}
+
+.controlSvg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.controlSvg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 1180px) {
+  .carouselShell {
+    --visible-slides: 2;
+    --control-size: 50px;
+    --control-gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .inner {
+    gap: 24px;
+  }
+
+  .sub {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .carouselShell {
+    --visible-slides: 1;
+    --carousel-gap: 16px;
+    --control-size: 46px;
+    --control-gap: 14px;
+  }
+
+  .previewPrice {
+    font-size: 1.2rem;
+  }
+
+  .previewPriceBrutto {
+    white-space: normal;
+  }
+
+  .controlSvg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  .carouselShell {
+    --control-size: 40px;
+    --control-gap: 10px;
+  }
+}
