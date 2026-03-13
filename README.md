@@ -1,118 +1,293 @@
-# Bergson Machines — React Landing Page
+Tak — poniżej masz gotowy, sensowny README pod ten projekt.
 
-Strona sprzedażowa minikoparek Bergson Machines. Zbudowana w React + Vite,
-podzielona na komponenty z CSS Modules.
+````md
+# Bergson Machines
 
----
+Nowoczesna strona www / landing page dla marki Bergson Machines, zbudowana w oparciu o React + Vite. Projekt zawiera stronę główną, podstrony modeli, strony prawne, obsługę wielu języków oraz formularz kontaktowy z walidacją i reCAPTCHA.
 
-## Szybki start
+## O projekcie
 
-```bash
-npm install
-npm run dev        # dev server na http://localhost:5173
-npm run build      # produkcyjny build do /dist
-npm run preview    # podgląd builda
-```
+Projekt został przygotowany jako szybka, lekka i łatwa do wdrożenia aplikacja frontendowa pod stronę produktową marki sprzedającej minikoparki i osprzęt.
 
----
+Najważniejsze funkcje:
+
+- strona główna typu landing page
+- podstrony modeli maszyn
+- sekcje ofertowe, FAQ, serwis, galeria, osprzęt, kontakt
+- wielojęzyczność oparta o `react-i18next`
+- routing oparty o `react-router-dom`
+- formularz kontaktowy z walidacją
+- integracja z reCAPTCHA
+- CTA do kontaktu i WhatsApp
+- strony prawne / informacyjne
+- build statyczny gotowy do wrzucenia na hosting
+
+## Stack technologiczny
+
+- React
+- Vite
+- React Router
+- react-i18next / i18next
+- CSS Modules
+- własne hooki i helpery
+- statyczne assety w `public/`
 
 ## Struktura projektu
 
-```
+Poniżej uproszczona struktura repozytorium (bez `node_modules` i `dist`):
+
+```text
 bergson/
-├── index.html                  # punkt wejścia HTML
-├── vite.config.js
-├── package.json
+├── .github/
+│   └── workflows/
+├── lib/
+│   └── userform/
 ├── public/
-│   └── images/                 # ← WKLEJ TU ZDJĘCIA MASZYN
-│       ├── BM10.jpeg
-│       ├── BM12.jpeg
-│       └── BM12C.jpeg
-└── src/
-    ├── main.jsx                # montowanie React
-    ├── App.jsx                 # składa wszystkie sekcje
-    ├── index.css               # design tokens + style globalne
-    ├── data.js                 # ★ CAŁOŚĆ TREŚCI — edytuj tu
-    ├── hooks/
-    │   └── useReveal.js        # hook scroll-reveal
-    └── components/
-        ├── Nav.jsx / .module.css
-        ├── Hero.jsx / .module.css
-        ├── TrustBar.jsx / .module.css
-        ├── Models.jsx / .module.css
-        ├── ModelCard.jsx / .module.css
-        ├── Gallery.jsx / .module.css
-        ├── Accessories.jsx / .module.css
-        ├── WhyUs.jsx / .module.css
-        ├── Objections.jsx / .module.css
-        ├── Process.jsx / .module.css
-        ├── Service.jsx / .module.css
-        ├── FAQ.jsx / .module.css
-        ├── Contact.jsx / .module.css
-        ├── Footer.jsx / .module.css
-        └── StickyCTA.jsx / .module.css
+│   ├── fonts/
+│   └── images/
+│       └── accessories/
+├── src/
+│   ├── components/
+│   ├── hooks/
+│   ├── i18n/
+│   │   └── locales/
+│   │       ├── en/
+│   │       ├── pl/
+│   │       └── ua/
+│   └── pages/
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+````
+
+## Opis katalogów
+
+### `.github/workflows`
+
+Miejsce na workflowy CI/CD, np. automatyczny build lub deploy.
+
+### `lib/userform`
+
+Własne helpery formularza kontaktowego, m.in.:
+
+* walidacja pól
+* formatowanie numeru telefonu
+* integracja z reCAPTCHA
+
+### `public/`
+
+Statyczne pliki serwowane bezpośrednio przez Vite i później przez hosting:
+
+* obrazy
+* fonty
+* favicon
+* logo
+* zdjęcia modeli i osprzętu
+
+### `src/components/`
+
+Komponenty UI całej strony, np.:
+
+* `Nav`
+* `Hero`
+* `Models`
+* `ModelCard`
+* `Accessories`
+* `Gallery`
+* `WhyUs`
+* `Service`
+* `FAQ`
+* `Contact`
+* `Footer`
+* `StickyCTA`
+
+### `src/hooks/`
+
+Własne hooki wspierające logikę aplikacji, np.:
+
+* animacje reveal on scroll
+* generowanie ścieżek zależnych od języka
+* logika pomocnicza dla routingu i sekcji
+
+### `src/i18n/`
+
+Konfiguracja tłumaczeń i pliki językowe.
+
+Przykładowy układ:
+
+```text
+src/i18n/
+└── locales/
+    ├── pl/
+    │   ├── common.json
+    │   └── data.json
+    ├── en/
+    │   ├── common.json
+    │   └── data.json
+    └── ua/
+        ├── common.json
+        └── data.json
 ```
 
----
+### `src/pages/`
 
-## Gdzie co edytować
+Widoki routowane, np.:
 
-### Treść i dane — `src/data.js`
-Cały content strony (modele, ceny, FAQ, dane kontaktowe, akcesoria itp.)
-jest w jednym pliku. **Nie musisz wchodzić w żaden komponent żeby zmienić tekst.**
+* strona główna
+* karta modelu
+* strony prawne / placeholdery
 
-```js
-// Zmiana ceny modelu:
-export const MODELS = [
-  { id: 'bm10', name: 'BM10', priceNetto: 26900, ... },
-  ...
-]
+## Routing
 
-// Zmiana danych kontaktowych:
-export const CONTACT_INFO = {
-  phone: '+48 XXX XXX XXX',
-  email: 'kontakt@bergsonmachines.pl',
-  ...
-}
+Projekt korzysta z `react-router-dom`.
+
+Przykładowe typy tras:
+
+* `/pl`
+* `/en`
+* `/ua`
+* `/pl/modele/:id`
+* `/en/model/:id`
+* `/ua/modeli/:id`
+* strony prawne w zależności od języka
+
+Jeżeli aplikacja jest wdrażana jako SPA na zwykły hosting statyczny, serwer musi przekierowywać wszystkie nieznane ścieżki do `index.html`.
+
+## Wielojęzyczność
+
+Projekt korzysta z `react-i18next`.
+
+Założenia:
+
+* teksty sekcji trafiają do `common.json`
+* dane opisowe, listy, FAQ, modele, osprzęt mogą trafiać do `data.json`
+* przełącznik języka zmienia:
+
+  * aktywny język i18n
+  * adres URL
+  * docelowe linki w nawigacji i CTA
+
+## Formularz kontaktowy
+
+Formularz kontaktowy obsługuje:
+
+* imię i nazwisko
+* telefon
+* e-mail
+* wybór modelu
+* wiadomość
+* zgodę na przetwarzanie danych
+* reCAPTCHA
+
+Logika formularza jest wsparta przez helpery z `lib/userform`.
+
+Do poprawnego działania należy skonfigurować:
+
+* endpoint API do wysyłki formularza
+* klucz site key dla reCAPTCHA
+* backend przyjmujący payload JSON
+
+## Uruchomienie lokalne
+
+### 1. Instalacja zależności
+
+```bash
+npm install
 ```
 
-### Kolory i typografia — `src/index.css`
-Wszystkie wartości designu jako CSS Custom Properties:
+### 2. Start środowiska developerskiego
 
-```css
-:root {
-  --orange:      #F26522;   /* kolor akcentu */
-  --black:       #0a0a0a;   /* tło główne */
-  --font-display: 'Barlow Condensed', sans-serif;
-  ...
-}
+```bash
+npm run dev
 ```
 
-### Zdjęcia
-Umieść pliki `BM10.jpeg`, `BM12.jpeg`, `BM12C.jpeg` w katalogu `public/images/`.
-Ścieżki zdjęć są konfigurowane w `data.js` → pole `image`.
+Domyślnie aplikacja uruchomi się lokalnie w trybie developerskim przez Vite.
 
----
+### 3. Build produkcyjny
 
-## Do zrobienia przez developera
+```bash
+npm run build
+```
 
-- [ ] Podłączyć obsługę formularza (`Contact.jsx` → `handleSubmit`) — np. Formspree, EmailJS, własne API
-- [ ] Dodać meta tagi SEO / Open Graph (w `index.html`)
-- [ ] Wgrać prawdziwe zdjęcia i logo do `public/images/`
-- [ ] Uzupełnić dane kontaktowe w `data.js`
-- [ ] Ewentualnie dodać Google Analytics / Meta Pixel
-- [ ] Opcjonalnie: wydzielić komponenty do osobnych bibliotek (React Router jeśli multi-page)
+Po buildzie gotowe pliki trafią do katalogu `dist/`.
 
----
+### 4. Podgląd buildu lokalnie
 
-## Tech stack
+```bash
+npm run preview
+```
 
-| Narzędzie         | Wersja | Po co                              |
-|-------------------|--------|------------------------------------|
-| React             | 18     | UI framework                       |
-| Vite              | 5      | Dev server + bundler               |
-| CSS Modules       | —      | Izolowane style per komponent      |
-| IntersectionObserver | —   | Scroll-reveal (hook useReveal.js)  |
-| OpenStreetMap     | —      | Mapa w sekcji kontakt (bezpłatna)  |
+## Wdrożenie
 
-Brak zewnętrznych zależności poza React — **zero bloat**.
+Projekt można wdrożyć jako stronę statyczną, np. przez:
+
+* FTP / FileZilla
+* hosting statyczny
+* GitHub Actions + serwer
+* Vercel / Netlify / podobne usługi
+
+### Ważne przy wdrożeniu SPA
+
+Jeżeli używasz `BrowserRouter`, serwer powinien obsługiwać fallback do `index.html`, inaczej bezpośrednie wejście na podstrony może zwracać 404.
+
+Jeżeli hosting tego nie wspiera, alternatywą jest:
+
+* konfiguracja rewrite rules po stronie hostingu
+* albo przejście na `HashRouter`
+
+## Assety i obrazy
+
+W projekcie obrazy są trzymane głównie w `public/images/`.
+
+Przykłady:
+
+* zdjęcia maszyn
+* zdjęcia osprzętu
+* hero image
+* logo
+* favicon
+
+Odwołania do nich można robić bezpośrednio po ścieżce, np.:
+
+```jsx
+<img src="/images/hero.png" alt="..." />
+```
+
+## Stylowanie
+
+Projekt korzysta z CSS Modules.
+
+Założenia stylowania:
+
+* modularne pliki `.module.css`
+* spójna paleta kolorów oparta o zmienne CSS
+* sekcje budowane w oparciu o wspólny `page-shell`
+* osobne style dla mobile / tablet / desktop
+* nacisk na czytelne CTA i kontrast
+
+## Dalszy rozwój
+
+Potencjalne kolejne kroki:
+
+* pełne dokończenie tłumaczeń wszystkich komponentów
+* przeniesienie wszystkich danych do plików locale
+* spięcie formularza z produkcyjnym backendem
+* dodanie analityki i event tracking
+* dopracowanie SEO i meta tagów
+* lazy loading większych assetów
+* dalsza optymalizacja pod Core Web Vitals
+
+## Uwagi developerskie
+
+Przy rozbudowie projektu warto trzymać się kilku zasad:
+
+1. Każdy nowy tekst użytkownika wrzucać do i18n zamiast wpisywać na sztywno.
+2. Dane sekcyjne i listy tłumaczalne przenosić do `data.json`.
+3. Linki wewnętrzne budować z uwzględnieniem aktywnego języka.
+4. Wszystkie nowe sekcje pisać jako osobne komponenty z własnym `.module.css`.
+5. Unikać hardcodowania kolorów, jeśli istnieją już globalne zmienne CSS.
+
+## Autor / utrzymanie
+
+Projekt przygotowany dla marki Bergson Machines jako frontend sprzedażowo-ofertowy oparty o React + Vite.
