@@ -1,6 +1,3 @@
-Tak — poniżej masz gotowy, sensowny README pod ten projekt.
-
-````md
 # Bergson Machines
 
 Nowoczesna strona www / landing page dla marki Bergson Machines, zbudowana w oparciu o React + Vite. Projekt zawiera stronę główną, podstrony modeli, strony prawne, obsługę wielu języków oraz formularz kontaktowy z walidacją i reCAPTCHA.
