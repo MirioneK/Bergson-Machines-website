@@ -1,13 +1,11 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { SERVICE_ITEMS } from '../data'
-import { useLangPath } from '../hooks/useLangPath'
 import { useReveal } from '../hooks/useReveal'
 import styles from './Service.module.css'
 
 export default function Service() {
   const { t } = useTranslation()
-  const langPath = useLangPath()
 
   const [headerRef, headerVisible] = useReveal()
   const [innerRef, innerVisible] = useReveal()
@@ -48,23 +46,13 @@ export default function Service() {
             style={{ transitionDelay: '220ms' }}
             aria-label={t('service.promise.ariaLabel')}
           >
-            <div className={styles.metric}>
-              <div className={styles.promiseBig}>{t('service.promise.reactionTime.value')}</div>
-              <div className={styles.promiseLabel}>
-                {t('service.promise.reactionTime.label')}
-              </div>
-            </div>
+            <h3 className={styles.promiseTitle}>
+              {t('service.promise.title')}
+            </h3>
 
-            <div className={styles.metric}>
-              <div className={styles.promiseBig}>{t('service.promise.warranty.value')}</div>
-              <div className={styles.promiseLabel}>
-                {t('service.promise.warranty.label')}
-              </div>
-            </div>
-
-            <a href={langPath('/', '#kontakt')} className={styles.promiseCta}>
-              {t('service.promise.cta')}
-            </a>
+            <p className={styles.promiseText}>
+              {t('service.promise.text')}
+            </p>
           </aside>
         </div>
       </div>

@@ -173,7 +173,9 @@ export default function Contact() {
         >
           <span className={styles.label}>{t('contact.label')}</span>
           <h2 className={styles.title} id="contact-title">
-            {t('contact.title')}
+            <span>{t('contact.titleLine1')}</span>
+            <br />
+            <span>{t('contact.titleLine2')}</span>
           </h2>
           <p className={styles.sub}>{t('contact.sub')}</p>
         </header>
@@ -299,12 +301,22 @@ export default function Contact() {
               <Detail
                 icon="📞"
                 label={t('contact.info.details.phone.label')}
-                value={CONTACT_INFO.phone}
+                values={[
+                  {
+                    text: CONTACT_INFO.phone,
+                    href: `tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`,
+                  },
+                  {
+                    text: CONTACT_INFO.phone2,
+                    href: `tel:${CONTACT_INFO.phone2.replace(/\s+/g, '')}`,
+                  },
+                ]}
               />
               <Detail
                 icon="📧"
                 label={t('contact.info.details.email.label')}
                 value={CONTACT_INFO.email}
+                href={`mailto:${CONTACT_INFO.email}`}
               />
               <Detail
                 icon="📍"
@@ -421,7 +433,7 @@ function SelectField({ label, name, value, onChange, options, placeholder }) {
   )
 }
 
-function Detail({ icon, label, value, sub }) {
+function Detail({ icon, label, value, sub, href, values }) {
   return (
     <li className={styles.detailItem}>
       <span className={styles.detailIcon} aria-hidden="true">
@@ -430,7 +442,27 @@ function Detail({ icon, label, value, sub }) {
 
       <div className={styles.detailContent}>
         <div className={styles.detailLabel}>{label}</div>
-        <div className={styles.detailVal}>{value}</div>
+
+        {Array.isArray(values) && values.length > 0 ? (
+          values.map((item, index) =>
+            item.href ? (
+              <a key={index} href={item.href} className={styles.detailVal}>
+                {item.text}
+              </a>
+            ) : (
+              <div key={index} className={styles.detailVal}>
+                {item.text}
+              </div>
+            )
+          )
+        ) : href ? (
+          <a href={href} className={styles.detailVal}>
+            {value}
+          </a>
+        ) : (
+          <div className={styles.detailVal}>{value}</div>
+        )}
+
         {sub && <div className={styles.detailSub}>{sub}</div>}
       </div>
     </li>

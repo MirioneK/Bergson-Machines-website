@@ -3,17 +3,19 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { buildLangPath, getLangFromPath } from '../i18n/routing'
 import styles from './Nav.module.css'
+import { useHashScroll } from '../hooks/useHashScroll'
 
 const NAV_LINKS = [
-  { key: 'nav.models', hash: '#modele' },
-  { key: 'nav.service', hash: '#serwis' },
-  { key: 'nav.faq', hash: '#faq' },
+  { key: 'nav.models', type: 'section', path: '/', hash: '#modele' },
+  { key: 'nav.service', type: 'section', path: '/', hash: '#serwis' },
+  { key: 'nav.faq', type: 'section', path: '/', hash: '#faq' },
+  { key: 'nav.accessories', type: 'page', path: '/osprzet' },
+  { key: 'nav.blog', type: 'page', path: '/blog' },
 ]
 
 const LANGUAGES = [
   { code: 'pl', label: 'PL', htmlLang: 'pl' },
   { code: 'en', label: 'ENG', htmlLang: 'en' },
-  { code: 'ua', label: 'UA', htmlLang: 'uk' },
 ]
 
 const WHATSAPP_URL = 'https://wa.me/48600507816'
@@ -22,6 +24,7 @@ export default function Nav() {
   const { t, i18n } = useTranslation()
   const location = useLocation()
   const navigate = useNavigate()
+  const handleHashScroll = useHashScroll()
 
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -29,6 +32,16 @@ export default function Nav() {
   const currentLang = useMemo(() => {
     return getLangFromPath(location.pathname)
   }, [location.pathname])
+
+  const sectionLinks = useMemo(
+    () => NAV_LINKS.filter((item) => item.type === 'section'),
+    []
+  )
+
+  const pageLinks = useMemo(
+    () => NAV_LINKS.filter((item) => item.type === 'page'),
+    []
+  )
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -126,18 +139,38 @@ export default function Nav() {
             />
           </Link>
 
-          <ul className={styles.links}>
-            {NAV_LINKS.map(({ key, hash }) => (
-              <li key={key}>
-                <Link
-                  to={buildLangPath(currentLang, '/', hash)}
-                  className={styles.link}
-                >
-                  {t(key)}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className={styles.navGroups}>
+            <ul className={`${styles.links} ${styles.sectionLinks}`}>
+              {sectionLinks.map(({ key, path, hash }) => {
+                const to = buildLangPath(currentLang, path, hash)
+
+                return (
+                  <li key={key}>
+                    <Link
+                      to={to}
+                      className={`${styles.link} ${styles.sectionLink}`}
+                      onClick={(event) => handleHashScroll(event, to)}
+                    >
+                      {t(key)}
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+
+            <ul className={`${styles.links} ${styles.pageLinks}`}>
+              {pageLinks.map(({ key, path, hash }) => (
+                <li key={key}>
+                  <Link
+                    to={buildLangPath(currentLang, path, hash)}
+                    className={`${styles.link} ${styles.pageLink}`}
+                  >
+                    {t(key)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div className={`${styles.actions} ${menuOpen ? styles.actionsHidden : ''}`}>
             <div
@@ -171,7 +204,11 @@ export default function Nav() {
               <span>{t('nav.whatsapp')}</span>
             </a>
 
-            <Link to={contactLink} className={styles.cta}>
+            <Link
+              to={contactLink}
+              className={styles.cta}
+              onClick={(event) => handleHashScroll(event, contactLink)}
+            >
               {t('nav.contact')}
             </Link>
 
@@ -225,18 +262,42 @@ export default function Nav() {
             </div>
           </div>
 
-          <ul className={styles.mobileLinks}>
-            {NAV_LINKS.map(({ key, hash }) => (
-              <li key={key}>
-                <Link
-                  to={buildLangPath(currentLang, '/', hash)}
-                  className={styles.mobileLink}
-                >
-                  {t(key)}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className={styles.mobileGroup}>
+            <div className={styles.mobileGroupLabel}>{t('nav.onPage')}</div>
+            <ul className={styles.mobileLinks}>
+              {sectionLinks.map(({ key, path, hash }) => {
+                const to = buildLangPath(currentLang, path, hash)
+
+                return (
+                  <li key={key}>
+                    <Link
+                      to={to}
+                      className={styles.mobileLink}
+                      onClick={(event) => handleHashScroll(event, to)}
+                    >
+                      {t(key)}
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+
+          <div className={styles.mobileGroup}>
+            <div className={styles.mobileGroupLabel}>{t('nav.pages')}</div>
+            <ul className={styles.mobileLinks}>
+              {pageLinks.map(({ key, path, hash }) => (
+                <li key={key}>
+                  <Link
+                    to={buildLangPath(currentLang, path, hash)}
+                    className={`${styles.mobileLink} ${styles.mobilePageLink}`}
+                  >
+                    {t(key)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <a
             href={WHATSAPP_URL}
@@ -249,7 +310,11 @@ export default function Nav() {
             <span>{t('nav.whatsapp')}</span>
           </a>
 
-          <Link to={contactLink} className={styles.mobileCta}>
+          <Link
+            to={contactLink}
+            className={styles.mobileCta}
+            onClick={(event) => handleHashScroll(event, contactLink)}
+          >
             {t('nav.contact')}
           </Link>
         </div>

@@ -1,24 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
+import { GALLERY_PHOTOS } from '../data'
 import { useReveal } from '../hooks/useReveal'
 import styles from './Gallery.module.css'
-
-const PHOTO_TILES = [
-  {
-    id: 'bm12cPhoto',
-    src: '/images/BM12C.jpeg',
-    featured: true,
-  },
-  {
-    id: 'bm10Photo',
-    src: '/images/BM10.jpeg',
-  },
-  {
-    id: 'bm12Photo',
-    src: '/images/BM12.jpeg',
-    imgStyle: { objectPosition: 'center 20%' },
-  },
-]
 
 const INFO_TILES = [
   {
@@ -27,28 +11,150 @@ const INFO_TILES = [
     variant: 'warranty',
   },
   {
-    id: 'trackWidth',
+    id: 'ready',
     theme: 'dark',
-    variant: 'trackWidth',
-    icon: '📐',
+    variant: 'ready',
   },
 ]
 
 export default function Gallery() {
   const { t } = useTranslation()
-  const [activePhoto, setActivePhoto] = useState(null)
   const [headerRef, headerVisible] = useReveal()
+  const [sliderRef, sliderVisible] = useReveal()
+
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [lightboxIndex, setLightboxIndex] = useState(null)
+  const [userInteracted, setUserInteracted] = useState(false)
+
+  const [isImageFading, setIsImageFading] = useState(false)
+  const [isSliding, setIsSliding] = useState(false)
+
+  const preloadedImagesRef = useRef(new Set())
+
+  const preloadImage = useCallback((src) => {
+    return new Promise((resolve) => {
+      if (!src) {
+        resolve()
+        return
+      }
+
+      if (preloadedImagesRef.current.has(src)) {
+        resolve()
+        return
+      }
+
+      const img = new window.Image()
+      img.src = src
+
+      const done = () => {
+        preloadedImagesRef.current.add(src)
+        resolve()
+      }
+
+      if (img.complete) {
+        done()
+        return
+      }
+
+      img.onload = done
+      img.onerror = done
+    })
+  }, [])
+
+  const totalPhotos = GALLERY_PHOTOS.length
+  const canSlide = totalPhotos > 1
+  const activePhoto = GALLERY_PHOTOS[activeIndex]
+  const lightboxPhoto =
+    lightboxIndex !== null ? GALLERY_PHOTOS[lightboxIndex] : null
+
+  const goPrev = () => {
+    const nextIndex = activeIndex === 0 ? totalPhotos - 1 : activeIndex - 1
+    goToSlide(nextIndex, true)
+  }
+
+  const goNext = () => {
+    const nextIndex = activeIndex === totalPhotos - 1 ? 0 : activeIndex + 1
+    goToSlide(nextIndex, true)
+  }
+
+  const goToSlide = useCallback(
+    async (nextIndex, markUserInteracted = true) => {
+      if (!canSlide) return
+      if (nextIndex === activeIndex) return
+      if (isSliding) return
+
+      if (markUserInteracted) {
+        setUserInteracted(true)
+      }
+
+      setIsSliding(true)
+
+      await preloadImage(GALLERY_PHOTOS[nextIndex]?.src)
+
+      setIsImageFading(true)
+
+      window.setTimeout(() => {
+        setActiveIndex(nextIndex)
+
+        window.requestAnimationFrame(() => {
+          setIsImageFading(false)
+
+          window.setTimeout(() => {
+            setIsSliding(false)
+          }, 220)
+        })
+      }, 180)
+    },
+    [activeIndex, canSlide, isSliding, preloadImage]
+  )
+
+  const openLightbox = (index = activeIndex) => {
+    setLightboxIndex(index)
+  }
+
+  const closeLightbox = () => {
+    setLightboxIndex(null)
+  }
+
+  const goPrevLightbox = () => {
+    if (!canSlide) return
+    setLightboxIndex((prev) => (prev === 0 ? totalPhotos - 1 : prev - 1))
+  }
+
+  const goNextLightbox = () => {
+    if (!canSlide) return
+    setLightboxIndex((prev) => (prev === totalPhotos - 1 ? 0 : prev + 1))
+  }
 
   useEffect(() => {
-    if (!activePhoto) return
+    if (!canSlide || userInteracted || lightboxIndex !== null || isSliding) return
+
+    const interval = window.setInterval(() => {
+      const nextIndex = activeIndex === totalPhotos - 1 ? 0 : activeIndex + 1
+      goToSlide(nextIndex, false)
+    }, 3500)
+
+    return () => window.clearInterval(interval)
+  }, [
+    canSlide,
+    userInteracted,
+    lightboxIndex,
+    isSliding,
+    activeIndex,
+    totalPhotos,
+    goToSlide,
+  ])
+
+  useEffect(() => {
+    if (lightboxIndex === null) return
 
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
 
     const onKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        setActivePhoto(null)
-      }
+      if (event.key === 'Escape') closeLightbox()
+      if (event.key === 'ArrowLeft') goPrevLightbox()
+      if (event.key === 'ArrowRight') goNextLightbox()
     }
 
     window.addEventListener('keydown', onKeyDown)
@@ -57,7 +163,26 @@ export default function Gallery() {
       document.body.style.overflow = previousOverflow
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [activePhoto])
+  }, [lightboxIndex, totalPhotos])
+
+  useEffect(() => {
+    GALLERY_PHOTOS.forEach((photo) => {
+      preloadImage(photo.src)
+    })
+  }, [preloadImage])
+
+  useEffect(() => {
+    if (!totalPhotos) return
+
+    const nextIndex = activeIndex === totalPhotos - 1 ? 0 : activeIndex + 1
+    const prevIndex = activeIndex === 0 ? totalPhotos - 1 : activeIndex - 1
+
+    preloadImage(GALLERY_PHOTOS[activeIndex]?.src)
+    preloadImage(GALLERY_PHOTOS[nextIndex]?.src)
+    preloadImage(GALLERY_PHOTOS[prevIndex]?.src)
+  }, [activeIndex, totalPhotos, preloadImage])
+
+  if (!activePhoto) return null
 
   return (
     <section className={styles.section} id="galeria" aria-labelledby="gallery-title">
@@ -73,15 +198,97 @@ export default function Gallery() {
         </header>
 
         <div className={styles.content}>
-          <div className={styles.photoGrid}>
-            {PHOTO_TILES.map((tile, index) => (
-              <PhotoTile
-                key={tile.id}
-                tile={tile}
-                delay={120 + index * 100}
-                onOpen={() => setActivePhoto(tile)}
-              />
-            ))}
+          <div
+            ref={sliderRef}
+            className={`${styles.sliderBlock} reveal ${sliderVisible ? 'visible' : ''}`}
+            style={{ transitionDelay: '120ms' }}
+          >
+            <div className={styles.sliderMain}>
+              {canSlide && (
+                <button
+                  type="button"
+                  className={`${styles.controlBtn} ${styles.controlPrev}`}
+                  onClick={goPrev}
+                  aria-label={t('gallery.prevPhotoAriaLabel', {
+                    defaultValue: 'Poprzednie zdjęcie',
+                  })}
+                >
+                  <svg viewBox="0 0 24 24" className={styles.controlSvg} aria-hidden="true">
+                    <path d="M14.5 5 8 12l6.5 7" />
+                  </svg>
+                </button>
+              )}
+
+              <button
+                type="button"
+                className={styles.mainImageButton}
+                onClick={() => openLightbox(activeIndex)}
+                aria-label={t('gallery.openPhotoAriaLabel', {
+                  defaultValue: 'Powiększ zdjęcie',
+                })}
+              >
+                <img
+                  src={activePhoto.src}
+                  alt={
+                    t(`gallery.photos.${activePhoto.id}.alt`, {
+                      defaultValue: activePhoto.alt || `Zdjęcie ${activeIndex + 1}`,
+                    })
+                  }
+                  className={`${styles.mainImage} ${isImageFading ? styles.mainImageFading : ''}`}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+
+              {canSlide && (
+                <button
+                  type="button"
+                  className={`${styles.controlBtn} ${styles.controlNext}`}
+                  onClick={goNext}
+                  aria-label={t('gallery.nextPhotoAriaLabel', {
+                    defaultValue: 'Następne zdjęcie',
+                  })}
+                >
+                  <svg viewBox="0 0 24 24" className={styles.controlSvg} aria-hidden="true">
+                    <path d="M9.5 5 16 12l-6.5 7" />
+                  </svg>
+                </button>
+              )}
+
+              {canSlide && (
+                <div className={styles.counter}>
+                  {activeIndex + 1} / {totalPhotos}
+                </div>
+              )}
+            </div>
+
+            <div className={styles.thumbRow}>
+              {GALLERY_PHOTOS.map((item, index) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  className={`${styles.thumbBtn} ${index === activeIndex ? styles.thumbBtnActive : ''}`}
+                  onClick={() => {
+                    goToSlide(index, true)
+                  }}
+                  aria-label={t('gallery.openPhotoAriaLabel', {
+                    defaultValue: 'Otwórz zdjęcie',
+                  })}
+                >
+                  <img
+                    src={item.src}
+                    alt={
+                      t(`gallery.photos.${item.id}.alt`, {
+                        defaultValue: item.alt || `Miniatura ${index + 1}`,
+                      })
+                    }
+                    className={styles.thumbImage}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className={styles.infoGrid}>
@@ -96,71 +303,80 @@ export default function Gallery() {
         </div>
       </div>
 
-      {activePhoto && (
+      {lightboxPhoto && (
         <div
           className={styles.lightbox}
           role="dialog"
           aria-modal="true"
-          aria-label={t(`gallery.photos.${activePhoto.id}.label`)}
-          onClick={() => setActivePhoto(null)}
+          aria-label={t('gallery.previewAriaLabel', {
+            defaultValue: 'Podgląd zdjęcia',
+          })}
+          onClick={closeLightbox}
         >
           <button
             type="button"
             className={styles.lightboxClose}
-            onClick={() => setActivePhoto(null)}
-            aria-label={t('gallery.closePreviewAriaLabel')}
+            onClick={closeLightbox}
+            aria-label={t('gallery.closePreviewAriaLabel', {
+              defaultValue: 'Zamknij podgląd zdjęcia',
+            })}
           >
             ×
           </button>
 
-          <figure
+          {canSlide && (
+            <button
+              type="button"
+              className={`${styles.lightboxNav} ${styles.lightboxPrev}`}
+              onClick={(event) => {
+                event.stopPropagation()
+                goPrevLightbox()
+              }}
+              aria-label={t('gallery.prevPhotoAriaLabel', {
+                defaultValue: 'Poprzednie zdjęcie',
+              })}
+            >
+              <svg viewBox="0 0 24 24" className={styles.controlSvg} aria-hidden="true">
+                <path d="M14.5 5 8 12l6.5 7" />
+              </svg>
+            </button>
+          )}
+
+          <div
             className={styles.lightboxFigure}
             onClick={(event) => event.stopPropagation()}
           >
             <img
-              src={activePhoto.src}
-              alt={t(`gallery.photos.${activePhoto.id}.alt`)}
+              src={lightboxPhoto.src}
+              alt={
+                t(`gallery.photos.${lightboxPhoto.id}.alt`, {
+                  defaultValue: lightboxPhoto.alt || 'Zdjęcie',
+                })
+              }
               className={styles.lightboxImage}
             />
-            <figcaption className={styles.lightboxCaption}>
-              <span className={styles.lightboxTag}>
-                {t(`gallery.photos.${activePhoto.id}.tag`)}
-              </span>
-              <span>{t(`gallery.photos.${activePhoto.id}.label`)}</span>
-            </figcaption>
-          </figure>
+          </div>
+
+          {canSlide && (
+            <button
+              type="button"
+              className={`${styles.lightboxNav} ${styles.lightboxNext}`}
+              onClick={(event) => {
+                event.stopPropagation()
+                goNextLightbox()
+              }}
+              aria-label={t('gallery.nextPhotoAriaLabel', {
+                defaultValue: 'Następne zdjęcie',
+              })}
+            >
+              <svg viewBox="0 0 24 24" className={styles.controlSvg} aria-hidden="true">
+                <path d="M9.5 5 16 12l-6.5 7" />
+              </svg>
+            </button>
+          )}
         </div>
       )}
     </section>
-  )
-}
-
-function PhotoTile({ tile, delay, onOpen }) {
-  const { t } = useTranslation()
-  const [ref, visible] = useReveal()
-
-  return (
-    <button
-      ref={ref}
-      type="button"
-      className={`${styles.photoTile} ${tile.featured ? styles.featuredPhoto : ''} reveal ${visible ? 'visible' : ''}`}
-      style={{ transitionDelay: `${delay}ms` }}
-      onClick={onOpen}
-      aria-label={t('gallery.openPhotoAriaLabel', {
-        label: t(`gallery.photos.${tile.id}.label`),
-      })}
-    >
-      <img
-        src={tile.src}
-        alt={t(`gallery.photos.${tile.id}.alt`)}
-        className={styles.image}
-        style={tile.imgStyle}
-        loading="lazy"
-        decoding="async"
-      />
-      <span className={styles.tag}>{t(`gallery.photos.${tile.id}.tag`)}</span>
-      <div className={styles.labelOverlay}>{t(`gallery.photos.${tile.id}.label`)}</div>
-    </button>
   )
 }
 
@@ -175,25 +391,10 @@ function InfoTile({ tile, delay }) {
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className={styles.infoContent}>
-        {tile.variant === 'warranty' && (
-          <>
-            <div className={styles.infoNum}>{t(`gallery.infoTiles.${tile.id}.number`)}</div>
-            <div className={styles.infoSub}>{t(`gallery.infoTiles.${tile.id}.sub`)}</div>
-            <div className={styles.infoLine} />
-            <div className={styles.infoDesc}>{t(`gallery.infoTiles.${tile.id}.desc`)}</div>
-          </>
-        )}
-
-        {tile.variant === 'trackWidth' && (
-          <>
-            <span className={styles.infoIcon} aria-hidden="true">{tile.icon}</span>
-            <div className={`${styles.infoSub} ${styles.orange}`}>
-              {t(`gallery.infoTiles.${tile.id}.sub`)}
-            </div>
-            <div className={styles.infoNumSmall}>{t(`gallery.infoTiles.${tile.id}.number`)}</div>
-            <div className={styles.infoDesc}>{t(`gallery.infoTiles.${tile.id}.desc`)}</div>
-          </>
-        )}
+        <div className={styles.infoNum}>{t(`gallery.infoTiles.${tile.id}.number`)}</div>
+        <div className={styles.infoSub}>{t(`gallery.infoTiles.${tile.id}.sub`)}</div>
+        <div className={styles.infoLine} />
+        <div className={styles.infoDesc}>{t(`gallery.infoTiles.${tile.id}.desc`)}</div>
       </div>
     </div>
   )

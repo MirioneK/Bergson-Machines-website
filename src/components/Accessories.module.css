@@ -41,6 +41,19 @@
   line-height: 1.7;
 }
 
+.headerActions {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.bottomCtaWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+
 .carouselSection {
   padding-top: 12px;
   border-top: 1px solid rgba(242, 101, 34, 0.08);
@@ -96,19 +109,17 @@
     / var(--visible-slides)
   );
   min-width: 0;
+  display: flex;
 }
 
 .previewCard {
-  min-width: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
+  min-height: 100%;
   background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  transition:
-    transform 0.18s ease,
-    border-color 0.18s ease,
-    box-shadow 0.18s ease;
 }
 
 .previewCard:hover {
@@ -121,26 +132,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  background:
-    radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.05), transparent 58%),
-    linear-gradient(180deg, var(--bg-media-top) 0%, var(--bg-media-bottom) 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  aspect-ratio: 16 / 12;
+  height: 340px;
+  padding: 22px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: radial-gradient(circle at 50% 35%, rgba(242, 101, 34, 0.08), transparent 55%);
 }
 
 .previewImage {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.22));
+  object-position: center center;
+  display: block;
 }
 
 .previewBody {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 14px 14px 16px;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  padding: 16px 16px 18px;
 }
 
 .previewName {
@@ -192,22 +204,13 @@
 
 .controlBtn {
   flex: 0 0 auto;
+  align-self: center;
   width: var(--control-size);
   height: var(--control-size);
   display: grid;
   place-items: center;
   padding: 0;
-  margin-top: calc(
-    (
-      (
-        (
-          (
-            100cqw - (var(--control-size) * 2) - (var(--control-gap) * 2) - ((var(--visible-slides) - 1) * var(--carousel-gap))
-          ) / var(--visible-slides)
-        ) * 0.75
-      ) - var(--control-size)
-    ) / 2
-  );
+  margin-top: 0;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
   background: rgba(var(--bg-nav-rgb), 0.88);
@@ -255,11 +258,27 @@
     --control-size: 50px;
     --control-gap: 20px;
   }
+
+  .previewMedia {
+    height: 300px;
+    padding: 18px;
+  }
 }
 
 @media (max-width: 768px) {
   .inner {
     gap: 24px;
+  }
+
+  .bottomCtaWrap {
+    margin-top: 18px;
+}
+
+  .headerActions {
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
   .sub {
@@ -285,6 +304,11 @@
   .controlSvg {
     width: 18px;
     height: 18px;
+  }
+
+  .previewMedia {
+    height: 260px;
+    padding: 16px;
   }
 }
 

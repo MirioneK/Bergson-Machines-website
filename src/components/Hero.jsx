@@ -3,10 +3,12 @@ import { Trans, useTranslation } from 'react-i18next'
 import styles from './Hero.module.css'
 import { useReveal } from '../hooks/useReveal'
 import { useLangPath } from '../hooks/useLangPath'
+import { useHashScroll } from '../hooks/useHashScroll'
 
 export default function Hero() {
   const { t } = useTranslation()
   const langPath = useLangPath()
+  const handleHashScroll = useHashScroll()
 
   const [badgeRef, badgeVisible] = useReveal()
   const [titleRef, titleVisible] = useReveal()
@@ -15,6 +17,9 @@ export default function Hero() {
   const [mediaRef, mediaVisible] = useReveal()
 
   const stats = t('hero.stats', { returnObjects: true })
+
+  const modelsLink = langPath('/', '#modele')
+  const contactLink = langPath('/', '#kontakt')
 
   return (
     <section className={styles.hero} id="hero" aria-labelledby="hero-title">
@@ -59,10 +64,19 @@ export default function Hero() {
             className={`${styles.actions} ${styles.reveal} ${actionsVisible ? styles.visible : ''}`}
             style={{ transitionDelay: '240ms' }}
           >
-            <a href={langPath('/', '#modele')} className="btn-primary">
+            <a
+              href={modelsLink}
+              className="btn-primary"
+              onClick={(event) => handleHashScroll(event, modelsLink)}
+            >
               {t('hero.actions.models')}
             </a>
-            <a href={langPath('/', '#kontakt')} className="btn-outline">
+
+            <a
+              href={contactLink}
+              className="btn-outline"
+              onClick={(event) => handleHashScroll(event, contactLink)}
+            >
               {t('hero.actions.consultation')}
             </a>
           </div>

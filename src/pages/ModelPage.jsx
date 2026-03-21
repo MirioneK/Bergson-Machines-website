@@ -12,6 +12,31 @@ import { useLangPath } from '../hooks/useLangPath'
 import { useReveal } from '../hooks/useReveal'
 import styles from './ModelPage.module.css'
 
+const ACCESSORY_PLACEHOLDER = '/images/placeholders/product-placeholder.png'
+
+function SafeImage({ src, alt, className, fallbackSrc = ACCESSORY_PLACEHOLDER }) {
+  const [imgSrc, setImgSrc] = useState(src || fallbackSrc)
+
+  useEffect(() => {
+    setImgSrc(src || fallbackSrc)
+  }, [src, fallbackSrc])
+
+  return (
+    <img
+      src={imgSrc}
+      alt={alt}
+      className={className}
+      loading="lazy"
+      decoding="async"
+      onError={() => {
+        if (imgSrc !== fallbackSrc) {
+          setImgSrc(fallbackSrc)
+        }
+      }}
+    />
+  )
+}
+
 export default function ModelPage() {
   const { id } = useParams()
   const { t, i18n } = useTranslation()
@@ -35,7 +60,7 @@ export default function ModelPage() {
 
   if (!model) return <Navigate to={langPath('/')} replace />
 
-  const others = MODELS.filter((m) => m.id !== id)
+  const others = MODELS.filter((m) => m.id !== id && m.id !== 'upcoming')
   const priceBrutto = calcBrutto(model.priceNetto)
 
   const metaTitle = model
@@ -389,7 +414,7 @@ function AccessoryPreviewCard({ item, delay }) {
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className={styles.accessoryMedia}>
-        <img
+        <SafeImage
           src={item.image}
           alt={t('modelPage.accessoryImageAlt', { name })}
           className={styles.accessoryImage}

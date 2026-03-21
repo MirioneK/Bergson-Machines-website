@@ -1,8 +1,35 @@
 import React, { useEffect, useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useLangPath } from '../hooks/useLangPath'
 import { useTranslation } from 'react-i18next'
 import { ACCESSORY_PREVIEW, calcBrutto, formatPrice } from '../data'
 import { useReveal } from '../hooks/useReveal'
 import styles from './Accessories.module.css'
+
+const PRODUCT_PLACEHOLDER = '/images/placeholders/product-placeholder.png'
+
+function SafeImage({ src, alt, className, fallbackSrc = PRODUCT_PLACEHOLDER }) {
+  const [imgSrc, setImgSrc] = useState(src || fallbackSrc)
+
+  useEffect(() => {
+    setImgSrc(src || fallbackSrc)
+  }, [src, fallbackSrc])
+
+  return (
+    <img
+      src={imgSrc}
+      alt={alt}
+      className={className}
+      loading="lazy"
+      decoding="async"
+      onError={() => {
+        if (imgSrc !== fallbackSrc) {
+          setImgSrc(fallbackSrc)
+        }
+      }}
+    />
+  )
+}
 
 function useVisibleSlides() {
   const getVisibleSlides = () => {
@@ -25,6 +52,7 @@ function useVisibleSlides() {
 
 export default function Accessories() {
   const { t } = useTranslation()
+  const langPath = useLangPath()
   const [headerRef, headerVisible] = useReveal()
   const [carouselRef, carouselVisible] = useReveal()
 
@@ -172,6 +200,12 @@ export default function Accessories() {
             )}
           </div>
         </div>
+
+        <div className={styles.bottomCtaWrap}>
+          <Link to={langPath('/osprzet')} className="btn-outline">
+            {t('accessories.cta')}
+          </Link>
+        </div>
       </div>
     </section>
   )
@@ -189,12 +223,10 @@ function PreviewCard({ item }) {
   return (
     <article className={styles.previewCard}>
       <div className={styles.previewMedia}>
-        <img
+        <SafeImage
           src={item.image}
           alt={t('accessories.card.imageAlt', { name })}
           className={styles.previewImage}
-          loading="lazy"
-          decoding="async"
         />
       </div>
 

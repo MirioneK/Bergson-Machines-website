@@ -9,8 +9,7 @@ export default function ModelCard({ model }) {
   const { t, i18n } = useTranslation()
   const langPath = useLangPath()
 
-  const { id, name, image, priceNetto } = model
-  const priceBrutto = calcBrutto(priceNetto)
+  const { id, name, image, priceNetto, comingSoon } = model
 
   const subtitle = t(`models.${id}.subtitle`, {
     ns: 'data',
@@ -22,6 +21,11 @@ export default function ModelCard({ model }) {
     defaultValue: '',
   })
 
+  const description = t(`models.${id}.description`, {
+    ns: 'data',
+    defaultValue: '',
+  })
+
   const cardSpecsRaw = t(`models.${id}.cardSpecs`, {
     ns: 'data',
     returnObjects: true,
@@ -29,6 +33,79 @@ export default function ModelCard({ model }) {
   })
 
   const cardSpecs = Array.isArray(cardSpecsRaw) ? cardSpecsRaw : []
+
+  if (comingSoon) {
+    const comingSoonBadge = t(`models.${id}.comingSoonBadge`, {
+      ns: 'data',
+      defaultValue: t('modelCard.comingSoon.badge'),
+    })
+
+    const comingSoonListRaw = t(`models.${id}.comingSoonList`, {
+      ns: 'data',
+      returnObjects: true,
+      defaultValue: t('modelCard.comingSoon.list', { returnObjects: true }),
+    })
+
+    const comingSoonList = Array.isArray(comingSoonListRaw) ? comingSoonListRaw : []
+
+    const comingSoonCta = t(`models.${id}.comingSoonCta`, {
+      ns: 'data',
+      defaultValue: t('modelCard.comingSoon.cta'),
+    })
+
+    return (
+      <article
+        className={`${styles.card} ${styles.comingSoonCard}`}
+        aria-labelledby={`model-${id}-title`}
+      >
+        <div className={`${styles.media} ${styles.comingSoonMedia}`} aria-hidden="true">
+          {image ? (
+            <img
+              src={image}
+              alt=""
+              className={`${styles.image} ${styles.comingSoonImage}`}
+              loading="lazy"
+              decoding="async"
+            />
+          ) : (
+            <div className={styles.comingSoonPlaceholder}>
+              <div className={styles.comingSoonGlow} />
+              <div className={styles.comingSoonMark}>+</div>
+            </div>
+          )}
+
+          <span className={styles.comingSoonBadge}>{comingSoonBadge}</span>
+        </div>
+
+        <div className={styles.body}>
+          <header className={styles.header}>
+            <h3 className={styles.name} id={`model-${id}-title`}>
+              {name}
+            </h3>
+            {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+          </header>
+
+          {description && <p className={styles.comingSoonDesc}>{description}</p>}
+
+          {comingSoonList.length > 0 && (
+            <ul className={styles.comingSoonList}>
+              {comingSoonList.map((item, index) => (
+                <li key={`${id}-coming-soon-${index}`}>{item}</li>
+              ))}
+            </ul>
+          )}
+
+          <div className={styles.footer}>
+            <span className={`${styles.cta} ${styles.ctaGhost}`}>
+              {comingSoonCta}
+            </span>
+          </div>
+        </div>
+      </article>
+    )
+  }
+
+  const priceBrutto = calcBrutto(priceNetto)
 
   return (
     <Link
@@ -79,9 +156,12 @@ export default function ModelCard({ model }) {
           <div className={styles.priceBlock}>
             <div className={styles.priceLine}>
               <span className={styles.pricePrefix}>{t('modelCard.pricePrefix')}</span>
-              <span className={styles.price}>{formatPrice(priceNetto, i18n.resolvedLanguage)}</span>
+              <span className={styles.price}>
+                {formatPrice(priceNetto, i18n.resolvedLanguage)}
+              </span>
               <span className={styles.priceLabel}>{t('modelCard.priceNettoLabel')}</span>
             </div>
+
             <span className={styles.priceBrutto}>
               {t('modelCard.priceBrutto', {
                 price: formatPrice(priceBrutto, i18n.resolvedLanguage),

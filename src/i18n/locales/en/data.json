@@ -5,32 +5,33 @@
     "dimensionsAndWeight": "Dimensions and weight"
   },
   "modelSpecs": {
+    "totalWeight": "Total weight",
     "operatingWeight": "Operating weight",
     "engine": "Engine",
     "diggingDepth": "Digging depth",
     "trackWidth": "Track width",
     "cabin": "Cabin",
     "bucketCapacity": "Bucket capacity",
-    "bucketWidth": "Bucket width",
-    "hydraulicPump": "Hydraulic pump",
     "hydraulicPressure": "Hydraulic pressure",
-    "travelSpeed": "Travel speed",
     "fuelTank": "Fuel tank",
+    "hydraulicOilTank": "Hydraulic oil tank",
     "maxDiggingDepth": "Max. digging depth",
     "maxDiggingHeight": "Max. digging height",
     "maxDumpingHeight": "Max. dumping height",
     "maxDiggingRadius": "Max. digging radius",
-    "upperStructureRotation": "Upper structure rotation",
     "transportLength": "Transport length",
     "width": "Width",
     "height": "Height",
-    "heightWithCabin": "Height with cab",
+    "heightWithCabin": "Height (with cabin)",
     "trackWheelbase": "Track wheelbase",
-    "groundPressure": "Ground pressure"
+    "counterweightClearance": "Counterweight clearance",
+    "minGroundClearance": "Minimum ground clearance",
+    "supportRollers": "Number of support rollers",
+    "rotationSpeed": "Rotation speed"
   },
   "models": {
     "bm10": {
-      "subtitle": "1-ton mini excavator · Ideal for gardens and narrow entrances",
+      "subtitle": "1-ton mini excavator · Ideal for light work and tight spaces",
       "cardSpecs": [
         {
           "key": "operatingWeight",
@@ -38,53 +39,61 @@
         },
         {
           "key": "engine",
-          "value": "10 HP diesel"
+          "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
         },
         {
           "key": "diggingDepth",
-          "value": "1,600 mm"
+          "value": "1,652 mm"
         },
         {
-          "key": "trackWidth",
-          "value": "760 mm"
+          "key": "width",
+          "value": "933 mm"
         }
       ],
-      "description": "BM10 is the smallest machine in the Bergson Machines lineup — but it is by no means a toy. It was designed for work on private plots, in gardens, during property renovations, and wherever the ability to pass through a standard gate or wicket is crucial. With a track width of just 760 mm, it can work where larger machines cannot reach. The 10 HP diesel engine ensures reliable work throughout the season without excessive fuel consumption.",
+      "description": "BM10 is a compact mini excavator for light earthworks, garden jobs, and installation work. Thanks to its small dimensions, it performs well wherever a larger machine would have limited access. It is a simple and practical model for everyday work around properties, foundations, utility lines, and small excavations.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
+            {
+              "key": "totalWeight",
+              "value": "850 kg"
+            },
             {
               "key": "operatingWeight",
               "value": "1,000 kg"
             },
             {
               "key": "engine",
-              "value": "10 HP diesel / 3,600 rpm"
+              "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
             },
             {
               "key": "bucketCapacity",
               "value": "0.018 m³"
             },
             {
-              "key": "bucketWidth",
-              "value": "300 mm"
+              "key": "trackWidth",
+              "value": "180 mm"
             },
             {
-              "key": "hydraulicPump",
-              "value": "Gear pump"
+              "key": "supportRollers",
+              "value": "4 pcs."
             },
             {
-              "key": "hydraulicPressure",
-              "value": "14 MPa"
-            },
-            {
-              "key": "travelSpeed",
-              "value": "1.5 km/h"
+              "key": "rotationSpeed",
+              "value": "9 rpm"
             },
             {
               "key": "fuelTank",
-              "value": "8 l"
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
             }
           ]
         },
@@ -93,23 +102,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,600 mm"
+              "value": "1,652 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,400 mm"
+              "value": "2,376 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,650 mm"
+              "value": "1,698 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "2,600 mm"
-            },
-            {
-              "key": "upperStructureRotation",
-              "value": "360°"
+              "value": "1,659 mm"
             }
           ]
         },
@@ -118,34 +123,34 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "2,500 mm"
+              "value": "3,119 mm"
             },
             {
               "key": "width",
-              "value": "760 mm"
+              "value": "933 mm"
             },
             {
               "key": "height",
-              "value": "2,050 mm"
+              "value": "2,149 mm"
             },
             {
-              "key": "trackWidth",
-              "value": "760 mm"
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
             },
             {
               "key": "trackWheelbase",
-              "value": "560 mm"
-            },
-            {
-              "key": "groundPressure",
-              "value": "22 kPa"
+              "value": "753 mm"
             }
           ]
         }
       ]
     },
     "bm12": {
-      "subtitle": "1.2-ton mini excavator · Best price-to-capability ratio",
+      "subtitle": "1.2-ton mini excavator · Greater weight, same compact format",
       "badge": "Bestseller",
       "cardSpecs": [
         {
@@ -154,53 +159,61 @@
         },
         {
           "key": "engine",
-          "value": "13.5 HP diesel"
+          "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
         },
         {
           "key": "diggingDepth",
-          "value": "1,850 mm"
+          "value": "1,649 mm"
         },
         {
-          "key": "trackWidth",
-          "value": "980 mm"
+          "key": "width",
+          "value": "933 mm"
         }
       ],
-      "description": "BM12 is a Bergson Machines bestseller — and for good reason. It combines enough operating weight for serious earthworks with compact dimensions that allow it to enter a typical construction plot or pass through an estate gate. The 13.5 HP diesel engine works with a solid hydraulic system to deliver reliable, repeatable performance for many seasons. It is the right machine for small and medium construction and installation companies that want quality without overpaying for the brand.",
+      "description": "BM12 is a model with a higher operating weight, designed for more demanding earthworks while maintaining compact transport dimensions. It is a good compromise between mobility and working stability, suitable both for installation works and everyday construction tasks.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
+            {
+              "key": "totalWeight",
+              "value": "930 kg"
+            },
             {
               "key": "operatingWeight",
               "value": "1,200 kg"
             },
             {
               "key": "engine",
-              "value": "13.5 HP diesel / 3,600 rpm"
+              "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
             },
             {
               "key": "bucketCapacity",
-              "value": "0.025 m³"
+              "value": "0.018 m³"
             },
             {
-              "key": "bucketWidth",
-              "value": "300 mm"
+              "key": "trackWidth",
+              "value": "180 mm"
             },
             {
-              "key": "hydraulicPump",
-              "value": "Gear pump"
+              "key": "supportRollers",
+              "value": "4 pcs."
             },
             {
-              "key": "hydraulicPressure",
-              "value": "16 MPa"
-            },
-            {
-              "key": "travelSpeed",
-              "value": "2.0 km/h"
+              "key": "rotationSpeed",
+              "value": "9 rpm"
             },
             {
               "key": "fuelTank",
-              "value": "10 l"
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
             }
           ]
         },
@@ -209,23 +222,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,850 mm"
+              "value": "1,649 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,700 mm"
+              "value": "2,380 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,900 mm"
+              "value": "1,703 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "3,100 mm"
-            },
-            {
-              "key": "upperStructureRotation",
-              "value": "360°"
+              "value": "1,694 mm"
             }
           ]
         },
@@ -234,34 +243,34 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "2,850 mm"
+              "value": "3,158 mm"
             },
             {
               "key": "width",
-              "value": "980 mm"
+              "value": "933 mm"
             },
             {
               "key": "height",
-              "value": "2,200 mm"
+              "value": "2,144 mm"
             },
             {
-              "key": "trackWidth",
-              "value": "980 mm"
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
             },
             {
               "key": "trackWheelbase",
-              "value": "740 mm"
-            },
-            {
-              "key": "groundPressure",
-              "value": "26 kPa"
+              "value": "753 mm"
             }
           ]
         }
       ]
     },
     "bm12c": {
-      "subtitle": "1.2-ton mini excavator with cab · Comfort all year round",
+      "subtitle": "1.2-ton mini excavator with cabin · Operator comfort all year round",
       "cardSpecs": [
         {
           "key": "operatingWeight",
@@ -269,53 +278,65 @@
         },
         {
           "key": "engine",
-          "value": "13.5 HP diesel"
+          "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
         },
         {
           "key": "cabin",
-          "value": "Closed, heated"
+          "value": "Yes"
         },
         {
-          "key": "trackWidth",
-          "value": "980 mm"
+          "key": "width",
+          "value": "933 mm"
         }
       ],
-      "description": "BM12C is a version of the BM12 equipped with a closed, heated operator cab. For companies working all year round — including late autumn and winter — this is a solution that directly improves productivity and operator comfort. The cab effectively protects against rain, wind, and low temperatures without significantly increasing the machine dimensions. Working parameters are identical to the BM12; the only differences are the cab equipment and the machine weight.",
+      "description": "BM12C is the cabin version of the BM12, designed for work in less favorable weather conditions and wherever the operator expects greater comfort. The base platform parameters remain the same as in the BM12, and the difference concerns the body version and intended use.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
+            {
+              "key": "totalWeight",
+              "value": "930 kg"
+            },
             {
               "key": "operatingWeight",
               "value": "1,200 kg"
             },
             {
               "key": "engine",
-              "value": "13.5 HP diesel / 3,600 rpm"
+              "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
             },
             {
               "key": "cabin",
-              "value": "Closed, heated"
+              "value": "Yes"
             },
             {
               "key": "bucketCapacity",
-              "value": "0.025 m³"
+              "value": "0.018 m³"
             },
             {
-              "key": "bucketWidth",
-              "value": "300 mm"
+              "key": "trackWidth",
+              "value": "180 mm"
             },
             {
-              "key": "hydraulicPressure",
-              "value": "16 MPa"
+              "key": "supportRollers",
+              "value": "4 pcs."
             },
             {
-              "key": "travelSpeed",
-              "value": "2.0 km/h"
+              "key": "rotationSpeed",
+              "value": "9 rpm"
             },
             {
               "key": "fuelTank",
-              "value": "10 l"
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
             }
           ]
         },
@@ -324,23 +345,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,850 mm"
+              "value": "1,649 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,700 mm"
+              "value": "2,380 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,900 mm"
+              "value": "1,703 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "3,100 mm"
-            },
-            {
-              "key": "upperStructureRotation",
-              "value": "360°"
+              "value": "1,694 mm"
             }
           ]
         },
@@ -349,34 +366,34 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "2,980 mm"
+              "value": "3,158 mm"
             },
             {
               "key": "width",
-              "value": "980 mm"
+              "value": "933 mm"
             },
             {
               "key": "heightWithCabin",
-              "value": "2,400 mm"
+              "value": "2,144 mm"
             },
             {
-              "key": "trackWidth",
-              "value": "980 mm"
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
             },
             {
               "key": "trackWheelbase",
-              "value": "740 mm"
-            },
-            {
-              "key": "groundPressure",
-              "value": "26 kPa"
+              "value": "753 mm"
             }
           ]
         }
       ]
     },
-    "bm12cc": {
-      "subtitle": "1.2-ton mini excavator with cab · Comfort all year round",
+    "bm12-kubota": {
+      "subtitle": "1.2-ton mini excavator · Version with Kubota Diesel engine",
       "cardSpecs": [
         {
           "key": "operatingWeight",
@@ -384,53 +401,61 @@
         },
         {
           "key": "engine",
-          "value": "13.5 HP diesel"
+          "value": "Kubota Diesel 10.2 kW / 13.9 HP"
         },
         {
-          "key": "cabin",
-          "value": "Closed, heated"
+          "key": "diggingDepth",
+          "value": "1,649 mm"
         },
         {
-          "key": "trackWidth",
-          "value": "980 mm"
+          "key": "width",
+          "value": "933 mm"
         }
       ],
-      "description": "BM12C is a version of the BM12 equipped with a closed, heated operator cab. For companies working all year round — including late autumn and winter — this is a solution that directly improves productivity and operator comfort. The cab effectively protects against rain, wind, and low temperatures without significantly increasing the machine dimensions. Working parameters are identical to the BM12; the only differences are the cab equipment and the machine weight.",
+      "description": "BM12 Kubota is a version of the BM12 model with the same technical parameters and working geometry, but equipped with a Kubota Diesel engine. It is intended for customers who want to keep the compact dimensions of the BM12 while opting for a stronger engine brand.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
+            {
+              "key": "totalWeight",
+              "value": "930 kg"
+            },
             {
               "key": "operatingWeight",
               "value": "1,200 kg"
             },
             {
               "key": "engine",
-              "value": "13.5 HP diesel / 3,600 rpm"
-            },
-            {
-              "key": "cabin",
-              "value": "Closed, heated"
+              "value": "Kubota Diesel 10.2 kW / 13.9 HP"
             },
             {
               "key": "bucketCapacity",
-              "value": "0.025 m³"
+              "value": "0.018 m³"
             },
             {
-              "key": "bucketWidth",
-              "value": "300 mm"
+              "key": "trackWidth",
+              "value": "180 mm"
             },
             {
-              "key": "hydraulicPressure",
-              "value": "16 MPa"
+              "key": "supportRollers",
+              "value": "4 pcs."
             },
             {
-              "key": "travelSpeed",
-              "value": "2.0 km/h"
+              "key": "rotationSpeed",
+              "value": "9 rpm"
             },
             {
               "key": "fuelTank",
-              "value": "10 l"
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
             }
           ]
         },
@@ -439,23 +464,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,850 mm"
+              "value": "1,649 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,700 mm"
+              "value": "2,380 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,900 mm"
+              "value": "1,703 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "3,100 mm"
-            },
-            {
-              "key": "upperStructureRotation",
-              "value": "360°"
+              "value": "1,694 mm"
             }
           ]
         },
@@ -464,48 +485,228 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "2,980 mm"
+              "value": "3,158 mm"
             },
             {
               "key": "width",
-              "value": "980 mm"
+              "value": "933 mm"
             },
             {
-              "key": "heightWithCabin",
-              "value": "2,400 mm"
+              "key": "height",
+              "value": "2,144 mm"
             },
             {
-              "key": "trackWidth",
-              "value": "980 mm"
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
             },
             {
               "key": "trackWheelbase",
-              "value": "740 mm"
-            },
-            {
-              "key": "groundPressure",
-              "value": "26 kPa"
+              "value": "753 mm"
             }
           ]
         }
       ]
+    },
+    "bm12c-kubota": {
+      "subtitle": "1.2-ton mini excavator with cabin · Version with Kubota Diesel engine",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1,200 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Kubota Diesel 10.2 kW / 13.9 HP"
+        },
+        {
+          "key": "cabin",
+          "value": "Yes"
+        },
+        {
+          "key": "width",
+          "value": "933 mm"
+        }
+      ],
+      "description": "BM12C Kubota is the equivalent of the BM12C with the same working parameters, but with a Kubota Diesel engine. It is a premium variant for customers who want to combine an operator cabin with a higher-class power unit.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "totalWeight",
+              "value": "930 kg"
+            },
+            {
+              "key": "operatingWeight",
+              "value": "1,200 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Kubota Diesel 10.2 kW / 13.9 HP"
+            },
+            {
+              "key": "cabin",
+              "value": "Yes"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0.018 m³"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "supportRollers",
+              "value": "4 pcs."
+            },
+            {
+              "key": "rotationSpeed",
+              "value": "9 rpm"
+            },
+            {
+              "key": "fuelTank",
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1,649 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2,380 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1,703 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "1,694 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "3,158 mm"
+            },
+            {
+              "key": "width",
+              "value": "933 mm"
+            },
+            {
+              "key": "heightWithCabin",
+              "value": "2,144 mm"
+            },
+            {
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "753 mm"
+            }
+          ]
+        }
+      ]
+    },
+    "upcoming": {
+      "subtitle": "New models — coming soon",
+      "description": "More Bergson Machines models will appear in this section."
     }
   },
   "accessories": {
-    "bucket-200": {
+    "ripper": {
+      "name": "Ripper"
+    },
+    "quick-coupler": {
+      "name": "Quick coupler"
+    },
+    "hydraulic-auger": {
+      "name": "Hydraulic auger"
+    },
+    "hydraulic-hammer": {
+      "name": "Hydraulic hammer"
+    },
+    "bucket-20": {
       "name": "200 mm bucket"
     },
-    "bucket-500": {
-      "name": "500 mm bucket"
+    "bucket-30": {
+      "name": "300 mm bucket"
     },
-    "bucket-800": {
-      "name": "800 mm bucket"
+    "bucket-60": {
+      "name": "600 mm bucket"
     },
-    "hydraulic-bucket-800": {
-      "name": "800 mm hydraulic bucket"
+    "rake-80": {
+      "name": "800 mm rake"
     },
-    "hydraulic-bucket-600": {
-      "name": "600 mm hydraulic bucket"
+    "grapple": {
+      "name": "Grapple"
+    },
+    "hydraulic-tilting-ditch-bucket": {
+      "name": "Hydraulic tilting ditch bucket"
+    },
+    "hydraulic-thumb": {
+      "name": "Hydraulic thumb"
+    },
+    "ditch-bucket-50": {
+      "name": "500 mm ditch bucket"
+    },
+    "ditch-bucket-100": {
+      "name": "1000 mm ditch bucket"
+    }
+  },
+  "parts": {
+    "oil-filter-koop-192f": {
+      "name": "KOOP 192F engine oil filter"
+    },
+    "air-filter-koop-192f": {
+      "name": "KOOP 192F air filter"
+    },
+    "rubber-track-180x72x37": {
+      "name": "Rubber track 180x72x37"
+    },
+    "cylinder-head-koop-192f": {
+      "name": "KOOP 192F cylinder head"
+    },
+    "hydraulic-hose-arm": {
+      "name": "Hydraulic hose for excavator arm"
+    },
+    "starter-motor-koop-192f": {
+      "name": "KOOP 192F starter motor"
+    },
+    "diesel-engine-koop-192f": {
+      "name": "KOOP 192F diesel engine"
+    },
+    "alternator-stator": {
+      "name": "Alternator stator"
+    },
+    "front-bucket-tooth": {
+      "name": "Front bucket tooth"
     }
   }
 }

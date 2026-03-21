@@ -10,6 +10,7 @@ import Process     from '../components/Process'
 import Service     from '../components/Service'
 import FAQ         from '../components/FAQ'
 import Contact     from '../components/Contact'
+import SeoContent from '../components/SeoContent'
 import { useTranslation } from 'react-i18next'
 import { usePageMeta } from '../hooks/usePageMeta'
 
@@ -29,11 +30,10 @@ export default function HomePage() {
       <Gallery />
       <Accessories />
       <WhyUs />
-      <Objections />
-      <Process />
       <Service />
       <FAQ />
       <Contact />
+      <SeoContent />
     </main>
   )
 }

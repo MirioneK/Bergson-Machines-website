@@ -102,7 +102,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 28px;
+  align-items: center;
+  gap: 16px;
   padding: 28px 24px;
   background:
     radial-gradient(circle at 50% 30%, rgba(242, 101, 34, 0.1), transparent 48%),
@@ -163,6 +164,25 @@
   box-shadow: 0 12px 24px rgba(242, 101, 34, 0.2);
 }
 
+.promiseTitle {
+  margin: 0;
+  color: var(--orange);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  font-weight: 900;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.promiseText {
+  max-width: 450px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+  line-height: 1.75;
+  text-align: center;
+}
+
 @media (max-width: 1024px) {
   .inner {
     grid-template-columns: 1fr;
@@ -211,5 +231,14 @@
   .promiseCta {
     min-height: 44px;
     font-size: 0.86rem;
+  }
+
+  .promiseTitle {
+    font-size: clamp(1.35rem, 6vw, 1.8rem);
+  }
+
+  .promiseText {
+    font-size: 0.88rem;
+    line-height: 1.7;
   }
 }

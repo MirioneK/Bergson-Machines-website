@@ -238,6 +238,140 @@
   flex-wrap: wrap;
 }
 
+/* coming soon */
+
+.comingSoonCard {
+  cursor: default;
+}
+
+.comingSoonCard:hover {
+  transform: translateY(-4px);
+}
+
+.comingSoonMedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(242, 101, 34, 0.18), transparent 30%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04), transparent 58%),
+    linear-gradient(180deg, var(--bg-surface-2) 0%, var(--bg-soft) 100%);
+}
+
+.comingSoonMedia::before {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border: 1px dashed rgba(242, 101, 34, 0.24);
+  pointer-events: none;
+}
+
+.comingSoonPlaceholder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68%;
+  height: 68%;
+}
+
+.comingSoonGlow {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242, 101, 34, 0.22) 0%, rgba(242, 101, 34, 0) 72%);
+  filter: blur(6px);
+}
+
+.comingSoonMark {
+  position: relative;
+  z-index: 1;
+  color: var(--orange);
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 7vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.comingSoonImage {
+  object-fit: contain;
+  padding: 28px;
+  filter: saturate(0.9) brightness(0.95);
+}
+
+.comingSoonBadge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid rgba(242, 101, 34, 0.34);
+  background: rgba(242, 101, 34, 0.12);
+  color: var(--orange);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.comingSoonDesc {
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.comingSoonList {
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comingSoonList li {
+  position: relative;
+  padding-left: 18px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.comingSoonList li::before {
+  content: '';
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background: var(--orange);
+}
+
+.ctaGhost {
+  border-color: rgba(242, 101, 34, 0.26);
+  background: rgba(242, 101, 34, 0.08);
+  color: var(--white);
+  cursor: default;
+}
+
+.ctaGhost:hover {
+  background: rgba(242, 101, 34, 0.08);
+  border-color: rgba(242, 101, 34, 0.26);
+  transform: none;
+  box-shadow: none;
+}
+
 @media (max-width: 1024px) {
   .body {
     padding: 16px 14px 14px;
@@ -254,6 +388,14 @@
   .cta {
     min-height: 46px;
     font-size: 0.9rem;
+  }
+
+  .comingSoonDesc {
+    font-size: 0.84rem;
+  }
+
+  .comingSoonList li {
+    font-size: 0.78rem;
   }
 }
 
@@ -291,5 +433,17 @@
   .cta {
     min-height: 44px;
     font-size: 0.86rem;
+  }
+
+  .comingSoonBadge {
+    top: 12px;
+    right: 12px;
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 0.74rem;
+  }
+
+  .comingSoonMark {
+    font-size: 4rem;
   }
 }

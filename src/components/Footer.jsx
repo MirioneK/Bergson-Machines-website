@@ -33,12 +33,15 @@ export default function Footer() {
           <div className={styles.linksGrid}>
             <div className={styles.linkColumn}>
               <h3 className={styles.columnTitle}>{t('footer.customerService.title')}</h3>
+
               <Link to={langPath('/gwarancja')} className={styles.footerLink}>
                 {t('footer.customerService.links.warranty')}
               </Link>
+
               <Link to={langPath('/zwroty-i-reklamacje')} className={styles.footerLink}>
                 {t('footer.customerService.links.returns')}
               </Link>
+
               <Link to={langPath('/dostawa')} className={styles.footerLink}>
                 {t('footer.customerService.links.delivery')}
               </Link>
@@ -46,15 +49,33 @@ export default function Footer() {
 
             <div className={styles.linkColumn}>
               <h3 className={styles.columnTitle}>{t('footer.legal.title')}</h3>
-              <Link to={langPath('/regulamin')} className={styles.footerLink}>
+
+              <a
+                href="/pdfs/regulamin_bergson_machines.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footerLink}
+              >
                 {t('footer.legal.links.terms')}
-              </Link>
-              <Link to={langPath('/formy-platnosci')} className={styles.footerLink}>
+              </a>
+
+              <a
+                href="/pdfs/karta_gwarancyjna_bergson.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footerLink}
+              >
                 {t('footer.legal.links.paymentMethods')}
-              </Link>
-              <Link to={langPath('/polityka-prywatnosci')} className={styles.footerLink}>
+              </a>
+
+              <a
+                href="/pdfs/polityka_prywatnosci_bergson.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footerLink}
+              >
                 {t('footer.legal.links.privacyPolicy')}
-              </Link>
+              </a>
             </div>
           </div>
         </div>

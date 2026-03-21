@@ -3,6 +3,10 @@
     "models": "Modele",
     "service": "Serwis",
     "faq": "FAQ",
+    "accessories": "Akcesoria i Części",
+    "blog": "Blog",
+    "onPage": "Na stronie",
+    "pages": "Podstrony",
     "contact": "Skontaktuj się",
     "whatsapp": "Napisz na WhatsApp",
     "language": "Wybór języka",
@@ -10,10 +14,10 @@
     "closeMenu": "Zamknij menu"
   },
   "hero": {
-    "badge": "Dostawa w Polsce · Gwarancja 2 lata · Serwis mobilny",
+    "badge": "Dostawa w Polsce · Gwarancja 1 rok · Serwis mobilny",
     "titleLine1": "Profesjonalna",
-    "titleLine2": "Minikoparka",
-    "titlePrice": "Od 26 900 zł netto",
+    "titleLine2": "Minikoparka BM12",
+    "titlePrice": "Od 24 999 zł netto",
     "lead": "Przestań wynajmować. <strong>Kup maszynę, która zwróci się po pierwszym sezonie.</strong> Bergson Machines - pełna obsługa serwisowa, części zawsze na stanie, dostawa pod drzwi.",
     "actions": {
       "models": "Zobacz modele",
@@ -23,16 +27,16 @@
     "imageAlt": "Minikoparka Bergson Machines BM12",
     "stats": [
       {
-        "value": "3",
-        "label": "Modele w ofercie"
+        "value": "6",
+        "label": "Modeli w ofercie"
       },
       {
         "value": "24h",
         "label": "Czas reakcji serwisu"
       },
       {
-        "value": "2 lata",
-        "label": "Gwarancja"
+        "value": "1 rok",
+        "label": "Gwarancji"
       }
     ]
   },
@@ -63,7 +67,17 @@
       "engine": "Silnik",
       "diggingDepth": "Głęb. kopania",
       "trackWidth": "Szer. gąsienicy",
-      "cabin": "Kabina"
+      "cabin": "Kabina",
+      "width": "Szerokość"
+    },
+      "comingSoon": {
+      "badge": "Już wkrótce",
+      "cta": "Wkrótce w ofercie",
+      "list": [
+        "Nowe konfiguracje maszyn",
+        "Więcej wariantów wyposażenia",
+        "Aktualizacja oferty wkrótce"
+      ]
     }
   },
   "modelPage": {
@@ -124,21 +138,22 @@
     },
     "infoTiles": {
       "warranty": {
-        "number": "2 lata",
-        "sub": "Gwarancja",
+        "number": "1 rok",
+        "sub": "Gwarancji",
         "desc": "Pełna ochrona mechaniki i hydrauliki"
       },
-      "trackWidth": {
-        "sub": "Szerokość gąsienicy",
-        "number": "od 760 mm",
-        "desc": "Mieści się przez standardową bramę garażową"
+      "ready": {
+        "number": "24h",
+        "sub": "Czas reakcji serwisu",
+        "desc": "Typowy czas reakcji serwisu"
       }
     }
   },
   "accessories": {
     "label": "Wyposażenie dodatkowe",
-    "title": "Osprzęt i akcesoria do minikoparek",
+    "title": "Akcesoria do minikoparek",
     "sub": "Wszystkie akcesoria kompatybilne z każdym modelem. Dobierz osprzęt do rodzaju prac i rozbuduj możliwości maszyny.",
+    "cta": "Zobacz cały osprzęt",
     "controls": {
       "prevAriaLabel": "Poprzedni osprzęt",
       "nextAriaLabel": "Następny osprzęt"
@@ -151,8 +166,8 @@
   },
   "whyUs": {
     "label": "Dlaczego Bergson Machines",
-    "titleLine1": "Nie jesteśmy",
-    "titleLine2": "„Januszem Biznesu”",
+    "titleLine1": "Tutaj nie ma",
+    "titleLine2": "niespodzianek",
     "sub": "Kupujesz od firmy z polskim adresem, KRS, NIP i magazynem części. Wystawiamy fakturę VAT bez dopłat, dowozimy maszynę pod wskazany adres i jesteśmy dostępni po sprzedaży - nie tylko przed nią.",
     "cta": "Porozmawiaj z nami",
     "cards": {
@@ -178,28 +193,28 @@
       },
       "delivery": {
         "title": "Dostawa Pod Adres",
-        "desc": "Dowozimy maszynę na plac budowy lub posesję. Transport wliczony w cenę do 200 km."
+        "desc": "Dowozimy maszynę na plac budowy lub posesję na terenie całej Polski. Transport wliczony w cenę do 200 km."
       }
     }
   },
   "objections": {
     "label": "Masz wątpliwości?",
-    "title": "Odpowiadamy na wprost",
+    "title": "Odpowiadamy wprost",
     "items": [
       {
         "id": "parts-wait",
         "question": "\"A co z częściami zamiennymi z Chin? Będę czekał miesiąc?\"",
-        "answer": "<strong>Nie.</strong> Trzymamy w Polsce magazyn kluczowych części - uszczelnień, filtrów, łyżek i elementów hydraulicznych. Dla minikoparek 1–1,5 t używamy podzespołów kompatybilnych z Kubotą i Yanmarem, dostępnych u polskich dystrybutorów. Czas realizacji naprawy: zazwyczaj <strong>48–72 godziny</strong>."
+        "answer": "<strong>Nie.</strong> Trzymamy w Polsce magazyn kluczowych części - uszczelnień, filtrów, łyżek i elementów hydraulicznych itp. Dla minikoparek używamy podzespołów kompatybilnych z KOOPem, Briggs & Stratton i Kubotą, dostępnych u polskich dystrybutorów. Typowy czas reakcji serwisu: <strong>24h</strong>."
       },
       {
         "id": "service-who",
         "question": "\"Kto mi to naprawi? Żaden serwis nie zna tych maszyn.\"",
-        "answer": "<strong>My.</strong> Posiadamy własny mobilny serwis techniczny. Do każdej maszyny dostarczamy kompletną dokumentację serwisową po polsku. Silniki diesel w naszych maszynach to standardowe jednostki - każdy doświadczony mechanik je obsłuży. Do każdej maszyny dołączamy <strong>polskojęzyczną instrukcję obsługi i katalog części</strong>."
+        "answer": "<strong>My.</strong> Posiadamy własny mobilny serwis techniczny. Silniki w naszych maszynach to standardowe jednostki - każdy doświadczony mechanik je obsłuży. Do każdej maszyny dołączamy <strong>polskojęzyczną instrukcję obsługi i katalog części</strong>."
       },
       {
         "id": "quality",
-        "question": "\"Chińska koparka to zabawka. Nie wytrzyma na budowie.\"",
-        "answer": "<strong>Sprawdź liczby.</strong> Rynek minikoparek chińskiej produkcji rośnie w Polsce o 30–40% rok do roku. Liderzy tacy jak Gunter Shop, XTM czy Meyer Europe sprzedają wyłącznie maszyny z Chin. Różnica? Nasze maszyny kosztują <strong>30–40% mniej</strong> przy identycznych parametrach roboczych."
+        "question": "\"Za tę cenę musi być nie tak\"",
+        "answer": "<strong>Zapytaj naszych klientów</strong> co sądzą o naszych minikoparkach. Chętnie podamy kontakt do kogoś, kto używa nasze minikoparki np. na budowie. Opinia z pierwszej ręki więcej znaczy niż nasza."
       }
     ]
   },
@@ -210,7 +225,7 @@
       {
         "num": "1",
         "title": "Kontakt",
-        "desc": "Wypełnij formularz lub zadzwoń. Odpiszemy w ciągu 2 godzin w dni robocze."
+        "desc": "Wypełnij formularz lub zadzwoń. Odpowiadamy szybko."
       },
       {
         "num": "2",
@@ -225,7 +240,7 @@
       {
         "num": "4",
         "title": "Dostawa",
-        "desc": "Dowozimy maszynę pod wskazany adres. Szkolenie z obsługi w cenie."
+        "desc": "Dowozimy maszynę pod wskazany adres w całej Polsce."
       },
       {
         "num": "5",
@@ -239,7 +254,7 @@
     "title": "Kupujesz spokój ducha",
     "items": {
       "warranty": {
-        "title": "2-letnia Gwarancja",
+        "title": "1 rok gwarancji",
         "desc": "Pełna gwarancja na wszystkie podzespoły mechaniczne i hydrauliczne. Żadnych gwiazdek, żadnych ukrytych wyjątków."
       },
       "mobile": {
@@ -248,39 +263,27 @@
       },
       "stock": {
         "title": "Magazyn Części w Polsce",
-        "desc": "Filtry, uszczelniacze, elementy hydrauliczne, łyżki - wszystko na stanie. Czas oczekiwania: max 48–72 h."
+        "desc": "Filtry, uszczelniacze, elementy hydrauliczne, łyżki - wszystko na stanie. Dzięki temu typowy czas reakcji serwisu wynosi 24h."
       },
       "hotline": {
         "title": "Linia Techniczna",
         "desc": "Bezpłatna konsultacja telefoniczna dla klientów. Pomożemy zdiagnozować problem zanim wyślemy technika."
       },
       "docs": {
-        "title": "Dokumentacja po Polsku",
-        "desc": "Pełna instrukcja obsługi, DTR i katalog części zamiennych w języku polskim przy każdej maszynie."
+        "title": "Dokumentacja w języku polskim",
+        "desc": "Pełna instrukcja obsługi po Polsku."
       }
     },
     "promise": {
-      "ariaLabel": "Obietnica serwisowa",
-      "reactionTime": {
-        "value": "48h",
-        "label": "Maksymalny czas reakcji serwisu"
-      },
-      "warranty": {
-        "value": "2 lata",
-        "label": "Pełna gwarancja bez wyjątków"
-      },
-      "cta": "Zgłoś usterkę"
+      "ariaLabel": "Informacja o przygotowaniu maszyny",
+      "title": "Gotowa do pracy od pierwszego dnia",
+      "text": "Każda koparka Bergson przechodzi u nas pełny przegląd przedsprzedażowy - zanim trafi do Ciebie, wymieniamy olej silnikowy i hydrauliczny, sprawdzamy instalację elektryczną oraz wszystkie układy mechaniczne. Kupujesz maszynę w pełni przygotowaną do pracy, bez żadnych ukrytych niespodzianek. Nie musisz nic robić - po dostarczeniu możesz od razu zaczynać pracę."
     }
   },
   "faq": {
     "label": "Najczęstsze pytania",
     "title": "FAQ",
     "items": [
-      {
-        "id": "registration",
-        "q": "Czy minikoparka wymaga rejestracji lub uprawnień?",
-        "a": "Minikoparki do 5 ton nie wymagają rejestracji ani uprawnień operatorskich do obsługi na własnej nieruchomości. Do pracy na drogach publicznych konieczne jest ubezpieczenie OC maszyny."
-      },
       {
         "id": "transport",
         "q": "Jak przetransportować koparkę na plac budowy?",
@@ -289,27 +292,22 @@
       {
         "id": "delivery-time",
         "q": "Jak długo czeka się na dostawę maszyny?",
-        "a": "Maszyny ze stocku dostarczamy w ciągu 5–14 dni roboczych. Modele na zamówienie - do 3–4 tygodni. Aktualną dostępność podajemy przy wycenie."
+        "a": "Maszyny dostępne z magazynu dostarczamy w ciągu 5-14 dni roboczych. Modele na zamówienie dostarczamy w ciągu 3-4 tygodni. Aktualną dostępność potwierdzamy przy wycenie."
       },
       {
         "id": "leasing",
         "q": "Czy mogę kupić na firmę i skorzystać z leasingu?",
-        "a": "Tak. Wystawiamy fakturę VAT na firmę i osobę prywatną. Współpracujemy z firmami leasingowymi - rata za maszynę BM12 to około 650–800 zł miesięcznie przy leasingu 60-miesięcznym."
+        "a": "Tak. Wystawiamy fakturę VAT na firmę i osobę prywatną. Współpracujemy z firmami leasingowymi - rata za maszynę BM12 to około 650-800 zł miesięcznie przy leasingu 60-miesięcznym."
       },
       {
         "id": "after-warranty",
         "q": "Co się stanie, gdy coś się zepsuje po roku?",
-        "a": "Gwarancja obejmuje 24 miesiące. Po jej zakończeniu oferujemy płatny serwis mobilny oraz sprzedaż części zamiennych z polskiego magazynu."
+        "a": "Gwarancja obejmuje 12 miesięcy. Po jej zakończeniu oferujemy płatny serwis mobilny oraz sprzedaż części zamiennych z polskiego magazynu."
       },
       {
         "id": "test-drive",
         "q": "Czy mogę przetestować maszynę przed zakupem?",
         "a": "Tak - zapraszamy na prezentację do naszego showroomu w Poznaniu. Możesz osobiście wypróbować maszynę w pracy. Skontaktuj się z nami, aby umówić termin."
-      },
-      {
-        "id": "gate-width",
-        "q": "Czy maszyna przejdzie przez wąską bramę lub furtkę?",
-        "a": "BM10 ma szerokość gąsienic 760 mm i mieści się przez większość standardowych bram. BM12 i BM12C mają 980 mm."
       },
       {
         "id": "new-ce",
@@ -320,7 +318,8 @@
   },
   "contact": {
     "label": "Skontaktuj się",
-    "title": "Wycena bezpłatna. Odpowiedź dziś.",
+    "titleLine1": "Bezpłatna odpowiedź",
+    "titleLine2": "Szybka wycena",
     "sub": "Opisz czego potrzebujesz, a wrócimy z konkretną odpowiedzią i doborem modelu pod Twoje prace.",
     "form": {
       "fields": {
@@ -348,15 +347,23 @@
       "modelOptions": [
         {
           "value": "bm10",
-          "label": "BM10 – 1 tona"
+          "label": "BM10"
         },
         {
           "value": "bm12",
-          "label": "BM12 – 1,2 tony"
+          "label": "BM12"
         },
         {
           "value": "bm12c",
-          "label": "BM12C – 1,2 tony z kabiną"
+          "label": "BM12C"
+        },
+        {
+          "value": "bm12-kubota",
+          "label": "BM12 Kubota"
+        },
+        {
+          "value": "bm12c-kubota",
+          "label": "BM12C Kubota"
         },
         {
           "value": "advisory",
@@ -398,7 +405,7 @@
         },
         "hours": {
           "label": "Godziny pracy",
-          "value": "Pon–Pt: 8:00–17:00 · Sob: 9:00–13:00"
+          "value": "Pon-Pt: 8:00-17:00 · Sob: 9:00-13:00"
         }
       },
       "whatsapp": {
@@ -414,7 +421,7 @@
   },
   "stickyCta": {
     "label": "Zadzwoń",
-    "ariaLabel": "Przejdź do formularza kontaktowego"
+    "ariaLabel": "Zadzwoń pod numer 600 507 816"
   },
   "footer": {
     "logoAriaLabel": "Bergson Machines",
@@ -432,7 +439,7 @@
       "title": "Informacje prawne",
       "links": {
         "terms": "Regulamin",
-        "paymentMethods": "Formy płatności",
+        "paymentMethods": "Karta Gwarancyjna",
         "privacyPolicy": "Polityka prywatności"
       }
     },
@@ -440,116 +447,358 @@
     "tax": "NIP: 725-229-86-52"
   },
   "legal": {
-    "label": "Informacje",
+    "label": "Obsługa klienta",
     "backLink": "← Wróć do strony głównej",
+    "companyTitle": "Dane sprzedawcy",
     "pages": {
       "gwarancja": {
-        "title": "Gwarancja",
-        "intro": "Ta strona stanowi miejsce na docelowe warunki gwarancji dla maszyn i osprzętu Bergson Machines.",
+        "title": "Warunki gwarancji",
+        "intro": "Niniejszy dokument określa zasady udzielania i wykonywania gwarancji na Towary marki Bergson Machines. Dokument stanowi integralną część Regulaminu Sprzedaży Bergson Machines.",
+        "documentMeta": "Bergson Machines",
+        "version": "Wersja 1.0",
+        "effectiveDate": "Data wejścia w życie: 1 stycznia 2025 r.",
         "sections": [
           {
-            "heading": "Zakres gwarancji",
-            "body": "W tym miejscu należy opisać, jakie elementy produktu objęte są gwarancją, jaki jest okres obowiązywania oraz od kiedy liczony jest bieg gwarancji."
+            "heading": "Udzielający gwarancji",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Gwarancji na Towary marki Bergson Machines udziela Better Solutions Spółka z ograniczoną odpowiedzialnością z siedzibą w Czapurach (61-160), ul. Poznańska 7, KRS: 0000837608, NIP: 7252298652, dalej jako Gwarant."
+              },
+              {
+                "type": "paragraph",
+                "text": "Gwarancja jest udzielana dobrowolnie i nie wyłącza, nie ogranicza ani nie zawiesza uprawnień Kupującego wynikających z przepisów o niezgodności towaru z umową."
+              }
+            ]
           },
           {
-            "heading": "Wyłączenia odpowiedzialności",
-            "body": "Tutaj warto wskazać przypadki, w których gwarancja nie obowiązuje, np. uszkodzenia wynikające z niewłaściwej eksploatacji, braku przeglądów lub samodzielnych przeróbek."
+            "heading": "Zakres i okres gwarancji",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Gwarancja obejmuje wady fizyczne Towaru powstałe z przyczyn tkwiących w samym Towarze przy zachowaniu warunków normalnej eksploatacji, zgodnej z instrukcją obsługi dostarczoną przez Gwaranta."
+              },
+              {
+                "type": "list",
+                "items": [
+                  "minikoparki BM10, BM12, BM12C - 12 miesięcy od daty wydania Towaru Kupującemu;",
+                  "osprzęt roboczy (łyżki, młoty, wiertnice) - 12 miesięcy od daty wydania;",
+                  "części zamienne dostarczone w ramach naprawy gwarancyjnej - 3 miesiące lub do końca pierwotnego okresu gwarancji, w zależności od tego, który termin upływa później."
+                ]
+              }
+            ]
           },
           {
-            "heading": "Procedura zgłoszenia",
-            "body": "W tej sekcji należy opisać sposób zgłaszania usterek, wymagane informacje od klienta oraz przewidywany sposób i termin rozpatrzenia zgłoszenia."
+            "heading": "Wyłączenia z gwarancji",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "uszkodzenia mechaniczne, elektryczne lub hydrauliczne spowodowane przez Kupującego lub osoby trzecie;",
+                  "usterki wynikające z nieprawidłowej obsługi, konserwacji lub montażu osprzętu niezgodnie z instrukcją;",
+                  "naturalne zużycie elementów eksploatacyjnych, w szczególności filtrów, olejów, uszczelek, węży gumowych, gąsienic gumowych i stalowych, żarówek oraz bezpieczników;",
+                  "uszkodzenia wywołane używaniem Towaru niezgodnie z przeznaczeniem, przeciążeniem lub brakiem regularnych przeglądów serwisowych;",
+                  "usterki spowodowane używaniem nieoryginalnych części zamiennych lub płynów eksploatacyjnych nieposiadających aprobaty producenta;",
+                  "uszkodzenia wynikające z działania siły wyższej, w tym powodzi, pożaru, wyładowania atmosferycznego lub mrozu poniżej dopuszczalnej temperatury pracy;",
+                  "Towary z naruszonymi lub nieczytelnymi numerami seryjnymi."
+                ]
+              }
+            ]
+          },
+          {
+            "heading": "Procedura zgłoszenia gwarancyjnego",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Krok 1 - Zgłoszenie wady. Kupujący zobowiązany jest zgłosić wadę niezwłocznie po jej stwierdzeniu, nie później niż w ciągu 14 dni, drogą e-mailową na adres: kontakt@bergsonmachines.pl."
+              },
+              {
+                "type": "list",
+                "items": [
+                  "dokładny opis stwierdzonej wady wraz z dokumentacją fotograficzną lub wideo;",
+                  "numer seryjny maszyny z tabliczki znamionowej;",
+                  "datę zakupu i kopię dowodu zakupu, w szczególności fakturę VAT lub paragon;",
+                  "dane kontaktowe Kupującego oraz miejsce, w którym Towar się znajduje."
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "Krok 2 - Ocena zgłoszenia. Gwarant potwierdza przyjęcie zgłoszenia w ciągu 2 dni roboczych i wskazuje, czy naprawa zostanie wykonana w miejscu użytkowania Towaru, czy Towar należy dostarczyć do punktu serwisowego."
+              },
+              {
+                "type": "paragraph",
+                "text": "Krok 3 - Realizacja. Gwarant rozpoznaje zgłoszenie gwarancyjne i przystępuje do realizacji w terminie 14 dni roboczych od jego prawidłowego dostarczenia. W przypadku uznania reklamacji Gwarant według własnego wyboru dokona naprawy Towaru, dostarczy i zamontuje część zamienną lub wymieni Towar na wolny od wad."
+              },
+              {
+                "type": "paragraph",
+                "text": "Krok 4 - Odbiór Towaru. Po zakończeniu naprawy Gwarant powiadamia Kupującego o możliwości odbioru Towaru lub organizuje jego dostawę na koszt Gwaranta."
+              }
+            ]
+          },
+          {
+            "heading": "Koszty transportu w ramach gwarancji",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Koszty dostarczenia Towaru do punktu serwisowego i jego odbioru po naprawie gwarancyjnej ponosi Gwarant, o ile wada została uznana za objętą gwarancją. Jeżeli zgłoszenie okaże się nieuzasadnione, koszty transportu i diagnostyki ponosi Kupujący."
+              }
+            ]
+          },
+          {
+            "heading": "Karta gwarancyjna",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Gwarant może wydać Kupującemu kartę gwarancyjną w formie papierowej lub elektronicznej. Brak karty gwarancyjnej nie pozbawia Kupującego uprawnień gwarancyjnych — do ich wykonania wystarczy dowód zakupu."
+              }
+            ]
           }
-        ]
+        ],
+        "companyNote": "Better Solutions Sp. z o.o. | Bergson Machines | ul. Poznańska 7, 61-160 Czapury | NIP: 7252298652 | KRS: 0000837608 | www.bergsonmachines.pl"
       },
       "zwroty-i-reklamacje": {
         "title": "Zwroty i reklamacje",
-        "intro": "Ta strona stanowi miejsce na docelowe zasady dotyczące zwrotów, odstąpienia od umowy oraz składania reklamacji.",
+        "intro": "Niniejszy dokument określa zasady składania reklamacji oraz wykonywania prawa odstąpienia od umowy. Dokument stanowi integralną część Regulaminu Sprzedaży Bergson Machines.",
+        "documentMeta": "Bergson Machines",
+        "version": "Wersja 1.0",
+        "effectiveDate": "Data wejścia w życie: 1 stycznia 2025 r.",
         "sections": [
           {
-            "heading": "Reklamacje",
-            "body": "W tej sekcji należy opisać, w jaki sposób klient może złożyć reklamację, jakie dane powinien przekazać oraz w jakim terminie sprzedawca odpowiada na zgłoszenie."
+            "heading": "Reklamacja z tytułu niezgodności Towaru z Umową",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Sprzedawca ponosi odpowiedzialność za niezgodność Towaru z Umową na zasadach określonych w ustawie z dnia 30 maja 2014 r. o prawach konsumenta — w stosunkach z Konsumentami — oraz na zasadach Kodeksu cywilnego — w stosunkach z Kupującymi B2B."
+              }
+            ]
           },
           {
-            "heading": "Zwroty",
-            "body": "Tutaj należy wskazać, kiedy klientowi przysługuje prawo zwrotu lub odstąpienia od umowy oraz jakie warunki muszą zostać spełnione."
+            "heading": "Uprawnienia Konsumenta",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Sprzedawca odpowiada za niezgodność Towaru z Umową istniejącą w chwili jego dostarczenia i ujawnioną w ciągu dwóch lat od tego momentu."
+              },
+              {
+                "type": "list",
+                "items": [
+                  "żądanie naprawy Towaru;",
+                  "żądanie wymiany Towaru na wolny od wad;",
+                  "żądanie obniżenia Ceny — jeżeli naprawa lub wymiana są niemożliwe, nadmiernie kosztowne lub Sprzedawca odmówił ich wykonania;",
+                  "odstąpienie od Umowy i zwrot pełnej Ceny — jeżeli niezgodność jest istotna, a naprawa lub wymiana okazały się nieskuteczne lub Sprzedawca odmówił ich wykonania."
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "Domniemywa się, że niezgodność ujawniona w ciągu roku od wydania Towaru istniała już w chwili jego dostarczenia, chyba że Sprzedawca udowodni inaczej."
+              }
+            ]
           },
           {
-            "heading": "Forma kontaktu",
-            "body": "W tym miejscu można wskazać preferowaną drogę kontaktu: formularz, e-mail, telefon lub adres korespondencyjny do obsługi reklamacji."
+            "heading": "Uprawnienia Kupującego B2B",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "W stosunkach z Kupującymi B2B odpowiedzialność z tytułu rękojmi jest wyłączona na podstawie art. 558 § 1 Kodeksu cywilnego."
+              },
+              {
+                "type": "paragraph",
+                "text": "Kupujący B2B może dochodzić uprawnień wyłącznie w ramach Gwarancji opisanej w dokumencie Warunki Gwarancji Bergson Machines lub na zasadach indywidualnie uzgodnionych ze Sprzedawcą na piśmie."
+              }
+            ]
+          },
+          {
+            "heading": "Prawo odstąpienia od Umowy — Konsumenci",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Konsument, który zawarł Umowę na odległość lub poza lokalem przedsiębiorstwa, ma prawo odstąpić od niej bez podawania przyczyny w terminie 14 dni od dnia objęcia Towaru w posiadanie."
+              },
+              {
+                "type": "paragraph",
+                "text": "Prawo odstąpienia nie przysługuje, gdy Towar został wyprodukowany lub zmodyfikowany według indywidualnej specyfikacji Konsumenta, jest Towarem sprowadzanym na specjalne zamówienie z produkcji lub uległ wyraźnemu pogorszeniu z przyczyn leżących po stronie Konsumenta."
+              }
+            ]
+          },
+          {
+            "heading": "Procedura odstąpienia od Umowy",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "przesłanie jednoznacznego oświadczenia o odstąpieniu na adres e-mail: kontakt@bergsonmachines.pl lub pisemnie na adres siedziby Sprzedawcy — przed upływem 14-dniowego terminu;",
+                  "zwrot Towaru w terminie 14 dni od dnia złożenia oświadczenia, w stanie niezmienionym, o ile to możliwe w oryginalnym opakowaniu, na adres wskazany przez Sprzedawcę;",
+                  "poniesienie bezpośrednich kosztów zwrotu Towaru, chyba że Sprzedawca wyraźnie zgodził się je pokryć."
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "Sprzedawca zwraca wszystkie otrzymane płatności, w tym standardowe koszty dostawy, niezwłocznie, nie później niż w terminie 14 dni od dnia otrzymania oświadczenia o odstąpieniu. Sprzedawca może wstrzymać się ze zwrotem do chwili otrzymania Towaru lub potwierdzenia jego nadania."
+              }
+            ]
+          },
+          {
+            "heading": "Składanie reklamacji",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Reklamację z tytułu niezgodności Towaru z Umową lub uprawnień gwarancyjnych należy zgłosić drogą e-mailową, pisemnie lub za pośrednictwem autoryzowanego dealera Bergson Machines, u którego Towar został zakupiony."
+              },
+              {
+                "type": "list",
+                "items": [
+                  "imię, nazwisko i dane kontaktowe Kupującego;",
+                  "numer zamówienia lub faktury VAT;",
+                  "numer seryjny Towaru;",
+                  "dokładny opis wady lub niezgodności wraz z dokumentacją fotograficzną lub wideo;",
+                  "żądanie Kupującego, w szczególności naprawę, wymianę, obniżenie ceny lub zwrot."
+                ]
+              }
+            ]
+          },
+          {
+            "heading": "Termin rozpatrzenia reklamacji",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Sprzedawca rozpatruje reklamację i udziela odpowiedzi w terminie 14 dni kalendarzowych w przypadku Konsumenta oraz 14 dni roboczych w przypadku Kupującego B2B składającego reklamację gwarancyjną."
+              },
+              {
+                "type": "paragraph",
+                "text": "Brak odpowiedzi wobec Konsumenta w terminie 14 dni kalendarzowych oznacza uznanie reklamacji za uzasadnioną. Odpowiedź przesyłana jest drogą e-mailową lub pisemnie — na życzenie Kupującego."
+              }
+            ]
+          },
+          {
+            "heading": "Pozasądowe rozstrzyganie sporów",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "mediacja prowadzona przez właściwy Inspektorat Inspekcji Handlowej;",
+                  "postępowanie przed Stałym Polubownym Sądem Konsumenckim przy Inspekcji Handlowej;",
+                  "platforma internetowego rozstrzygania sporów ODR: https://ec.europa.eu/consumers/odr."
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "Sprzedawca nie jest zobowiązany do korzystania z pozasądowych sposobów rozstrzygania sporów, lecz może wyrazić zgodę na udział w konkretnym postępowaniu."
+              }
+            ]
           }
-        ]
+        ],
+        "companyNote": "Better Solutions Sp. z o.o. | Bergson Machines | ul. Poznańska 7, 61-160 Czapury | NIP: 7252298652 | KRS: 0000837608 | www.bergsonmachines.pl"
       },
       "dostawa": {
-        "title": "Dostawa",
-        "intro": "Ta strona stanowi miejsce na opis warunków dostawy maszyn, osprzętu i części zamiennych.",
+        "title": "Warunki dostawy",
+        "intro": "Niniejszy dokument określa zasady realizacji dostaw Towarów Bergson Machines. Dokument stanowi integralną część Regulaminu Sprzedaży Bergson Machines.",
+        "documentMeta": "Bergson Machines",
+        "version": "Wersja 1.0",
+        "effectiveDate": "Data wejścia w życie: 1 stycznia 2025 r.",
         "sections": [
           {
             "heading": "Obszar dostawy",
-            "body": "W tej sekcji należy wskazać, na jakim obszarze realizowana jest dostawa oraz czy obowiązują dodatkowe warunki dla wybranych lokalizacji."
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Sprzedawca realizuje dostawy Towarów na terytorium Rzeczypospolitej Polskiej."
+              },
+              {
+                "type": "paragraph",
+                "text": "Dostawy poza granice Polski są możliwe po uprzednim indywidualnym uzgodnieniu warunków, w tym kosztów, terminu oraz formalności celnych."
+              }
+            ]
           },
           {
-            "heading": "Czas realizacji",
-            "body": "Tutaj warto opisać standardowe terminy dostawy dla produktów dostępnych od ręki oraz dla maszyn sprowadzanych lub konfigurowanych na zamówienie."
+            "heading": "Termin dostawy",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Orientacyjny termin dostawy podawany jest każdorazowo w potwierdzeniu Zamówienia i liczony jest od dnia zaksięgowania pełnej płatności lub uzgodnionej zaliczki."
+              },
+              {
+                "type": "list",
+                "items": [
+                  "Towary dostępne w magazynie w Polsce — 3-7 dni roboczych od potwierdzenia płatności;",
+                  "Towary sprowadzane bezpośrednio z produkcji — 60-90 dni roboczych, z uwzględnieniem czasu transportu morskiego i odprawy celnej."
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "Sprzedawca niezwłocznie informuje Kupującego o każdym opóźnieniu przekraczającym pierwotnie podany termin. Sprzedawca nie ponosi odpowiedzialności za opóźnienia wynikające z przyczyn leżących po stronie przewoźnika, agencji celnej, organu celno-podatkowego ani za opóźnienia spowodowane działaniem siły wyższej."
+              }
+            ]
           },
           {
-            "heading": "Koszty i odbiór",
-            "body": "W tym miejscu można wskazać zasady naliczania kosztów transportu, warunki odbioru oraz obowiązki klienta przy przyjęciu towaru."
+            "heading": "Formy dostawy",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "transport własny Sprzedawcy lub zlecony przewoźnikowi — na adres wskazany przez Kupującego w Zamówieniu;",
+                  "odbiór osobisty w siedzibie Sprzedawcy: ul. Poznańska 7, 61-160 Czapury — po uprzednim uzgodnieniu terminu;",
+                  "odbiór u autoryzowanego dealera Bergson Machines — po uprzednim uzgodnieniu z dealerem."
+                ]
+              }
+            ]
+          },
+          {
+            "heading": "Koszty dostawy",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Koszty dostawy doliczane są do Ceny Towaru lub wskazywane odrębnie w potwierdzeniu Zamówienia. Kalkulacja uzależniona jest od wagi i gabarytów Towaru, wybranej formy transportu oraz miejsca docelowego."
+              },
+              {
+                "type": "paragraph",
+                "text": "Odbiór osobisty jest bezpłatny."
+              }
+            ]
+          },
+          {
+            "heading": "Sprawdzenie Towaru przy odbiorze",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Kupujący jest zobowiązany do sprawdzenia stanu przesyłki bezpośrednio przy odbiorze, w obecności przedstawiciela przewoźnika lub kuriera."
+              },
+              {
+                "type": "list",
+                "items": [
+                  "w przypadku uszkodzeń opakowania lub Towaru — sporządzenie protokołu szkody w obecności przewoźnika i niezwłoczne powiadomienie Sprzedawcy na adres: kontakt@bergsonmachines.pl;",
+                  "w przypadku niezgodności ilościowej lub asortymentowej — odmowa przyjęcia przesyłki lub oznaczenie zastrzeżenia w dokumentach przewozowych i niezwłoczny kontakt ze Sprzedawcą."
+                ]
+              },
+              {
+                "type": "paragraph",
+                "text": "Przyjęcie przesyłki bez zastrzeżeń oznacza potwierdzenie, że Towar dotarł w stanie nienaruszonym i w prawidłowej ilości. Zastrzeżenia zgłoszone po podpisaniu dokumentów odbioru bez uwag będą rozpatrywane indywidualnie."
+              }
+            ]
+          },
+          {
+            "heading": "Przejście ryzyka",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Ryzyko przypadkowej utraty lub uszkodzenia Towaru przechodzi na Kupującego B2B z chwilą wydania Towaru przewoźnikowi lub dokonania odbioru osobistego, a na Konsumenta z chwilą fizycznego objęcia Towaru w posiadanie przez Konsumenta lub wskazaną przez niego osobę trzecią."
+              }
+            ]
+          },
+          {
+            "heading": "Zastrzeżenie własności",
+            "blocks": [
+              {
+                "type": "paragraph",
+                "text": "Sprzedawca zastrzega własność Towaru do chwili pełnego uiszczenia Ceny wraz z należnymi odsetkami."
+              },
+              {
+                "type": "paragraph",
+                "text": "Do czasu przejścia własności Kupujący uprawniony jest do używania Towaru zgodnie z jego przeznaczeniem, lecz nie może nim rozporządzać, w szczególności poprzez odsprzedaż, zastaw lub przewłaszczenie na zabezpieczenie."
+              }
+            ]
           }
-        ]
-      },
-      "regulamin": {
-        "title": "Regulamin",
-        "intro": "Ta strona stanowi miejsce na regulamin sprzedaży i korzystania ze strony internetowej Bergson Machines.",
-        "sections": [
-          {
-            "heading": "Postanowienia ogólne",
-            "body": "Tutaj należy opisać podstawowe zasady działania sklepu lub serwisu, definicje używanych pojęć oraz dane identyfikacyjne sprzedawcy."
-          },
-          {
-            "heading": "Składanie zamówień",
-            "body": "W tej sekcji warto opisać, w jaki sposób dochodzi do złożenia zamówienia, potwierdzenia warunków oraz zawarcia umowy."
-          },
-          {
-            "heading": "Postanowienia końcowe",
-            "body": "Tutaj można wskazać zasady zmian regulaminu, właściwość prawa oraz sposób publikacji aktualnej wersji dokumentu."
-          }
-        ]
-      },
-      "formy-platnosci": {
-        "title": "Formy płatności",
-        "intro": "Ta strona stanowi miejsce na opis dostępnych metod płatności oraz warunków rozliczenia zamówienia.",
-        "sections": [
-          {
-            "heading": "Dostępne metody",
-            "body": "W tej sekcji należy opisać, czy dostępny jest przelew tradycyjny, płatność gotówką, leasing, raty lub inne formy finansowania."
-          },
-          {
-            "heading": "Termin płatności",
-            "body": "Tutaj warto wskazać, kiedy płatność powinna zostać dokonana i jakie są konsekwencje jej braku w określonym czasie."
-          },
-          {
-            "heading": "Rozliczenia indywidualne",
-            "body": "W tym miejscu można opisać warunki płatności ustalane indywidualnie przy zakupie maszyn, osprzętu lub większych zamówień."
-          }
-        ]
-      },
-      "polityka-prywatnosci": {
-        "title": "Polityka prywatności",
-        "intro": "Ta strona stanowi miejsce na opis zasad przetwarzania danych osobowych użytkowników strony i klientów.",
-        "sections": [
-          {
-            "heading": "Administrator danych",
-            "body": "W tej sekcji należy wskazać dane administratora, dane kontaktowe oraz podstawowe informacje o przetwarzaniu danych osobowych."
-          },
-          {
-            "heading": "Cele i podstawy przetwarzania",
-            "body": "Tutaj należy opisać, w jakich celach dane są przetwarzane, np. obsługa zapytań, przygotowanie oferty, kontakt handlowy lub wykonanie umowy."
-          },
-          {
-            "heading": "Prawa użytkownika",
-            "body": "W tym miejscu należy wskazać prawa osoby, której dane dotyczą, w tym prawo dostępu, sprostowania, usunięcia, ograniczenia przetwarzania i wniesienia skargi."
-          }
-        ]
+        ],
+        "companyNote": "Better Solutions Sp. z o.o. | Bergson Machines | ul. Poznańska 7, 61-160 Czapury | NIP: 7252298652 | KRS: 0000837608 | www.bergsonmachines.pl"
       }
     }
   },
@@ -563,6 +812,65 @@
     },
     "legal": {
       "title": "{{title}} | Bergson Machines"
+    }
+  },
+  "blogPage": {
+    "label": "Blog",
+    "title": "Praktyczna wiedza o minikoparkach i osprzęcie",
+    "lead": "Poradniki, wskazówki eksploatacyjne i materiały pomagające dobrać model do konkretnych prac.",
+    "readMore": "Czytaj więcej"
+  },
+  "blogPostPage": {
+    "backLink": "← Wróć do bloga"
+  },
+  "accessoriesPage": {
+    "breadcrumb": {
+      "home": "Strona główna",
+      "current": "Akcesoria i części"
+    },
+    "label": "Osprzęt dodatkowy",
+    "title": "Akcesoria i części",
+    "sub": "Akcesoria oraz części kompatybilne z modelami Bergson Machines.",
+    "filters": {
+      "all": "Wszystko",
+      "accessories": "Akcesoria",
+      "parts": "Części",
+      "searchPlaceholder": "Szukaj produktu..."
+    },
+    "sections": {
+      "accessoriesLabel": "Akcesoria",
+      "accessoriesTitle": "Akcesoria do minikoparek",
+      "accessoriesSub": "Przykładowe akcesoria kompatybilne z modelami Bergson Machines.",
+      "partsLabel": "Części zamienne",
+      "partsTitle": "Części do minikoparek",
+      "partsSub": "Wybrane części zamienne i eksploatacyjne dostępne dla modeli Bergson Machines."
+    },
+    "priceLabel": "{{price}} netto",
+    "empty": "Brak produktów spełniających wybrane kryteria.",
+    "partsEmpty": "Nie znaleziono części spełniających wybrane kryteria."
+  },
+  "seoContent": {
+    "label": "Przewodnik",
+    "title": "Minikoparki na sprzedaż - jak wybrać odpowiedni model?",
+    "lead": "Minikoparka to sprzęt, który sprawdza się zarówno przy pracach budowlanych i instalacyjnych, jak i na posesjach prywatnych. Kluczowe znaczenie ma dobór odpowiedniej masy maszyny, osprzętu oraz dostępności serwisu i części w Polsce.",
+    "blocks": [
+      {
+        "title": "1 tona czy 1.2 tony?",
+        "text": "Modele 1-tonowe lepiej sprawdzają się w ciasnych miejscach i przy lżejszych pracach. Minikoparki 1.2 tony oferują większą stabilność i wydajność, dlatego są częstym wyborem dla firm wykonujących bardziej wymagające roboty ziemne."
+      },
+      {
+        "title": "Ile kosztuje minikoparka?",
+        "text": "Cena zależy od konfiguracji, silnika, obecności kabiny i dodatkowego osprzętu. W praktyce własna maszyna bardzo często okazuje się korzystniejsza niż regularny wynajem, szczególnie przy stałych zleceniach."
+      },
+      {
+        "title": "Serwis i części w Polsce",
+        "text": "Przy zakupie liczy się nie tylko sama maszyna, ale też dostępność części i szybkość reakcji serwisu. To właśnie te elementy mają największy wpływ na ograniczenie przestojów i realny koszt eksploatacji."
+      }
+    ],
+    "footerText": "Sprawdź dostępne modele, porównaj osprzęt i wybierz konfigurację dopasowaną do rodzaju prac, które wykonujesz najczęściej.",
+    "actions": {
+      "models": "Zobacz modele",
+      "accessories": "Zobacz osprzęt"
     }
   }
 }

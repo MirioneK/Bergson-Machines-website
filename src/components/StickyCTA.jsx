@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { useLangPath } from '../hooks/useLangPath'
 import styles from './StickyCTA.module.css'
+
+const PHONE_NUMBER_RAW = '600507816'
+const PHONE_NUMBER_TEL = '+48600507816'
 
 function getInitialMenuState() {
   if (typeof document === 'undefined') return false
@@ -11,7 +13,6 @@ function getInitialMenuState() {
 
 export default function StickyCTA() {
   const { t } = useTranslation()
-  const langPath = useLangPath()
   const { pathname, hash } = useLocation()
 
   const [hideForContact, setHideForContact] = useState(false)
@@ -87,12 +88,12 @@ export default function StickyCTA() {
   const visible = !(hideForContact || hideForFooter || hideForMenu)
 
   return (
-    <Link
-      to={langPath('/', '#kontakt')}
+    <a
+      href={`tel:${PHONE_NUMBER_TEL}`}
       className={`${styles.cta} ${visible ? styles.show : styles.hide}`}
-      aria-label={t('stickyCta.ariaLabel')}
+      aria-label={t('stickyCta.ariaLabel', { phone: PHONE_NUMBER_RAW })}
     >
       📞 {t('stickyCta.label')}
-    </Link>
+    </a>
   )
 }

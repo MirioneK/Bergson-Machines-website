@@ -12,6 +12,16 @@ const ROUTE_TRANSLATIONS = {
     en: 'warranty',
     ua: 'warranty',
   },
+  '/osprzet': {
+    pl: 'osprzet',
+    en: 'accessories',
+    ua: 'accessories',
+  },
+  '/blog': {
+    pl: 'blog',
+    en: 'blog',
+    ua: 'blog',
+  },
   '/zwroty-i-reklamacje': {
     pl: 'zwroty-i-reklamacje',
     en: 'returns-and-complaints',

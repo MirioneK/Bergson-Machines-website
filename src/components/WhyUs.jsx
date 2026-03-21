@@ -2,15 +2,19 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { WHY_CARDS } from '../data'
 import { useLangPath } from '../hooks/useLangPath'
+import { useHashScroll } from '../hooks/useHashScroll'
 import { useReveal } from '../hooks/useReveal'
 import styles from './WhyUs.module.css'
 
 export default function WhyUs() {
   const { t } = useTranslation()
   const langPath = useLangPath()
+  const handleHashScroll = useHashScroll()
 
   const [leftRef, leftVisible] = useReveal()
   const [rightRef, rightVisible] = useReveal()
+
+  const contactLink = langPath('/', '#kontakt')
 
   return (
     <section className={styles.section} id="dlaczego" aria-labelledby="whyus-title">
@@ -31,7 +35,11 @@ export default function WhyUs() {
 
           <p className={styles.sub}>{t('whyUs.sub')}</p>
 
-          <a href={langPath('/', '#kontakt')} className={styles.cta}>
+          <a
+            href={contactLink}
+            className={styles.cta}
+            onClick={(event) => handleHashScroll(event, contactLink)}
+          >
             {t('whyUs.cta')}
           </a>
         </div>

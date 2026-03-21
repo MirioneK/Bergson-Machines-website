@@ -244,10 +244,16 @@
 }
 
 .detailVal {
+  display: block;
+  width: fit-content;
   color: var(--white);
   font-size: 0.92rem;
   font-weight: 600;
   line-height: 1.45;
+}
+
+.detailVal + .detailVal {
+  margin-top: 4px;
 }
 
 .detailSub {

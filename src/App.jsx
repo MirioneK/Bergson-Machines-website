@@ -17,6 +17,11 @@ import HomePage from './pages/HomePage'
 import ModelPage from './pages/ModelPage'
 import LegalPage from './pages/LegalPage'
 
+import BlogPage from './pages/BlogPage'
+import BlogPostPage from './pages/BlogPostPage'
+
+import AccessoriesPage from './pages/AccessoriesPage'
+
 import {
   DEFAULT_LANG,
   getPreferredLang,
@@ -103,6 +108,8 @@ const deliveryRouteVariants = getLocalizedRouteVariants('/dostawa')
 const termsRouteVariants = getLocalizedRouteVariants('/regulamin')
 const paymentRouteVariants = getLocalizedRouteVariants('/formy-platnosci')
 const privacyRouteVariants = getLocalizedRouteVariants('/polityka-prywatnosci')
+const blogRouteVariants = getLocalizedRouteVariants('/blog')
+const accessoriesRouteVariants = getLocalizedRouteVariants('/osprzet')
 
 export default function App() {
   return (
@@ -111,6 +118,22 @@ export default function App() {
 
       <Route path="/:lang" element={<LangLayout />}>
         <Route index element={<HomePage />} />
+
+        {blogRouteVariants.map((slug) => (
+          <Route
+            key={`blog-${slug}`}
+            path={slug}
+            element={<BlogPage />}
+          />
+        ))}
+
+        {blogRouteVariants.map((slug) => (
+          <Route
+            key={`blog-post-${slug}`}
+            path={`${slug}/:slug`}
+            element={<BlogPostPage />}
+          />
+        ))}
 
         {modelRouteVariants.map((slug) => (
           <Route
@@ -165,6 +188,14 @@ export default function App() {
             key={`privacy-${slug}`}
             path={slug}
             element={<LegalPage pageKey="polityka-prywatnosci" />}
+          />
+        ))}
+
+        {accessoriesRouteVariants.map((slug) => (
+          <Route
+            key={`accessories-${slug}`}
+            path={slug}
+            element={<AccessoriesPage />}
           />
         ))}
 

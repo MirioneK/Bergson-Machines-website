@@ -40,73 +40,169 @@
   gap: 10px;
 }
 
-.photoGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: 260px 260px;
+.sliderBlock {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
-.photoTile {
+.sliderMain {
   position: relative;
-  overflow: hidden;
   min-width: 0;
-  min-height: 220px;
+  height: clamp(320px, 42vw, 620px);
+  max-height: 620px;
+  overflow: hidden;
   border: 1px solid rgba(242, 101, 34, 0.12);
   background: var(--bg-base);
+}
+
+.mainImageButton {
+  width: 100%;
+  height: 100%;
+  display: block;
   padding: 0;
+  border: 0;
+  background: transparent;
   cursor: zoom-in;
-  appearance: none;
 }
 
-.featuredPhoto {
-  grid-row: span 2;
-}
-
-.image {
+.mainImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.84) saturate(0.92);
+  display: block;
+  filter: brightness(0.88) saturate(0.94);
   transition: transform 0.35s ease, filter 0.35s ease;
+  opacity: 1;
+  will-change: opacity, transform, filter;
+  transition:
+    opacity 0.22s ease,
+    transform 0.35s ease,
+    filter 0.35s ease;
 }
 
-.photoTile:hover .image {
-  transform: scale(1.05);
+.mainImageFading {
+  opacity: 0;
+}
+
+.mainImageButton:hover .mainImage {
+  transform: scale(1.02);
   filter: brightness(0.96) saturate(1.02);
 }
 
-.tag {
+.counter {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  z-index: 2;
+  right: 16px;
+  bottom: 16px;
+  z-index: 3;
+  min-height: 30px;
+  padding: 0 10px;
   display: inline-flex;
   align-items: center;
-  min-height: 26px;
-  padding: 0 10px;
-  background: var(--orange);
-  color: #fff;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 800;
   line-height: 1;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.labelOverlay {
+.thumbRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+}
+
+.thumbBtn {
+  position: relative;
+  min-width: 0;
+  height: 76px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-base);
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.thumbBtn:hover {
+  border-color: rgba(242, 101, 34, 0.32);
+  transform: translateY(-1px);
+}
+
+.thumbBtnActive {
+  border-color: var(--orange);
+  box-shadow: inset 0 0 0 1px rgba(242, 101, 34, 0.18);
+}
+
+.thumbImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.82);
+}
+
+.thumbBtnActive .thumbImage {
+  filter: brightness(0.96);
+}
+
+.controlBtn {
   position: absolute;
-  inset: auto 0 0 0;
-  padding: 20px 18px 16px;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.84) 100%);
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  top: 50%;
+  z-index: 3;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(var(--bg-nav-rgb), 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--white);
+  transform: translateY(-50%);
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.controlBtn:hover {
+  border-color: rgba(242, 101, 34, 0.42);
+  background: rgba(242, 101, 34, 0.14);
+  color: var(--orange);
+}
+
+.controlPrev {
+  left: 14px;
+}
+
+.controlNext {
+  right: 14px;
+}
+
+.controlSvg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.controlSvg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .infoGrid {
@@ -122,7 +218,7 @@
 }
 
 .dark {
-  background: var(--bg-soft);
+  background: linear-gradient(180deg, var(--bg-surface-2) 0%, var(--bg-soft) 100%);
 }
 
 .grad {
@@ -137,25 +233,16 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  padding: 24px;
+  padding: 28px 24px;
   text-align: center;
 }
 
 .infoNum {
   color: var(--orange);
   font-family: var(--font-display);
-  font-size: 3.2rem;
+  font-size: clamp(2.8rem, 5vw, 3.2rem);
   font-weight: 900;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.infoNumSmall {
-  color: var(--orange);
-  font-family: var(--font-display);
-  font-size: 2.1rem;
-  font-weight: 900;
-  line-height: 1;
+  line-height: 0.92;
   text-transform: uppercase;
 }
 
@@ -169,14 +256,11 @@
   text-transform: uppercase;
 }
 
-.orange {
-  color: var(--orange);
-}
-
 .infoLine {
   width: 56px;
   height: 3px;
   background: var(--orange);
+  margin: 2px 0 4px;
 }
 
 .infoDesc {
@@ -185,11 +269,6 @@
   font-size: 0.84rem;
   line-height: 1.5;
   text-align: center;
-}
-
-.infoIcon {
-  font-size: 2.4rem;
-  line-height: 1;
 }
 
 .lightbox {
@@ -223,31 +302,6 @@
   border: 1px solid rgba(242, 101, 34, 0.22);
 }
 
-.lightboxCaption {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  color: var(--white);
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.lightboxTag {
-  display: inline-flex;
-  align-items: center;
-  min-height: 28px;
-  padding: 0 10px;
-  background: var(--orange);
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: 0.72rem;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .lightboxClose {
   position: absolute;
   top: 18px;
@@ -263,6 +317,29 @@
   cursor: pointer;
 }
 
+.lightboxNav {
+  position: absolute;
+  top: 50%;
+  z-index: 210;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.84);
+  color: #ffffff;
+  transform: translateY(-50%);
+}
+
+.lightboxPrev {
+  left: 24px;
+}
+
+.lightboxNext {
+  right: 24px;
+}
+
 @media (max-width: 1024px) {
   .header {
     padding-top: 60px;
@@ -273,13 +350,9 @@
     gap: 14px;
   }
 
-  .photoGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: 240px 240px;
-  }
-
-  .featuredPhoto {
-    grid-row: span 1;
+  .sliderMain {
+    height: clamp(280px, 50vw, 460px);
+    max-height: 460px;
   }
 
   .infoGrid {
@@ -297,9 +370,17 @@
     gap: 20px;
   }
 
-  .photoGrid {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
+  .sliderMain {
+    height: clamp(220px, 58vw, 320px);
+    max-height: 320px;
+  }
+
+  .thumbRow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .thumbBtn {
+    height: 64px;
   }
 
   .infoGrid {
@@ -307,26 +388,25 @@
   }
 
   .infoTile {
-    min-height: 180px;
+    min-height: 190px;
   }
 
-  .tag {
-    top: 12px;
-    left: 12px;
-    font-size: 0.66rem;
-  }
-
-  .labelOverlay {
-    padding: 16px 14px 14px;
-    font-size: 0.92rem;
+  .infoContent {
+    padding: 22px 18px;
+    gap: 10px;
   }
 
   .infoNum {
     font-size: 2.6rem;
   }
 
-  .infoNumSmall {
-    font-size: 1.8rem;
+  .infoDesc {
+    font-size: 0.8rem;
+  }
+
+  .controlBtn {
+    width: 40px;
+    height: 40px;
   }
 
   .lightbox {
@@ -342,14 +422,23 @@
     max-height: calc(92svh - 76px);
   }
 
-  .lightboxCaption {
-    font-size: 0.88rem;
-  }
-
   .lightboxClose {
     top: 12px;
     right: 12px;
     width: 40px;
     height: 40px;
+  }
+
+  .lightboxNav {
+    width: 42px;
+    height: 42px;
+  }
+
+  .lightboxPrev {
+    left: 12px;
+  }
+
+  .lightboxNext {
+    right: 12px;
   }
 }
