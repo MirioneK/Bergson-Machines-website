@@ -23,11 +23,15 @@ SetEnv SMTP_USER website@bergsonmachines.pl
   RewriteEngine On
   RewriteBase /
 
+  # Nie przepisywuj endpointów backendu - mają trafić do Node/Passenger
+  RewriteRule ^api(/|$) - [L]
+
   RewriteRule ^index\.html$ - [L]
 
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
+  # Fallback dla React SPA
   RewriteRule . /index.html [L]
 </IfModule>
