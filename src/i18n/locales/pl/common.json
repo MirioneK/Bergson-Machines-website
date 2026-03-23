@@ -11,7 +11,9 @@
     "whatsapp": "Napisz na WhatsApp",
     "language": "Wybór języka",
     "openMenu": "Otwórz menu",
-    "closeMenu": "Zamknij menu"
+    "closeMenu": "Zamknij menu",
+    "ariaLabel": "Nawigacja główna",
+    "logoAriaLabel": "Bergson Machines - strona główna"
   },
   "hero": {
     "badge": "Dostawa w Polsce · Gwarancja 1 rok · Serwis mobilny",
@@ -31,7 +33,7 @@
         "label": "Modeli w ofercie"
       },
       {
-        "value": "24h",
+        "value": "48h",
         "label": "Czas reakcji serwisu"
       },
       {
@@ -70,7 +72,7 @@
       "cabin": "Kabina",
       "width": "Szerokość"
     },
-      "comingSoon": {
+    "comingSoon": {
       "badge": "Już wkrótce",
       "cta": "Wkrótce w ofercie",
       "list": [
@@ -143,7 +145,7 @@
         "desc": "Pełna ochrona mechaniki i hydrauliki"
       },
       "ready": {
-        "number": "24h",
+        "number": "48h",
         "sub": "Czas reakcji serwisu",
         "desc": "Typowy czas reakcji serwisu"
       }
@@ -204,7 +206,7 @@
       {
         "id": "parts-wait",
         "question": "\"A co z częściami zamiennymi z Chin? Będę czekał miesiąc?\"",
-        "answer": "<strong>Nie.</strong> Trzymamy w Polsce magazyn kluczowych części - uszczelnień, filtrów, łyżek i elementów hydraulicznych itp. Dla minikoparek używamy podzespołów kompatybilnych z KOOPem, Briggs & Stratton i Kubotą, dostępnych u polskich dystrybutorów. Typowy czas reakcji serwisu: <strong>24h</strong>."
+        "answer": "<strong>Nie.</strong> Trzymamy w Polsce magazyn kluczowych części - uszczelnień, filtrów, łyżek i elementów hydraulicznych itp. Dla minikoparek używamy podzespołów kompatybilnych z KOOPem, Briggs & Stratton i Kubotą, dostępnych u polskich dystrybutorów. Typowy czas reakcji serwisu: <strong>48h</strong>."
       },
       {
         "id": "service-who",
@@ -263,7 +265,7 @@
       },
       "stock": {
         "title": "Magazyn Części w Polsce",
-        "desc": "Filtry, uszczelniacze, elementy hydrauliczne, łyżki - wszystko na stanie. Dzięki temu typowy czas reakcji serwisu wynosi 24h."
+        "desc": "Filtry, uszczelniacze, elementy hydrauliczne, łyżki - wszystko na stanie. Dzięki temu typowy czas reakcji serwisu wynosi 48h."
       },
       "hotline": {
         "title": "Linia Techniczna",
@@ -804,20 +806,41 @@
   },
   "meta": {
     "home": {
-      "title": "Bergson Machines | Minikoparki, osprzęt i serwis",
-      "description": "Sprzedaż minikoparek, osprzętu i wsparcia serwisowego. Dobierz model do swoich prac i otrzymaj bezpłatną wycenę."
+      "title": "Bergson Machines | Minikoparki - ceny, osprzęt i serwis",
+      "description": "Sprawdź, ile kosztuje minikoparka, porównaj minikoparki i ceny, dobierz model do prac ziemnych, ogrodu lub domu i otrzymaj bezpłatną wycenę."
     },
     "model": {
       "title": "{{name}} | Bergson Machines"
     },
     "legal": {
       "title": "{{title}} | Bergson Machines"
+    },
+    "blog": {
+      "title": "Blog | Bergson Machines",
+      "description": "Poradniki i praktyczne informacje o minikoparkach: jaka minikoparka do ogrodu lub domu, ile kosztuje minikoparka i jak wybrać odpowiedni model."
+    },
+    "blogPost": {
+      "title": "{{title}} | Blog Bergson Machines"
+    },
+    "accessories": {
+      "title": "Osprzęt i części | Bergson Machines",
+      "description": "Osprzęt do minikoparek, części eksploatacyjne i części zamienne do modeli Bergson Machines."
+    },
+    "notFound": {
+      "title": "404 | Bergson Machines",
+      "description": "Nie znaleziono strony, której szukasz."
     }
+  },
+  "notFound": {
+    "label": "404",
+    "title": "Nie znaleziono strony",
+    "text": "Strona, której szukasz, nie istnieje, została przeniesiona albo adres jest niepoprawny.",
+    "button": "Wróć na stronę główną"
   },
   "blogPage": {
     "label": "Blog",
-    "title": "Praktyczna wiedza o minikoparkach i osprzęcie",
-    "lead": "Poradniki, wskazówki eksploatacyjne i materiały pomagające dobrać model do konkretnych prac.",
+    "title": "Praktyczna wiedza o minikoparkach - cena, wybór i osprzęt",
+    "lead": "Poradniki i wskazówki, które pomagają sprawdzić, ile kosztuje minikoparka, jaką minikoparkę wybrać i jaki model dobrać do konkretnych prac.",
     "readMore": "Czytaj więcej"
   },
   "blogPostPage": {
@@ -830,7 +853,7 @@
     },
     "label": "Osprzęt dodatkowy",
     "title": "Akcesoria i części",
-    "sub": "Akcesoria oraz części kompatybilne z modelami Bergson Machines.",
+    "sub": "Akcesoria oraz części kompatybilne z modelami Bergson Machines i minikoparkami do prac ziemnych.",
     "filters": {
       "all": "Wszystko",
       "accessories": "Akcesoria",
@@ -851,20 +874,20 @@
   },
   "seoContent": {
     "label": "Przewodnik",
-    "title": "Minikoparki na sprzedaż - jak wybrać odpowiedni model?",
-    "lead": "Minikoparka to sprzęt, który sprawdza się zarówno przy pracach budowlanych i instalacyjnych, jak i na posesjach prywatnych. Kluczowe znaczenie ma dobór odpowiedniej masy maszyny, osprzętu oraz dostępności serwisu i części w Polsce.",
+    "title": "Minikoparki na sprzedaż - jaką minikoparkę wybrać i ile kosztuje minikoparka?",
+    "lead": "Minikoparka, czyli mała koparka do precyzyjnych prac, sprawdza się zarówno przy pracach budowlanych i instalacyjnych, jak i na posesjach prywatnych. Dla wielu osób liczy się nie tylko minikoparka cena, ale też to, czy dana maszyna nadaje się do ogrodu, do domu i do regularnych prac ziemnych.",
     "blocks": [
       {
-        "title": "1 tona czy 1.2 tony?",
-        "text": "Modele 1-tonowe lepiej sprawdzają się w ciasnych miejscach i przy lżejszych pracach. Minikoparki 1.2 tony oferują większą stabilność i wydajność, dlatego są częstym wyborem dla firm wykonujących bardziej wymagające roboty ziemne."
+        "title": "1 tona, 1.5 t czy 2 t - jaką minikoparkę wybrać?",
+        "text": "Modele 1-tonowe lepiej sprawdzają się w ciasnych miejscach i przy lżejszych pracach. Osoby porównujące frazy takie jak minikoparka 1.5 t, minikoparka 2 t czy mini koparka do ogrodu najczęściej szukają kompromisu między gabarytem, stabilnością i wydajnością przy pracach ziemnych."
       },
       {
-        "title": "Ile kosztuje minikoparka?",
-        "text": "Cena zależy od konfiguracji, silnika, obecności kabiny i dodatkowego osprzętu. W praktyce własna maszyna bardzo często okazuje się korzystniejsza niż regularny wynajem, szczególnie przy stałych zleceniach."
+        "title": "Ile kosztuje minikoparka i od czego zależy cena?",
+        "text": "Cena zależy od konfiguracji, silnika, obecności kabiny i dodatkowego osprzętu. Jeśli wpisujesz w wyszukiwarkę hasła typu cena minikoparki, minikoparka cena nowa, minikoparki ceny albo koparka mała cena, w praktyce porównujesz przede wszystkim klasę maszyny, wyposażenie i dostępność serwisu."
       },
       {
-        "title": "Serwis i części w Polsce",
-        "text": "Przy zakupie liczy się nie tylko sama maszyna, ale też dostępność części i szybkość reakcji serwisu. To właśnie te elementy mają największy wpływ na ograniczenie przestojów i realny koszt eksploatacji."
+        "title": "Minikoparka do ogrodu, do domu i do prac ziemnych",
+        "text": "Przy zakupie liczy się nie tylko sama maszyna, ale też dostępność części i szybkość reakcji serwisu. Niezależnie od tego, czy interesuje Cię minikoparka do ogrodu, minikoparka do domu, mikro koparka czy chińska minikoparka do prac ziemnych, to właśnie te elementy mają największy wpływ na ograniczenie przestojów i realny koszt eksploatacji."
       }
     ],
     "footerText": "Sprawdź dostępne modele, porównaj osprzęt i wybierz konfigurację dopasowaną do rodzaju prac, które wykonujesz najczęściej.",

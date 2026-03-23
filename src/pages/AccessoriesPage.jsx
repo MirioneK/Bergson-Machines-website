@@ -6,6 +6,7 @@ import {
   formatPrice,
 } from '../data'
 import { useReveal } from '../hooks/useReveal'
+import { usePageMeta } from '../hooks/usePageMeta'
 import styles from './AccessoriesPage.module.css'
 
 const PRODUCT_PLACEHOLDER = '/images/placeholders/product-placeholder.png'
@@ -35,6 +36,11 @@ function SafeImage({ src, alt, className, fallbackSrc = PRODUCT_PLACEHOLDER }) {
 
 export default function AccessoriesPage() {
   const { t, i18n } = useTranslation()
+
+  usePageMeta({
+    title: t('meta.accessories.title'),
+    description: t('meta.accessories.description'),
+  })
 
   const [typeFilter, setTypeFilter] = useState('all')
   const [search, setSearch] = useState('')

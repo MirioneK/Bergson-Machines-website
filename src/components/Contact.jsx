@@ -9,7 +9,7 @@ import {
 import { getRecaptchaToken } from '../../lib/userform/recaptcha'
 import styles from './Contact.module.css'
 
-const API_ENDPOINT = 'https://TWOJA-DOMENA.pl/api/contact'
+const API_ENDPOINT = 'https://bergsonmachines.pl/api/contact'
 
 const INITIAL_FORM = {
   name: '',

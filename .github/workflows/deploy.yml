@@ -2,7 +2,7 @@ name: Build & Deploy (Cyber_Folks)
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -34,7 +34,6 @@ jobs:
           FTP_HOST: ${{ secrets.FTP_SERVER }}
           FTP_USER: ${{ secrets.FTP_USERNAME }}
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
-          REMOTE_DIR: ${{ secrets.REMOTE_DIR }}  # np. /domains/dev.farmalert.eu/public_html
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
           lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" -e "
@@ -43,11 +42,10 @@ jobs:
           set net:max-retries 2;
           set net:timeout 20;
           set cmd:fail-exit true;
-          cd $REMOTE_DIR;
           mirror --reverse --delete --verbose --parallel=4 \
                  --exclude-glob .DS_Store \
                  --exclude-glob .git* \
                  --exclude-glob .htaccess \
-                 ./out .;
+                 ./dist .;
           bye
           "

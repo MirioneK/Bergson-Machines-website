@@ -1,6 +1,9 @@
 ---
 title: "Czy opłaca się kupić minikoparkę? Porównanie z wynajmem"
-excerpt: "Sprawdź, kiedy zakup minikoparki bardziej opłaca się niż wynajem i po jakim czasie inwestycja zaczyna się zwracać."
+excerpt: "Sprawdź, kiedy zakup minikoparki bardziej opłaca się niż wynajem, ile kosztuje minikoparka i po jakim czasie inwestycja zaczyna się zwracać."
+seoTitle: "Czy opłaca się kupić minikoparkę? Ile kosztuje minikoparka i kiedy się zwraca? | Bergson Machines"
+seoDescription: "Sprawdź, ile kosztuje minikoparka, jaka jest cena nowej minikoparki i kiedy zakup bardziej opłaca się niż wynajem."
+translationKey: "czy-oplaca-sie-kupic-minikoparke"
 date: "2026-03-21"
 category: "Poradnik"
 cover: "/images/blog/czy-oplaca-sie-kupic-minikoparke.jpg"
@@ -30,7 +33,7 @@ Do tego często dochodzą:
 - ograniczona dostępność sprzętu,
 - brak elastyczności w terminach.
 
-## Ile kosztuje zakup minikoparki?
+## Ile kosztuje minikoparka?
 
 Zakup minikoparki to wydatek rzędu:
 

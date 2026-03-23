@@ -6,29 +6,23 @@ const blogFiles = import.meta.glob('../content/blog/*/*.md', {
   eager: true,
 })
 
+const FRONT_MATTER_REGEX = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/
+
 function parseFrontMatter(raw = '') {
-  if (!raw.startsWith('---')) {
+  const match = raw.match(FRONT_MATTER_REGEX)
+
+  if (!match) {
     return {
       data: {},
       content: raw.trim(),
     }
   }
 
-  const closingIndex = raw.indexOf('\n---', 3)
-
-  if (closingIndex === -1) {
-    return {
-      data: {},
-      content: raw.trim(),
-    }
-  }
-
-  const frontMatterBlock = raw.slice(3, closingIndex).trim()
-  const content = raw.slice(closingIndex + 4).trim()
-
+  const frontMatterBlock = match[1].trim()
+  const content = match[2].trim()
   const data = {}
 
-  frontMatterBlock.split('\n').forEach((line) => {
+  frontMatterBlock.split(/\r?\n/).forEach((line) => {
     const trimmed = line.trim()
     if (!trimmed || trimmed.startsWith('#')) return
 
@@ -65,8 +59,11 @@ function normalizePost(filePath, rawContent) {
   return {
     lang,
     slug,
+    translationKey: data.translationKey || slug,
     title: data.title || slug,
     excerpt: data.excerpt || '',
+    seoTitle: data.seoTitle || '',
+    seoDescription: data.seoDescription || '',
     date: data.date || '',
     category: data.category || '',
     cover: data.cover || null,
@@ -80,7 +77,9 @@ const ALL_POSTS = Object.entries(blogFiles).map(([filePath, rawContent]) =>
 )
 
 function sortPosts(posts) {
-  return [...posts].sort((a, b) => new Date(b.date) - new Date(a.date))
+  return [...posts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  )
 }
 
 function getSafeLang(lang) {
@@ -115,4 +114,38 @@ export function getPostBySlug(lang = DEFAULT_LANG, slug) {
     ) ||
     null
   )
+}
+
+export function getPostAlternates(lang = DEFAULT_LANG, slug) {
+  const currentPost = getPostBySlug(lang, slug)
+
+  if (!currentPost) return []
+
+  return SUPPORTED_LANGS.map((locale) => {
+    const localizedPost = ALL_POSTS.find(
+      (post) =>
+        post.lang === locale &&
+        post.translationKey === currentPost.translationKey &&
+        !post.draft
+    )
+
+    if (!localizedPost) return null
+
+    return {
+      lang: locale,
+      slug: localizedPost.slug,
+      translationKey: localizedPost.translationKey,
+    }
+  }).filter(Boolean)
+}
+
+export function getAllPublishedPostRoutes() {
+  return ALL_POSTS
+    .filter((post) => !post.draft)
+    .map((post) => ({
+      lang: post.lang,
+      slug: post.slug,
+      date: post.date,
+      translationKey: post.translationKey,
+    }))
 }

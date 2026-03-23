@@ -4,11 +4,17 @@ import { useTranslation } from 'react-i18next'
 import { getAllPosts } from '../lib/blog'
 import { useLangPath } from '../hooks/useLangPath'
 import { useReveal } from '../hooks/useReveal'
+import { usePageMeta } from '../hooks/usePageMeta'
 import styles from './BlogPage.module.css'
 
 export default function BlogPage() {
   const { t, i18n } = useTranslation()
   const posts = getAllPosts(i18n.resolvedLanguage)
+
+  usePageMeta({
+    title: t('meta.blog.title'),
+    description: t('meta.blog.description'),
+  })
 
   const [heroRef, heroVisible] = useReveal()
 

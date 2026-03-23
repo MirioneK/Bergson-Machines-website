@@ -63,19 +63,6 @@ export default function ModelPage() {
   const others = MODELS.filter((m) => m.id !== id && m.id !== 'upcoming')
   const priceBrutto = calcBrutto(model.priceNetto)
 
-  const metaTitle = model
-    ? t('meta.model.title', { name: model.name })
-    : t('meta.home.title')
-
-  const metaDescription = model
-    ? t(`models.${id}.description`, {
-        ns: 'data',
-        defaultValue: t('meta.home.description'),
-      })
-    : t('meta.home.description')
-
-  usePageMeta(metaTitle, metaDescription)
-
   const modelSubtitle = t(`models.${id}.subtitle`, {
     ns: 'data',
     defaultValue: '',
@@ -114,6 +101,11 @@ export default function ModelPage() {
 
   const formattedNetto = formatPrice(model.priceNetto, i18n.resolvedLanguage)
   const formattedBrutto = formatPrice(priceBrutto, i18n.resolvedLanguage)
+
+  usePageMeta({
+    title: t('meta.model.title', { name: model.name }),
+    description: modelDescription || t('meta.home.description'),
+  })
 
   return (
     <main className={styles.page}>

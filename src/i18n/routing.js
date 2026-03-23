@@ -121,26 +121,53 @@ export function stripLangFromPath(pathname = '') {
   return segments.length ? `/${segments.join('/')}` : '/'
 }
 
-function getLocalizedStaticPath(pathname = '/', lang = DEFAULT_LANG) {
-  const safeLang = isSupportedLang(lang) ? lang : DEFAULT_LANG
+export function getCanonicalPathname(pathname = '') {
   const strippedPath = stripLangFromPath(pathname)
 
-  if (strippedPath === '/') return ''
+  if (strippedPath === '/') return '/'
 
   const routeKeys = Object.keys(ROUTE_TRANSLATIONS).sort((a, b) => b.length - a.length)
 
   for (const routeKey of routeKeys) {
-    if (strippedPath === routeKey) {
+    const variants = [...new Set(Object.values(ROUTE_TRANSLATIONS[routeKey]))]
+
+    for (const variant of variants) {
+      const localizedBase = `/${variant}`
+
+      if (strippedPath === localizedBase) {
+        return routeKey
+      }
+
+      if (strippedPath.startsWith(`${localizedBase}/`)) {
+        const rest = strippedPath.slice(localizedBase.length)
+        return `${routeKey}${rest}`
+      }
+    }
+  }
+
+  return strippedPath
+}
+
+function getLocalizedStaticPath(pathname = '/', lang = DEFAULT_LANG) {
+  const safeLang = isSupportedLang(lang) ? lang : DEFAULT_LANG
+  const canonicalPath = getCanonicalPathname(pathname)
+
+  if (canonicalPath === '/') return ''
+
+  const routeKeys = Object.keys(ROUTE_TRANSLATIONS).sort((a, b) => b.length - a.length)
+
+  for (const routeKey of routeKeys) {
+    if (canonicalPath === routeKey) {
       return `/${ROUTE_TRANSLATIONS[routeKey][safeLang]}`
     }
 
-    if (strippedPath.startsWith(`${routeKey}/`)) {
-      const rest = strippedPath.slice(routeKey.length)
+    if (canonicalPath.startsWith(`${routeKey}/`)) {
+      const rest = canonicalPath.slice(routeKey.length)
       return `/${ROUTE_TRANSLATIONS[routeKey][safeLang]}${rest}`
     }
   }
 
-  return strippedPath === '/' ? '' : strippedPath
+  return canonicalPath === '/' ? '' : canonicalPath
 }
 
 function getLocalizedHash(hash = '', lang = DEFAULT_LANG) {

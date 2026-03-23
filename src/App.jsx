@@ -16,11 +16,10 @@ import StickyCTA from './components/StickyCTA'
 import HomePage from './pages/HomePage'
 import ModelPage from './pages/ModelPage'
 import LegalPage from './pages/LegalPage'
-
 import BlogPage from './pages/BlogPage'
 import BlogPostPage from './pages/BlogPostPage'
-
 import AccessoriesPage from './pages/AccessoriesPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 import {
   DEFAULT_LANG,
@@ -80,25 +79,21 @@ function LangLayout() {
   }
 
   return (
-    <>
+    <div className="app-shell">
       <ScrollManager />
       <Nav />
-      <Outlet />
+      <div className="app-main">
+        <Outlet />
+      </div>
       <Footer />
       <StickyCTA />
-    </>
+    </div>
   )
 }
 
 function RootRedirect() {
   const preferredLang = getPreferredLang()
   return <Navigate to={`/${preferredLang}`} replace />
-}
-
-function LangFallbackRedirect() {
-  const { lang } = useParams()
-  const safeLang = isSupportedLang(lang) ? lang : DEFAULT_LANG
-  return <Navigate to={`/${safeLang}`} replace />
 }
 
 const modelRouteVariants = getLocalizedRouteVariants('/modele')
@@ -199,7 +194,7 @@ export default function App() {
           />
         ))}
 
-        <Route path="*" element={<LangFallbackRedirect />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
 
       <Route path="*" element={<Navigate to={`/${DEFAULT_LANG}`} replace />} />

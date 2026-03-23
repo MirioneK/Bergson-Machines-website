@@ -2,10 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import ReactMarkdown from 'react-markdown'
-import { getPostBySlug } from '../lib/blog'
+import { getPostBySlug, getPostAlternates } from '../lib/blog'
 import { useLangPath } from '../hooks/useLangPath'
 import { useReveal } from '../hooks/useReveal'
+import { usePageMeta } from '../hooks/usePageMeta'
+import { buildLangPath } from '../i18n/routing'
 import styles from './BlogPostPage.module.css'
+
+const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://bergsonmachines.pl').replace(/\/$/, '')
 
 export default function BlogPostPage() {
   const { slug } = useParams()
@@ -28,6 +32,21 @@ export default function BlogPostPage() {
   }
 
   const shouldShowCover = Boolean(post.cover) && !coverError
+
+  const blogAlternates = getPostAlternates(i18n.resolvedLanguage, slug).map(
+    ({ lang, slug: localizedSlug }) => ({
+      lang,
+      href: `${SITE_URL}${buildLangPath(lang, `/blog/${localizedSlug}`)}`,
+    })
+  )
+
+  usePageMeta({
+    title: post.seoTitle || t('meta.blogPost.title', { title: post.title }),
+    description: post.seoDescription || post.excerpt || t('meta.blog.description'),
+    image: post.cover || undefined,
+    type: 'article',
+    alternates: blogAlternates,
+  })
 
   return (
     <main className={styles.page}>

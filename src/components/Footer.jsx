@@ -50,32 +50,17 @@ export default function Footer() {
             <div className={styles.linkColumn}>
               <h3 className={styles.columnTitle}>{t('footer.legal.title')}</h3>
 
-              <a
-                href="/pdfs/regulamin_bergson_machines.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.footerLink}
-              >
+              <Link to={langPath('/regulamin')} className={styles.footerLink}>
                 {t('footer.legal.links.terms')}
-              </a>
+              </Link>
 
-              <a
-                href="/pdfs/karta_gwarancyjna_bergson.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.footerLink}
-              >
+              <Link to={langPath('/formy-platnosci')} className={styles.footerLink}>
                 {t('footer.legal.links.paymentMethods')}
-              </a>
+              </Link>
 
-              <a
-                href="/pdfs/polityka_prywatnosci_bergson.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.footerLink}
-              >
+              <Link to={langPath('/polityka-prywatnosci')} className={styles.footerLink}>
                 {t('footer.legal.links.privacyPolicy')}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

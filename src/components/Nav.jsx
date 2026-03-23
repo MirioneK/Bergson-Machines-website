@@ -1,9 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useMatch } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { buildLangPath, getLangFromPath } from '../i18n/routing'
+import { useLangPath } from '../hooks/useLangPath'
 import styles from './Nav.module.css'
 import { useHashScroll } from '../hooks/useHashScroll'
+import { getPostAlternates } from '../lib/blog'
 
 const NAV_LINKS = [
   { key: 'nav.models', type: 'section', path: '/', hash: '#modele' },
@@ -16,6 +18,7 @@ const NAV_LINKS = [
 const LANGUAGES = [
   { code: 'pl', label: 'PL', htmlLang: 'pl' },
   { code: 'en', label: 'ENG', htmlLang: 'en' },
+  { code: 'ua', label: 'UA', htmlLang: 'uk' },
 ]
 
 const WHATSAPP_URL = 'https://wa.me/48600507816'
@@ -24,7 +27,9 @@ export default function Nav() {
   const { t, i18n } = useTranslation()
   const location = useLocation()
   const navigate = useNavigate()
+  const langPath = useLangPath()
   const handleHashScroll = useHashScroll()
+  const blogPostMatch = useMatch('/:lang/blog/:slug')
 
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -41,6 +46,11 @@ export default function Nav() {
   const pageLinks = useMemo(
     () => NAV_LINKS.filter((item) => item.type === 'page'),
     []
+  )
+
+  const mobileLinks = useMemo(
+    () => [...sectionLinks, ...pageLinks],
+    [sectionLinks, pageLinks]
   )
 
   useEffect(() => {
@@ -117,21 +127,37 @@ export default function Nav() {
   const goToLanguage = (nextLang) => {
     if (nextLang === currentLang) return
 
+    const currentBlogSlug = blogPostMatch?.params?.slug
+
+    if (currentBlogSlug) {
+      const alternates = getPostAlternates(currentLang, currentBlogSlug)
+      const targetPost = alternates.find((item) => item.lang === nextLang)
+
+      if (targetPost) {
+        navigate(buildLangPath(nextLang, `/blog/${targetPost.slug}`))
+        return
+      }
+    }
+
     const target = buildLangPath(nextLang, location.pathname, location.hash)
     navigate(target)
   }
 
-  const homeLink = buildLangPath(currentLang, '/')
-  const contactLink = buildLangPath(currentLang, '/', '#kontakt')
+  const homeLink = langPath('/')
+  const contactLink = langPath('/', '#kontakt')
 
   return (
     <>
       <nav
         className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}
-        aria-label="Nawigacja główna"
+        aria-label={t('nav.ariaLabel')}
       >
         <div className={`page-shell ${styles.inner}`}>
-          <Link to={homeLink} className={styles.logo} aria-label="Bergson Machines">
+          <Link
+            to={homeLink}
+            className={styles.logo}
+            aria-label={t('nav.logoAriaLabel')}
+          >
             <img
               src="/logo.svg"
               alt="Bergson Machines"
@@ -142,7 +168,7 @@ export default function Nav() {
           <div className={styles.navGroups}>
             <ul className={`${styles.links} ${styles.sectionLinks}`}>
               {sectionLinks.map(({ key, path, hash }) => {
-                const to = buildLangPath(currentLang, path, hash)
+                const to = langPath(path, hash)
 
                 return (
                   <li key={key}>
@@ -162,7 +188,7 @@ export default function Nav() {
               {pageLinks.map(({ key, path, hash }) => (
                 <li key={key}>
                   <Link
-                    to={buildLangPath(currentLang, path, hash)}
+                    to={langPath(path, hash)}
                     className={`${styles.link} ${styles.pageLink}`}
                   >
                     {t(key)}
@@ -262,42 +288,23 @@ export default function Nav() {
             </div>
           </div>
 
-          <div className={styles.mobileGroup}>
-            <div className={styles.mobileGroupLabel}>{t('nav.onPage')}</div>
-            <ul className={styles.mobileLinks}>
-              {sectionLinks.map(({ key, path, hash }) => {
-                const to = buildLangPath(currentLang, path, hash)
+          <ul className={styles.mobileLinks}>
+            {mobileLinks.map(({ key, path, hash, type }) => {
+              const to = langPath(path, hash)
 
-                return (
-                  <li key={key}>
-                    <Link
-                      to={to}
-                      className={styles.mobileLink}
-                      onClick={(event) => handleHashScroll(event, to)}
-                    >
-                      {t(key)}
-                    </Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-
-          <div className={styles.mobileGroup}>
-            <div className={styles.mobileGroupLabel}>{t('nav.pages')}</div>
-            <ul className={styles.mobileLinks}>
-              {pageLinks.map(({ key, path, hash }) => (
+              return (
                 <li key={key}>
                   <Link
-                    to={buildLangPath(currentLang, path, hash)}
-                    className={`${styles.mobileLink} ${styles.mobilePageLink}`}
+                    to={to}
+                    className={styles.mobileLink}
+                    onClick={type === 'section' ? (event) => handleHashScroll(event, to) : undefined}
                   >
                     {t(key)}
                   </Link>
                 </li>
-              ))}
-            </ul>
-          </div>
+              )
+            })}
+          </ul>
 
           <a
             href={WHATSAPP_URL}

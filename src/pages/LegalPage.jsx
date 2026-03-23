@@ -19,10 +19,10 @@ export default function LegalPage({ pageKey }) {
     returnObjects: true,
   })
 
-  usePageMeta(
-    t('meta.legal.title', { title: page.title }),
-    page.intro
-  )
+  usePageMeta({
+    title: t('meta.legal.title', { title: page.title }),
+    description: page.intro,
+  })
 
   return (
     <main className={styles.page}>
