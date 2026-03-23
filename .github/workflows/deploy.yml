@@ -27,7 +27,7 @@ jobs:
         run: npm run build   # tworzy katalog "out/"
 
       - name: List build dir (debug)
-        run: ls -la out
+        run: ls -la dist
 
       - name: Deploy via FTP (lftp)
         env:
