@@ -1,0 +1,19 @@
+AddHandler application/x-httpd-php84 php
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/epxzxkughl/domains/bergsonmachines.pl/public_node/backend"
+PassengerBaseURI "/"
+PassengerNodejs "/home/epxzxkughl/nodevenv/domains/bergsonmachines.pl/public_node/backend/20/bin/node"
+PassengerAppType node
+PassengerStartupFile app.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+SetEnv CONTACT_TARGET lu.gliwinski@gmail.com
+SetEnv NODE_ENV production
+SetEnv RECAPTCHA_SECRET 6Lco5hwsAAAAAJC54LBM6VR49JrQSh5UNr1t4dZv
+SetEnv SMTP_HOST s11.cyber-folks.pl
+SetEnv SMTP_PORT 587
+SetEnv SMTP_PASS I3t#msW_90y-ey-A
+SetEnv SMTP_USER website@bergsonmachines.pl
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END

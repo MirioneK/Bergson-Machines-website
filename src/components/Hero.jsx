@@ -95,7 +95,7 @@ export default function Hero() {
         >
           <div className={styles.mediaInner}>
             <img
-              src="/images/hero.png"
+              src="/images/optimized/hero.webp"
               alt={t('hero.imageAlt')}
               className={styles.image}
               loading="eager"

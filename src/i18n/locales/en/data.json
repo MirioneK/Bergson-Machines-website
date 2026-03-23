@@ -19,11 +19,11 @@
     "maxDiggingHeight": "Max. digging height",
     "maxDumpingHeight": "Max. dumping height",
     "maxDiggingRadius": "Max. digging radius",
-    "transportLength": "Transport length",
+    "transportLength": "Length (transport)",
     "width": "Width",
     "height": "Height",
     "heightWithCabin": "Height (with cabin)",
-    "trackWheelbase": "Track wheelbase",
+    "trackWheelbase": "Track roller base",
     "counterweightClearance": "Counterweight clearance",
     "minGroundClearance": "Minimum ground clearance",
     "supportRollers": "Number of support rollers",
@@ -50,7 +50,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM10 is a compact mini excavator for light earthworks, garden jobs, and installation work. Thanks to its small dimensions, it performs well wherever a larger machine would have limited access. It is a simple and practical model for everyday work around properties, foundations, utility lines, and small excavations.",
+      "description": "BM10 is a compact mini excavator for light earthworks, garden and installation jobs. Thanks to its small dimensions, it performs well wherever a larger machine would have limited access. It is a simple and practical model for everyday work around properties, foundations, utility lines and small excavations.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -150,7 +150,7 @@
       ]
     },
     "bm12": {
-      "subtitle": "1.2-ton mini excavator · Greater weight, same compact format",
+      "subtitle": "1.2-ton mini excavator · More weight, the same compact format",
       "badge": "Bestseller",
       "cardSpecs": [
         {
@@ -170,7 +170,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12 is a model with a higher operating weight, designed for more demanding earthworks while maintaining compact transport dimensions. It is a good compromise between mobility and working stability, suitable both for installation works and everyday construction tasks.",
+      "description": "BM12 is a model with greater operating weight, designed for more demanding earthworks while maintaining compact transport dimensions. It is a good compromise between mobility and work stability, suitable both for installation jobs and everyday construction work.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -289,7 +289,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12C is the cabin version of the BM12, designed for work in less favorable weather conditions and wherever the operator expects greater comfort. The base platform parameters remain the same as in the BM12, and the difference concerns the body version and intended use.",
+      "description": "BM12C is the BM12 variant with a cabin, designed for work in less favorable weather conditions and wherever the operator expects greater comfort. The base platform parameters remain in line with the BM12, while the difference concerns the body version and the way the machine is used.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -412,7 +412,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12 Kubota is a version of the BM12 model with the same technical parameters and working geometry, but equipped with a Kubota Diesel engine. It is intended for customers who want to keep the compact dimensions of the BM12 while opting for a stronger engine brand.",
+      "description": "BM12 Kubota is a variant of the BM12 model with the same technical parameters and working geometry, but equipped with a Kubota Diesel engine. It is a version for customers who want to keep the compact dimensions of the BM12 while choosing a stronger engine brand.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -531,7 +531,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12C Kubota is the equivalent of the BM12C with the same working parameters, but with a Kubota Diesel engine. It is a premium variant for customers who want to combine an operator cabin with a higher-class power unit.",
+      "description": "BM12C Kubota is the BM12C equivalent with the same working parameters, but with a Kubota Diesel engine. It is a premium variant for customers who want to combine an operator cabin with a higher-class power unit.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -635,7 +635,7 @@
       ]
     },
     "upcoming": {
-      "subtitle": "New models — coming soon",
+      "subtitle": "New models - coming soon",
       "description": "More Bergson Machines models will appear in this section."
     }
   },
@@ -650,7 +650,7 @@
       "name": "Hydraulic auger"
     },
     "hydraulic-hammer": {
-      "name": "Hydraulic hammer"
+      "name": "Hydraulic breaker"
     },
     "bucket-20": {
       "name": "200 mm bucket"
@@ -700,7 +700,7 @@
       "name": "KOOP 192F starter motor"
     },
     "diesel-engine-koop-192f": {
-      "name": "KOOP 192F diesel engine"
+      "name": "KOOP 192F Diesel engine"
     },
     "alternator-stator": {
       "name": "Alternator stator"

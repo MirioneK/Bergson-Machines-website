@@ -3,7 +3,7 @@
     "models": "Models",
     "service": "Service",
     "faq": "FAQ",
-    "accessories": "Attachments",
+    "accessories": "Accessories & Parts",
     "blog": "Blog",
     "onPage": "On this page",
     "pages": "Pages",
@@ -11,16 +11,18 @@
     "whatsapp": "Message us on WhatsApp",
     "language": "Language selection",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "ariaLabel": "Main navigation",
+    "logoAriaLabel": "Bergson Machines - home page"
   },
   "hero": {
-    "badge": "Delivery in Poland · 1-year warranty · Mobile service",
+    "badge": "Delivery across Poland · 1-year warranty · Mobile service",
     "titleLine1": "Professional",
     "titleLine2": "BM12 Mini Excavator",
     "titlePrice": "From PLN 24,999 net",
-    "lead": "Stop renting. <strong>Buy a machine that pays for itself after the first season.</strong> Bergson Machines - full service support, spare parts always in stock, delivery to your door.",
+    "lead": "Stop renting. <strong>Buy a machine that pays for itself after the first season.</strong> Bergson Machines - full service support, parts always in stock, delivery to your door.",
     "actions": {
-      "models": "See models",
+      "models": "View models",
       "consultation": "Free consultation"
     },
     "statsAriaLabel": "Key information",
@@ -31,7 +33,7 @@
         "label": "Models available"
       },
       {
-        "value": "24h",
+        "value": "48h",
         "label": "Service response time"
       },
       {
@@ -43,10 +45,10 @@
   "trustBar": {
     "ariaLabel": "Key benefits",
     "items": {
-      "mobileService": "Mobile service throughout Poland",
-      "stockParts": "Spare parts stocked in Poland",
-      "delivery": "Delivery to the specified address",
-      "vatInvoice": "VAT invoice with no extra fees",
+      "mobileService": "Mobile service across Poland",
+      "stockParts": "Parts stocked in Poland",
+      "delivery": "Delivery to your address",
+      "vatInvoice": "VAT invoice with no extra charges",
       "financing": "Leasing and installments available"
     }
   },
@@ -55,13 +57,13 @@
     "title": "Choose your model"
   },
   "modelCard": {
-    "ariaLabel": "Discover the {{name}} model",
+    "ariaLabel": "Explore model {{name}}",
     "imageAlt": "{{name}} mini excavator",
-    "specsAriaLabel": "Specifications of the {{name}} model",
+    "specsAriaLabel": "Specifications for model {{name}}",
     "pricePrefix": "from",
     "priceNettoLabel": "NET",
     "priceBrutto": "from {{price}} gross",
-    "cta": "Discover the model",
+    "cta": "Explore model",
     "specLabels": {
       "operatingWeight": "Operating weight",
       "engine": "Engine",
@@ -72,7 +74,7 @@
     },
     "comingSoon": {
       "badge": "Coming soon",
-      "cta": "Coming to the offer soon",
+      "cta": "Coming soon",
       "list": [
         "New machine configurations",
         "More equipment variants",
@@ -82,7 +84,7 @@
   },
   "modelPage": {
     "breadcrumb": {
-      "home": "Home",
+      "home": "Home page",
       "models": "Mini excavators"
     },
     "heroLabel": "Bergson Machines mini excavators",
@@ -94,23 +96,23 @@
       "contact": "Contact us",
       "allModels": "← All models"
     },
-    "overviewTitle": "{{name}} mini excavator",
+    "overviewTitle": "{{name}} Mini Excavator",
     "galleryImageAlt": "{{name}} photo {{index}}",
     "specsLabel": "Technical data",
-    "specsTitle": "{{name}} model specifications",
+    "specsTitle": "Specifications for model {{name}}",
     "drawingLabel": "Technical drawing",
     "drawingTitle": "Dimensions and working geometry",
-    "drawingImageAlt": "{{name}} technical drawing",
+    "drawingImageAlt": "Technical drawing {{name}}",
     "accessoriesLabel": "Additional attachments",
     "accessoriesTitle": "Additional attachments",
-    "accessoriesSubtitle": "Sample accessories compatible with the {{name}} model.",
+    "accessoriesSubtitle": "Example accessories compatible with model {{name}}.",
     "accessoryImageAlt": "{{name}}",
     "accessoryPrice": "{{price}} net",
-    "otherLabel": "Discover other models",
+    "otherLabel": "Explore other models",
     "otherModelImageAlt": "{{name}}",
     "otherPrice": "from {{price}} net",
-    "otherCta": "Discover the model →",
-    "ctaBarTitle": "Do you have questions about {{name}}?",
+    "otherCta": "Explore model →",
+    "ctaBarTitle": "Have questions about {{name}}?",
     "ctaBarSub": "We reply within 2 hours on business days",
     "ctaBarButton": "Go to the form"
   },
@@ -128,22 +130,22 @@
       "bm10Photo": {
         "alt": "BM10 mini excavator",
         "tag": "BM10 · 1 ton",
-        "label": "BM10 - narrow access, gardens"
+        "label": "BM10 - narrow access points, gardens"
       },
       "bm12Photo": {
         "alt": "BM12 mini excavator",
         "tag": "BM12 · Bestseller",
-        "label": "BM12 - the best choice"
+        "label": "BM12 - best choice"
       }
     },
     "infoTiles": {
       "warranty": {
         "number": "1 year",
         "sub": "Warranty",
-        "desc": "Full protection of mechanics and hydraulics"
+        "desc": "Full protection for mechanics and hydraulics"
       },
       "ready": {
-        "number": "24h",
+        "number": "48h",
         "sub": "Service response time",
         "desc": "Typical service response time"
       }
@@ -151,9 +153,9 @@
   },
   "accessories": {
     "label": "Additional equipment",
-    "title": "Attachments and accessories for mini excavators",
-    "sub": "All accessories are compatible with every model. Choose attachments according to the type of work and expand your machine’s capabilities.",
-    "cta": "See all attachments",
+    "title": "Mini excavator accessories",
+    "sub": "All accessories are compatible with every model. Match the attachment to the type of work and expand your machine’s capabilities.",
+    "cta": "View all attachments",
     "controls": {
       "prevAriaLabel": "Previous attachment",
       "nextAriaLabel": "Next attachment"
@@ -166,55 +168,55 @@
   },
   "whyUs": {
     "label": "Why Bergson Machines",
-    "titleLine1": "There are no",
+    "titleLine1": "No hidden",
     "titleLine2": "surprises here",
-    "sub": "You buy from a company with a Polish address, KRS, NIP, and a spare parts warehouse. We issue VAT invoices with no extra fees, deliver the machine to the specified address, and remain available after the sale - not only before it.",
+    "sub": "You buy from a company with a Polish address, KRS, NIP and a parts warehouse. We issue VAT invoices with no extra charges, deliver the machine to your address and remain available after the sale - not just before it.",
     "cta": "Talk to us",
     "cards": {
       "fv": {
-        "title": "Always a VAT Invoice",
-        "desc": "Every sale is documented with an invoice and no hidden surcharges. Deduct VAT and benefit from depreciation."
+        "title": "VAT Invoice Every Time",
+        "desc": "Every sale is documented with an invoice and no hidden extra charges. Deduct VAT and benefit from depreciation."
       },
       "parts": {
-        "title": "Spare Parts Warehouse in Poland",
-        "desc": "We keep key components in a Polish warehouse. No downtime waiting for a shipment from China."
+        "title": "Parts Warehouse in Poland",
+        "desc": "We keep key components in our Polish warehouse. No downtime waiting for shipping from China."
       },
       "service": {
         "title": "Mobile Service",
-        "desc": "A technician will come to you. You do not waste time transporting the machine to a service center."
+        "desc": "A technician comes to you. No time wasted transporting the machine to a service point."
       },
       "leasing": {
-        "title": "Leasing and Installments",
-        "desc": "We cooperate with leasing companies. Your machine starts earning before the first installment is even paid off."
+        "title": "Leasing & Installments",
+        "desc": "We work with leasing companies. The machine starts earning before the first installment ends."
       },
       "advisory": {
         "title": "Technical Advice",
-        "desc": "Not sure which model to choose? Our specialist will help you select a machine for your type of work."
+        "desc": "Not sure which model to choose? Our specialist will help match the machine to your work."
       },
       "delivery": {
         "title": "Delivery to Your Address",
-        "desc": "We deliver the machine to your construction site or property anywhere in Poland. Transport included in the price up to 200 km."
+        "desc": "We deliver the machine to your construction site or property anywhere in Poland. Transport is included in the price up to 200 km."
       }
     }
   },
   "objections": {
     "label": "Have doubts?",
-    "title": "We answer directly",
+    "title": "Straight answers",
     "items": [
       {
         "id": "parts-wait",
         "question": "\"What about spare parts from China? Will I have to wait a month?\"",
-        "answer": "<strong>No.</strong> We keep key parts in Poland - seals, filters, buckets, hydraulic components, etc. For our mini excavators, we use components compatible with KOOP, Briggs & Stratton, and Kubota, available from Polish distributors. Typical service response time: <strong>24h</strong>."
+        "answer": "<strong>No.</strong> We keep a warehouse in Poland with key parts - seals, filters, buckets and hydraulic components, among others. For our mini excavators, we use components compatible with KOOP, Briggs & Stratton and Kubota, available from Polish distributors. Typical service response time: <strong>48h</strong>."
       },
       {
         "id": "service-who",
-        "question": "\"Who is going to repair it? No service shop knows these machines.\"",
-        "answer": "<strong>We will.</strong> We have our own mobile technical service team. The engines in our machines are standard units - any experienced mechanic can handle them. Each machine comes with a <strong>Polish-language user manual and spare parts catalog</strong>."
+        "question": "\"Who will repair it? No service center knows these machines.\"",
+        "answer": "<strong>We will.</strong> We have our own mobile technical service. The engines in our machines are standard units - any experienced mechanic can handle them. Every machine comes with a <strong>Polish-language user manual and parts catalogue</strong>."
       },
       {
         "id": "quality",
         "question": "\"At this price, something must be wrong\"",
-        "answer": "<strong>Ask our customers</strong> what they think about our mini excavators. We will gladly provide contact details for someone who uses our mini excavators, for example on a construction site. A first-hand opinion means more than ours."
+        "answer": "<strong>Ask our customers</strong> what they think about our mini excavators. We will gladly put you in touch with someone who uses our mini excavators, for example on a construction site. A first-hand opinion means more than ours."
       }
     ]
   },
@@ -225,45 +227,45 @@
       {
         "num": "1",
         "title": "Contact",
-        "desc": "Fill out the form or call us. We reply quickly."
+        "desc": "Fill out the form or call us. We respond quickly."
       },
       {
         "num": "2",
         "title": "Consultation",
-        "desc": "We choose the model and attachments to match your specific work and budget."
+        "desc": "We match the model and attachments to your specific work and budget."
       },
       {
         "num": "3",
         "title": "Order and Invoice",
-        "desc": "We sign the agreement and issue the invoice. Leasing and installments are available."
+        "desc": "We sign the agreement and issue the invoice. Leasing and installments available."
       },
       {
         "num": "4",
         "title": "Delivery",
-        "desc": "We deliver the machine to the specified address anywhere in Poland."
+        "desc": "We deliver the machine to your address anywhere in Poland."
       },
       {
         "num": "5",
         "title": "After-Warranty Service",
-        "desc": "We stay with you for the long term. Service, parts, advice."
+        "desc": "We stay with you for the long term. Service, parts and advice."
       }
     ]
   },
   "service": {
     "label": "Warranty and service",
-    "title": "You are buying peace of mind",
+    "title": "You buy peace of mind",
     "items": {
       "warranty": {
         "title": "1-year warranty",
         "desc": "Full warranty on all mechanical and hydraulic components. No asterisks, no hidden exceptions."
       },
       "mobile": {
-        "title": "On-Site Mobile Service",
-        "desc": "A technician comes to you - to the construction site or your property. You do not lose a single workday to logistics."
+        "title": "Mobile On-Site Service",
+        "desc": "A technician comes to you - to the construction site or your property. You do not lose a single working day to logistics."
       },
       "stock": {
-        "title": "Spare Parts Warehouse in Poland",
-        "desc": "Filters, seals, hydraulic components, buckets - everything in stock. Thanks to this, the typical service response time is 24h."
+        "title": "Parts Warehouse in Poland",
+        "desc": "Filters, seals, hydraulic components, buckets - everything in stock. Thanks to this, the typical service response time is 48h."
       },
       "hotline": {
         "title": "Technical Hotline",
@@ -277,7 +279,7 @@
     "promise": {
       "ariaLabel": "Information about machine preparation",
       "title": "Ready to work from day one",
-      "text": "Every Bergson excavator undergoes a full pre-sale inspection with us - before it reaches you, we replace the engine and hydraulic oil, check the electrical installation and all mechanical systems. You buy a machine fully prepared for work, with no hidden surprises. You do not need to do anything - once delivered, you can start working immediately."
+      "text": "Every Bergson excavator goes through a full pre-delivery inspection with us - before it reaches you, we change the engine and hydraulic oil, check the electrical installation and inspect all mechanical systems. You buy a machine fully prepared for work, with no hidden surprises. You do not need to do anything - once delivered, you can start working right away."
     }
   },
   "faq": {
@@ -291,23 +293,23 @@
       },
       {
         "id": "delivery-time",
-        "q": "How long does it take to receive the machine?",
-        "a": "Machines available from stock are delivered within 5–14 business days. Made-to-order models are delivered within 3–4 weeks. We confirm current availability when preparing the quotation."
+        "q": "How long does delivery take?",
+        "a": "Machines available from stock are delivered within 5-14 business days. Made-to-order models are delivered within 3-4 weeks. We confirm current availability during the quotation process."
       },
       {
         "id": "leasing",
-        "q": "Can I buy it for my company and use leasing?",
-        "a": "Yes. We issue VAT invoices for both companies and private individuals. We cooperate with leasing companies - the installment for a BM12 machine is around PLN 650-800 per month with a 60-month lease."
+        "q": "Can I buy as a company and use leasing?",
+        "a": "Yes. We issue VAT invoices for companies and private individuals. We work with leasing companies - the installment for a BM12 machine is around PLN 650-800 per month with a 60-month lease."
       },
       {
         "id": "after-warranty",
         "q": "What happens if something breaks after a year?",
-        "a": "The warranty covers 12 months. After it ends, we offer paid mobile service and spare parts sales from our Polish warehouse."
+        "a": "The warranty covers 12 months. After it ends, we offer paid mobile service and spare parts sales from our warehouse in Poland."
       },
       {
         "id": "test-drive",
         "q": "Can I test the machine before buying?",
-        "a": "Yes - we invite you to a presentation at our showroom in Poznań. You can personally test the machine in operation. Contact us to arrange a date."
+        "a": "Yes - we invite you to a presentation at our showroom in Poznań. You can try the machine in real working conditions. Contact us to arrange a date."
       },
       {
         "id": "new-ce",
@@ -319,8 +321,8 @@
   "contact": {
     "label": "Contact us",
     "titleLine1": "Free response",
-    "titleLine2": "Fast quote",
-    "sub": "Describe what you need and we will get back to you with a specific answer and a model recommendation for your work.",
+    "titleLine2": "Fast quotation",
+    "sub": "Tell us what you need and we will get back to you with a specific answer and a model recommendation for your work.",
     "form": {
       "fields": {
         "name": {
@@ -337,11 +339,11 @@
         },
         "model": {
           "label": "Model of interest",
-          "placeholder": "Choose"
+          "placeholder": "Select"
         },
         "message": {
-          "label": "Question or description of the work *",
-          "placeholder": "Describe what you need the excavator for, what questions you have, and what scope of work you are planning."
+          "label": "Question or job description *",
+          "placeholder": "Describe what you need the excavator for, what questions you have and what kind of work you are planning."
         }
       },
       "modelOptions": [
@@ -371,14 +373,14 @@
         }
       ],
       "modelSelectionPrefix": "Model of interest: {{model}}",
-      "consentText": "I consent to the processing of my personal data by Better Solutions Sp. z o.o., with its registered office at ul. Poznańska 7, 61-160 Czapury, NIP: 7252298652, for the purpose of responding to my inquiry, including presenting an offer if I ask for one.",
+      "consentText": "I consent to the processing of my personal data by Better Solutions Sp. z o.o., with its registered office at ul. Poznańska 7, 61-160 Czapury, NIP: 7252298652, for the purpose of responding to my inquiry, including presenting an offer if I request one.",
       "recaptchaText": "This site is protected by reCAPTCHA and the Google <privacyLink>Privacy Policy</privacyLink> and <termsLink>Terms of Service</termsLink> apply.",
       "submit": {
         "default": "Send inquiry",
         "loading": "Sending…"
       },
       "messages": {
-        "fixErrors": "Complete the required fields, correct the e-mail or phone number, and check the contact consent.",
+        "fixErrors": "Fill in the required fields, correct your e-mail or phone number, and tick the consent box.",
         "genericError": "The message could not be sent. Please try again in a moment or contact us by phone or e-mail.",
         "success": "Thank you! Your inquiry has been sent."
       },
@@ -387,12 +389,12 @@
         "phone": "Enter a valid phone number.",
         "email": "Enter a valid e-mail address.",
         "message": "Describe what you need.",
-        "consent": "Check the contact consent."
+        "consent": "Tick the consent box for contact."
       }
     },
     "info": {
       "title": "Let’s talk",
-      "text": "We do not force you to buy online. Prefer to call? Want to see the machine live? Visit us or book a demonstration visit.",
+      "text": "We do not force online purchases. Prefer to call? Want to see the machine live? Visit us or book a demonstration visit.",
       "details": {
         "phone": {
           "label": "Phone"
@@ -404,7 +406,7 @@
           "label": "Address"
         },
         "hours": {
-          "label": "Opening hours",
+          "label": "Business hours",
           "value": "Mon-Fri: 8:00-17:00 · Sat: 9:00-13:00"
         }
       },
@@ -439,7 +441,7 @@
       "title": "Legal information",
       "links": {
         "terms": "Terms and conditions",
-        "paymentMethods": "Warranty Card",
+        "paymentMethods": "Warranty card",
         "privacyPolicy": "Privacy policy"
       }
     },
@@ -452,11 +454,11 @@
     "companyTitle": "Seller details",
     "pages": {
       "gwarancja": {
-        "title": "Warranty terms",
-        "intro": "This document sets out the rules for granting and performing the warranty for Bergson Machines branded Goods. The document forms an integral part of the Bergson Machines Sales Terms and Conditions.",
+        "title": "Warranty Terms",
+        "intro": "This document sets out the rules for granting and performing the warranty for Bergson Machines branded Goods. This document is an integral part of the Bergson Machines Sales Terms and Conditions.",
         "documentMeta": "Bergson Machines",
         "version": "Version 1.0",
-        "effectiveDate": "Effective date: 1 January 2025",
+        "effectiveDate": "Effective date: January 1, 2025",
         "sections": [
           {
             "heading": "Warrantor",
@@ -467,7 +469,7 @@
               },
               {
                 "type": "paragraph",
-                "text": "The warranty is granted voluntarily and does not exclude, limit, or suspend the Buyer’s rights arising from the provisions on non-conformity of goods with the contract."
+                "text": "The warranty is granted voluntarily and does not exclude, limit or suspend the Buyer’s rights arising from the laws on non-conformity of goods with the contract."
               }
             ]
           },
@@ -476,14 +478,14 @@
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "The warranty covers physical defects of the Goods resulting from causes inherent in the Goods themselves, provided that they are used under normal operating conditions in accordance with the user manual supplied by the Warrantor."
+                "text": "The warranty covers physical defects of the Goods arising from causes inherent in the Goods themselves, provided that the Goods are used under normal operating conditions and in accordance with the user manual supplied by the Warrantor."
               },
               {
                 "type": "list",
                 "items": [
                   "BM10, BM12, BM12C mini excavators - 12 months from the date the Goods are handed over to the Buyer;",
-                  "working attachments (buckets, hammers, augers) - 12 months from the date of delivery;",
-                  "spare parts supplied as part of a warranty repair - 3 months or until the end of the original warranty period, whichever expires later."
+                  "working attachments (buckets, breakers, augers) - 12 months from the date of handover;",
+                  "spare parts supplied under a warranty repair - 3 months or until the end of the original warranty period, whichever expires later."
                 ]
               }
             ]
@@ -494,12 +496,12 @@
               {
                 "type": "list",
                 "items": [
-                  "mechanical, electrical, or hydraulic damage caused by the Buyer or third parties;",
-                  "defects resulting from improper operation, maintenance, or installation of attachments contrary to the instructions;",
-                  "natural wear and tear of consumable parts, in particular filters, oils, seals, rubber hoses, rubber and steel tracks, bulbs, and fuses;",
-                  "damage caused by using the Goods contrary to their intended purpose, overloading, or lack of regular service inspections;",
-                  "defects caused by using non-original spare parts or operating fluids not approved by the manufacturer;",
-                  "damage resulting from force majeure, including flood, fire, lightning, or frost below the permissible operating temperature;",
+                  "mechanical, electrical or hydraulic damage caused by the Buyer or third parties;",
+                  "faults resulting from improper operation, maintenance or installation of attachments contrary to the instructions;",
+                  "natural wear and tear of consumable parts, in particular filters, oils, seals, rubber hoses, rubber and steel tracks, bulbs and fuses;",
+                  "damage caused by use of the Goods contrary to their intended purpose, overload or lack of regular service inspections;",
+                  "faults caused by the use of non-original spare parts or operating fluids not approved by the manufacturer;",
+                  "damage resulting from force majeure, including flood, fire, lightning discharge or frost below the permissible operating temperature;",
                   "Goods with tampered or illegible serial numbers."
                 ]
               }
@@ -510,12 +512,12 @@
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "Step 1 - Reporting the defect. The Buyer is required to report the defect immediately after discovering it, no later than within 14 days, by e-mail to: kontakt@bergsonmachines.pl."
+                "text": "Step 1 - Defect notification. The Buyer is obliged to report the defect immediately after discovering it, no later than within 14 days, by e-mail to: kontakt@bergsonmachines.pl."
               },
               {
                 "type": "list",
                 "items": [
-                  "a detailed description of the identified defect together with photographic or video documentation;",
+                  "a detailed description of the defect found, together with photo or video documentation;",
                   "the machine serial number from the nameplate;",
                   "the purchase date and a copy of the proof of purchase, in particular a VAT invoice or receipt;",
                   "the Buyer’s contact details and the location of the Goods."
@@ -523,15 +525,15 @@
               },
               {
                 "type": "paragraph",
-                "text": "Step 2 - Evaluation of the claim. The Warrantor confirms receipt of the claim within 2 business days and indicates whether the repair will be carried out at the place where the Goods are used or whether the Goods should be delivered to a service point."
+                "text": "Step 2 - Claim assessment. The Warrantor confirms receipt of the claim within 2 business days and indicates whether the repair will be performed at the place of use of the Goods or whether the Goods must be delivered to a service point."
               },
               {
                 "type": "paragraph",
-                "text": "Step 3 - Performance. The Warrantor reviews the warranty claim and begins processing it within 14 business days from its proper submission. If the claim is accepted, the Warrantor, at its sole discretion, will repair the Goods, deliver and install a spare part, or replace the Goods with defect-free Goods."
+                "text": "Step 3 - Fulfilment. The Warrantor reviews the warranty claim and begins fulfilment within 14 business days from proper delivery of the claim. If the claim is accepted, the Warrantor, at its own discretion, will repair the Goods, supply and install a spare part, or replace the Goods with defect-free Goods."
               },
               {
                 "type": "paragraph",
-                "text": "Step 4 - Collection of the Goods. After the repair is completed, the Warrantor notifies the Buyer that the Goods are ready for collection or arranges their delivery at the Warrantor’s expense."
+                "text": "Step 4 - Collection of the Goods. After the repair is completed, the Warrantor notifies the Buyer that the Goods are ready for collection or arranges delivery at the Warrantor’s expense."
               }
             ]
           },
@@ -540,7 +542,7 @@
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "The costs of delivering the Goods to the service point and collecting them after the warranty repair are borne by the Warrantor, provided that the defect is recognized as covered by the warranty. If the claim proves unjustified, the transport and diagnostic costs are borne by the Buyer."
+                "text": "The cost of delivering the Goods to the service point and collecting them after the warranty repair is borne by the Warrantor, provided that the defect has been recognized as covered by the warranty. If the claim proves unfounded, the transport and diagnostic costs are borne by the Buyer."
               }
             ]
           },
@@ -549,7 +551,7 @@
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "The Warrantor may issue the Buyer with a warranty card in paper or electronic form. The absence of a warranty card does not deprive the Buyer of warranty rights — proof of purchase is sufficient to exercise them."
+                "text": "The Warrantor may issue the Buyer with a warranty card in paper or electronic form. The absence of a warranty card does not deprive the Buyer of warranty rights - proof of purchase is sufficient to exercise them."
               }
             ]
           }
@@ -558,17 +560,17 @@
       },
       "zwroty-i-reklamacje": {
         "title": "Returns and complaints",
-        "intro": "This document sets out the rules for submitting complaints and exercising the right of withdrawal from the contract. The document forms an integral part of the Bergson Machines Sales Terms and Conditions.",
+        "intro": "This document sets out the rules for submitting complaints and exercising the right of withdrawal from the contract. This document is an integral part of the Bergson Machines Sales Terms and Conditions.",
         "documentMeta": "Bergson Machines",
         "version": "Version 1.0",
-        "effectiveDate": "Effective date: 1 January 2025",
+        "effectiveDate": "Effective date: January 1, 2025",
         "sections": [
           {
             "heading": "Complaint due to non-conformity of the Goods with the Contract",
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "The Seller is liable for non-conformity of the Goods with the Contract under the rules set out in the Act of 30 May 2014 on consumer rights — in relations with Consumers — and under the Civil Code — in relations with B2B Buyers."
+                "text": "The Seller is liable for any non-conformity of the Goods with the Contract under the rules set out in the Act of 30 May 2014 on consumer rights - in relations with Consumers - and under the Civil Code - in relations with B2B Buyers."
               }
             ]
           },
@@ -577,20 +579,20 @@
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "The Seller is liable for non-conformity of the Goods with the Contract existing at the time of delivery and revealed within two years from that moment."
+                "text": "The Seller is liable for any non-conformity of the Goods with the Contract existing at the time of delivery and revealed within two years from that moment."
               },
               {
                 "type": "list",
                 "items": [
-                  "demand repair of the Goods;",
-                  "demand replacement of the Goods with defect-free Goods;",
-                  "demand a price reduction — if repair or replacement is impossible, excessively costly, or the Seller has refused to perform it;",
-                  "withdraw from the Contract and receive a full refund — if the non-conformity is material and repair or replacement proved ineffective or the Seller refused to perform it."
+                  "request repair of the Goods;",
+                  "request replacement of the Goods with defect-free Goods;",
+                  "request a price reduction - if repair or replacement is impossible, excessively costly, or the Seller has refused to perform it;",
+                  "withdraw from the Contract and receive a full refund - if the non-conformity is material and the repair or replacement has proven ineffective or the Seller has refused to perform it."
                 ]
               },
               {
                 "type": "paragraph",
-                "text": "It is presumed that any non-conformity revealed within one year from delivery of the Goods already existed at the time of delivery, unless the Seller proves otherwise."
+                "text": "It is presumed that a non-conformity revealed within one year from delivery of the Goods already existed at the time of delivery, unless the Seller proves otherwise."
               }
             ]
           },
@@ -599,24 +601,24 @@
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "In relations with B2B Buyers, liability under statutory warranty is excluded pursuant to Article 558 § 1 of the Civil Code."
+                "text": "In relations with B2B Buyers, liability under the statutory warranty for defects is excluded pursuant to Article 558 § 1 of the Civil Code."
               },
               {
                 "type": "paragraph",
-                "text": "A B2B Buyer may pursue claims solely under the Warranty described in the Bergson Machines Warranty Terms document or under terms individually agreed with the Seller in writing."
+                "text": "A B2B Buyer may pursue rights only under the Warranty described in the Bergson Machines Warranty Terms document or under terms individually agreed with the Seller in writing."
               }
             ]
           },
           {
-            "heading": "Right of withdrawal from the Contract — Consumers",
+            "heading": "Right of withdrawal from the Contract - Consumers",
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "A Consumer who concluded a distance contract or an off-premises contract has the right to withdraw from it without stating a reason within 14 days from the day on which the Goods came into the Consumer’s possession."
+                "text": "A Consumer who concluded a Contract at a distance or off-premises has the right to withdraw from it without giving any reason within 14 days from the day of taking possession of the Goods."
               },
               {
                 "type": "paragraph",
-                "text": "The right of withdrawal does not apply if the Goods were manufactured or modified according to the Consumer’s individual specification, are Goods imported on special production order, or have clearly deteriorated for reasons attributable to the Consumer."
+                "text": "The right of withdrawal does not apply if the Goods were manufactured or modified according to the Consumer’s individual specification, are Goods imported directly from production on special order, or have clearly deteriorated for reasons attributable to the Consumer."
               }
             ]
           },
@@ -626,14 +628,14 @@
               {
                 "type": "list",
                 "items": [
-                  "sending an unequivocal statement of withdrawal to the e-mail address: kontakt@bergsonmachines.pl or in writing to the Seller’s registered office — before the expiry of the 14-day period;",
-                  "returning the Goods within 14 days from the date of submitting the statement, in unchanged condition and, if possible, in the original packaging, to the address indicated by the Seller;",
-                  "bearing the direct costs of returning the Goods, unless the Seller has expressly agreed to cover them."
+                  "submit a clear statement of withdrawal by e-mail to kontakt@bergsonmachines.pl or in writing to the Seller’s registered office address - before the 14-day deadline expires;",
+                  "return the Goods within 14 days from the date of submitting the statement, unchanged insofar as possible, preferably in the original packaging, to the address indicated by the Seller;",
+                  "bear the direct costs of returning the Goods, unless the Seller has expressly agreed to cover them."
                 ]
               },
               {
                 "type": "paragraph",
-                "text": "The Seller refunds all payments received, including standard delivery costs, without undue delay and no later than within 14 days from the date of receiving the withdrawal statement. The Seller may withhold the refund until receiving the Goods or confirmation that they have been sent back."
+                "text": "The Seller refunds all payments received, including standard delivery costs, without undue delay and no later than within 14 days from the date of receiving the withdrawal statement. The Seller may withhold the refund until receiving the Goods or confirmation of their dispatch."
               }
             ]
           },
@@ -642,7 +644,7 @@
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "A complaint due to non-conformity of the Goods with the Contract or warranty rights should be submitted by e-mail, in writing, or through an authorized Bergson Machines dealer from whom the Goods were purchased."
+                "text": "A complaint regarding non-conformity of the Goods with the Contract or warranty rights should be submitted by e-mail, in writing, or through an authorized Bergson Machines dealer from whom the Goods were purchased."
               },
               {
                 "type": "list",
@@ -650,22 +652,22 @@
                   "the Buyer’s full name and contact details;",
                   "the order number or VAT invoice number;",
                   "the serial number of the Goods;",
-                  "a detailed description of the defect or non-conformity together with photographic or video documentation;",
-                  "the Buyer’s request, in particular repair, replacement, price reduction, or refund."
+                  "a detailed description of the defect or non-conformity together with photo or video documentation;",
+                  "the Buyer’s request, in particular repair, replacement, price reduction or refund."
                 ]
               }
             ]
           },
           {
-            "heading": "Complaint review period",
+            "heading": "Complaint handling period",
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "The Seller reviews the complaint and responds within 14 calendar days in the case of a Consumer and within 14 business days in the case of a B2B Buyer submitting a warranty complaint."
+                "text": "The Seller reviews the complaint and provides a response within 14 calendar days in the case of a Consumer and within 14 business days in the case of a B2B Buyer submitting a warranty complaint."
               },
               {
                 "type": "paragraph",
-                "text": "Lack of a response to the Consumer within 14 calendar days means that the complaint is deemed justified. The response is sent by e-mail or in writing — at the Buyer’s request."
+                "text": "No response to a Consumer within 14 calendar days means that the complaint is deemed justified. The response is sent by e-mail or in writing - at the Buyer’s request."
               }
             ]
           },
@@ -682,7 +684,7 @@
               },
               {
                 "type": "paragraph",
-                "text": "The Seller is not obliged to use out-of-court dispute resolution methods but may consent to participate in a specific proceeding."
+                "text": "The Seller is not obliged to use out-of-court dispute resolution methods, but may agree to participate in a specific proceeding."
               }
             ]
           }
@@ -690,11 +692,11 @@
         "companyNote": "Better Solutions Sp. z o.o. | Bergson Machines | ul. Poznańska 7, 61-160 Czapury | NIP: 7252298652 | KRS: 0000837608 | www.bergsonmachines.pl"
       },
       "dostawa": {
-        "title": "Delivery terms",
-        "intro": "This document sets out the rules for the delivery of Bergson Machines Goods. The document forms an integral part of the Bergson Machines Sales Terms and Conditions.",
+        "title": "Delivery Terms",
+        "intro": "This document sets out the rules for the delivery of Bergson Machines Goods. This document is an integral part of the Bergson Machines Sales Terms and Conditions.",
         "documentMeta": "Bergson Machines",
         "version": "Version 1.0",
-        "effectiveDate": "Effective date: 1 January 2025",
+        "effectiveDate": "Effective date: January 1, 2025",
         "sections": [
           {
             "heading": "Delivery area",
@@ -705,7 +707,7 @@
               },
               {
                 "type": "paragraph",
-                "text": "Deliveries outside Poland are possible after prior individual agreement on the conditions, including costs, timing, and customs formalities."
+                "text": "Deliveries outside Poland are possible after prior individual agreement on the terms, including costs, timing and customs formalities."
               }
             ]
           },
@@ -714,18 +716,18 @@
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "The estimated delivery date is provided each time in the Order confirmation and is calculated from the date of booking the full payment or the agreed advance payment."
+                "text": "The estimated delivery time is provided each time in the Order confirmation and is counted from the date of booking the full payment or the agreed advance payment."
               },
               {
                 "type": "list",
                 "items": [
-                  "Goods available in a warehouse in Poland — 3-7 business days from payment confirmation;",
-                  "Goods imported directly from production — 60-90 business days, including sea transport and customs clearance."
+                  "Goods available in stock in Poland - 3-7 business days from payment confirmation;",
+                  "Goods imported directly from production - 60-90 business days, including sea transport and customs clearance time."
                 ]
               },
               {
                 "type": "paragraph",
-                "text": "The Seller shall promptly inform the Buyer of any delay exceeding the originally stated deadline. The Seller is not liable for delays resulting from causes attributable to the carrier, customs agency, customs or tax authorities, or delays caused by force majeure."
+                "text": "The Seller immediately informs the Buyer of any delay exceeding the originally indicated deadline. The Seller is not liable for delays caused by the carrier, customs agency, customs or tax authority, or by force majeure."
               }
             ]
           },
@@ -735,9 +737,9 @@
               {
                 "type": "list",
                 "items": [
-                  "delivery by the Seller’s own transport or by a carrier commissioned by the Seller — to the address indicated by the Buyer in the Order;",
-                  "personal collection at the Seller’s registered office: ul. Poznańska 7, 61-160 Czapury — after prior arrangement of the date;",
-                  "collection from an authorized Bergson Machines dealer — after prior arrangement with the dealer."
+                  "transport by the Seller or a carrier appointed by the Seller - to the address indicated by the Buyer in the Order;",
+                  "personal collection at the Seller’s registered office: ul. Poznańska 7, 61-160 Czapury - after prior appointment;",
+                  "collection from an authorized Bergson Machines dealer - after prior arrangement with the dealer."
                 ]
               }
             ]
@@ -747,7 +749,7 @@
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "Delivery costs are added to the Price of the Goods or indicated separately in the Order confirmation. The calculation depends on the weight and dimensions of the Goods, the selected transport method, and the destination."
+                "text": "Delivery costs are added to the Price of the Goods or indicated separately in the Order confirmation. The calculation depends on the weight and dimensions of the Goods, the selected delivery method and the destination."
               },
               {
                 "type": "paragraph",
@@ -756,22 +758,22 @@
             ]
           },
           {
-            "heading": "Inspection of the Goods upon receipt",
+            "heading": "Checking the Goods upon receipt",
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "The Buyer is obliged to check the condition of the shipment immediately upon receipt, in the presence of the carrier’s or courier’s representative."
+                "text": "The Buyer is obliged to check the condition of the shipment directly upon receipt, in the presence of the carrier’s representative or courier."
               },
               {
                 "type": "list",
                 "items": [
-                  "in the event of damage to the packaging or the Goods — draw up a damage report in the presence of the carrier and immediately notify the Seller at: kontakt@bergsonmachines.pl;",
-                  "in the event of a discrepancy in quantity or assortment — refuse to accept the shipment or note the reservation in the transport documents and immediately contact the Seller."
+                  "in the event of damage to the packaging or the Goods - prepare a damage report in the presence of the carrier and immediately notify the Seller at: kontakt@bergsonmachines.pl;",
+                  "in the event of a quantitative or assortment discrepancy - refuse acceptance of the shipment or note the reservation in the transport documents and immediately contact the Seller."
                 ]
               },
               {
                 "type": "paragraph",
-                "text": "Acceptance of the shipment without reservations means confirmation that the Goods arrived undamaged and in the correct quantity. Reservations reported after signing the receipt documents without comments will be considered individually."
+                "text": "Acceptance of the shipment without reservations means confirmation that the Goods arrived intact and in the correct quantity. Reservations reported after signing the delivery documents without remarks will be considered individually."
               }
             ]
           },
@@ -780,7 +782,7 @@
             "blocks": [
               {
                 "type": "paragraph",
-                "text": "The risk of accidental loss of or damage to the Goods passes to the B2B Buyer when the Goods are handed over to the carrier or collected personally, and to the Consumer when the Goods are physically taken into possession by the Consumer or a third party indicated by the Consumer."
+                "text": "The risk of accidental loss of or damage to the Goods passes to the B2B Buyer when the Goods are handed over to the carrier or collected in person, and to the Consumer when the Consumer or a third party indicated by the Consumer physically takes possession of the Goods."
               }
             ]
           },
@@ -793,7 +795,7 @@
               },
               {
                 "type": "paragraph",
-                "text": "Until title passes, the Buyer is entitled to use the Goods in accordance with their intended purpose but may not dispose of them, in particular by resale, pledge, or transfer by way of security."
+                "text": "Until ownership passes, the Buyer is entitled to use the Goods in accordance with their intended purpose, but may not dispose of them, in particular by resale, pledge or transfer by way of security."
               }
             ]
           }
@@ -804,20 +806,41 @@
   },
   "meta": {
     "home": {
-      "title": "Bergson Machines | Mini excavators, attachments and service",
-      "description": "Sales of mini excavators, attachments and service support. Choose the right model for your work and get a free quote."
+      "title": "Bergson Machines | Mini excavators - prices, attachments and service",
+      "description": "Check how much a mini excavator costs, compare mini excavators and prices, choose a model for earthworks, garden or home use, and get a free quote."
     },
     "model": {
       "title": "{{name}} | Bergson Machines"
     },
     "legal": {
       "title": "{{title}} | Bergson Machines"
+    },
+    "blog": {
+      "title": "Blog | Bergson Machines",
+      "description": "Guides and practical information about mini excavators: which mini excavator is best for a garden or home, how much a mini excavator costs, and how to choose the right model."
+    },
+    "blogPost": {
+      "title": "{{title}} | Bergson Machines Blog"
+    },
+    "accessories": {
+      "title": "Attachments & parts | Bergson Machines",
+      "description": "Attachments for mini excavators, consumable parts and spare parts for Bergson Machines models."
+    },
+    "notFound": {
+      "title": "404 | Bergson Machines",
+      "description": "The page you are looking for could not be found."
     }
+  },
+  "notFound": {
+    "label": "404",
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist, has been moved, or the address is incorrect.",
+    "button": "Back to home page"
   },
   "blogPage": {
     "label": "Blog",
-    "title": "Practical knowledge about mini excavators and attachments",
-    "lead": "Guides, operating tips, and materials to help you choose the right model for specific jobs.",
+    "title": "Practical knowledge about mini excavators - price, choice and attachments",
+    "lead": "Guides and tips to help you check how much a mini excavator costs, which mini excavator to choose, and which model best fits specific work.",
     "readMore": "Read more"
   },
   "blogPostPage": {
@@ -825,52 +848,52 @@
   },
   "accessoriesPage": {
     "breadcrumb": {
-      "home": "Home",
-      "current": "Attachments and parts"
+      "home": "Home page",
+      "current": "Accessories & parts"
     },
     "label": "Additional attachments",
-    "title": "Attachments and parts",
-    "sub": "Accessories and parts compatible with Bergson Machines models.",
+    "title": "Accessories & parts",
+    "sub": "Accessories and parts compatible with Bergson Machines models and mini excavators used for earthworks.",
     "filters": {
       "all": "All",
-      "accessories": "Attachments",
+      "accessories": "Accessories",
       "parts": "Parts",
       "searchPlaceholder": "Search product..."
     },
     "sections": {
-      "accessoriesLabel": "Additional attachments",
-      "accessoriesTitle": "Additional attachments",
-      "accessoriesSub": "Sample accessories compatible with Bergson Machines models.",
+      "accessoriesLabel": "Accessories",
+      "accessoriesTitle": "Mini excavator accessories",
+      "accessoriesSub": "Example accessories compatible with Bergson Machines models.",
       "partsLabel": "Spare parts",
-      "partsTitle": "Parts for mini excavators",
+      "partsTitle": "Mini excavator parts",
       "partsSub": "Selected spare and consumable parts available for Bergson Machines models."
     },
     "priceLabel": "{{price}} net",
     "empty": "No products match the selected criteria.",
-    "partsEmpty": "No parts matching the selected criteria were found."
+    "partsEmpty": "No parts match the selected criteria."
   },
   "seoContent": {
     "label": "Guide",
-    "title": "Mini excavators for sale - how to choose the right model?",
-    "lead": "A mini excavator is equipment that works well both for construction and installation jobs as well as on private properties. Choosing the right machine weight, attachments, and availability of service and spare parts in Poland is crucial.",
+    "title": "Mini excavators for sale - which mini excavator should you choose and how much does a mini excavator cost?",
+    "lead": "A mini excavator, meaning a small excavator for precise work, is useful both for construction and installation jobs as well as on private properties. For many people, it is not only the mini excavator price that matters, but also whether a given machine is suitable for garden work, home use and regular earthworks.",
     "blocks": [
       {
-        "title": "1 ton or 1.2 tons?",
-        "text": "1-ton models work better in tight spaces and for lighter jobs. 1.2-ton mini excavators offer greater stability and efficiency, which is why they are a common choice for companies carrying out more demanding earthworks."
+        "title": "1 ton, 1.5 t or 2 t - which mini excavator should you choose?",
+        "text": "1-ton models work better in tight spaces and for lighter tasks. People comparing phrases such as 1.5 t mini excavator, 2 t mini excavator or mini excavator for the garden are usually looking for a balance between size, stability and performance for earthworks."
       },
       {
-        "title": "How much does a mini excavator cost?",
-        "text": "The price depends on the configuration, engine, cabin presence, and additional attachments. In practice, owning your own machine is very often more beneficial than regular renting, especially for ongoing jobs."
+        "title": "How much does a mini excavator cost and what affects the price?",
+        "text": "The price depends on the configuration, engine, presence of a cabin and additional attachments. If you are searching phrases such as mini excavator price, new mini excavator price, mini excavator prices or small excavator price, in practice you are mainly comparing the machine class, equipment and service availability."
       },
       {
-        "title": "Service and spare parts in Poland",
-        "text": "When buying, it is not only the machine itself that matters, but also the availability of spare parts and the speed of service response. These are the elements that have the greatest impact on reducing downtime and the real operating cost."
+        "title": "Mini excavator for the garden, home and earthworks",
+        "text": "When buying, not only the machine itself matters, but also parts availability and service response time. Whether you are interested in a mini excavator for the garden, a mini excavator for home use, a micro excavator or a Chinese mini excavator for earthworks, these factors have the biggest impact on reducing downtime and the real operating cost."
       }
     ],
-    "footerText": "Check the available models, compare attachments, and choose a configuration tailored to the type of work you do most often.",
+    "footerText": "Check the available models, compare attachments and choose a configuration suited to the type of work you do most often.",
     "actions": {
-      "models": "See models",
-      "accessories": "See attachments"
+      "models": "View models",
+      "accessories": "View attachments"
     }
   }
 }
