@@ -443,6 +443,67 @@
   box-shadow: none;
 }
 
+.socialBlock {
+  margin-top: 22px;
+  margin-bottom: 14px;
+}
+
+.socialLabel {
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.socialIconLink {
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-input);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.socialIconLink:hover {
+  background: rgba(242, 101, 34, 0.08);
+  border-color: rgba(242, 101, 34, 0.28);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+}
+
+.instagramLink:hover {
+  color: #dd2a7b;
+}
+
+.facebookLink:hover {
+  color: #1877f2;
+}
+
+.socialIconSvg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
 @media (max-width: 1024px) {
   .inner {
     grid-template-columns: 1fr;

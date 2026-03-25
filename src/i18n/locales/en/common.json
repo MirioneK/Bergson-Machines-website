@@ -395,6 +395,11 @@
     "info": {
       "title": "Let’s talk",
       "text": "We do not force online purchases. Prefer to call? Want to see the machine live? Visit us or book a demonstration visit.",
+      "social": {
+        "label": "Follow us",
+        "instagramAria": "Go to Instagram",
+        "facebookAria": "Go to Facebook"
+      },
       "details": {
         "phone": {
           "label": "Phone"

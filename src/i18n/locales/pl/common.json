@@ -395,6 +395,11 @@
     "info": {
       "title": "Porozmawiajmy",
       "text": "Nie zmuszamy do zakupu przez internet. Wolisz zadzwonić? Chcesz zobaczyć maszynę na żywo? Przyjedź do nas lub zamów wizytę demonstracyjną.",
+      "social": {
+        "label": "Obserwuj nas",
+        "instagramAria": "Przejdź do Instagrama",
+        "facebookAria": "Przejdź do Facebooka"
+      },
       "details": {
         "phone": {
           "label": "Telefon"

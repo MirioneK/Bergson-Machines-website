@@ -299,6 +299,8 @@ export const SERVICE_ITEMS = [
 export const CONTACT_INFO = {
   phone: '+48 600 507 816',
   phone2: '+48 537 493 696',
+  facebookUrl: 'https://www.facebook.com/profile.php?id=61583733265172',
+  instagramUrl: 'https://www.instagram.com/bergsonmachines/',
   email: 'kontakt@bergsonmachines.pl',
   location: 'Pobórka Wielka 2',
   locationSub: '89-340 Pobórka Wielka',
