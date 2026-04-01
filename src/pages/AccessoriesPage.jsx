@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import {
   ACCESSORY_PREVIEW,
   PARTS_PREVIEW,
+  calcBrutto,
   formatPrice,
 } from '../data'
 import { useReveal } from '../hooks/useReveal'
@@ -161,9 +162,6 @@ export default function AccessoriesPage() {
                     item={item}
                     nameKey={`accessories.${item.id}.name`}
                     delay={120 + index * 70}
-                    priceLabel={t('accessoriesPage.priceLabel', {
-                      price: formatPrice(item.priceNetto, i18n.resolvedLanguage),
-                    })}
                   />
                 ))}
               </div>
@@ -198,9 +196,6 @@ export default function AccessoriesPage() {
                     item={item}
                     nameKey={`parts.${item.id}.name`}
                     delay={120 + index * 70}
-                    priceLabel={t('accessoriesPage.priceLabel', {
-                      price: formatPrice(item.priceNetto, i18n.resolvedLanguage),
-                    })}
                   />
                 ))}
               </div>
@@ -214,14 +209,16 @@ export default function AccessoriesPage() {
   )
 }
 
-function ProductCard({ item, nameKey, delay, priceLabel }) {
-  const { t } = useTranslation()
+function ProductCard({ item, nameKey, delay }) {
+  const { t, i18n } = useTranslation()
   const [ref, visible] = useReveal()
 
   const name = t(nameKey, {
     ns: 'data',
     defaultValue: item.id,
   })
+
+  const priceBrutto = calcBrutto(item.priceNetto)
 
   return (
     <article
@@ -239,7 +236,23 @@ function ProductCard({ item, nameKey, delay, priceLabel }) {
 
       <div className={styles.productBody}>
         <div className={styles.productName}>{name}</div>
-        <div className={styles.productPrice}>{priceLabel}</div>
+
+        <div className={styles.priceBlock}>
+          <div className={styles.priceLine}>
+            <span className={styles.productPrice}>
+              {formatPrice(item.priceNetto, i18n.resolvedLanguage)}
+            </span>
+            <span className={styles.priceLabel}>
+              {t('accessories.card.priceNettoLabel')}
+            </span>
+          </div>
+
+          <div className={styles.productPriceBrutto}>
+            {t('accessories.card.priceBrutto', {
+              price: formatPrice(priceBrutto, i18n.resolvedLanguage),
+            })}
+          </div>
+        </div>
       </div>
     </article>
   )

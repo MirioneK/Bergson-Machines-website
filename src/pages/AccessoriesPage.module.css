@@ -278,13 +278,41 @@
 }
 
 .productPrice {
-  margin-top: auto;
   color: var(--orange);
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 800;
   line-height: 1;
-  white-space: nowrap;
+}
+
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: auto;
+}
+
+.priceLine {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.priceLabel {
+  color: rgba(255, 255, 255, 0.44);
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.productPriceBrutto {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  font-weight: 600;
 }
 
 .emptyState {
@@ -335,6 +363,14 @@
 
   .productMedia {
     height: 260px;
+  }
+
+  .productPrice {
+    font-size: 1.2rem;
+  }
+
+  .productPriceBrutto {
+    white-space: normal;
   }
 }
 

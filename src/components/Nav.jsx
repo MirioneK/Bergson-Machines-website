@@ -18,7 +18,7 @@ const NAV_LINKS = [
 const LANGUAGES = [
   { code: 'pl', label: 'PL', htmlLang: 'pl' },
   { code: 'en', label: 'ENG', htmlLang: 'en' },
-  { code: 'ua', label: 'UA', htmlLang: 'uk' },
+  // { code: 'ua', label: 'UA', htmlLang: 'uk' },
 ]
 
 const WHATSAPP_URL = 'https://wa.me/48600507816'
