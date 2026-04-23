@@ -3,8 +3,8 @@ import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import styles from './StickyCTA.module.css'
 
-const PHONE_NUMBER_RAW = '600507816'
-const PHONE_NUMBER_TEL = '+48600507816'
+const PHONE_NUMBER_RAW = '537493696'
+const PHONE_NUMBER_TEL = '+48537493696'
 
 function getInitialMenuState() {
   if (typeof document === 'undefined') return false
