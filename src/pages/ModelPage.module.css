@@ -236,6 +236,10 @@
   align-items: stretch;
 }
 
+.overviewInnerSingle {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .descCard {
   min-width: 0;
   padding: 0;
@@ -311,11 +315,11 @@
 }
 
 .acc {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.acc:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+.acc:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .accHead {
@@ -370,6 +374,10 @@
   gap: 24px;
   padding: 11px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.specRow:last-child {
+  border-bottom: none;
 }
 
 .specKey {

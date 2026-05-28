@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .links {
@@ -93,9 +93,9 @@
 }
 
 .sectionLink {
-  padding: 0 16px;
+  padding: 0 13px;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
+  font-size: 0.94rem;
   letter-spacing: 0.04em;
 }
 

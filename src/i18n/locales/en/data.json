@@ -27,7 +27,8 @@
     "counterweightClearance": "Counterweight clearance",
     "minGroundClearance": "Minimum ground clearance",
     "supportRollers": "Number of support rollers",
-    "rotationSpeed": "Rotation speed"
+    "rotationSpeed": "Rotation speed",
+    "trackExpansion": "Track expansion"
   },
   "models": {
     "bm10": {
@@ -637,6 +638,872 @@
     "upcoming": {
       "subtitle": "New models - coming soon",
       "description": "More Bergson Machines models will appear in this section."
+    },
+    "bm13": {
+      "subtitle": "1.2-ton mini excavator · Compact model with expandable tracks",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1,200 kg"
+        },
+        {
+          "key": "engine",
+          "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+        },
+        {
+          "key": "diggingDepth",
+          "value": "1,750 mm"
+        },
+        {
+          "key": "trackExpansion",
+          "value": "850-1050 mm"
+        }
+      ],
+      "description": "BM13 is a compact 1.2-ton mini excavator built for earthworks, installation jobs and garden work. Expandable tracks make it easier to pass through tighter access points and improve stability during operation.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "totalWeight",
+              "value": "930 kg"
+            },
+            {
+              "key": "operatingWeight",
+              "value": "1,200 kg"
+            },
+            {
+              "key": "engine",
+              "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0.018 m³"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "supportRollers",
+              "value": "4 pcs."
+            },
+            {
+              "key": "rotationSpeed",
+              "value": "9 rpm"
+            },
+            {
+              "key": "fuelTank",
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1,750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2,380 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1,703 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "1,694 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "3,158 mm"
+            },
+            {
+              "key": "trackExpansion",
+              "value": "850-1050 mm"
+            },
+            {
+              "key": "height",
+              "value": "2,144 mm"
+            },
+            {
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "753 mm"
+            }
+          ]
+        }
+      ]
+    },
+    "bm13-kubota": {
+      "subtitle": "1.2-ton mini excavator · Version with Kubota engine",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1,200 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Kubota Diesel · 14 HP"
+        },
+        {
+          "key": "diggingDepth",
+          "value": "1,750 mm"
+        },
+        {
+          "key": "trackExpansion",
+          "value": "850-1050 mm"
+        }
+      ],
+      "description": "BM13 Kubota uses the same platform as the BM13, but with a Kubota engine. It is aimed at customers who want a compact footprint and expandable tracks while choosing a branded power unit.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "totalWeight",
+              "value": "930 kg"
+            },
+            {
+              "key": "operatingWeight",
+              "value": "1,200 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Kubota Diesel · 14 HP"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0.018 m³"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "supportRollers",
+              "value": "4 pcs."
+            },
+            {
+              "key": "rotationSpeed",
+              "value": "9 rpm"
+            },
+            {
+              "key": "fuelTank",
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1,750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2,380 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1,703 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "1,694 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "3,158 mm"
+            },
+            {
+              "key": "trackExpansion",
+              "value": "850-1050 mm"
+            },
+            {
+              "key": "height",
+              "value": "2,144 mm"
+            },
+            {
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "753 mm"
+            }
+          ]
+        }
+      ]
+    },
+    "bm16": {
+      "subtitle": "1.6-ton mini excavator · More stability and a stronger power unit",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1,600 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Laidong 385 · 25 HP"
+        },
+        {
+          "key": "diggingDepth",
+          "value": "1,750 mm"
+        },
+        {
+          "key": "trackExpansion",
+          "value": "1100-1300 mm"
+        }
+      ],
+      "description": "BM16 is a larger model for more demanding earthmoving work. The wider track expansion range improves stability, while the 25 HP Laidong 385 engine provides more power for everyday operation.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "operatingWeight",
+              "value": "1,600 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Laidong 385 · 25 HP"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0.018 m³"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "supportRollers",
+              "value": "4 pcs."
+            },
+            {
+              "key": "rotationSpeed",
+              "value": "9 rpm"
+            },
+            {
+              "key": "fuelTank",
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1,750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2,380 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1,703 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "1,694 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "3,158 mm"
+            },
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "height",
+              "value": "2,144 mm"
+            },
+            {
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "753 mm"
+            }
+          ]
+        }
+      ]
+    },
+    "bm16-kubota": {
+      "subtitle": "1.6-ton mini excavator · Version with Kubota engine",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1,600 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Kubota Diesel · 14 HP"
+        },
+        {
+          "key": "diggingDepth",
+          "value": "1,750 mm"
+        },
+        {
+          "key": "trackExpansion",
+          "value": "1100-1300 mm"
+        }
+      ],
+      "description": "BM16 Kubota is the BM16 variant for customers who want a larger machine with expandable tracks and a Kubota engine. It keeps the same working geometry and undercarriage concept while switching to a different power unit.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "operatingWeight",
+              "value": "1,600 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Kubota Diesel · 14 HP"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0.018 m³"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "supportRollers",
+              "value": "4 pcs."
+            },
+            {
+              "key": "rotationSpeed",
+              "value": "9 rpm"
+            },
+            {
+              "key": "fuelTank",
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1,750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2,380 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1,703 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "1,694 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "3,158 mm"
+            },
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "height",
+              "value": "2,144 mm"
+            },
+            {
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "753 mm"
+            }
+          ]
+        }
+      ]
+    },
+    "bm16c": {
+      "subtitle": "1.6-ton mini excavator with cabin · Operator comfort all year round",
+      "badge": "Bestseller",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1,600 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Laidong 385 · 25 HP"
+        },
+        {
+          "key": "cabin",
+          "value": "Yes"
+        },
+        {
+          "key": "trackExpansion",
+          "value": "1100-1300 mm"
+        }
+      ],
+      "description": "BM16C is the cab-equipped version of the BM16, designed for year-round work and more demanding weather conditions. It keeps the expandable tracks and stronger working platform while improving operator comfort.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "operatingWeight",
+              "value": "1,600 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Laidong 385 · 25 HP"
+            },
+            {
+              "key": "cabin",
+              "value": "Yes"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0.018 m³"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "supportRollers",
+              "value": "4 pcs."
+            },
+            {
+              "key": "rotationSpeed",
+              "value": "9 rpm"
+            },
+            {
+              "key": "fuelTank",
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1,750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2,380 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1,703 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "1,694 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "3,158 mm"
+            },
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "heightWithCabin",
+              "value": "2,144 mm"
+            },
+            {
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "753 mm"
+            }
+          ]
+        }
+      ]
+    },
+    "bm16c-kubota": {
+      "subtitle": "1.6-ton mini excavator with cabin · Version with Kubota engine",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1,600 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Kubota Diesel · 14 HP"
+        },
+        {
+          "key": "cabin",
+          "value": "Yes"
+        },
+        {
+          "key": "trackExpansion",
+          "value": "1100-1300 mm"
+        }
+      ],
+      "description": "BM16C Kubota is the premium cab version built on the BM16C platform. It combines an enclosed cabin, expandable tracks and a Kubota engine, making it well suited to regular all-year work.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "operatingWeight",
+              "value": "1,600 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Kubota Diesel · 14 HP"
+            },
+            {
+              "key": "cabin",
+              "value": "Yes"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0.018 m³"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "supportRollers",
+              "value": "4 pcs."
+            },
+            {
+              "key": "rotationSpeed",
+              "value": "9 rpm"
+            },
+            {
+              "key": "fuelTank",
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1,750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2,380 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1,703 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "1,694 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "3,158 mm"
+            },
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "heightWithCabin",
+              "value": "2,144 mm"
+            },
+            {
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "753 mm"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "aggregates": {
+    "bm25-ricardo": {
+      "name": "Generator BM25",
+      "subtitle": "Ricardo engine 25KW · Silent generator",
+      "cardSpecs": [
+        {
+          "key": "engineBrand",
+          "value": "Ricardo"
+        },
+        {
+          "key": "atsSystem",
+          "value": "Automatic transfer switching"
+        },
+        {
+          "key": "avrRegulator",
+          "value": "Automatic voltage regulation"
+        },
+        {
+          "key": "alternator",
+          "value": "Stamford STF-25"
+        },
+        {
+          "key": "controlPanel",
+          "value": "SmartGen 6120 · Polish-language interface"
+        }
+      ]
+    },
+    "bm30-ricardo": {
+      "name": "Generator BM30",
+      "subtitle": "Ricardo engine 30KW · Silent generator",
+      "cardSpecs": [
+        {
+          "key": "engineBrand",
+          "value": "Ricardo"
+        },
+        {
+          "key": "atsSystem",
+          "value": "Automatic transfer switching"
+        },
+        {
+          "key": "avrRegulator",
+          "value": "Automatic voltage regulation"
+        },
+        {
+          "key": "alternator",
+          "value": "Stamford STF-30"
+        },
+        {
+          "key": "controlPanel",
+          "value": "SmartGen 6120 · Polish-language interface"
+        }
+      ]
+    },
+    "bm25-weichai": {
+      "name": "Generator BM25",
+      "subtitle": "Weichai engine 25KW · Silent generator",
+      "badge": "Bestseller",
+      "cardSpecs": [
+        {
+          "key": "engineBrand",
+          "value": "Weichai"
+        },
+        {
+          "key": "atsSystem",
+          "value": "Automatic transfer switching"
+        },
+        {
+          "key": "avrRegulator",
+          "value": "Automatic voltage regulation"
+        },
+        {
+          "key": "alternator",
+          "value": "Stamford STF-25"
+        },
+        {
+          "key": "controlPanel",
+          "value": "SmartGen 6120 · Polish-language interface"
+        }
+      ]
+    },
+    "bm30-weichai": {
+      "name": "Generator BM30",
+      "subtitle": "Weichai engine 30KW · Silent generator",
+      "cardSpecs": [
+        {
+          "key": "engineBrand",
+          "value": "Weichai"
+        },
+        {
+          "key": "atsSystem",
+          "value": "Automatic transfer switching"
+        },
+        {
+          "key": "avrRegulator",
+          "value": "Automatic voltage regulation"
+        },
+        {
+          "key": "alternator",
+          "value": "Stamford STF-30"
+        },
+        {
+          "key": "controlPanel",
+          "value": "SmartGen 6120 · Polish-language interface"
+        }
+      ]
+    },
+    "bm30-cummins": {
+      "name": "Generator BM30",
+      "subtitle": "Cummins engine 30KW · Silent generator",
+      "cardSpecs": [
+        {
+          "key": "engineBrand",
+          "value": "Cummins"
+        },
+        {
+          "key": "atsSystem",
+          "value": "Automatic transfer switching"
+        },
+        {
+          "key": "avrRegulator",
+          "value": "Automatic voltage regulation"
+        },
+        {
+          "key": "alternator",
+          "value": "Stamford STF-30"
+        },
+        {
+          "key": "controlPanel",
+          "value": "SmartGen 6120 · Polish-language interface"
+        }
+      ]
+    },
+    "bm40-cummins": {
+      "name": "Generator BM40",
+      "subtitle": "Cummins engine 40KW · Silent generator",
+      "cardSpecs": [
+        {
+          "key": "engineBrand",
+          "value": "Cummins"
+        },
+        {
+          "key": "atsSystem",
+          "value": "Automatic transfer switching"
+        },
+        {
+          "key": "avrRegulator",
+          "value": "Automatic voltage regulation"
+        },
+        {
+          "key": "alternator",
+          "value": "Stamford STF-40"
+        },
+        {
+          "key": "controlPanel",
+          "value": "SmartGen 6120 · Polish-language interface"
+        }
+      ]
     }
   },
   "accessories": {

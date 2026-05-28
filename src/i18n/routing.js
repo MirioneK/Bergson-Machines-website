@@ -7,6 +7,11 @@ const ROUTE_TRANSLATIONS = {
     en: 'models',
     ua: 'models',
   },
+  '/agregaty': {
+    pl: 'agregaty',
+    en: 'generators',
+    ua: 'generators',
+  },
   '/gwarancja': {
     pl: 'gwarancja',
     en: 'warranty',
@@ -59,6 +64,21 @@ const HASH_TRANSLATIONS = {
     pl: 'modele',
     en: 'models',
     ua: 'models',
+  },
+  '#agregaty': {
+    pl: 'agregaty',
+    en: 'generators',
+    ua: 'generators',
+  },
+  '#porownaj': {
+    pl: 'porownaj',
+    en: 'compare',
+    ua: 'compare',
+  },
+  '#leasing': {
+    pl: 'leasing',
+    en: 'leasing',
+    ua: 'leasing',
   },
   '#galeria': {
     pl: 'galeria',

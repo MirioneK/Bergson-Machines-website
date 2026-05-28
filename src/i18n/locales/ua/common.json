@@ -1,6 +1,7 @@
 {
   "nav": {
-    "models": "Моделі",
+    "models": "Мініекскаватори",
+    "aggregates": "Генератори",
     "service": "Сервіс",
     "faq": "FAQ",
     "accessories": "Аксесуари та запчастини",
@@ -18,15 +19,16 @@
   "hero": {
     "badge": "Доставка по Польщі · 1 рік гарантії · Мобільний сервіс",
     "titleLine1": "Професійний",
-    "titleLine2": "Мініекскаватор BM12",
-    "titlePrice": "Від 24 999 zł нетто",
+    "titleLine2": "Мініекскаватор BM16C",
+    "titlePrice": "Від 48 900 zł брутто",
+    "titlePriceSub": "39 756 zł нетто",
     "lead": "Припиніть орендувати. <strong>Купіть машину, яка окупиться вже після першого сезону.</strong> Bergson Machines - повне сервісне обслуговування, запчастини завжди в наявності, доставка до дверей.",
     "actions": {
       "models": "Переглянути моделі",
       "consultation": "Безкоштовна консультація"
     },
     "statsAriaLabel": "Ключова інформація",
-    "imageAlt": "Мініекскаватор Bergson Machines BM12",
+    "imageAlt": "Мініекскаватор Bergson Machines",
     "stats": [
       {
         "value": "6",
@@ -54,6 +56,11 @@
   },
   "models": {
     "label": "Наші машини",
+    "title": "Оберіть свою модель",
+    "sub": "Десять актуально доступних конфігурацій: від компактної BM12 до кабінних версій із двигунами Kubota та Laidong."
+  },
+  "aggregates": {
+    "label": "Генератори",
     "title": "Оберіть свою модель"
   },
   "modelCard": {
@@ -65,12 +72,17 @@
     "priceBrutto": "від {{price}} брутто",
     "cta": "Ознайомитися з моделлю",
     "specLabels": {
-      "operatingWeight": "Робоча маса",
+      "operatingWeight": "Робоча / власна маса",
+      "totalWeight": "Власна маса",
       "engine": "Двигун",
+      "hydraulicPump": "Гідравлічний насос",
+      "additionalEquipment": "Додаткове оснащення",
+      "oilCooler": "Охолоджувач гідравлічної оливи",
       "diggingDepth": "Глиб. копання",
       "trackWidth": "Шир. гусениці",
       "cabin": "Кабіна",
-      "width": "Ширина"
+      "width": "Ширина",
+      "trackExpansion": "Розширення гусениць"
     },
     "comingSoon": {
       "badge": "Вже скоро",
@@ -80,6 +92,22 @@
         "Більше варіантів оснащення",
         "Оновлення пропозиції вже скоро"
       ]
+    }
+  },
+  "aggregateCard": {
+    "ariaLabel": "Переглянути модель {{name}}",
+    "imageAlt": "{{name}}",
+    "specsAriaLabel": "Специфікація моделі {{name}}",
+    "pricePrefix": "від",
+    "priceNettoLabel": "NET",
+    "priceBrutto": "від {{price}} брутто",
+    "cta": "Переглянути модель",
+    "specLabels": {
+      "engineBrand": "Двигун",
+      "atsSystem": "Система ATS",
+      "avrRegulator": "Регулятор AVR",
+      "alternator": "Альтернатор",
+      "controlPanel": "Панель керування"
     }
   },
   "modelPage": {
@@ -348,24 +376,28 @@
       },
       "modelOptions": [
         {
-          "value": "bm10",
-          "label": "BM10"
+          "value": "bm13",
+          "label": "BM13"
         },
         {
-          "value": "bm12",
-          "label": "BM12"
+          "value": "bm13-kubota",
+          "label": "BM13 Kubota"
         },
         {
-          "value": "bm12c",
-          "label": "BM12C"
+          "value": "bm16",
+          "label": "BM16"
         },
         {
-          "value": "bm12-kubota",
-          "label": "BM12 Kubota"
+          "value": "bm16-kubota",
+          "label": "BM16 Kubota"
         },
         {
-          "value": "bm12c-kubota",
-          "label": "BM12C Kubota"
+          "value": "bm16c",
+          "label": "BM16C"
+        },
+        {
+          "value": "bm16c-kubota",
+          "label": "BM16C Kubota"
         },
         {
           "value": "advisory",

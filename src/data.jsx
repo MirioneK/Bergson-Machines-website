@@ -1,17 +1,6 @@
 // ─── MODELS ──────────────────────────────────────────────────────────────────
 export const MODELS = [
   {
-    id: 'bm10',
-    name: 'BM10',
-    image: '/images/optimized/BM10.webp',
-    gallery: [
-      '/images/optimized/bm10-gal1.webp',
-      '/images/optimized/gal1.webp',
-    ],
-    techDrawing: '/images/optimized/bm10-technical.webp',
-    priceNetto: 19999,
-  },
-  {
     id: 'bm12',
     name: 'BM12',
     image: '/images/optimized/BM12.webp',
@@ -20,7 +9,7 @@ export const MODELS = [
       '/images/optimized/bm12-gal2.webp',
     ],
     techDrawing: '/images/optimized/bm12-technical.webp',
-    priceNetto: 24999,
+    priceNetto: 20244,
   },
   {
     id: 'bm12c',
@@ -31,39 +20,139 @@ export const MODELS = [
       '/images/optimized/gal3.webp',
     ],
     techDrawing: '/images/optimized/bm12-technical.webp',
-    priceNetto: 29999,
+    priceNetto: 23496,
   },
   {
-    id: 'bm12-kubota',
-    name: 'BM12',
-    image: '/images/optimized/BM12.webp',
+    id: 'bm13',
+    name: 'BM13',
+    image: '/images/optimized/bm13.png',
     gallery: [
-      '/images/optimized/bm12-gal1.webp',
-      '/images/optimized/bm12-gal2.webp',
+      '/images/optimized/bm13.png',
+      '/images/optimized/bm13.png',
     ],
-    techDrawing: '/images/optimized/bm12-technical.webp',
-    priceNetto: 34999,
+    techDrawing: null,
+    priceNetto: 24309,
   },
   {
-    id: 'bm12c-kubota',
-    name: 'BM12C',
-    image: '/images/optimized/BM12C.webp',
+    id: 'bm13-kubota',
+    name: 'BM13 Kubota',
+    image: '/images/optimized/bm13.png',
     gallery: [
-      '/images/optimized/bm12c-gal1.webp',
-      '/images/optimized/gal3.webp',
+      '/images/optimized/bm13.png',
+      '/images/optimized/bm13.png',
     ],
-    techDrawing: '/images/optimized/bm12-technical.webp',
-    priceNetto: 39999,
+    techDrawing: null,
+    priceNetto: 36585,
+  },
+  {
+    id: 'bm13c',
+    name: 'BM13C',
+    image: '/images/optimized/bm13.png',
+    gallery: [
+      '/images/optimized/bm13.png',
+      '/images/optimized/bm13.png',
+    ],
+    techDrawing: null,
+    priceNetto: 27561,
+  },
+  {
+    id: 'bm13c-kubota',
+    name: 'BM13C Kubota',
+    image: '/images/optimized/bm13.png',
+    gallery: [
+      '/images/optimized/bm13.png',
+      '/images/optimized/bm13.png',
+    ],
+    techDrawing: null,
+    priceNetto: 39756,
+  },
+  {
+    id: 'bm16',
+    name: 'BM16 Laidong',
+    image: '/images/optimized/bm16.png',
+    gallery: [
+      '/images/optimized/bm16.png',
+      '/images/optimized/bm16.png',
+    ],
+    techDrawing: null,
+    priceNetto: 37805,
+  },
+  {
+    id: 'bm16-kubota',
+    name: 'BM16 Kubota',
+    image: '/images/optimized/bm16.png',
+    gallery: [
+      '/images/optimized/bm16.png',
+      '/images/optimized/bm16.png',
+    ],
+    techDrawing: null,
+    priceNetto: 43821,
+  },
+  {
+    id: 'bm16c',
+    name: 'BM16C Laidong',
+    image: '/images/optimized/bm16C.png',
+    gallery: [
+      '/images/optimized/bm16C.png',
+      '/images/optimized/bm16C.png',
+    ],
+    techDrawing: null,
+    priceNetto: 39756,
+  },
+  {
+    id: 'bm16c-kubota',
+    name: 'BM16C Kubota',
+    image: '/images/optimized/bm16C.png',
+    gallery: [
+      '/images/optimized/bm16C.png',
+      '/images/optimized/bm16C.png',
+    ],
+    techDrawing: null,
+    priceNetto: 47073,
   },
   {
     id: 'upcoming',
+    name: 'Więcej modeli',
     image: null,
     priceNetto: null,
     comingSoon: true,
-  }
+  },
 ]
 
 // ─── ACCESSORIES ─────────────────────────────────────────────────────────────
+export const AGGREGATES = [
+  {
+    id: 'bm25-ricardo',
+    image: '/images/optimized/aggregates/aggregate-silent.png',
+    priceNetto: 21999,
+  },
+  {
+    id: 'bm30-ricardo',
+    image: '/images/optimized/aggregates/aggregate-silent.png',
+    priceNetto: 23999,
+  },
+  {
+    id: 'bm25-weichai',
+    image: '/images/optimized/aggregates/aggregate-silent.png',
+    priceNetto: 23999,
+  },
+  {
+    id: 'bm30-weichai',
+    image: '/images/optimized/aggregates/aggregate-silent.png',
+    priceNetto: 25999,
+  },
+  {
+    id: 'bm30-cummins',
+    image: '/images/optimized/aggregates/aggregate-silent.png',
+    priceNetto: 39999,
+  },
+  {
+    id: 'bm40-cummins',
+    image: '/images/optimized/aggregates/aggregate-silent.png',
+    priceNetto: 44999,
+  },
+]
+
 export const ACCESSORY_PREVIEW = [
   {
     id: 'ripper',
@@ -236,11 +325,11 @@ export const GALLERY_PHOTOS = [
 
 // ─── TRUST BAR ───────────────────────────────────────────────────────────────
 export const TRUST_ITEMS = [
-  { id: 'mobileService', icon: '🔧' },
-  { id: 'stockParts', icon: '📦' },
-  { id: 'delivery', icon: '🚚' },
-  { id: 'vatInvoice', icon: '🧾' },
-  { id: 'financing', icon: '📝' },
+  { id: 'mobileService' },
+  { id: 'stockParts' },
+  { id: 'delivery' },
+  { id: 'vatInvoice' },
+  { id: 'financing' },
 ]
 
 // ─── WHY US ──────────────────────────────────────────────────────────────────
@@ -302,12 +391,26 @@ export const CONTACT_INFO = {
   facebookUrl: 'https://www.facebook.com/profile.php?id=61583733265172',
   instagramUrl: 'https://www.instagram.com/bergsonmachines/',
   email: 'kontakt@bergsonmachines.pl',
-  location: 'Pobórka Wielka 2',
-  locationSub: '89-340 Pobórka Wielka',
-  mapEmbedUrl:
-    'https://www.google.com/maps/embed/v1/place?key=AIzaSyCuyZxv5_Key0VnVYqW-08bOmUF_nT0StE&q=Pobórka+Wielka+2,+89-340+Pobórka+Wielka',
-  mapLinkUrl:
-    'https://www.google.com/maps/search/?api=1&query=Pobórka+Wielka+2,+89-340+Pobórka+Wielka',
+  location: 'Antoniew 8',
+  locationSub: '95-015 Głowno, woj. łódzkie',
+  locations: [
+    {
+      location: 'Antoniew 8',
+      locationSub: '95-015 Głowno, woj. łódzkie',
+      mapEmbedUrl:
+        'https://www.google.com/maps?q=Antoniew+8,+95-015+G%C5%82owno&z=15&output=embed',
+      mapLinkUrl:
+        'https://www.google.com/maps/search/?api=1&query=Antoniew+8,+95-015+G%C5%82owno',
+    },
+    {
+      location: 'Pobórka Wielka 2',
+      locationSub: '89-340 Pobórka Wielka, woj. wielkopolskie',
+      mapEmbedUrl:
+        'https://www.google.com/maps?q=Pob%C3%B3rka+Wielka+2,+89-340+Pob%C3%B3rka+Wielka&z=15&output=embed',
+      mapLinkUrl:
+        'https://www.google.com/maps/search/?api=1&query=Pob%C3%B3rka+Wielka+2,+89-340+Pob%C3%B3rka+Wielka',
+    },
+  ],
 }
 
 // ─── HELPERS ─────────────────────────────────────────────────────────────────

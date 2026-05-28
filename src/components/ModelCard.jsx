@@ -1,8 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { calcBrutto, formatPrice } from '../data'
 import { useLangPath } from '../hooks/useLangPath'
+import {
+  getModelCardSpecs,
+  getModelContentId,
+  getModelText,
+} from '../modelPresentation'
+import ProductCard from './ProductCard'
 import styles from './ModelCard.module.css'
 
 export default function ModelCard({ model }) {
@@ -10,29 +15,34 @@ export default function ModelCard({ model }) {
   const langPath = useLangPath()
 
   const { id, name, image, priceNetto, comingSoon } = model
+  const contentId = getModelContentId(id)
 
-  const subtitle = t(`models.${id}.subtitle`, {
+  const subtitle = getModelText(id, i18n.resolvedLanguage, 'subtitle', t(`models.${contentId}.subtitle`, {
     ns: 'data',
     defaultValue: '',
-  })
+  }))
 
-  const badge = t(`models.${id}.badge`, {
+  const badge = getModelText(id, i18n.resolvedLanguage, 'badge', t(`models.${contentId}.badge`, {
     ns: 'data',
     defaultValue: '',
-  })
+  }))
 
-  const description = t(`models.${id}.description`, {
+  const description = getModelText(id, i18n.resolvedLanguage, 'description', t(`models.${contentId}.description`, {
     ns: 'data',
     defaultValue: '',
-  })
+  }))
 
-  const cardSpecsRaw = t(`models.${id}.cardSpecs`, {
+  const cardSpecsRaw = t(`models.${contentId}.cardSpecs`, {
     ns: 'data',
     returnObjects: true,
     defaultValue: [],
   })
 
-  const cardSpecs = Array.isArray(cardSpecsRaw) ? cardSpecsRaw : []
+  const cardSpecs = getModelCardSpecs(
+    id,
+    i18n.resolvedLanguage,
+    Array.isArray(cardSpecsRaw) ? cardSpecsRaw : []
+  )
 
   if (comingSoon) {
     const comingSoonBadge = t(`models.${id}.comingSoonBadge`, {
@@ -108,72 +118,30 @@ export default function ModelCard({ model }) {
   const priceBrutto = calcBrutto(priceNetto)
 
   return (
-    <Link
+    <ProductCard
+      id={id}
+      titleIdPrefix="model"
       to={langPath(`/modele/${id}`)}
-      className={styles.card}
-      aria-labelledby={`model-${id}-title`}
-      aria-label={t('modelCard.ariaLabel', { name })}
-    >
-      {badge && (
-        <span className={styles.badge}>
-          <span className={styles.badgeStar} aria-hidden="true">★</span>
-          {badge}
-        </span>
-      )}
-
-      <div className={styles.media}>
-        <img
-          src={image}
-          alt={t('modelCard.imageAlt', { name })}
-          className={styles.image}
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-
-      <div className={styles.body}>
-        <header className={styles.header}>
-          <h3 className={styles.name} id={`model-${id}-title`}>
-            {name}
-          </h3>
-          <p className={styles.subtitle}>{subtitle}</p>
-        </header>
-
-        <ul className={styles.specs} aria-label={t('modelCard.specsAriaLabel', { name })}>
-          {cardSpecs.map(({ key, value }, index) => (
-            <li key={`${key}-${index}`} className={styles.specRow}>
-              <span className={styles.specKey}>
-                {t(`modelCard.specLabels.${key}`, {
-                  defaultValue: key,
-                })}
-              </span>
-              <span className={styles.specVal}>{value}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className={styles.footer}>
-          <div className={styles.priceBlock}>
-            <div className={styles.priceLine}>
-              <span className={styles.pricePrefix}>{t('modelCard.pricePrefix')}</span>
-              <span className={styles.price}>
-                {formatPrice(priceNetto, i18n.resolvedLanguage)}
-              </span>
-              <span className={styles.priceLabel}>{t('modelCard.priceNettoLabel')}</span>
-            </div>
-
-            <span className={styles.priceBrutto}>
-              {t('modelCard.priceBrutto', {
-                price: formatPrice(priceBrutto, i18n.resolvedLanguage),
-              })}
-            </span>
-          </div>
-
-          <span className={styles.cta}>
-            {t('modelCard.cta')}
-          </span>
-        </div>
-      </div>
-    </Link>
+      ariaLabel={t('modelCard.ariaLabel', { name })}
+      imageAlt={t('modelCard.imageAlt', { name })}
+      image={image}
+      badge={badge}
+      title={name}
+      subtitle={subtitle}
+      specsAriaLabel={t('modelCard.specsAriaLabel', { name })}
+      cardSpecs={cardSpecs}
+      resolveSpecLabel={(key) =>
+        t(`modelCard.specLabels.${key}`, {
+          defaultValue: key,
+        })
+      }
+      pricePrefix={t('modelCard.pricePrefix')}
+      formattedPrice={formatPrice(priceNetto, i18n.resolvedLanguage)}
+      priceLabel={t('modelCard.priceNettoLabel')}
+      priceBrutto={t('modelCard.priceBrutto', {
+        price: formatPrice(priceBrutto, i18n.resolvedLanguage),
+      })}
+      cta={t('modelCard.cta')}
+    />
   )
 }

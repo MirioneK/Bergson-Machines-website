@@ -38,11 +38,10 @@
   overflow: hidden;
 }
 
-.iconGlyph {
+.iconSvg {
+  width: 18px;
+  height: 18px;
   display: block;
-  font-size: 0.92rem;
-  line-height: 1;
-  text-align: center;
 }
 
 .text {
@@ -79,8 +78,9 @@
     flex-basis: 38px;
   }
 
-  .iconGlyph {
-    font-size: 1rem;
+  .iconSvg {
+    width: 20px;
+    height: 20px;
   }
 
   .text {
@@ -118,8 +118,9 @@
     flex-basis: 34px;
   }
 
-  .iconGlyph {
-    font-size: 0.92rem;
+  .iconSvg {
+    width: 18px;
+    height: 18px;
   }
 
   .text {

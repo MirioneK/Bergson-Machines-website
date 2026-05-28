@@ -2,10 +2,12 @@ import React from 'react'
 import Hero from '../components/Hero'
 import TrustBar from '../components/TrustBar'
 import Models from '../components/Models'
+import Aggregates from '../components/Aggregates'
+import LeasingCalculatorSection from '../components/LeasingCalculatorSection'
 import Gallery from '../components/Gallery'
 import Accessories from '../components/Accessories'
 import WhyUs from '../components/WhyUs'
-import Service from '../components/Service'
+import TestimonialsSection from '../components/TestimonialsSection'
 import FAQ from '../components/FAQ'
 import Contact from '../components/Contact'
 import SeoContent from '../components/SeoContent'
@@ -25,10 +27,12 @@ export default function HomePage() {
       <Hero />
       <TrustBar />
       <Models />
-      <Gallery />
-      <Accessories />
+      <Aggregates />
+      <LeasingCalculatorSection />
       <WhyUs />
-      <Service />
+      <TestimonialsSection />
+      <Accessories />
+      <Gallery />
       <FAQ />
       <Contact />
       <SeoContent />

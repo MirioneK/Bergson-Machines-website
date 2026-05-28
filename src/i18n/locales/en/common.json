@@ -1,6 +1,7 @@
 {
   "nav": {
-    "models": "Models",
+    "models": "Mini excavators",
+    "aggregates": "Generators",
     "service": "Service",
     "faq": "FAQ",
     "accessories": "Accessories & Parts",
@@ -18,15 +19,16 @@
   "hero": {
     "badge": "Delivery across Poland · 1-year warranty · Mobile service",
     "titleLine1": "Professional",
-    "titleLine2": "BM12 Mini Excavator",
-    "titlePrice": "From PLN 24,999 net",
+    "titleLine2": "BM16C Mini Excavator",
+    "titlePrice": "From PLN 48,900 gross",
+    "titlePriceSub": "PLN 39,756 net",
     "lead": "Stop renting. <strong>Buy a machine that pays for itself after the first season.</strong> Bergson Machines - full service support, parts always in stock, delivery to your door.",
     "actions": {
       "models": "View models",
       "consultation": "Free consultation"
     },
     "statsAriaLabel": "Key information",
-    "imageAlt": "Bergson Machines BM12 mini excavator",
+    "imageAlt": "Bergson Machines mini excavator",
     "stats": [
       {
         "value": "6",
@@ -54,6 +56,11 @@
   },
   "models": {
     "label": "Our machines",
+    "title": "Choose your model",
+    "sub": "Ten currently available configurations, from the compact BM12 to cab versions with Kubota and Laidong engines."
+  },
+  "aggregates": {
+    "label": "Power generators",
     "title": "Choose your model"
   },
   "modelCard": {
@@ -65,12 +72,17 @@
     "priceBrutto": "from {{price}} gross",
     "cta": "Explore model",
     "specLabels": {
-      "operatingWeight": "Operating weight",
+      "operatingWeight": "Operating / own weight",
+      "totalWeight": "Own weight",
       "engine": "Engine",
+      "hydraulicPump": "Hydraulic pump",
+      "additionalEquipment": "Additional equipment",
+      "oilCooler": "Hydraulic oil cooler",
       "diggingDepth": "Digging depth",
       "trackWidth": "Track width",
       "cabin": "Cabin",
-      "width": "Width"
+      "width": "Width",
+      "trackExpansion": "Track expansion"
     },
     "comingSoon": {
       "badge": "Coming soon",
@@ -80,6 +92,22 @@
         "More equipment variants",
         "Offer update coming soon"
       ]
+    }
+  },
+  "aggregateCard": {
+    "ariaLabel": "Explore model {{name}}",
+    "imageAlt": "{{name}}",
+    "specsAriaLabel": "{{name}} model specification",
+    "pricePrefix": "from",
+    "priceNettoLabel": "NET",
+    "priceBrutto": "from {{price}} gross",
+    "cta": "Explore model",
+    "specLabels": {
+      "engineBrand": "Engine",
+      "atsSystem": "ATS system",
+      "avrRegulator": "AVR regulator",
+      "alternator": "Alternator",
+      "controlPanel": "Control panel"
     }
   },
   "modelPage": {
@@ -348,24 +376,28 @@
       },
       "modelOptions": [
         {
-          "value": "bm10",
-          "label": "BM10"
+          "value": "bm13",
+          "label": "BM13"
         },
         {
-          "value": "bm12",
-          "label": "BM12"
+          "value": "bm13-kubota",
+          "label": "BM13 Kubota"
         },
         {
-          "value": "bm12c",
-          "label": "BM12C"
+          "value": "bm16",
+          "label": "BM16"
         },
         {
-          "value": "bm12-kubota",
-          "label": "BM12 Kubota"
+          "value": "bm16-kubota",
+          "label": "BM16 Kubota"
         },
         {
-          "value": "bm12c-kubota",
-          "label": "BM12C Kubota"
+          "value": "bm16c",
+          "label": "BM16C"
+        },
+        {
+          "value": "bm16c-kubota",
+          "label": "BM16C Kubota"
         },
         {
           "value": "advisory",

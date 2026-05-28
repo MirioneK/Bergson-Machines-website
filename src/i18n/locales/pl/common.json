@@ -1,6 +1,7 @@
 {
   "nav": {
-    "models": "Modele",
+    "models": "Minikoparki",
+    "aggregates": "Agregaty",
     "service": "Serwis",
     "faq": "FAQ",
     "accessories": "Akcesoria i Części",
@@ -13,32 +14,97 @@
     "openMenu": "Otwórz menu",
     "closeMenu": "Zamknij menu",
     "ariaLabel": "Nawigacja główna",
-    "logoAriaLabel": "Bergson Machines - strona główna"
+    "logoAriaLabel": "Bergson Machines - strona główna",
+    "compare": "Porównaj modele",
+    "leasing": "Leasing"
   },
   "hero": {
     "badge": "Dostawa w Polsce · Gwarancja 1 rok · Serwis mobilny",
     "titleLine1": "Profesjonalna",
-    "titleLine2": "Minikoparka BM12",
-    "titlePrice": "Od 24 999 zł netto",
+    "titleLine2": "Minikoparka BM16C",
+    "titlePrice": "Od 48 900 zł brutto",
+    "titlePriceSub": "39 756 zł netto",
     "lead": "Przestań wynajmować. <strong>Kup maszynę, która zwróci się po pierwszym sezonie.</strong> Bergson Machines - pełna obsługa serwisowa, części zawsze na stanie, dostawa pod drzwi.",
+    "sliderAriaLabel": "Przełącz planszę hero",
     "actions": {
       "models": "Zobacz modele",
       "consultation": "Bezpłatna konsultacja"
     },
     "statsAriaLabel": "Najważniejsze informacje",
-    "imageAlt": "Minikoparka Bergson Machines BM12",
+    "imageAlt": "Minikoparka Bergson Machines",
     "stats": [
       {
-        "value": "6",
-        "label": "Modeli w ofercie"
+        "value": "48 h",
+        "label": "Średni czas reakcji serwisu"
       },
       {
-        "value": "48h",
-        "label": "Czas reakcji serwisu"
+        "value": "2",
+        "label": "Oddziały w Polsce"
       },
       {
-        "value": "1 rok",
-        "label": "Gwarancji"
+        "value": "5 / 5",
+        "label": "Ocena w Google"
+      }
+    ],
+    "slides": [
+      {
+        "id": "excavators",
+        "label": "Minikoparki",
+        "titleLine1": "Profesjonalna",
+        "titleLine2": "Minikoparka BM16C",
+        "titlePrice": "Od 48 900 zł brutto",
+        "titlePriceSub": "39 756 zł netto",
+        "lead": "Przestań wynajmować. <strong>Kup maszynę, która zwróci się po pierwszym sezonie.</strong> Bergson Machines - pełna obsługa serwisowa, części zawsze na stanie, dostawa pod drzwi.",
+        "image": "/images/optimized/hero.png",
+        "imageAlt": "Minikoparka Bergson Machines",
+        "primaryLabel": "Zobacz modele",
+        "primaryHash": "#modele",
+        "secondaryLabel": "Bezpłatna konsultacja",
+        "secondaryHash": "#kontakt",
+        "stats": [
+          {
+            "value": "48 h",
+            "label": "Średni czas reakcji serwisu"
+          },
+          {
+            "value": "2",
+            "label": "Oddziały w Polsce"
+          },
+          {
+            "value": "5 / 5",
+            "label": "Ocena w Google"
+          }
+        ]
+      },
+      {
+        "id": "aggregates",
+        "label": "Agregaty",
+        "titleLine1": "Profesjonalny",
+        "titleLine2": "Agregat BM25",
+        "titlePrice": "Od 27 059 zł brutto",
+        "titlePriceSub": "21 999 zł netto",
+        "lead": "Nie ryzykuj przestojów. <strong>Wybierz agregat, który zabezpiecza budowę, gospodarstwo i firmę.</strong> Bergson Machines - wyciszona obudowa, ATS, AVR i szybka dostawa w Polsce.",
+        "image": "/images/optimized/hero_agr.png",
+        "imageAlt": "Agregat prądotwórczy Bergson Machines",
+        "imageVariant": "aggregate",
+        "primaryLabel": "Zobacz agregaty",
+        "primaryHash": "#agregaty",
+        "secondaryLabel": "Bezpłatna konsultacja",
+        "secondaryHash": "#kontakt",
+        "stats": [
+          {
+            "value": "6",
+            "label": "Modeli agregatów"
+          },
+          {
+            "value": "ATS + AVR",
+            "label": "W standardzie"
+          },
+          {
+            "value": "1 rok",
+            "label": "Gwarancji"
+          }
+        ]
       }
     ]
   },
@@ -54,7 +120,25 @@
   },
   "models": {
     "label": "Nasze maszyny",
-    "title": "Wybierz swój model"
+    "title": "Wybierz swoją minikoparkę",
+    "sub": "Dziesięć aktualnie dostępnych konfiguracji, od kompaktowego BM12 po wersje kabinowe z silnikiem Kubota i Laidong.",
+    "compareLink": "Porównaj modele",
+    "filters": {
+      "all": "Wszystkie",
+      "cabin": "Z kabiną",
+      "kubota": "Silnik Kubota"
+    }
+  },
+  "aggregates": {
+    "label": "Agregaty prądotwórcze",
+    "title": "Agregaty prądotwórcze 25-40 kW",
+    "sub": "Wersje 25-40 kW z silnikami Cummins, Ricardo i Weichai, gotowe do pracy jako agregaty wyciszone z ATS w standardzie.",
+    "filters": {
+      "all": "Wszystkie",
+      "cummins": "Cummins",
+      "ricardo": "Ricardo",
+      "weichai": "Weichai"
+    }
   },
   "modelCard": {
     "ariaLabel": "Poznaj model {{name}}",
@@ -65,12 +149,17 @@
     "priceBrutto": "od {{price}} brutto",
     "cta": "Poznaj model",
     "specLabels": {
-      "operatingWeight": "Masa robocza",
+      "operatingWeight": "Masa robocza / własna",
+      "totalWeight": "Masa własna",
       "engine": "Silnik",
-      "diggingDepth": "Głęb. kopania",
+      "hydraulicPump": "Pompa hydrauliczna",
+      "additionalEquipment": "Dodatkowe wyposażenie",
+      "oilCooler": "Chłodnica oleju hydraulicznego",
+      "diggingDepth": "Głębokość kopania",
       "trackWidth": "Szer. gąsienicy",
       "cabin": "Kabina",
-      "width": "Szerokość"
+      "width": "Szerokość",
+      "trackExpansion": "Rozszerzanie gąsienic"
     },
     "comingSoon": {
       "badge": "Już wkrótce",
@@ -80,6 +169,25 @@
         "Więcej wariantów wyposażenia",
         "Aktualizacja oferty wkrótce"
       ]
+    }
+  },
+  "aggregateCard": {
+    "ariaLabel": "Poznaj model {{name}}",
+    "imageAlt": "{{name}}",
+    "specsAriaLabel": "Specyfikacja modelu {{name}}",
+    "pricePrefix": "od",
+    "priceNettoLabel": "NETTO",
+    "priceBrutto": "od {{price}} brutto",
+    "cta": "Poznaj model",
+    "specLabels": {
+      "engineBrand": "Silnik",
+      "atsSystem": "ATS",
+      "avrRegulator": "Regulator AVR",
+      "alternator": "Alternator",
+      "controlPanel": "Panel sterujący",
+      "ratedPower": "Moc",
+      "outputVoltage": "Napięcie",
+      "deliveryTime": "Dostawa"
     }
   },
   "modelPage": {
@@ -197,7 +305,9 @@
         "title": "Dostawa Pod Adres",
         "desc": "Dowozimy maszynę na plac budowy lub posesję na terenie całej Polski. Transport wliczony w cenę do 200 km."
       }
-    }
+    },
+    "ctaPrimary": "Porozmawiaj z doradcą",
+    "ctaSecondary": "Sprawdź najczęstsze pytania"
   },
   "objections": {
     "label": "Masz wątpliwości?",
@@ -284,45 +394,50 @@
   },
   "faq": {
     "label": "Najczęstsze pytania",
-    "title": "FAQ",
+    "title": "Najczęstsze pytania o minikoparki Bergson",
     "items": [
       {
         "id": "transport",
-        "q": "Jak przetransportować koparkę na plac budowy?",
-        "a": "Nasze minikoparki mieszczą się na typowej przyczepie samochodowej do 3,5 t DMC. Transport na przyczepie z samochodem osobowym nie stanowi problemu."
+        "q": "Jak przetransportować minikoparkę na plac budowy?",
+        "a": "Nasze minikoparki mieszczą się na typowej przyczepie samochodowej do 3,5 t DMC. W praktyce transport na przyczepie z autem osobowym lub dostawczym nie stanowi problemu."
       },
       {
         "id": "delivery-time",
-        "q": "Jak długo czeka się na dostawę maszyny?",
-        "a": "Maszyny dostępne z magazynu dostarczamy w ciągu 5-14 dni roboczych. Modele na zamówienie dostarczamy w ciągu 3-4 tygodni. Aktualną dostępność potwierdzamy przy wycenie."
+        "q": "Jak długo czeka się na dostawę minikoparki?",
+        "a": "Modele dostępne w Polsce dostarczamy zwykle w 5-14 dni roboczych. Dokładny termin potwierdzamy przy wycenie, bo zależy od bieżącej dostępności i miejsca dostawy."
+      },
+      {
+        "id": "aggregate-delivery",
+        "q": "Jak długo trwa dostawa agregatu?",
+        "a": "Większość agregatów z aktualnej oferty dostarczamy w 15-20 dni roboczych. Termin zależy od wariantu silnika i aktualnej dostępności konkretnego modelu."
       },
       {
         "id": "leasing",
         "q": "Czy mogę kupić na firmę i skorzystać z leasingu?",
-        "a": "Tak. Wystawiamy fakturę VAT na firmę i osobę prywatną. Współpracujemy z firmami leasingowymi - rata za maszynę BM12 to około 650-800 zł miesięcznie przy leasingu 60-miesięcznym."
+        "a": "Tak. Wystawiamy fakturę VAT, współpracujemy z firmami leasingowymi i pomagamy przejść przez formalności. Rata za BM13 zaczyna się od około 480 zł netto miesięcznie przy leasingu 60-miesięcznym."
       },
       {
         "id": "after-warranty",
-        "q": "Co się stanie, gdy coś się zepsuje po roku?",
-        "a": "Gwarancja obejmuje 12 miesięcy. Po jej zakończeniu oferujemy płatny serwis mobilny oraz sprzedaż części zamiennych z polskiego magazynu."
+        "q": "Co się stanie, gdy coś zepsuje się po gwarancji?",
+        "a": "Po zakończeniu gwarancji nadal zapewniamy płatny serwis mobilny i sprzedaż części z polskiego magazynu. Dzięki temu nie zostajesz sam z maszyną po pierwszym roku."
       },
       {
         "id": "test-drive",
-        "q": "Czy mogę przetestować maszynę przed zakupem?",
-        "a": "Tak - zapraszamy na prezentację do naszego showroomu w Poznaniu. Możesz osobiście wypróbować maszynę w pracy. Skontaktuj się z nami, aby umówić termin."
+        "q": "Czy mogę zobaczyć maszynę na żywo przed zakupem?",
+        "a": "Tak. Po wcześniejszym umówieniu pokazujemy maszyny w Antoniewie i Pobórce Wielkiej. Skontaktuj się z nami, a potwierdzimy najbliższy termin oraz właściwą lokalizację."
       },
       {
         "id": "new-ce",
-        "q": "Czy minikoparki są nowe? Czy mają certyfikaty CE?",
-        "a": "Wszystkie maszyny są fabrycznie nowe, z deklaracją zgodności CE. Dostarczamy pełną dokumentację techniczną oraz instrukcję obsługi w języku polskim."
+        "q": "Czy maszyny są nowe i mają certyfikaty CE?",
+        "a": "Wszystkie maszyny są fabrycznie nowe, z deklaracją zgodności CE. Dołączamy pełną dokumentację techniczną oraz instrukcję obsługi w języku polskim."
       }
     ]
   },
   "contact": {
     "label": "Skontaktuj się",
-    "titleLine1": "Bezpłatna odpowiedź",
-    "titleLine2": "Szybka wycena",
-    "sub": "Opisz czego potrzebujesz, a wrócimy z konkretną odpowiedzią i doborem modelu pod Twoje prace.",
+    "titleLine1": "Szybka wycena",
+    "titleLine2": "Odpowiadamy do końca dnia",
+    "sub": "Opisz, czy interesuje Cię minikoparka, agregat albo osprzęt, a wrócimy z konkretną konfiguracją i wyceną pod Twoje zastosowanie.",
     "form": {
       "fields": {
         "name": {
@@ -338,41 +453,73 @@
           "placeholder": "jan@firma.pl"
         },
         "model": {
-          "label": "Interesujący model",
+          "label": "Interesujący produkt",
           "placeholder": "Wybierz"
         },
         "message": {
           "label": "Pytanie lub opis prac *",
-          "placeholder": "Opisz do czego potrzebujesz koparki, jakie masz pytania i jaki zakres prac planujesz."
+          "placeholder": "Opisz do czego potrzebujesz maszyny lub agregatu, jakie masz pytania i jaki zakres prac planujesz."
         }
       },
       "modelOptions": [
         {
-          "value": "bm10",
-          "label": "BM10"
+          "value": "bm13",
+          "label": "BM13"
         },
         {
-          "value": "bm12",
-          "label": "BM12"
+          "value": "bm13-kubota",
+          "label": "BM13 Kubota"
         },
         {
-          "value": "bm12c",
-          "label": "BM12C"
+          "value": "bm16",
+          "label": "BM16"
         },
         {
-          "value": "bm12-kubota",
-          "label": "BM12 Kubota"
+          "value": "bm16-kubota",
+          "label": "BM16 Kubota"
         },
         {
-          "value": "bm12c-kubota",
-          "label": "BM12C Kubota"
+          "value": "bm16c",
+          "label": "BM16C"
+        },
+        {
+          "value": "bm16c-kubota",
+          "label": "BM16C Kubota"
+        },
+        {
+          "value": "bm25-ricardo",
+          "label": "Agregat BM25 Ricardo"
+        },
+        {
+          "value": "bm30-ricardo",
+          "label": "Agregat BM30 Ricardo"
+        },
+        {
+          "value": "bm25-weichai",
+          "label": "Agregat BM25 Weichai"
+        },
+        {
+          "value": "bm30-weichai",
+          "label": "Agregat BM30 Weichai"
+        },
+        {
+          "value": "bm30-cummins",
+          "label": "Agregat BM30 Cummins"
+        },
+        {
+          "value": "bm40-cummins",
+          "label": "Agregat BM40 Cummins"
+        },
+        {
+          "value": "accessories",
+          "label": "Akcesoria i osprzęt"
         },
         {
           "value": "advisory",
           "label": "Potrzebuję doradztwa"
         }
       ],
-      "modelSelectionPrefix": "Interesujący model: {{model}}",
+      "modelSelectionPrefix": "Interesujący produkt: {{model}}",
       "consentText": "Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę Better Solutions Sp. z o.o. z siedzibą przy ul. Poznańska 7, 61-160 Czapury, NIP: 7252298652 w celu udzielenia odpowiedzi, w tym przedłożenia oferty jeśli o nią pytam.",
       "recaptchaText": "Ta strona jest chroniona przez reCAPTCHA, a także obowiązują <privacyLink>Polityka prywatności</privacyLink> oraz <termsLink>Warunki korzystania z usługi</termsLink> Google.",
       "submit": {
@@ -834,6 +981,9 @@
     "notFound": {
       "title": "404 | Bergson Machines",
       "description": "Nie znaleziono strony, której szukasz."
+    },
+    "aggregate": {
+      "title": "{{name}} | Bergson Machines"
     }
   },
   "notFound": {
@@ -878,27 +1028,68 @@
     "partsEmpty": "Nie znaleziono części spełniających wybrane kryteria."
   },
   "seoContent": {
-    "label": "Przewodnik",
-    "title": "Minikoparki na sprzedaż - jaką minikoparkę wybrać i ile kosztuje minikoparka?",
-    "lead": "Minikoparka, czyli mała koparka do precyzyjnych prac, sprawdza się zarówno przy pracach budowlanych i instalacyjnych, jak i na posesjach prywatnych. Dla wielu osób liczy się nie tylko minikoparka cena, ale też to, czy dana maszyna nadaje się do ogrodu, do domu i do regularnych prac ziemnych.",
+    "label": "Czytaj więcej",
+    "title": "Czytaj więcej o minikoparkach i agregatach Bergson",
+    "lead": "Rozwijana sekcja dla osób, które chcą szybciej porównać parametry, zastosowania i ceny minikoparek oraz agregatów z aktualnej oferty.",
     "blocks": [
       {
-        "title": "1 tona, 1.5 t czy 2 t - jaką minikoparkę wybrać?",
-        "text": "Modele 1-tonowe lepiej sprawdzają się w ciasnych miejscach i przy lżejszych pracach. Osoby porównujące frazy takie jak minikoparka 1.5 t, minikoparka 2 t czy mini koparka do ogrodu najczęściej szukają kompromisu między gabarytem, stabilnością i wydajnością przy pracach ziemnych."
+        "title": "1,2 t czy 1,6 t - jaką minikoparkę wybrać?",
+        "text": "Modele 1,2 t lepiej sprawdzają się przy pracach przydomowych, ogrodowych i tam, gdzie liczy się przejazd przez węższe miejsca. Platforma 1,6 t daje większą stabilność, zasięg roboczy i wygodniejszą pracę przy regularnych robotach ziemnych oraz instalacyjnych."
       },
       {
         "title": "Ile kosztuje minikoparka i od czego zależy cena?",
-        "text": "Cena zależy od konfiguracji, silnika, obecności kabiny i dodatkowego osprzętu. Jeśli wpisujesz w wyszukiwarkę hasła typu cena minikoparki, minikoparka cena nowa, minikoparki ceny albo koparka mała cena, w praktyce porównujesz przede wszystkim klasę maszyny, wyposażenie i dostępność serwisu."
+        "text": "Na cenę wpływa przede wszystkim masa maszyny, silnik, obecność kabiny oraz wybrany osprzęt. Różnica między wersją standardową a wariantem z silnikiem Kubota wynika głównie z jednostki napędowej i docelowego profilu pracy klienta."
       },
       {
-        "title": "Minikoparka do ogrodu, do domu i do prac ziemnych",
-        "text": "Przy zakupie liczy się nie tylko sama maszyna, ale też dostępność części i szybkość reakcji serwisu. Niezależnie od tego, czy interesuje Cię minikoparka do ogrodu, minikoparka do domu, mikro koparka czy chińska minikoparka do prac ziemnych, to właśnie te elementy mają największy wpływ na ograniczenie przestojów i realny koszt eksploatacji."
+        "title": "Minikoparka do ogrodu, instalacji i codziennych prac ziemnych",
+        "text": "Przy wyborze liczy się nie tylko sama cena zakupu, ale też serwis, części i szybkość reakcji po sprzedaży. W praktyce to te elementy decydują, czy maszyna realnie pracuje i zarabia, czy stoi w oczekiwaniu na wsparcie."
+      },
+      {
+        "title": "Agregat 25, 30 czy 40 kW - jak dobrać moc?",
+        "text": "Dobór agregatu zaczyna się od realnego zapotrzebowania na moc oraz od tego, czy urządzenie ma pełnić rolę awaryjną, czy pracować regularnie. W mniejszych obiektach często wystarcza 25 kW, natomiast zaplecze firmowe, gospodarstwo lub budowa częściej wymagają 30-40 kW."
+      },
+      {
+        "title": "Na co zwrócić uwagę poza samą mocą agregatu?",
+        "text": "Liczy się nie tylko silnik i moc znamionowa, ale też typ alternatora, ATS, AVR, panel sterujący oraz dostęp serwisu i części. To właśnie te elementy decydują, czy agregat będzie wygodny w codziennej eksploatacji i czy szybko wróci do pracy po przeglądzie."
+      },
+      {
+        "title": "Agregat do firmy, gospodarstwa i pracy w terenie",
+        "text": "Agregaty wyciszone sprawdzają się jako zasilanie rezerwowe w firmie, gospodarstwie, na budowie i przy pracach terenowych. Dobrze dobrany model powinien zapewnić stabilne napięcie, prostą obsługę i konfigurację dopasowaną do rzeczywistego obciążenia."
       }
     ],
-    "footerText": "Sprawdź dostępne modele, porównaj osprzęt i wybierz konfigurację dopasowaną do rodzaju prac, które wykonujesz najczęściej.",
+    "footerText": "Sprawdź dostępne modele i agregaty, porównaj konfiguracje oraz dobierz ofertę do rodzaju prac, które wykonujesz najczęściej.",
     "actions": {
       "models": "Zobacz modele",
       "accessories": "Zobacz osprzęt"
-    }
+    },
+    "toggleMore": "Czytaj więcej o ofercie Bergson",
+    "toggleLess": "Zwiń treść"
+  },
+  "aggregatePage": {
+    "breadcrumb": {
+      "home": "Strona główna",
+      "aggregates": "Agregaty"
+    },
+    "heroLabel": "Agregaty prądotwórcze Bergson Machines",
+    "heroImageAlt": "{{name}}",
+    "pricePrefix": "od",
+    "priceNettoUnit": "netto",
+    "priceGross": "od {{price}} brutto",
+    "actions": {
+      "contact": "Skontaktuj się",
+      "allAggregates": "← Wszystkie agregaty"
+    },
+    "overviewTitle": "{{name}}",
+    "featureLabel": "Wyposażenie",
+    "galleryImageAlt": "{{name}} zdjęcie {{index}}",
+    "specsLabel": "Dane techniczne",
+    "specsTitle": "Specyfikacja modelu {{name}}",
+    "otherLabel": "Pozostałe agregaty",
+    "otherAggregateImageAlt": "{{name}}",
+    "otherPrice": "od {{price}} netto",
+    "otherCta": "Poznaj model →",
+    "ctaBarTitle": "Masz pytania dotyczące {{name}}?",
+    "ctaBarSub": "Odpowiemy w ciągu 2 godzin w dni robocze",
+    "ctaBarButton": "Przejdź do formularza"
   }
 }

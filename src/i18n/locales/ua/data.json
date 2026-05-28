@@ -27,7 +27,8 @@
     "counterweightClearance": "Кліренс противаги",
     "minGroundClearance": "Мінімальний кліренс",
     "supportRollers": "Кількість опорних роликів",
-    "rotationSpeed": "Швидкість обертання"
+    "rotationSpeed": "Швидкість обертання",
+    "trackExpansion": "Розширення гусениць"
   },
   "models": {
     "bm10": {
@@ -637,6 +638,872 @@
     "upcoming": {
       "subtitle": "Нові моделі — вже скоро",
       "description": "У цьому розділі з’являться наступні моделі Bergson Machines."
+    },
+    "bm13": {
+      "subtitle": "Мініекскаватор 1,2 тонни · Компактна модель з розсувними гусеницями",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1,200 kg"
+        },
+        {
+          "key": "engine",
+          "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+        },
+        {
+          "key": "diggingDepth",
+          "value": "1,750 mm"
+        },
+        {
+          "key": "trackExpansion",
+          "value": "850-1050 mm"
+        }
+      ],
+      "description": "BM13 — це компактний мініекскаватор робочою масою 1,2 тонни для земляних, монтажних і садових робіт. Розсувні гусениці полегшують проїзд у вузькі місця та покращують стійкість під час роботи.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "totalWeight",
+              "value": "930 kg"
+            },
+            {
+              "key": "operatingWeight",
+              "value": "1,200 kg"
+            },
+            {
+              "key": "engine",
+              "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0.018 m³"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "supportRollers",
+              "value": "4 шт."
+            },
+            {
+              "key": "rotationSpeed",
+              "value": "9 об/хв"
+            },
+            {
+              "key": "fuelTank",
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1,750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2,380 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1,703 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "1,694 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "3,158 mm"
+            },
+            {
+              "key": "trackExpansion",
+              "value": "850-1050 mm"
+            },
+            {
+              "key": "height",
+              "value": "2,144 mm"
+            },
+            {
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "753 mm"
+            }
+          ]
+        }
+      ]
+    },
+    "bm13-kubota": {
+      "subtitle": "Мініекскаватор 1,2 тонни · Версія з двигуном Kubota",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1,200 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Kubota Diesel · 14 HP"
+        },
+        {
+          "key": "diggingDepth",
+          "value": "1,750 mm"
+        },
+        {
+          "key": "trackExpansion",
+          "value": "850-1050 mm"
+        }
+      ],
+      "description": "BM13 Kubota побудований на тій самій платформі, що й BM13, але оснащений двигуном Kubota. Це варіант для клієнтів, які хочуть зберегти компактні габарити та розсувні гусениці, але обрати брендовий силовий агрегат.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "totalWeight",
+              "value": "930 kg"
+            },
+            {
+              "key": "operatingWeight",
+              "value": "1,200 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Kubota Diesel · 14 HP"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0.018 m³"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "supportRollers",
+              "value": "4 шт."
+            },
+            {
+              "key": "rotationSpeed",
+              "value": "9 об/хв"
+            },
+            {
+              "key": "fuelTank",
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1,750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2,380 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1,703 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "1,694 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "3,158 mm"
+            },
+            {
+              "key": "trackExpansion",
+              "value": "850-1050 mm"
+            },
+            {
+              "key": "height",
+              "value": "2,144 mm"
+            },
+            {
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "753 mm"
+            }
+          ]
+        }
+      ]
+    },
+    "bm16": {
+      "subtitle": "Мініекскаватор 1,6 тонни · Більша стійкість і потужніший двигун",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1,600 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Laidong 385 · 25 HP"
+        },
+        {
+          "key": "diggingDepth",
+          "value": "1,750 mm"
+        },
+        {
+          "key": "trackExpansion",
+          "value": "1100-1300 mm"
+        }
+      ],
+      "description": "BM16 — це більша модель для більш вимогливих земляних робіт. Ширший діапазон розсування гусениць покращує стійкість, а двигун Laidong 385 25 HP дає більший запас потужності у щоденній роботі.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "operatingWeight",
+              "value": "1,600 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Laidong 385 · 25 HP"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0.018 m³"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "supportRollers",
+              "value": "4 шт."
+            },
+            {
+              "key": "rotationSpeed",
+              "value": "9 об/хв"
+            },
+            {
+              "key": "fuelTank",
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1,750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2,380 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1,703 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "1,694 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "3,158 mm"
+            },
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "height",
+              "value": "2,144 mm"
+            },
+            {
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "753 mm"
+            }
+          ]
+        }
+      ]
+    },
+    "bm16-kubota": {
+      "subtitle": "Мініекскаватор 1,6 тонни · Версія з двигуном Kubota",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1,600 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Kubota Diesel · 14 HP"
+        },
+        {
+          "key": "diggingDepth",
+          "value": "1,750 mm"
+        },
+        {
+          "key": "trackExpansion",
+          "value": "1100-1300 mm"
+        }
+      ],
+      "description": "BM16 Kubota — це версія BM16 для клієнтів, яким потрібна більша машина з розсувними гусеницями та двигуном Kubota. Вона зберігає ту саму робочу геометрію та концепцію ходової частини, але використовує інший силовий агрегат.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "operatingWeight",
+              "value": "1,600 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Kubota Diesel · 14 HP"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0.018 m³"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "supportRollers",
+              "value": "4 шт."
+            },
+            {
+              "key": "rotationSpeed",
+              "value": "9 об/хв"
+            },
+            {
+              "key": "fuelTank",
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1,750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2,380 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1,703 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "1,694 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "3,158 mm"
+            },
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "height",
+              "value": "2,144 mm"
+            },
+            {
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "753 mm"
+            }
+          ]
+        }
+      ]
+    },
+    "bm16c": {
+      "subtitle": "Мініекскаватор 1,6 тонни з кабіною · Комфорт оператора протягом усього року",
+      "badge": "Бестселер",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1,600 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Laidong 385 · 25 HP"
+        },
+        {
+          "key": "cabin",
+          "value": "Так"
+        },
+        {
+          "key": "trackExpansion",
+          "value": "1100-1300 mm"
+        }
+      ],
+      "description": "BM16C — це версія BM16 з кабіною для цілорічної роботи та складніших погодних умов. Вона зберігає розсувні гусениці та потужнішу платформу, а також підвищує комфорт оператора.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "operatingWeight",
+              "value": "1,600 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Laidong 385 · 25 HP"
+            },
+            {
+              "key": "cabin",
+              "value": "Так"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0.018 m³"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "supportRollers",
+              "value": "4 шт."
+            },
+            {
+              "key": "rotationSpeed",
+              "value": "9 об/хв"
+            },
+            {
+              "key": "fuelTank",
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1,750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2,380 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1,703 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "1,694 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "3,158 mm"
+            },
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "heightWithCabin",
+              "value": "2,144 mm"
+            },
+            {
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "753 mm"
+            }
+          ]
+        }
+      ]
+    },
+    "bm16c-kubota": {
+      "subtitle": "Мініекскаватор 1,6 тонни з кабіною · Версія з двигуном Kubota",
+      "cardSpecs": [
+        {
+          "key": "operatingWeight",
+          "value": "1,600 kg"
+        },
+        {
+          "key": "engine",
+          "value": "Kubota Diesel · 14 HP"
+        },
+        {
+          "key": "cabin",
+          "value": "Так"
+        },
+        {
+          "key": "trackExpansion",
+          "value": "1100-1300 mm"
+        }
+      ],
+      "description": "BM16C Kubota — це преміальна версія з кабіною на платформі BM16C. Вона поєднує закриту кабіну, розсувні гусениці та двигун Kubota, тому добре підходить для регулярної цілорічної роботи.",
+      "accordions": [
+        {
+          "titleKey": "specification",
+          "rows": [
+            {
+              "key": "operatingWeight",
+              "value": "1,600 kg"
+            },
+            {
+              "key": "engine",
+              "value": "Kubota Diesel · 14 HP"
+            },
+            {
+              "key": "cabin",
+              "value": "Так"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0.018 m³"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "supportRollers",
+              "value": "4 шт."
+            },
+            {
+              "key": "rotationSpeed",
+              "value": "9 об/хв"
+            },
+            {
+              "key": "fuelTank",
+              "value": "6.6 l"
+            },
+            {
+              "key": "hydraulicOilTank",
+              "value": "10.9 l"
+            },
+            {
+              "key": "hydraulicPressure",
+              "value": "18 MPa"
+            }
+          ]
+        },
+        {
+          "titleKey": "workingRange",
+          "rows": [
+            {
+              "key": "maxDiggingDepth",
+              "value": "1,750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2,380 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1,703 mm"
+            },
+            {
+              "key": "maxDiggingRadius",
+              "value": "1,694 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsAndWeight",
+          "rows": [
+            {
+              "key": "transportLength",
+              "value": "3,158 mm"
+            },
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "heightWithCabin",
+              "value": "2,144 mm"
+            },
+            {
+              "key": "counterweightClearance",
+              "value": "364 mm"
+            },
+            {
+              "key": "minGroundClearance",
+              "value": "129 mm"
+            },
+            {
+              "key": "trackWheelbase",
+              "value": "753 mm"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "aggregates": {
+    "bm25-ricardo": {
+      "name": "Генератор BM25",
+      "subtitle": "Двигун Ricardo 25KW · Тихий генератор",
+      "cardSpecs": [
+        {
+          "key": "engineBrand",
+          "value": "Ricardo"
+        },
+        {
+          "key": "atsSystem",
+          "value": "Автоматичне перемикання живлення"
+        },
+        {
+          "key": "avrRegulator",
+          "value": "Автоматичне регулювання напруги"
+        },
+        {
+          "key": "alternator",
+          "value": "Stamford STF-25"
+        },
+        {
+          "key": "controlPanel",
+          "value": "SmartGen 6120 · Інтерфейс польською"
+        }
+      ]
+    },
+    "bm30-ricardo": {
+      "name": "Генератор BM30",
+      "subtitle": "Двигун Ricardo 30KW · Тихий генератор",
+      "cardSpecs": [
+        {
+          "key": "engineBrand",
+          "value": "Ricardo"
+        },
+        {
+          "key": "atsSystem",
+          "value": "Автоматичне перемикання живлення"
+        },
+        {
+          "key": "avrRegulator",
+          "value": "Автоматичне регулювання напруги"
+        },
+        {
+          "key": "alternator",
+          "value": "Stamford STF-30"
+        },
+        {
+          "key": "controlPanel",
+          "value": "SmartGen 6120 · Інтерфейс польською"
+        }
+      ]
+    },
+    "bm25-weichai": {
+      "name": "Генератор BM25",
+      "subtitle": "Двигун Weichai 25KW · Тихий генератор",
+      "badge": "Бестселер",
+      "cardSpecs": [
+        {
+          "key": "engineBrand",
+          "value": "Weichai"
+        },
+        {
+          "key": "atsSystem",
+          "value": "Автоматичне перемикання живлення"
+        },
+        {
+          "key": "avrRegulator",
+          "value": "Автоматичне регулювання напруги"
+        },
+        {
+          "key": "alternator",
+          "value": "Stamford STF-25"
+        },
+        {
+          "key": "controlPanel",
+          "value": "SmartGen 6120 · Інтерфейс польською"
+        }
+      ]
+    },
+    "bm30-weichai": {
+      "name": "Генератор BM30",
+      "subtitle": "Двигун Weichai 30KW · Тихий генератор",
+      "cardSpecs": [
+        {
+          "key": "engineBrand",
+          "value": "Weichai"
+        },
+        {
+          "key": "atsSystem",
+          "value": "Автоматичне перемикання живлення"
+        },
+        {
+          "key": "avrRegulator",
+          "value": "Автоматичне регулювання напруги"
+        },
+        {
+          "key": "alternator",
+          "value": "Stamford STF-30"
+        },
+        {
+          "key": "controlPanel",
+          "value": "SmartGen 6120 · Інтерфейс польською"
+        }
+      ]
+    },
+    "bm30-cummins": {
+      "name": "Генератор BM30",
+      "subtitle": "Двигун Cummins 30KW · Тихий генератор",
+      "cardSpecs": [
+        {
+          "key": "engineBrand",
+          "value": "Cummins"
+        },
+        {
+          "key": "atsSystem",
+          "value": "Автоматичне перемикання живлення"
+        },
+        {
+          "key": "avrRegulator",
+          "value": "Автоматичне регулювання напруги"
+        },
+        {
+          "key": "alternator",
+          "value": "Stamford STF-30"
+        },
+        {
+          "key": "controlPanel",
+          "value": "SmartGen 6120 · Інтерфейс польською"
+        }
+      ]
+    },
+    "bm40-cummins": {
+      "name": "Генератор BM40",
+      "subtitle": "Двигун Cummins 40KW · Тихий генератор",
+      "cardSpecs": [
+        {
+          "key": "engineBrand",
+          "value": "Cummins"
+        },
+        {
+          "key": "atsSystem",
+          "value": "Автоматичне перемикання живлення"
+        },
+        {
+          "key": "avrRegulator",
+          "value": "Автоматичне регулювання напруги"
+        },
+        {
+          "key": "alternator",
+          "value": "Stamford STF-40"
+        },
+        {
+          "key": "controlPanel",
+          "value": "SmartGen 6120 · Інтерфейс польською"
+        }
+      ]
     }
   },
   "accessories": {

@@ -1,25 +1,108 @@
-import React from 'react'
-import { Trans, useTranslation } from 'react-i18next'
+import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import styles from './Hero.module.css'
-import { useReveal } from '../hooks/useReveal'
 import { useLangPath } from '../hooks/useLangPath'
 import { useHashScroll } from '../hooks/useHashScroll'
+
+const SLIDE_ROTATION_MS = 5600
+const SLIDE_EXIT_MS = 260
+const SLIDE_ENTER_MS = 520
 
 export default function Hero() {
   const { t } = useTranslation()
   const langPath = useLangPath()
   const handleHashScroll = useHashScroll()
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [transition, setTransition] = useState(null)
 
-  const [badgeRef, badgeVisible] = useReveal()
-  const [titleRef, titleVisible] = useReveal()
-  const [leadRef, leadVisible] = useReveal()
-  const [actionsRef, actionsVisible] = useReveal()
-  const [mediaRef, mediaVisible] = useReveal()
+  const fallbackStats = t('hero.stats', { returnObjects: true })
+  const fallbackSlide = {
+    id: 'default',
+    label: t('nav.models'),
+    titleLine1: t('hero.titleLine1'),
+    titleLine2: t('hero.titleLine2'),
+    titlePrice: t('hero.titlePrice'),
+    lead: t('hero.lead'),
+    image: '/images/optimized/hero.png',
+    imageAlt: t('hero.imageAlt'),
+    primaryLabel: t('hero.actions.models'),
+    primaryHash: '#modele',
+    secondaryLabel: t('hero.actions.consultation'),
+    secondaryHash: '#kontakt',
+    stats: Array.isArray(fallbackStats) ? fallbackStats : [],
+  }
 
-  const stats = t('hero.stats', { returnObjects: true })
+  const localizedSlides = t('hero.slides', { returnObjects: true, defaultValue: [] })
+  const slides = Array.isArray(localizedSlides) && localizedSlides.length > 0
+    ? localizedSlides
+    : [fallbackSlide]
 
-  const modelsLink = langPath('/', '#modele')
-  const contactLink = langPath('/', '#kontakt')
+  useEffect(() => {
+    if (activeIndex < slides.length) return
+    setActiveIndex(0)
+  }, [activeIndex, slides.length])
+
+  useEffect(() => {
+    if (!transition || transition.phase !== 'exiting') return undefined
+
+    const timeoutId = window.setTimeout(() => {
+      setActiveIndex(transition.to)
+      setTransition({ to: transition.to, phase: 'entering' })
+    }, SLIDE_EXIT_MS)
+
+    return () => window.clearTimeout(timeoutId)
+  }, [transition])
+
+  useEffect(() => {
+    if (!transition || transition.phase !== 'entering') return undefined
+
+    const timeoutId = window.setTimeout(() => {
+      setTransition(null)
+    }, SLIDE_ENTER_MS)
+
+    return () => window.clearTimeout(timeoutId)
+  }, [transition])
+
+  useEffect(() => {
+    if (slides.length < 2 || transition) return undefined
+
+    const timeoutId = window.setTimeout(() => {
+      setTransition({
+        to: (activeIndex + 1) % slides.length,
+        phase: 'exiting',
+      })
+    }, SLIDE_ROTATION_MS)
+
+    return () => window.clearTimeout(timeoutId)
+  }, [activeIndex, slides.length, transition])
+
+  const changeSlide = (nextIndex) => {
+    if (slides.length < 2) return
+    if (transition || nextIndex === activeIndex) return
+
+    setTransition({
+      to: nextIndex,
+      phase: 'exiting',
+    })
+  }
+
+  const selectedIndex = transition ? transition.to : activeIndex
+  const activeSlide = slides[activeIndex] ?? fallbackSlide
+  const primaryLink = langPath('/', activeSlide.primaryHash || '#modele')
+  const secondaryLink = langPath('/', activeSlide.secondaryHash || '#kontakt')
+  const slideStats = Array.isArray(activeSlide.stats) ? activeSlide.stats : []
+  const imageVariantClass = activeSlide.imageVariant === 'aggregate' ? styles.imageAggregate : ''
+
+  let copyStateClass = styles.slideCopyActive
+  let mediaStateClass = styles.mediaStageActive
+
+  if (transition?.phase === 'exiting') {
+    copyStateClass = styles.slideCopyExiting
+    mediaStateClass = styles.mediaStageExiting
+  } else if (transition?.phase === 'entering') {
+    copyStateClass = styles.slideCopyEntering
+    mediaStateClass = styles.mediaStageEntering
+  }
 
   return (
     <section className={styles.hero} id="hero" aria-labelledby="hero-title">
@@ -29,96 +112,83 @@ export default function Hero() {
 
       <div className={`page-shell ${styles.inner}`}>
         <div className={styles.copy}>
-          <p
-            ref={badgeRef}
-            className={`${styles.badge} ${styles.reveal} ${badgeVisible ? styles.visible : ''}`}
-            style={{ transitionDelay: '0ms' }}
-          >
-            {t('hero.badge')}
-          </p>
+          <p className={styles.badge}>{t('hero.badge')}</p>
 
-          <h1
-            ref={titleRef}
-            id="hero-title"
-            className={`${styles.title} ${styles.reveal} ${titleVisible ? styles.visible : ''}`}
-            style={{ transitionDelay: '80ms' }}
-          >
-            <span>{t('hero.titleLine1')}</span>
-            <span className={styles.titleAccent}>{t('hero.titleLine2')}</span>
-            <span className={styles.titlePrice}>{t('hero.titlePrice')}</span>
-          </h1>
+          {slides.length > 1 ? (
+            <div className={styles.switcher} role="group" aria-label={t('hero.sliderAriaLabel')}>
+              {slides.map((slide, index) => (
+                <button
+                  key={slide.id ?? index}
+                  type="button"
+                  aria-pressed={selectedIndex === index}
+                  className={`${styles.switcherButton} ${selectedIndex === index ? styles.switcherButtonActive : ''}`}
+                  onClick={() => changeSlide(index)}
+                >
+                  {slide.label}
+                </button>
+              ))}
+            </div>
+          ) : null}
 
-          <p
-            ref={leadRef}
-            className={`${styles.lead} ${styles.reveal} ${leadVisible ? styles.visible : ''}`}
-            style={{ transitionDelay: '160ms' }}
-          >
-            <Trans
-              i18nKey="hero.lead"
-              components={{ strong: <strong /> }}
-            />
-          </p>
+          <div className={styles.copyViewport}>
+            <div className={`${styles.slideCopy} ${copyStateClass}`}>
+              <h1 id="hero-title" className={styles.title}>
+                <span>{activeSlide.titleLine1}</span>
+                <span className={styles.titleAccent}>{activeSlide.titleLine2}</span>
+                <span className={styles.titlePrice}>{activeSlide.titlePrice}</span>
+              </h1>
 
-          <div
-            ref={actionsRef}
-            className={`${styles.actions} ${styles.reveal} ${actionsVisible ? styles.visible : ''}`}
-            style={{ transitionDelay: '240ms' }}
-          >
-            <a
-              href={modelsLink}
-              className="btn-primary"
-              onClick={(event) => handleHashScroll(event, modelsLink)}
-            >
-              {t('hero.actions.models')}
-            </a>
+              <p
+                className={styles.lead}
+                dangerouslySetInnerHTML={{ __html: activeSlide.lead }}
+              />
 
-            <a
-              href={contactLink}
-              className="btn-outline"
-              onClick={(event) => handleHashScroll(event, contactLink)}
-            >
-              {t('hero.actions.consultation')}
-            </a>
+              <div className={styles.actions}>
+                <a
+                  href={primaryLink}
+                  className="btn-primary"
+                  onClick={(event) => handleHashScroll(event, primaryLink)}
+                >
+                  {activeSlide.primaryLabel}
+                </a>
+
+                <a
+                  href={secondaryLink}
+                  className="btn-outline"
+                  onClick={(event) => handleHashScroll(event, secondaryLink)}
+                >
+                  {activeSlide.secondaryLabel}
+                </a>
+              </div>
+
+              <ul className={styles.stats} aria-label={t('hero.statsAriaLabel')}>
+                {slideStats.map((item, index) => (
+                  <li key={`${activeSlide.id ?? 'slide'}-${item.value}-${index}`} className={styles.statItem}>
+                    <span className={styles.statValue}>{item.value}</span>
+                    <span className={styles.statLabel}>{item.label}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-
-          <ul className={styles.stats} aria-label={t('hero.statsAriaLabel')}>
-            {stats.map((item, index) => (
-              <HeroStat key={`${item.value}-${index}`} item={item} delay={320 + index * 80} />
-            ))}
-          </ul>
         </div>
 
-        <div
-          ref={mediaRef}
-          className={`${styles.media} ${styles.reveal} ${mediaVisible ? styles.visible : ''}`}
-          style={{ transitionDelay: '120ms' }}
-        >
-          <div className={styles.mediaInner}>
-            <img
-              src="/images/optimized/hero.webp"
-              alt={t('hero.imageAlt')}
-              className={styles.image}
-              loading="eager"
-              decoding="async"
-            />
+        <div className={styles.media}>
+          <div className={styles.mediaViewport}>
+            <div className={`${styles.mediaStage} ${mediaStateClass}`}>
+              <div className={styles.mediaInner}>
+                <img
+                  src={activeSlide.image}
+                  alt={activeSlide.imageAlt}
+                  className={`${styles.image} ${imageVariantClass}`}
+                  loading={activeIndex === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
-
-function HeroStat({ item, delay }) {
-  const [ref, visible] = useReveal()
-
-  return (
-    <li
-      ref={ref}
-      className={`${styles.statItem} ${styles.reveal} ${visible ? styles.visible : ''}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      <span className={styles.statValue}>{item.value}</span>
-      <span className={styles.statLabel}>{item.label}</span>
-    </li>
   )
 }

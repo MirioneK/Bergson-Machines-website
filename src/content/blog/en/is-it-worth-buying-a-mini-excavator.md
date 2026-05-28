@@ -38,7 +38,7 @@ On top of that, there are often:
 Buying a mini excavator means an expense of roughly:
 
 - from around PLN 19,999 net — basic 1-ton models,
-- from PLN 24,999 net — 1.2-ton models,
+- from PLN 24,309 net — 1.2-ton models,
 - PLN 30,000–40,000 net — versions with a cabin or a Kubota engine.
 
 This is a one-time cost that can also be spread out through installments or leasing.

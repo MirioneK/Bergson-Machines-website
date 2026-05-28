@@ -9,7 +9,14 @@ import { getPostAlternates } from '../lib/blog'
 
 const NAV_LINKS = [
   { key: 'nav.models', type: 'section', path: '/', hash: '#modele' },
-  { key: 'nav.service', type: 'section', path: '/', hash: '#serwis' },
+  { key: 'nav.aggregates', type: 'section', path: '/', hash: '#agregaty' },
+  {
+    key: 'nav.leasing',
+    type: 'section',
+    path: '/',
+    hash: '#leasing',
+    defaultLabel: 'Leasing',
+  },
   { key: 'nav.faq', type: 'section', path: '/', hash: '#faq' },
   { key: 'nav.accessories', type: 'page', path: '/osprzet' },
   { key: 'nav.blog', type: 'page', path: '/blog' },
@@ -145,6 +152,8 @@ export default function Nav() {
 
   const homeLink = langPath('/')
   const contactLink = langPath('/', '#kontakt')
+  const resolveNavLabel = ({ key, defaultLabel }) =>
+    defaultLabel ? t(key, { defaultValue: defaultLabel }) : t(key)
 
   return (
     <>
@@ -167,7 +176,7 @@ export default function Nav() {
 
           <div className={styles.navGroups}>
             <ul className={`${styles.links} ${styles.sectionLinks}`}>
-              {sectionLinks.map(({ key, path, hash }) => {
+              {sectionLinks.map(({ key, path, hash, defaultLabel }) => {
                 const to = langPath(path, hash)
 
                 return (
@@ -177,7 +186,7 @@ export default function Nav() {
                       className={`${styles.link} ${styles.sectionLink}`}
                       onClick={(event) => handleHashScroll(event, to)}
                     >
-                      {t(key)}
+                      {resolveNavLabel({ key, defaultLabel })}
                     </Link>
                   </li>
                 )
@@ -185,13 +194,13 @@ export default function Nav() {
             </ul>
 
             <ul className={`${styles.links} ${styles.pageLinks}`}>
-              {pageLinks.map(({ key, path, hash }) => (
+              {pageLinks.map(({ key, path, hash, defaultLabel }) => (
                 <li key={key}>
                   <Link
                     to={langPath(path, hash)}
                     className={`${styles.link} ${styles.pageLink}`}
                   >
-                    {t(key)}
+                    {resolveNavLabel({ key, defaultLabel })}
                   </Link>
                 </li>
               ))}
@@ -289,7 +298,7 @@ export default function Nav() {
           </div>
 
           <ul className={styles.mobileLinks}>
-            {mobileLinks.map(({ key, path, hash, type }) => {
+            {mobileLinks.map(({ key, path, hash, type, defaultLabel }) => {
               const to = langPath(path, hash)
 
               return (
@@ -299,7 +308,7 @@ export default function Nav() {
                     className={styles.mobileLink}
                     onClick={type === 'section' ? (event) => handleHashScroll(event, to) : undefined}
                   >
-                    {t(key)}
+                    {resolveNavLabel({ key, defaultLabel })}
                   </Link>
                 </li>
               )

@@ -4,19 +4,6 @@ import { GALLERY_PHOTOS } from '../data'
 import { useReveal } from '../hooks/useReveal'
 import styles from './Gallery.module.css'
 
-const INFO_TILES = [
-  {
-    id: 'warranty',
-    theme: 'grad',
-    variant: 'warranty',
-  },
-  {
-    id: 'ready',
-    theme: 'dark',
-    variant: 'ready',
-  },
-]
-
 export default function Gallery() {
   const { t } = useTranslation()
   const [headerRef, headerVisible] = useReveal()
@@ -290,16 +277,6 @@ export default function Gallery() {
               ))}
             </div>
           </div>
-
-          <div className={styles.infoGrid}>
-            {INFO_TILES.map((tile, index) => (
-              <InfoTile
-                key={tile.id}
-                tile={tile}
-                delay={220 + index * 100}
-              />
-            ))}
-          </div>
         </div>
       </div>
 
@@ -377,25 +354,5 @@ export default function Gallery() {
         </div>
       )}
     </section>
-  )
-}
-
-function InfoTile({ tile, delay }) {
-  const { t } = useTranslation()
-  const [ref, visible] = useReveal()
-
-  return (
-    <div
-      ref={ref}
-      className={`${styles.infoTile} ${styles[tile.theme]} reveal ${visible ? 'visible' : ''}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      <div className={styles.infoContent}>
-        <div className={styles.infoNum}>{t(`gallery.infoTiles.${tile.id}.number`)}</div>
-        <div className={styles.infoSub}>{t(`gallery.infoTiles.${tile.id}.sub`)}</div>
-        <div className={styles.infoLine} />
-        <div className={styles.infoDesc}>{t(`gallery.infoTiles.${tile.id}.desc`)}</div>
-      </div>
-    </div>
   )
 }

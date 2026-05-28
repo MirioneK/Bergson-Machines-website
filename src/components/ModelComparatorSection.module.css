@@ -1,0 +1,263 @@
+.section {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-soft) 100%);
+  border-top: 1px solid rgba(242, 101, 34, 0.08);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.header {
+  max-width: 780px;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--orange);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0 0 14px;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4vw, 3.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.lead {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.card {
+  overflow: hidden;
+  border: 1px solid rgba(242, 101, 34, 0.14);
+  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%);
+}
+
+.pickerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 22px 22px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.picker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pickerLabel {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.select option {
+  color: #101014;
+  background: #ffffff;
+}
+
+.select:focus {
+  outline: 1px solid rgba(242, 101, 34, 0.5);
+  border-color: rgba(242, 101, 34, 0.5);
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 14px 16px;
+}
+
+.table thead th {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.paramHeader {
+  width: 280px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.modelHeader {
+  min-width: 190px;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.modelHeader span,
+.modelHeader strong {
+  display: block;
+}
+
+.modelHeader strong {
+  margin-top: 8px;
+  color: var(--orange);
+  font-size: 0.94rem;
+}
+
+.sectionRow td {
+  padding: 10px 16px;
+  background: rgba(242, 101, 34, 0.08);
+  color: var(--orange);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.dataRow {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dataRow:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.paramCell {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.valueCell {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.94rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.valueCellBest {
+  background: rgba(242, 101, 34, 0.14);
+  color: #ff8d52;
+  font-weight: 700;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footerText {
+  max-width: 760px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.94rem;
+  line-height: 1.66;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid var(--orange);
+  background: var(--orange);
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.cta:hover {
+  background: var(--orange-dark);
+  border-color: var(--orange-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(242, 101, 34, 0.22);
+}
+
+@media (max-width: 1024px) {
+  .pickerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .inner {
+    gap: 22px;
+  }
+
+  .title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .lead,
+  .footerText {
+    font-size: 0.92rem;
+    line-height: 1.66;
+  }
+
+  .pickerGrid,
+  .footer {
+    padding: 18px;
+  }
+}

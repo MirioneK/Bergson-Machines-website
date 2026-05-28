@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { CONTACT_INFO } from '../data'
+import { AGGREGATES, CONTACT_INFO, MODELS } from '../data'
 import { useReveal } from '../hooks/useReveal'
 import {
   validateContactForm,
@@ -33,8 +33,22 @@ function translateValidationErrors(errors, t) {
   return translated
 }
 
+function getAggregateEngineBrand(cardSpecs) {
+  return cardSpecs.find((item) => item.key === 'engineBrand')?.value ?? 'Agregat'
+}
+
 export default function Contact() {
   const { t } = useTranslation()
+  const locations = CONTACT_INFO.locations?.length
+    ? CONTACT_INFO.locations
+    : [
+      {
+        location: CONTACT_INFO.location,
+        locationSub: CONTACT_INFO.locationSub,
+        mapEmbedUrl: CONTACT_INFO.mapEmbedUrl,
+        mapLinkUrl: CONTACT_INFO.mapLinkUrl,
+      },
+    ]
 
   const [headerRef, headerVisible] = useReveal()
   const [formRef, formVisible] = useReveal()
@@ -46,7 +60,45 @@ export default function Contact() {
   const [globalError, setGlobalError] = useState('')
   const [success, setSuccess] = useState('')
 
-  const modelOptions = t('contact.form.modelOptions', { returnObjects: true })
+  const modelOptions = useMemo(() => {
+    const staticOptionsRaw = t('contact.form.modelOptions', {
+      returnObjects: true,
+      defaultValue: [],
+    })
+    const staticOptions = Array.isArray(staticOptionsRaw)
+      ? staticOptionsRaw.filter((option) => ['accessories', 'advisory'].includes(option.value))
+      : []
+
+    const excavatorOptions = MODELS.filter((model) => !model.comingSoon).map((model) => ({
+      value: model.id,
+      label: model.name,
+    }))
+
+    const aggregateOptions = AGGREGATES.map((aggregate) => {
+      const cardSpecsRaw = t(`aggregates.${aggregate.id}.cardSpecs`, {
+        ns: 'data',
+        returnObjects: true,
+        defaultValue: [],
+      })
+      const cardSpecs = Array.isArray(cardSpecsRaw) ? cardSpecsRaw : []
+      const engineBrand = getAggregateEngineBrand(cardSpecs)
+      const name = t(`aggregates.${aggregate.id}.name`, {
+        ns: 'data',
+        defaultValue: aggregate.id,
+      })
+
+      return {
+        value: aggregate.id,
+        label: `${name} ${engineBrand}`,
+      }
+    })
+
+    return [
+      ...excavatorOptions,
+      ...aggregateOptions,
+      ...staticOptions,
+    ]
+  }, [t])
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target
@@ -321,8 +373,10 @@ export default function Contact() {
               <Detail
                 icon="📍"
                 label={t('contact.info.details.address.label')}
-                value={CONTACT_INFO.location}
-                sub={CONTACT_INFO.locationSub}
+                values={locations.map((item) => ({
+                  text: item.location,
+                  sub: item.locationSub,
+                }))}
               />
               <Detail
                 icon="🕐"
@@ -384,31 +438,35 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className={styles.mapWrap}>
-              <iframe
-                src={CONTACT_INFO.mapEmbedUrl}
-                title={t('contact.map.iframeTitle')}
-                className={styles.mapFrame}
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-              <div className={styles.mapBar}>
-                <span className={styles.mapText}>
-                  {t('contact.map.barText', {
-                    location: CONTACT_INFO.location,
-                    locationSub: CONTACT_INFO.locationSub,
-                  })}
-                </span>
-                <a
-                  href={CONTACT_INFO.mapLinkUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={styles.mapLink}
-                >
-                  {t('contact.map.open')}
-                </a>
-              </div>
+            <div className={styles.mapList}>
+              {locations.map((item, index) => (
+                <div key={`${item.location}-${index}`} className={styles.mapWrap}>
+                  <iframe
+                    src={item.mapEmbedUrl}
+                    title={`${t('contact.map.iframeTitle')} ${item.location}`}
+                    className={styles.mapFrame}
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                  <div className={styles.mapBar}>
+                    <span className={styles.mapText}>
+                      {t('contact.map.barText', {
+                        location: item.location,
+                        locationSub: item.locationSub,
+                      })}
+                    </span>
+                    <a
+                      href={item.mapLinkUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={styles.mapLink}
+                    >
+                      {t('contact.map.open')}
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
           </aside>
         </div>
@@ -500,12 +558,18 @@ function Detail({ icon, label, value, sub, href, values }) {
         {Array.isArray(values) && values.length > 0 ? (
           values.map((item, index) =>
             item.href ? (
-              <a key={index} href={item.href} className={styles.detailVal}>
-                {item.text}
-              </a>
+              <div key={index} className={styles.detailGroup}>
+                <a href={item.href} className={styles.detailVal}>
+                  {item.text}
+                </a>
+                {item.sub && <div className={styles.detailSub}>{item.sub}</div>}
+              </div>
             ) : (
-              <div key={index} className={styles.detailVal}>
-                {item.text}
+              <div key={index} className={styles.detailGroup}>
+                <div className={styles.detailVal}>
+                  {item.text}
+                </div>
+                {item.sub && <div className={styles.detailSub}>{item.sub}</div>}
               </div>
             )
           )

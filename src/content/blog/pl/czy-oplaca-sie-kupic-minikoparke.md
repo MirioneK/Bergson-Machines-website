@@ -38,7 +38,7 @@ Do tego często dochodzą:
 Zakup minikoparki to wydatek rzędu:
 
 - od około 19 999 zł netto - podstawowe modele 1 tona,
-- od 24 999 zł netto - modele 1.2 tony,
+- od 24 309 zł netto - modele 1.2 tony,
 - 30 000 - 40 000 zł netto - wersje z kabiną lub silnikiem Kubota.
 
 To jednorazowy koszt, który można dodatkowo rozłożyć na raty lub leasing.

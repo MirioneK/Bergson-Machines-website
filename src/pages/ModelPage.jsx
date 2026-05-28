@@ -10,6 +10,13 @@ import {
 } from '../data'
 import { useLangPath } from '../hooks/useLangPath'
 import { useReveal } from '../hooks/useReveal'
+import { getProductGalleryImages } from '../galleryUtils'
+import {
+  getModelAccordions,
+  getModelCardSpecs,
+  getModelContentId,
+  getModelText,
+} from '../modelPresentation'
 import styles from './ModelPage.module.css'
 
 const ACCESSORY_PLACEHOLDER = '/images/placeholders/product-placeholder.png'
@@ -62,45 +69,75 @@ export default function ModelPage() {
 
   const others = MODELS.filter((m) => m.id !== id && m.id !== 'upcoming')
   const priceBrutto = calcBrutto(model.priceNetto)
+  const contentId = getModelContentId(id)
 
-  const modelSubtitle = t(`models.${id}.subtitle`, {
+  const modelSubtitle = getModelText(id, i18n.resolvedLanguage, 'subtitle', t(`models.${contentId}.subtitle`, {
     ns: 'data',
     defaultValue: '',
-  })
+  }))
 
-  const modelBadge = t(`models.${id}.badge`, {
+  const modelBadge = getModelText(id, i18n.resolvedLanguage, 'badge', t(`models.${contentId}.badge`, {
     ns: 'data',
     defaultValue: '',
-  })
+  }))
 
-  const modelDescription = t(`models.${id}.description`, {
+  const modelDescription = getModelText(id, i18n.resolvedLanguage, 'description', t(`models.${contentId}.description`, {
     ns: 'data',
     defaultValue: '',
-  })
+  }))
 
-  const quickSpecsRaw = t(`models.${id}.cardSpecs`, {
+  const quickSpecsRaw = t(`models.${contentId}.cardSpecs`, {
     ns: 'data',
     returnObjects: true,
     defaultValue: [],
   })
 
-  const quickSpecs = Array.isArray(quickSpecsRaw) ? quickSpecsRaw.slice(0, 4) : []
+  const quickSpecs = getModelCardSpecs(
+    id,
+    i18n.resolvedLanguage,
+    Array.isArray(quickSpecsRaw) ? quickSpecsRaw : []
+  ).slice(0, 4)
 
-  const accordionsRaw = t(`models.${id}.accordions`, {
+  const accordionsRaw = t(`models.${contentId}.accordions`, {
     ns: 'data',
     returnObjects: true,
     defaultValue: [],
   })
 
-  const accordions = Array.isArray(accordionsRaw) ? accordionsRaw : []
+  const accordions = getModelAccordions(
+    id,
+    i18n.resolvedLanguage,
+    Array.isArray(accordionsRaw) ? accordionsRaw : []
+  )
 
-  const sideImages =
-    model.gallery && model.gallery.length >= 2
-      ? model.gallery.slice(0, 2)
-      : [model.image, model.image]
+  const sideImages = getProductGalleryImages(model.image, model.gallery)
+  const hasSideGallery = sideImages.length > 0
 
   const formattedNetto = formatPrice(model.priceNetto, i18n.resolvedLanguage)
   const formattedBrutto = formatPrice(priceBrutto, i18n.resolvedLanguage)
+  const preferredCommonLabels = new Set([
+    'operatingWeight',
+    'totalWeight',
+    'hydraulicPump',
+    'additionalEquipment',
+    'oilCooler',
+    'diggingDepth',
+    'trackExpansion',
+  ])
+  const resolveModelSpecLabel = (key) =>
+    preferredCommonLabels.has(key)
+      ? t(`modelCard.specLabels.${key}`, {
+          defaultValue: t(`modelSpecs.${key}`, {
+            ns: 'data',
+            defaultValue: key,
+          }),
+        })
+      : t(`modelSpecs.${key}`, {
+          ns: 'data',
+          defaultValue: t(`modelCard.specLabels.${key}`, {
+            defaultValue: key,
+          }),
+        })
 
   usePageMeta({
     title: t('meta.model.title', { name: model.name }),
@@ -174,10 +211,7 @@ export default function ModelPage() {
               {quickSpecs.map(({ key, value }, index) => (
                 <QuickSpecCell
                   key={`${key}-${index}`}
-                  label={t(`modelSpecs.${key}`, {
-                    ns: 'data',
-                    defaultValue: key,
-                  })}
+                  label={resolveModelSpecLabel(key)}
                   value={value}
                   delay={180 + index * 80}
                 />
@@ -197,7 +231,9 @@ export default function ModelPage() {
       </section>
 
       <section className={styles.overviewSection}>
-        <div className={`page-shell ${styles.overviewInner}`}>
+        <div
+          className={`page-shell ${styles.overviewInner} ${!hasSideGallery ? styles.overviewInnerSingle : ''}`}
+        >
           <div
             ref={overviewDescRef}
             className={`${styles.descCard} reveal ${overviewDescVisible ? 'visible' : ''}`}
@@ -206,17 +242,19 @@ export default function ModelPage() {
             <p className={styles.descText}>{modelDescription}</p>
           </div>
 
-          <div className={styles.sideGallery}>
-            {sideImages.map((src, index) => (
-              <SideGalleryCard
-                key={`${src}-${index}`}
-                src={src}
-                modelName={model.name}
-                index={index}
-                delay={120 + index * 100}
-              />
-            ))}
-          </div>
+          {hasSideGallery ? (
+            <div className={styles.sideGallery}>
+              {sideImages.map((src, index) => (
+                <SideGalleryCard
+                  key={`${src}-${index}`}
+                  src={src}
+                  modelName={model.name}
+                  index={index}
+                  delay={120 + index * 100}
+                />
+              ))}
+            </div>
+          ) : null}
         </div>
       </section>
 
@@ -240,10 +278,7 @@ export default function ModelPage() {
                 })}
                 rows={(acc.rows || []).map((row) => ({
                   key: row.key,
-                  label: t(`modelSpecs.${row.key}`, {
-                    ns: 'data',
-                    defaultValue: row.key,
-                  }),
+                  label: resolveModelSpecLabel(row.key),
                   value: row.value,
                 }))}
                 defaultOpen={index === 0}

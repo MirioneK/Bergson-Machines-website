@@ -15,6 +15,7 @@ import StickyCTA from './components/StickyCTA'
 
 import HomePage from './pages/HomePage'
 import ModelPage from './pages/ModelPage'
+import AggregatePage from './pages/AggregatePage'
 import LegalPage from './pages/LegalPage'
 import BlogPage from './pages/BlogPage'
 import BlogPostPage from './pages/BlogPostPage'
@@ -97,6 +98,7 @@ function RootRedirect() {
 }
 
 const modelRouteVariants = getLocalizedRouteVariants('/modele')
+const aggregateRouteVariants = getLocalizedRouteVariants('/agregaty')
 const warrantyRouteVariants = getLocalizedRouteVariants('/gwarancja')
 const returnsRouteVariants = getLocalizedRouteVariants('/zwroty-i-reklamacje')
 const deliveryRouteVariants = getLocalizedRouteVariants('/dostawa')
@@ -135,6 +137,14 @@ export default function App() {
             key={`models-${slug}`}
             path={`${slug}/:id`}
             element={<ModelPage />}
+          />
+        ))}
+
+        {aggregateRouteVariants.map((slug) => (
+          <Route
+            key={`aggregates-${slug}`}
+            path={`${slug}/:id`}
+            element={<AggregatePage />}
           />
         ))}
 
