@@ -4,6 +4,37 @@ import { calcBrutto, formatPrice } from '../data'
 import { useLangPath } from '../hooks/useLangPath'
 import ProductCard from './ProductCard'
 
+const AGGREGATE_CARD_SPEC_PRIORITY = [
+  'engineBrand',
+  'ratedPower',
+  'atsSystem',
+  'avrRegulator',
+  'outputVoltage',
+]
+
+function getCompactAggregateCardSpecs(cardSpecs) {
+  const selected = []
+
+  AGGREGATE_CARD_SPEC_PRIORITY.forEach((key) => {
+    const match = cardSpecs.find((item) => item?.key === key)
+    if (match) {
+      selected.push(match)
+    }
+  })
+
+  if (selected.length >= 3) {
+    return selected.slice(0, 3)
+  }
+
+  cardSpecs.forEach((item) => {
+    if (!selected.find((selectedItem) => selectedItem.key === item?.key)) {
+      selected.push(item)
+    }
+  })
+
+  return selected.slice(0, 3)
+}
+
 export default function AggregateCard({ aggregate }) {
   const { t, i18n } = useTranslation()
   const langPath = useLangPath()
@@ -34,6 +65,7 @@ export default function AggregateCard({ aggregate }) {
   const cardSpecs = Array.isArray(cardSpecsRaw)
     ? cardSpecsRaw.filter((item) => item?.key !== 'deliveryTime')
     : []
+  const compactCardSpecs = getCompactAggregateCardSpecs(cardSpecs)
   const priceBrutto = calcBrutto(priceNetto)
 
   return (
@@ -49,7 +81,7 @@ export default function AggregateCard({ aggregate }) {
       title={name}
       subtitle={subtitle}
       specsAriaLabel={t('aggregateCard.specsAriaLabel', { name })}
-      cardSpecs={cardSpecs}
+      cardSpecs={compactCardSpecs}
       resolveSpecLabel={(key) =>
         t(`aggregateCard.specLabels.${key}`, {
           defaultValue: key,

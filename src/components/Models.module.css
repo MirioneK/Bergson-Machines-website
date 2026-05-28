@@ -83,12 +83,18 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
-  gap: 16px;
+  gap: 14px;
 }
 
 .grid > * {
   min-width: 0;
   height: 100%;
+}
+
+@media (min-width: 1520px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 1180px) {

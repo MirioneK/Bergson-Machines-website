@@ -1,38 +1,40 @@
 const localized = (pl, en = pl, ua = en) => ({ pl, en, ua })
 
 const TWO_SECTION_PUMP = localized('Dwusekcyjna', 'Two-section', 'Двосекційна')
-const BOOM_SWING = localized('Ramię skrętne', 'Boom swing', 'Поворотна стріла')
 const YES = localized('Tak', 'Yes', 'Так')
 const NO = localized('Nie', 'No', 'Ні')
 const CANOPY = localized('Daszek', 'Canopy', 'Навіс')
 const FULL_CAB = localized('Pełna kabina', 'Full cabin', 'Повна кабіна')
+const CARD_ADDITIONAL_EQUIPMENT = localized(
+  'Ramię skrętne, chłodnica oleju hydraulicznego',
+  'Boom swing, hydraulic oil cooler',
+  'Поворотна стріла, охолоджувач гідравлічної оливи'
+)
+const CONDITION_NEW = localized('Nowa', 'New', 'Нова')
+const RUBBER = localized('Guma', 'Rubber', 'Гума')
+const FIXED_TRACKS_930 = localized(
+  'Brak (stałe ~930 mm)',
+  'None (fixed ~930 mm)',
+  'Немає (фіксовані ~930 мм)'
+)
 
-function buildCardSpecs({
-  operatingWeight,
-  engine,
-  diggingDepth,
-  trackExpansion,
-  width,
-}) {
-  const specs = [
+const ACCORDION_ORDER = [
+  'specification',
+  'engine',
+  'workingRange',
+  'undercarriage',
+  'hydraulics',
+  'operatorCab',
+  'dimensionsAndWeight',
+]
+
+function buildCardSpecs({ operatingWeight, engine }) {
+  return [
     { key: 'operatingWeight', value: operatingWeight },
     { key: 'engine', value: engine },
     { key: 'hydraulicPump', value: TWO_SECTION_PUMP },
-    { key: 'additionalEquipment', value: BOOM_SWING },
-    { key: 'oilCooler', value: YES },
+    { key: 'additionalEquipment', value: CARD_ADDITIONAL_EQUIPMENT },
   ]
-
-  if (diggingDepth) {
-    specs.push({ key: 'diggingDepth', value: diggingDepth })
-  }
-
-  if (trackExpansion) {
-    specs.push({ key: 'trackExpansion', value: trackExpansion })
-  } else if (width) {
-    specs.push({ key: 'width', value: width })
-  }
-
-  return specs
 }
 
 const MODEL_CONTENT_FALLBACKS = {
@@ -62,7 +64,7 @@ const MODEL_TEXT_OVERRIDES = {
     description: localized(
       'BM13C Kubota to kabinowy wariant platformy 1,2 t z silnikiem Kubota D722. Model powstał dla klientów, którzy chcą połączyć markową jednostkę 3-cylindrową, kompaktowe gabaryty i pełną kabinę operatora w jednej konfiguracji.',
       'BM13C Kubota is the cab-equipped 1.2-ton platform version with a Kubota D722 engine. It is aimed at customers who want a branded 3-cylinder engine, compact dimensions and a full operator cabin in one configuration.',
-      'BM13C Kubota — це кабінна версія платформи 1,2 тонни з двигуном Kubota D722. Модель створена для клієнтів, яким потрібні брендовий 3-циліндровий двигун, компактні габарити та повна кабіна оператора в одній конфігурації.'
+      'BM13C Kubota — це кабінна версія платформи 1,2 тонни з двигуном Kubota D722. Модель створена для клієнтів, яким потрібні брендований 3-циліндровий двигун, компактні габарити та повна кабіна оператора в одній конфігурації.'
     ),
   },
 }
@@ -75,23 +77,105 @@ const MODEL_OVERRIDES = {
     cabinHeating: NO,
     cardSpecs: buildCardSpecs({
       operatingWeight: localized('1 200 kg / 1 100 kg'),
-      engine: localized('KOOP 192F Diesel · 10 KM', 'KOOP 192F Diesel · 10 HP'),
-      diggingDepth: localized('1 649 mm'),
-      width: localized('933 mm'),
+      engine: localized('KOOP 192 Diesel · 10 KM', 'KOOP 192 Diesel · 10 HP'),
     }),
+    accordionRows: {
+      specification: [
+        { key: 'engine', value: localized('KOOP 192 Diesel · 10 KM', 'KOOP 192 Diesel · 10 HP') },
+        { key: 'certificate', value: YES },
+        { key: 'condition', value: CONDITION_NEW },
+      ],
+      engine: [
+        { key: 'engineBrand', value: localized('KOOP') },
+        { key: 'engineModel', value: localized('KOOP 192 Diesel') },
+        { key: 'power', value: localized('10 KM (7,6 kW)', '10 HP (7.6 kW)') },
+        { key: 'cylinders', value: localized('1 (pojedynczy)', '1 (single)') },
+        { key: 'fuelType', value: localized('Diesel') },
+      ],
+      workingRange: [
+        { key: 'maxDiggingDepth', value: localized('1 700 mm') },
+        { key: 'maxDiggingRadius', value: localized('1 490 mm') },
+        { key: 'maxDiggingHeight', value: localized('1 745 mm') },
+        { key: 'maxDumpingHeight', value: localized('1 725 mm') },
+        { key: 'diggingForce', value: localized('6,5 kN', '6.5 kN') },
+        { key: 'bucketCapacity', value: localized('0,022 m³', '0.022 m³') },
+      ],
+      undercarriage: [
+        { key: 'trackExpansion', value: FIXED_TRACKS_930 },
+        { key: 'trackMaterial', value: RUBBER },
+        { key: 'travelSpeed', value: localized('1,2 km/h', '1.2 km/h') },
+        { key: 'gradeability', value: localized('30 stopni', '30 degrees') },
+      ],
+      hydraulics: [
+        { key: 'hydraulicPump', value: TWO_SECTION_PUMP },
+        { key: 'oilCooler', value: YES },
+      ],
+      operatorCab: [
+        { key: 'joystickControl', value: YES },
+        { key: 'boomSwing', value: YES },
+        { key: 'operatorStructure', value: CANOPY },
+        { key: 'cabinHeating', value: NO },
+        { key: 'workLights', value: YES },
+      ],
+      dimensionsAndWeight: [
+        { key: 'overallDimensions', value: localized('2870 x 930 x 2200 mm') },
+        { key: 'fitsTrailer', value: YES },
+      ],
+    },
   },
   bm12c: {
-    totalWeight: localized('1 100 kg'),
-    operatingWeight: localized('1 200 kg'),
+    totalWeight: localized('1 200 kg'),
+    operatingWeight: localized('1 300 kg'),
     cabin: FULL_CAB,
     operatorStructure: FULL_CAB,
     cabinHeating: NO,
     cardSpecs: buildCardSpecs({
-      operatingWeight: localized('1 200 kg / 1 100 kg'),
-      engine: localized('KOOP 192F Diesel · 10 KM', 'KOOP 192F Diesel · 10 HP'),
-      diggingDepth: localized('1 649 mm'),
-      width: localized('933 mm'),
+      operatingWeight: localized('1 300 kg / 1 200 kg'),
+      engine: localized('KOOP 192 Diesel · 10 KM', 'KOOP 192 Diesel · 10 HP'),
     }),
+    accordionRows: {
+      specification: [
+        { key: 'engine', value: localized('KOOP 192 Diesel · 10 KM', 'KOOP 192 Diesel · 10 HP') },
+        { key: 'certificate', value: YES },
+        { key: 'condition', value: CONDITION_NEW },
+      ],
+      engine: [
+        { key: 'engineBrand', value: localized('KOOP') },
+        { key: 'engineModel', value: localized('KOOP 192 Diesel') },
+        { key: 'power', value: localized('10 KM (7,6 kW)', '10 HP (7.6 kW)') },
+        { key: 'cylinders', value: localized('1 (pojedynczy)', '1 (single)') },
+        { key: 'fuelType', value: localized('Diesel') },
+      ],
+      workingRange: [
+        { key: 'maxDiggingDepth', value: localized('1 700 mm') },
+        { key: 'maxDiggingRadius', value: localized('1 490 mm') },
+        { key: 'maxDiggingHeight', value: localized('1 745 mm') },
+        { key: 'maxDumpingHeight', value: localized('1 725 mm') },
+        { key: 'diggingForce', value: localized('6,5 kN', '6.5 kN') },
+        { key: 'bucketCapacity', value: localized('0,022 m³', '0.022 m³') },
+      ],
+      undercarriage: [
+        { key: 'trackExpansion', value: FIXED_TRACKS_930 },
+        { key: 'trackMaterial', value: RUBBER },
+        { key: 'travelSpeed', value: localized('1,2 km/h', '1.2 km/h') },
+        { key: 'gradeability', value: localized('30 stopni', '30 degrees') },
+      ],
+      hydraulics: [
+        { key: 'hydraulicPump', value: TWO_SECTION_PUMP },
+        { key: 'oilCooler', value: YES },
+      ],
+      operatorCab: [
+        { key: 'joystickControl', value: YES },
+        { key: 'boomSwing', value: YES },
+        { key: 'operatorStructure', value: FULL_CAB },
+        { key: 'cabinHeating', value: NO },
+        { key: 'workLights', value: YES },
+      ],
+      dimensionsAndWeight: [
+        { key: 'overallDimensions', value: localized('2870 x 930 x ~2400 mm') },
+        { key: 'fitsTrailer', value: YES },
+      ],
+    },
   },
   bm13: {
     totalWeight: localized('1 100 kg'),
@@ -101,8 +185,6 @@ const MODEL_OVERRIDES = {
     cardSpecs: buildCardSpecs({
       operatingWeight: localized('1 200 kg / 1 100 kg'),
       engine: localized('KOOP 192F Diesel · 10 KM', 'KOOP 192F Diesel · 10 HP'),
-      diggingDepth: localized('1 750 mm'),
-      trackExpansion: localized('850 - 1050 mm'),
     }),
   },
   'bm13-kubota': {
@@ -113,50 +195,49 @@ const MODEL_OVERRIDES = {
     cardSpecs: buildCardSpecs({
       operatingWeight: localized('1 200 kg / 1 100 kg'),
       engine: localized('Kubota D722 Diesel · 14 KM', 'Kubota D722 Diesel · 14 HP'),
-      diggingDepth: localized('1 750 mm'),
-      trackExpansion: localized('850 - 1050 mm'),
     }),
   },
   bm13c: {
-    totalWeight: localized('1 100 kg'),
-    operatingWeight: localized('1 200 kg'),
+    totalWeight: localized('1 200 kg'),
+    operatingWeight: localized('1 300 kg'),
     cabin: FULL_CAB,
     operatorStructure: FULL_CAB,
     cabinHeating: YES,
     cardSpecs: buildCardSpecs({
-      operatingWeight: localized('1 200 kg / 1 100 kg'),
+      operatingWeight: localized('1 300 kg / 1 200 kg'),
       engine: localized('KOOP 192F Diesel · 10 KM', 'KOOP 192F Diesel · 10 HP'),
-      diggingDepth: localized('1 750 mm'),
-      trackExpansion: localized('850 - 1050 mm'),
     }),
+    accordionRows: {
+      dimensionsAndWeight: [
+        { key: 'overallDimensions', value: localized('2870 x 1000 x ~2400 mm') },
+      ],
+    },
   },
   'bm13c-kubota': {
-    totalWeight: localized('1 100 kg'),
-    operatingWeight: localized('1 200 kg'),
+    totalWeight: localized('1 200 kg'),
+    operatingWeight: localized('1 300 kg'),
     cabin: FULL_CAB,
     operatorStructure: FULL_CAB,
     cabinHeating: YES,
     cardSpecs: buildCardSpecs({
-      operatingWeight: localized('1 200 kg / 1 100 kg'),
+      operatingWeight: localized('1 300 kg / 1 200 kg'),
       engine: localized('Kubota D722 Diesel · 14 KM', 'Kubota D722 Diesel · 14 HP'),
-      diggingDepth: localized('1 750 mm'),
-      trackExpansion: localized('850 - 1050 mm'),
     }),
+    accordionRows: {
+      dimensionsAndWeight: [
+        { key: 'overallDimensions', value: localized('2870 x 1000 x ~2400 mm') },
+      ],
+    },
   },
   bm16: {
     totalWeight: localized('1 500 kg'),
     operatingWeight: localized('1 600 kg'),
     operatorStructure: CANOPY,
     cabinHeating: NO,
-    cardSpecs: [
-      { key: 'operatingWeight', value: localized('1 600 kg / 1 500 kg') },
-      { key: 'engine', value: localized('Laidong 385 Diesel · 25 KM', 'Laidong 385 Diesel · 25 HP') },
-      { key: 'hydraulicPump', value: TWO_SECTION_PUMP },
-      { key: 'additionalEquipment', value: BOOM_SWING },
-      { key: 'oilCooler', value: YES },
-      { key: 'diggingDepth', value: localized('1 800 mm') },
-      { key: 'trackExpansion', value: localized('1 100 - 1 300 mm') },
-    ],
+    cardSpecs: buildCardSpecs({
+      operatingWeight: localized('1 600 kg / 1 500 kg'),
+      engine: localized('Laidong 385 Diesel · 25 KM', 'Laidong 385 Diesel · 25 HP'),
+    }),
   },
   'bm16-kubota': {
     totalWeight: localized('1 500 kg'),
@@ -164,30 +245,20 @@ const MODEL_OVERRIDES = {
     power: localized('20 KM', '20 HP'),
     operatorStructure: CANOPY,
     cabinHeating: NO,
-    cardSpecs: [
-      { key: 'operatingWeight', value: localized('1 600 kg / 1 500 kg') },
-      { key: 'engine', value: localized('Kubota D722 Diesel · 20 KM', 'Kubota D722 Diesel · 20 HP') },
-      { key: 'hydraulicPump', value: TWO_SECTION_PUMP },
-      { key: 'additionalEquipment', value: BOOM_SWING },
-      { key: 'oilCooler', value: YES },
-      { key: 'diggingDepth', value: localized('1 800 mm') },
-      { key: 'trackExpansion', value: localized('1 100 - 1 300 mm') },
-    ],
+    cardSpecs: buildCardSpecs({
+      operatingWeight: localized('1 600 kg / 1 500 kg'),
+      engine: localized('Kubota D722 Diesel · 20 KM', 'Kubota D722 Diesel · 20 HP'),
+    }),
   },
   bm16c: {
     totalWeight: localized('1 500 kg'),
     operatingWeight: localized('1 600 kg'),
     operatorStructure: FULL_CAB,
     cabinHeating: YES,
-    cardSpecs: [
-      { key: 'operatingWeight', value: localized('1 600 kg / 1 500 kg') },
-      { key: 'engine', value: localized('Laidong 385 Diesel · 25 KM', 'Laidong 385 Diesel · 25 HP') },
-      { key: 'hydraulicPump', value: TWO_SECTION_PUMP },
-      { key: 'additionalEquipment', value: BOOM_SWING },
-      { key: 'oilCooler', value: YES },
-      { key: 'diggingDepth', value: localized('1 800 mm') },
-      { key: 'trackExpansion', value: localized('1 100 - 1 300 mm') },
-    ],
+    cardSpecs: buildCardSpecs({
+      operatingWeight: localized('1 600 kg / 1 500 kg'),
+      engine: localized('Laidong 385 Diesel · 25 KM', 'Laidong 385 Diesel · 25 HP'),
+    }),
   },
   'bm16c-kubota': {
     totalWeight: localized('1 500 kg'),
@@ -195,15 +266,10 @@ const MODEL_OVERRIDES = {
     power: localized('20 KM', '20 HP'),
     operatorStructure: FULL_CAB,
     cabinHeating: YES,
-    cardSpecs: [
-      { key: 'operatingWeight', value: localized('1 600 kg / 1 500 kg') },
-      { key: 'engine', value: localized('Kubota D722 Diesel · 20 KM', 'Kubota D722 Diesel · 20 HP') },
-      { key: 'hydraulicPump', value: TWO_SECTION_PUMP },
-      { key: 'additionalEquipment', value: BOOM_SWING },
-      { key: 'oilCooler', value: YES },
-      { key: 'diggingDepth', value: localized('1 800 mm') },
-      { key: 'trackExpansion', value: localized('1 100 - 1 300 mm') },
-    ],
+    cardSpecs: buildCardSpecs({
+      operatingWeight: localized('1 600 kg / 1 500 kg'),
+      engine: localized('Kubota D722 Diesel · 20 KM', 'Kubota D722 Diesel · 20 HP'),
+    }),
   },
 }
 
@@ -237,6 +303,46 @@ function upsertRow(rows, key, value, index = rows.length) {
   ]
 }
 
+function upsertAccordion(accordions, titleKey, rows) {
+  const accordionIndex = accordions.findIndex((accordion) => accordion.titleKey === titleKey)
+
+  if (accordionIndex >= 0) {
+    let nextRows = Array.isArray(accordions[accordionIndex].rows)
+      ? accordions[accordionIndex].rows.map((row) => ({ ...row }))
+      : []
+
+    rows.forEach((row, rowIndex) => {
+      nextRows = upsertRow(nextRows, row.key, row.value, rowIndex)
+    })
+
+    const nextAccordions = [...accordions]
+    nextAccordions[accordionIndex] = {
+      ...nextAccordions[accordionIndex],
+      rows: nextRows,
+    }
+    return nextAccordions
+  }
+
+  return [
+    ...accordions,
+    {
+      titleKey,
+      rows,
+    },
+  ]
+}
+
+function sortAccordions(accordions) {
+  return [...accordions].sort((left, right) => {
+    const leftIndex = ACCORDION_ORDER.indexOf(left.titleKey)
+    const rightIndex = ACCORDION_ORDER.indexOf(right.titleKey)
+    const safeLeftIndex = leftIndex >= 0 ? leftIndex : ACCORDION_ORDER.length
+    const safeRightIndex = rightIndex >= 0 ? rightIndex : ACCORDION_ORDER.length
+
+    return safeLeftIndex - safeRightIndex
+  })
+}
+
 export function getModelContentId(modelId) {
   return MODEL_CONTENT_FALLBACKS[modelId] ?? modelId
 }
@@ -261,7 +367,7 @@ export function getModelAccordions(modelId, language, fallbackAccordions) {
   const override = MODEL_OVERRIDES[modelId]
   if (!override) return fallbackAccordions
 
-  return fallbackAccordions.map((accordion) => {
+  let nextAccordions = fallbackAccordions.map((accordion) => {
     const rows = Array.isArray(accordion.rows) ? accordion.rows.map((row) => ({ ...row })) : []
 
     if (accordion.titleKey === 'specification') {
@@ -316,4 +422,17 @@ export function getModelAccordions(modelId, language, fallbackAccordions) {
 
     return accordion
   })
+
+  if (override.accordionRows) {
+    Object.entries(override.accordionRows).forEach(([titleKey, rows]) => {
+      const translatedRows = rows.map((row) => ({
+        key: row.key,
+        value: getValue(row.value, language),
+      }))
+
+      nextAccordions = upsertAccordion(nextAccordions, titleKey, translatedRows)
+    })
+  }
+
+  return sortAccordions(nextAccordions)
 }

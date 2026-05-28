@@ -10,6 +10,36 @@ import {
 import ProductCard from './ProductCard'
 import styles from './ModelCard.module.css'
 
+const MODEL_CARD_SPEC_PRIORITY = [
+  'operatingWeight',
+  'engine',
+  'hydraulicPump',
+  'additionalEquipment',
+]
+
+function getCompactModelCardSpecs(cardSpecs) {
+  const selected = []
+
+  MODEL_CARD_SPEC_PRIORITY.forEach((key) => {
+    const match = cardSpecs.find((item) => item?.key === key)
+    if (match) {
+      selected.push(match)
+    }
+  })
+
+  if (selected.length >= 4) {
+    return selected.slice(0, 4)
+  }
+
+  cardSpecs.forEach((item) => {
+    if (!selected.find((selectedItem) => selectedItem.key === item?.key)) {
+      selected.push(item)
+    }
+  })
+
+  return selected.slice(0, 4)
+}
+
 export default function ModelCard({ model }) {
   const { t, i18n } = useTranslation()
   const langPath = useLangPath()
@@ -43,6 +73,7 @@ export default function ModelCard({ model }) {
     i18n.resolvedLanguage,
     Array.isArray(cardSpecsRaw) ? cardSpecsRaw : []
   )
+  const compactCardSpecs = getCompactModelCardSpecs(cardSpecs)
 
   if (comingSoon) {
     const comingSoonBadge = t(`models.${id}.comingSoonBadge`, {
@@ -129,7 +160,7 @@ export default function ModelCard({ model }) {
       title={name}
       subtitle={subtitle}
       specsAriaLabel={t('modelCard.specsAriaLabel', { name })}
-      cardSpecs={cardSpecs}
+      cardSpecs={compactCardSpecs}
       resolveSpecLabel={(key) =>
         t(`modelCard.specLabels.${key}`, {
           defaultValue: key,
