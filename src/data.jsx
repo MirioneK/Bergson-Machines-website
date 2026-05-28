@@ -187,32 +187,32 @@ export const AGGREGATES = [
   {
     id: 'bm25-ricardo',
     image: '/images/optimized/aggregates/aggregate-silent.png',
-    priceNetto: 21999,
+    priceNetto: 21870,
   },
   {
     id: 'bm30-ricardo',
     image: '/images/optimized/aggregates/aggregate-silent.png',
-    priceNetto: 23999,
+    priceNetto: 23984,
   },
   {
     id: 'bm25-weichai',
     image: '/images/optimized/aggregates/aggregate-silent.png',
-    priceNetto: 23999,
+    priceNetto: 23984,
   },
   {
     id: 'bm30-weichai',
     image: '/images/optimized/aggregates/aggregate-silent.png',
-    priceNetto: 25999,
+    priceNetto: 25935,
   },
   {
     id: 'bm30-cummins',
     image: '/images/optimized/aggregates/aggregate-silent.png',
-    priceNetto: 39999,
+    priceNetto: 39756,
   },
   {
     id: 'bm40-cummins',
     image: '/images/optimized/aggregates/aggregate-silent.png',
-    priceNetto: 44999,
+    priceNetto: 44634,
   },
 ]
 

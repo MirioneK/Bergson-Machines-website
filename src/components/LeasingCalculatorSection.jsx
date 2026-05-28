@@ -76,7 +76,9 @@ export default function LeasingCalculatorSection() {
   }, [t])
 
   const selectedProduct = useMemo(
-    () => productOptions.find((product) => product.id === selectedId) ?? productOptions[0],
+    () =>
+      productOptions.find((product) => product.id === selectedId) ??
+      productOptions[0],
     [productOptions, selectedId]
   )
 
@@ -84,21 +86,30 @@ export default function LeasingCalculatorSection() {
     if (!selectedProduct) return null
 
     const multiplier = DEFAULT_MULTIPLIERS[months] ?? DEFAULT_MULTIPLIERS[60]
+
     const financedBase =
       selectedProduct.priceNetto * (1 - downPayment / 100 - residual / 100)
+
     const monthlyNet = (financedBase * multiplier) / months
+    const monthlyGross = monthlyNet * VAT_RATE
+
     const totalNet =
       monthlyNet * months +
       (selectedProduct.priceNetto * downPayment) / 100 +
       (selectedProduct.priceNetto * residual) / 100
+
+    const totalGross = totalNet * VAT_RATE
+
     const dailyNet = monthlyNet / 30
+    const dailyGross = dailyNet * VAT_RATE
 
     return {
       monthlyNet,
-      monthlyGross: monthlyNet * VAT_RATE,
+      monthlyGross,
       totalNet,
-      totalGross: totalNet * VAT_RATE,
+      totalGross,
       dailyNet,
+      dailyGross,
     }
   }, [downPayment, months, residual, selectedProduct])
 
@@ -147,14 +158,22 @@ export default function LeasingCalculatorSection() {
               >
                 {productOptions.map((product) => (
                   <option key={product.id} value={product.id}>
-                    {product.label} · od {formatPrice(product.priceNetto, i18n.resolvedLanguage)} netto
+                    {product.label} · od{' '}
+                    {formatPrice(
+                      product.priceNetto * VAT_RATE,
+                      i18n.resolvedLanguage
+                    )}{' '}
+                    brutto
                   </option>
                 ))}
               </select>
             </div>
 
             <div className={styles.field}>
-              <label htmlFor="leasing-down-payment" className={styles.rangeLabel}>
+              <label
+                htmlFor="leasing-down-payment"
+                className={styles.rangeLabel}
+              >
                 <span>
                   {t('leasing.downPaymentLabel', {
                     defaultValue: 'Wkład własny',
@@ -188,7 +207,9 @@ export default function LeasingCalculatorSection() {
                   <button
                     key={option}
                     type="button"
-                    className={`${styles.choiceButton} ${months === option ? styles.choiceButtonActive : ''}`}
+                    className={`${styles.choiceButton} ${
+                      months === option ? styles.choiceButtonActive : ''
+                    }`}
                     onClick={() => setMonths(option)}
                   >
                     {option} mies.
@@ -208,7 +229,9 @@ export default function LeasingCalculatorSection() {
                   <button
                     key={option}
                     type="button"
-                    className={`${styles.choiceButton} ${residual === option ? styles.choiceButtonActive : ''}`}
+                    className={`${styles.choiceButton} ${
+                      residual === option ? styles.choiceButtonActive : ''
+                    }`}
                     onClick={() => setResidual(option)}
                   >
                     {option}%
@@ -220,18 +243,13 @@ export default function LeasingCalculatorSection() {
 
           <div className={styles.summaryPanel}>
             <div className={styles.summaryLabel}>
-              {t('leasing.monthlyLabel', {
-                defaultValue: 'Twoja miesięczna rata netto',
+              {t('leasing.monthlyGrossLabel', {
+                defaultValue: 'Twoja miesięczna rata brutto',
               })}
             </div>
             <div className={styles.monthlyValue}>
               {calculation
-                ? formatPrice(calculation.monthlyNet, i18n.resolvedLanguage)
-                : '—'}
-            </div>
-            <div className={styles.monthlyGross}>
-              {calculation
-                ? `${formatPrice(calculation.monthlyGross, i18n.resolvedLanguage)} brutto`
+                ? formatPrice(calculation.monthlyGross, i18n.resolvedLanguage)
                 : '—'}
             </div>
 
@@ -240,24 +258,20 @@ export default function LeasingCalculatorSection() {
                 <span>Łącznie</span>
                 <strong>
                   {calculation
-                    ? formatPrice(calculation.totalNet, i18n.resolvedLanguage)
+                    ? formatPrice(calculation.totalGross, i18n.resolvedLanguage)
                     : '—'}
                 </strong>
-                <small>
-                  {calculation
-                    ? `${formatPrice(calculation.totalGross, i18n.resolvedLanguage)} brutto`
-                    : '—'}
-                </small>
+                <small>brutto</small>
               </div>
 
               <div className={styles.summaryBox}>
                 <span>Dziennie</span>
                 <strong>
                   {calculation
-                    ? formatPrice(calculation.dailyNet, i18n.resolvedLanguage)
+                    ? formatPrice(calculation.dailyGross, i18n.resolvedLanguage)
                     : '—'}
                 </strong>
-                <small>netto</small>
+                <small>brutto</small>
               </div>
             </div>
 
@@ -265,14 +279,21 @@ export default function LeasingCalculatorSection() {
               <div className={styles.compareNote}>
                 <p>
                   Wynajem minikoparki z operatorem to około{' '}
-                  <strong>150 zł netto za godzinę</strong>.
+                  <strong>
+                    {formatPrice(150 * VAT_RATE, i18n.resolvedLanguage)} brutto
+                    za godzinę
+                  </strong>
+                  .
                 </p>
                 <p>
                   Tutaj masz swoją maszynę od{' '}
                   <strong>
-                    {formatPrice(calculation.dailyNet, i18n.resolvedLanguage)}
+                    {formatPrice(
+                      calculation.dailyGross,
+                      i18n.resolvedLanguage
+                    )}
                   </strong>{' '}
-                  netto dziennie.
+                  brutto dziennie.
                 </p>
               </div>
             ) : null}
