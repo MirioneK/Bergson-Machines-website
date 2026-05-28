@@ -136,10 +136,11 @@ export default function ModelCard({ model }) {
         })
       }
       pricePrefix={t('modelCard.pricePrefix')}
-      formattedPrice={formatPrice(priceNetto, i18n.resolvedLanguage)}
-      priceLabel={t('modelCard.priceNettoLabel')}
-      priceBrutto={t('modelCard.priceBrutto', {
-        price: formatPrice(priceBrutto, i18n.resolvedLanguage),
+      formattedPrice={formatPrice(priceBrutto, i18n.resolvedLanguage)}
+      priceLabel={t('modelCard.priceGrossLabel', { defaultValue: 'BRUTTO' })}
+      priceBrutto={t('modelCard.priceNetto', {
+        price: formatPrice(priceNetto, i18n.resolvedLanguage),
+        defaultValue: `${t('modelCard.pricePrefix')} ${formatPrice(priceNetto, i18n.resolvedLanguage)} ${t('modelCard.priceNettoLabel')}`,
       })}
       cta={t('modelCard.cta')}
     />

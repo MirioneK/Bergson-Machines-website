@@ -68,7 +68,9 @@
     "imageAlt": "{{name}} mini excavator",
     "specsAriaLabel": "Specifications for model {{name}}",
     "pricePrefix": "from",
+    "priceGrossLabel": "GROSS",
     "priceNettoLabel": "NET",
+    "priceNetto": "from {{price}} net",
     "priceBrutto": "from {{price}} gross",
     "cta": "Explore model",
     "specLabels": {
@@ -99,7 +101,9 @@
     "imageAlt": "{{name}}",
     "specsAriaLabel": "{{name}} model specification",
     "pricePrefix": "from",
+    "priceGrossLabel": "GROSS",
     "priceNettoLabel": "NET",
+    "priceNetto": "from {{price}} net",
     "priceBrutto": "from {{price}} gross",
     "cta": "Explore model",
     "specLabels": {

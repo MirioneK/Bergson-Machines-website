@@ -1,5 +1,68 @@
 // ─── MODELS ──────────────────────────────────────────────────────────────────
 export const MODELS = [
+  /*
+  {
+    id: 'bm10',
+    name: 'BM10',
+    image: '/images/optimized/BM10.webp',
+    gallery: [
+      '/images/optimized/bm10-gal1.webp',
+      '/images/optimized/gal1.webp',
+    ],
+    techDrawing: '/images/optimized/bm10-technical.webp',
+    priceNetto: 19999,
+  },
+  {
+    id: 'bm12',
+    name: 'BM12',
+    image: '/images/optimized/BM12.webp',
+    gallery: [
+      '/images/optimized/bm12-gal1.webp',
+      '/images/optimized/bm12-gal2.webp',
+    ],
+    techDrawing: '/images/optimized/bm12-technical.webp',
+    priceNetto: 24999,
+  },
+  {
+    id: 'bm12c',
+    name: 'BM12C',
+    image: '/images/optimized/BM12C.webp',
+    gallery: [
+      '/images/optimized/bm12c-gal1.webp',
+      '/images/optimized/gal3.webp',
+    ],
+    techDrawing: '/images/optimized/bm12-technical.webp',
+    priceNetto: 29999,
+  },
+  {
+    id: 'bm12-kubota',
+    name: 'BM12',
+    image: '/images/optimized/BM12.webp',
+    gallery: [
+      '/images/optimized/bm12-gal1.webp',
+      '/images/optimized/bm12-gal2.webp',
+    ],
+    techDrawing: '/images/optimized/bm12-technical.webp',
+    priceNetto: 34999,
+  },
+  {
+    id: 'bm12c-kubota',
+    name: 'BM12C',
+    image: '/images/optimized/BM12C.webp',
+    gallery: [
+      '/images/optimized/bm12c-gal1.webp',
+      '/images/optimized/gal3.webp',
+    ],
+    techDrawing: '/images/optimized/bm12-technical.webp',
+    priceNetto: 39999,
+  },
+  {
+    id: 'upcoming',
+    image: null,
+    priceNetto: null,
+    comingSoon: true,
+  }
+  */
   {
     id: 'bm12',
     name: 'BM12',
@@ -392,11 +455,11 @@ export const CONTACT_INFO = {
   instagramUrl: 'https://www.instagram.com/bergsonmachines/',
   email: 'kontakt@bergsonmachines.pl',
   location: 'Antoniew 8',
-  locationSub: '95-015 Głowno, woj. łódzkie',
+  locationSub: '95-015 Głowno',
   locations: [
     {
       location: 'Antoniew 8',
-      locationSub: '95-015 Głowno, woj. łódzkie',
+      locationSub: '95-015 Głowno',
       mapEmbedUrl:
         'https://www.google.com/maps?q=Antoniew+8,+95-015+G%C5%82owno&z=15&output=embed',
       mapLinkUrl:
@@ -404,7 +467,7 @@ export const CONTACT_INFO = {
     },
     {
       location: 'Pobórka Wielka 2',
-      locationSub: '89-340 Pobórka Wielka, woj. wielkopolskie',
+      locationSub: '89-340 Pobórka Wielka',
       mapEmbedUrl:
         'https://www.google.com/maps?q=Pob%C3%B3rka+Wielka+2,+89-340+Pob%C3%B3rka+Wielka&z=15&output=embed',
       mapLinkUrl:

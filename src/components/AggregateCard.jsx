@@ -56,10 +56,11 @@ export default function AggregateCard({ aggregate }) {
         })
       }
       pricePrefix={t('aggregateCard.pricePrefix')}
-      formattedPrice={formatPrice(priceNetto, i18n.resolvedLanguage)}
-      priceLabel={t('aggregateCard.priceNettoLabel')}
-      priceBrutto={t('aggregateCard.priceBrutto', {
-        price: formatPrice(priceBrutto, i18n.resolvedLanguage),
+      formattedPrice={formatPrice(priceBrutto, i18n.resolvedLanguage)}
+      priceLabel={t('aggregateCard.priceGrossLabel', { defaultValue: 'BRUTTO' })}
+      priceBrutto={t('aggregateCard.priceNetto', {
+        price: formatPrice(priceNetto, i18n.resolvedLanguage),
+        defaultValue: `${t('aggregateCard.pricePrefix')} ${formatPrice(priceNetto, i18n.resolvedLanguage)} ${t('aggregateCard.priceNettoLabel')}`,
       })}
       cta={t('aggregateCard.cta')}
     />

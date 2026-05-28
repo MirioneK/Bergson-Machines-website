@@ -68,7 +68,9 @@
     "imageAlt": "Мініекскаватор {{name}}",
     "specsAriaLabel": "Специфікація моделі {{name}}",
     "pricePrefix": "від",
+    "priceGrossLabel": "БРУТТО",
     "priceNettoLabel": "NETTO",
+    "priceNetto": "від {{price}} нетто",
     "priceBrutto": "від {{price}} брутто",
     "cta": "Ознайомитися з моделлю",
     "specLabels": {
@@ -99,7 +101,9 @@
     "imageAlt": "{{name}}",
     "specsAriaLabel": "Специфікація моделі {{name}}",
     "pricePrefix": "від",
+    "priceGrossLabel": "БРУТТО",
     "priceNettoLabel": "NET",
+    "priceNetto": "від {{price}} нетто",
     "priceBrutto": "від {{price}} брутто",
     "cta": "Переглянути модель",
     "specLabels": {
