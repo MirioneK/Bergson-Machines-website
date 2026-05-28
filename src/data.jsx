@@ -98,7 +98,7 @@ export const MODELS = [
   },
   {
     id: 'bm13-kubota',
-    name: 'BM13 Kubota',
+    name: 'BM13',
     image: '/images/optimized/bm13.png',
     gallery: [
       '/images/optimized/bm13.png',
@@ -120,7 +120,7 @@ export const MODELS = [
   },
   {
     id: 'bm13c-kubota',
-    name: 'BM13C Kubota',
+    name: 'BM13C',
     image: '/images/optimized/bm13.png',
     gallery: [
       '/images/optimized/bm13.png',
@@ -131,7 +131,7 @@ export const MODELS = [
   },
   {
     id: 'bm16',
-    name: 'BM16 Laidong',
+    name: 'BM16',
     image: '/images/optimized/bm16.png',
     gallery: [
       '/images/optimized/bm16.png',
@@ -142,7 +142,7 @@ export const MODELS = [
   },
   {
     id: 'bm16-kubota',
-    name: 'BM16 Kubota',
+    name: 'BM16',
     image: '/images/optimized/bm16.png',
     gallery: [
       '/images/optimized/bm16.png',
@@ -153,7 +153,7 @@ export const MODELS = [
   },
   {
     id: 'bm16c',
-    name: 'BM16C Laidong',
+    name: 'BM16C',
     image: '/images/optimized/bm16C.png',
     gallery: [
       '/images/optimized/bm16C.png',
@@ -164,7 +164,7 @@ export const MODELS = [
   },
   {
     id: 'bm16c-kubota',
-    name: 'BM16C Kubota',
+    name: 'BM16C',
     image: '/images/optimized/bm16C.png',
     gallery: [
       '/images/optimized/bm16C.png',
