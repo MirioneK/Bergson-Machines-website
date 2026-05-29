@@ -1,8 +1,12 @@
 {
   "modelAccordionTitles": {
-    "specification": "Специфікація",
-    "workingRange": "Робочий діапазон",
-    "dimensionsAndWeight": "Розміри та маса"
+    "specification": "Загальні дані",
+    "workingRange": "Робочі параметри",
+    "dimensionsAndWeight": "Габарити і транспорт",
+    "engine": "Двигун",
+    "undercarriage": "Ходова частина",
+    "hydraulics": "Гідравліка",
+    "operatorCab": "Кабіна і комфорт"
   },
   "modelSpecs": {
     "totalWeight": "Загальна маса",
@@ -11,7 +15,7 @@
     "diggingDepth": "Глибина копання",
     "trackWidth": "Ширина гусениці",
     "cabin": "Кабіна",
-    "bucketCapacity": "Місткість ковша",
+    "bucketCapacity": "Об’єм ковша",
     "hydraulicPressure": "Гідравлічний тиск",
     "fuelTank": "Паливний бак",
     "hydraulicOilTank": "Бак гідравлічної оливи",
@@ -23,35 +27,57 @@
     "width": "Ширина",
     "height": "Висота",
     "heightWithCabin": "Висота (з кабіною)",
-    "trackWheelbase": "База роликів гусениці",
+    "trackWheelbase": "База котків",
     "counterweightClearance": "Кліренс противаги",
-    "minGroundClearance": "Мінімальний кліренс",
+    "minGroundClearance": "Мінімальний дорожній просвіт",
     "supportRollers": "Кількість опорних роликів",
     "rotationSpeed": "Швидкість обертання",
-    "trackExpansion": "Розширення гусениць"
+    "trackExpansion": "Розширення гусениць",
+    "certificate": "Сертифікат CE",
+    "condition": "Стан",
+    "engineBrand": "Виробник двигуна",
+    "engineModel": "Модель двигуна",
+    "power": "Потужність",
+    "cylinders": "Кількість циліндрів",
+    "fuelType": "Паливо",
+    "diggingForce": "Зусилля копання ковшем",
+    "bladeHeight": "Висота відвала",
+    "trackGroundContactLength": "Довжина контакту гусениць із ґрунтом",
+    "trackMaterial": "Матеріал гусениць",
+    "travelSpeed": "Швидкість руху",
+    "gradeability": "Здатність долати підйоми",
+    "auxHydraulics": "Гідравлічна лінія для обладнання",
+    "oilCooler": "Охолоджувач гідравлічної оливи",
+    "joystickControl": "Керування джойстиками",
+    "boomSwing": "Поворотна стріла (boom swing)",
+    "operatorStructure": "Тип конструкції над оператором",
+    "cabinHeating": "Опалення кабіни",
+    "workLights": "Робоче освітлення",
+    "overallDimensions": "Габаритні розміри (Д x Ш x В)",
+    "fitsTrailer": "Поміщається на причіп до 3,5 т повної маси"
   },
   "models": {
     "bm10": {
-      "subtitle": "Мініекскаватор 1 тонна · Ідеальний для легких робіт і тісних місць",
+      "subtitle": "Мініекскаватор 1 тонна · Ідеальний для легких робіт і вузьких місць",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,000 kg"
+          "value": "1 000 kg"
         },
         {
           "key": "engine",
-          "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+          "value": "KOOP 192F DIESEL · 7 kW / 10 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,652 mm"
+          "value": "1 652 mm"
         },
         {
           "key": "width",
           "value": "933 mm"
         }
       ],
-      "description": "BM10 — це компактний мініекскаватор для легких земляних, садових та інсталяційних робіт. Завдяки невеликим габаритам він добре працює там, де більша машина мала б обмежений доступ. Це проста й практична модель для щоденної роботи на приватних ділянках, біля фундаментів, комунікацій та при невеликих виїмках.",
+      "description": "BM10 — компактний мініекскаватор для легких земляних, садових і монтажних робіт. Завдяки невеликим габаритам добре працює там, де більша машина мала б обмежений доступ. Це проста і практична модель для щоденної роботи біля ділянок, фундаментів, кабелів і невеликих виїмок.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -62,15 +88,15 @@
             },
             {
               "key": "operatingWeight",
-              "value": "1,000 kg"
+              "value": "1 000 kg"
             },
             {
               "key": "engine",
-              "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+              "value": "KOOP 192F DIESEL · 7 kW / 10 KM"
             },
             {
               "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "value": "0,018 m³"
             },
             {
               "key": "trackWidth",
@@ -86,11 +112,11 @@
             },
             {
               "key": "fuelTank",
-              "value": "6.6 l"
+              "value": "6,6 l"
             },
             {
               "key": "hydraulicOilTank",
-              "value": "10.9 l"
+              "value": "10,9 l"
             },
             {
               "key": "hydraulicPressure",
@@ -103,19 +129,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,652 mm"
+              "value": "1 652 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,376 mm"
+              "value": "2 376 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,698 mm"
+              "value": "1 698 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,659 mm"
+              "value": "1 659 mm"
             }
           ]
         },
@@ -124,7 +150,7 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "3,119 mm"
+              "value": "3 119 mm"
             },
             {
               "key": "width",
@@ -132,7 +158,7 @@
             },
             {
               "key": "height",
-              "value": "2,149 mm"
+              "value": "2 149 mm"
             },
             {
               "key": "counterweightClearance",
@@ -156,22 +182,22 @@
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,200 kg"
+          "value": "1 200 kg"
         },
         {
           "key": "engine",
-          "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+          "value": "KOOP 192F DIESEL · 7 kW / 10 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,649 mm"
+          "value": "1 649 mm"
         },
         {
           "key": "width",
           "value": "933 mm"
         }
       ],
-      "description": "BM12 — модель з більшою робочою масою, призначена для більш вимогливих земляних робіт при збереженні компактних транспортних розмірів. Вона є хорошим компромісом між мобільністю та стабільністю роботи і добре підходить як для інсталяційних робіт, так і для щоденних будівельних завдань.",
+      "description": "BM12 — модель з більшою робочою масою, призначена для вимогливіших земляних робіт при збереженні компактних транспортних розмірів. Це хороший компроміс між мобільністю та стабільністю роботи, який підходить як для монтажних, так і для щоденних будівельних робіт.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -182,15 +208,15 @@
             },
             {
               "key": "operatingWeight",
-              "value": "1,200 kg"
+              "value": "1 200 kg"
             },
             {
               "key": "engine",
-              "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+              "value": "KOOP 192F DIESEL · 7 kW / 10 KM"
             },
             {
               "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "value": "0,018 m³"
             },
             {
               "key": "trackWidth",
@@ -206,11 +232,11 @@
             },
             {
               "key": "fuelTank",
-              "value": "6.6 l"
+              "value": "6,6 l"
             },
             {
               "key": "hydraulicOilTank",
-              "value": "10.9 l"
+              "value": "10,9 l"
             },
             {
               "key": "hydraulicPressure",
@@ -223,19 +249,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,649 mm"
+              "value": "1 649 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,380 mm"
+              "value": "2 380 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 703 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "1 694 mm"
             }
           ]
         },
@@ -244,7 +270,7 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "3,158 mm"
+              "value": "3 158 mm"
             },
             {
               "key": "width",
@@ -252,7 +278,7 @@
             },
             {
               "key": "height",
-              "value": "2,144 mm"
+              "value": "2 144 mm"
             },
             {
               "key": "counterweightClearance",
@@ -271,15 +297,15 @@
       ]
     },
     "bm12c": {
-      "subtitle": "Мініекскаватор 1,2 тонни з кабіною · Комфорт оператора протягом усього року",
+      "subtitle": "Мініекскаватор 1,2 тонни з кабіною · Комфорт оператора цілий рік",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,200 kg"
+          "value": "1 200 kg"
         },
         {
           "key": "engine",
-          "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+          "value": "KOOP 192F DIESEL · 7 kW / 10 KM"
         },
         {
           "key": "cabin",
@@ -290,7 +316,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12C — це варіант BM12 з кабіною, призначений для роботи в менш сприятливих погодних умовах і там, де оператор очікує більшого комфорту. Базові параметри платформи залишаються такими ж, як у BM12, а відмінність стосується версії надбудови та способу використання.",
+      "description": "BM12C — варіант BM12 з кабіною, призначений для роботи в менш сприятливих погодних умовах і там, де оператор очікує більшого комфорту. Базові параметри платформи відповідають BM12, а відмінність стосується виконання кабіни та способу використання.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -301,11 +327,11 @@
             },
             {
               "key": "operatingWeight",
-              "value": "1,200 kg"
+              "value": "1 200 kg"
             },
             {
               "key": "engine",
-              "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+              "value": "KOOP 192F DIESEL · 7 kW / 10 KM"
             },
             {
               "key": "cabin",
@@ -313,7 +339,7 @@
             },
             {
               "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "value": "0,018 m³"
             },
             {
               "key": "trackWidth",
@@ -329,11 +355,11 @@
             },
             {
               "key": "fuelTank",
-              "value": "6.6 l"
+              "value": "6,6 l"
             },
             {
               "key": "hydraulicOilTank",
-              "value": "10.9 l"
+              "value": "10,9 l"
             },
             {
               "key": "hydraulicPressure",
@@ -346,19 +372,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,649 mm"
+              "value": "1 649 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,380 mm"
+              "value": "2 380 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 703 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "1 694 mm"
             }
           ]
         },
@@ -367,7 +393,7 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "3,158 mm"
+              "value": "3 158 mm"
             },
             {
               "key": "width",
@@ -375,7 +401,7 @@
             },
             {
               "key": "heightWithCabin",
-              "value": "2,144 mm"
+              "value": "2 144 mm"
             },
             {
               "key": "counterweightClearance",
@@ -394,26 +420,26 @@
       ]
     },
     "bm12-kubota": {
-      "subtitle": "Мініекскаватор 1,2 тонни · Версія з двигуном Kubota Diesel",
+      "subtitle": "Мініекскаватор 1,2 тонни · Версія з дизельним двигуном Kubota",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,200 kg"
+          "value": "1 200 kg"
         },
         {
           "key": "engine",
-          "value": "Kubota Diesel 10.2 kW / 13.9 HP"
+          "value": "Kubota Diesel 10,2 kW / 13,9 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,649 mm"
+          "value": "1 649 mm"
         },
         {
           "key": "width",
           "value": "933 mm"
         }
       ],
-      "description": "BM12 Kubota — це варіант моделі BM12 з тими самими технічними параметрами та робочою геометрією, але оснащений двигуном Kubota Diesel. Це версія для клієнтів, які хочуть зберегти компактні габарити BM12 і водночас обрати сильніший бренд силового агрегату.",
+      "description": "BM12 Kubota — варіант моделі BM12 з тими самими технічними параметрами та робочою геометрією, але оснащений дизельним двигуном Kubota. Це версія для клієнтів, які хочуть зберегти компактні габарити BM12 і водночас обрати потужніший бренд силового агрегату.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -424,15 +450,15 @@
             },
             {
               "key": "operatingWeight",
-              "value": "1,200 kg"
+              "value": "1 200 kg"
             },
             {
               "key": "engine",
-              "value": "Kubota Diesel 10.2 kW / 13.9 HP"
+              "value": "Kubota Diesel 10,2 kW / 13,9 KM"
             },
             {
               "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "value": "0,018 m³"
             },
             {
               "key": "trackWidth",
@@ -448,11 +474,11 @@
             },
             {
               "key": "fuelTank",
-              "value": "6.6 l"
+              "value": "6,6 l"
             },
             {
               "key": "hydraulicOilTank",
-              "value": "10.9 l"
+              "value": "10,9 l"
             },
             {
               "key": "hydraulicPressure",
@@ -465,19 +491,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,649 mm"
+              "value": "1 649 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,380 mm"
+              "value": "2 380 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 703 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "1 694 mm"
             }
           ]
         },
@@ -486,7 +512,7 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "3,158 mm"
+              "value": "3 158 mm"
             },
             {
               "key": "width",
@@ -494,7 +520,7 @@
             },
             {
               "key": "height",
-              "value": "2,144 mm"
+              "value": "2 144 mm"
             },
             {
               "key": "counterweightClearance",
@@ -513,15 +539,15 @@
       ]
     },
     "bm12c-kubota": {
-      "subtitle": "Мініекскаватор 1,2 тонни з кабіною · Версія з двигуном Kubota Diesel",
+      "subtitle": "Мініекскаватор 1,2 тонни з кабіною · Версія з дизельним двигуном Kubota",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,200 kg"
+          "value": "1 200 kg"
         },
         {
           "key": "engine",
-          "value": "Kubota Diesel 10.2 kW / 13.9 HP"
+          "value": "Kubota Diesel 10,2 kW / 13,9 KM"
         },
         {
           "key": "cabin",
@@ -532,7 +558,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12C Kubota — це відповідник BM12C з тими самими робочими параметрами, але з двигуном Kubota Diesel. Це преміальний варіант для клієнтів, які хочуть поєднати кабіну оператора з вищим класом силового агрегату.",
+      "description": "BM12C Kubota — відповідник BM12C з тими самими робочими параметрами, але з дизельним двигуном Kubota. Це преміум-варіант для клієнтів, які хочуть поєднати кабіну оператора з силовим агрегатом вищого класу.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -543,11 +569,11 @@
             },
             {
               "key": "operatingWeight",
-              "value": "1,200 kg"
+              "value": "1 200 kg"
             },
             {
               "key": "engine",
-              "value": "Kubota Diesel 10.2 kW / 13.9 HP"
+              "value": "Kubota Diesel 10,2 kW / 13,9 KM"
             },
             {
               "key": "cabin",
@@ -555,7 +581,7 @@
             },
             {
               "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "value": "0,018 m³"
             },
             {
               "key": "trackWidth",
@@ -571,11 +597,11 @@
             },
             {
               "key": "fuelTank",
-              "value": "6.6 l"
+              "value": "6,6 l"
             },
             {
               "key": "hydraulicOilTank",
-              "value": "10.9 l"
+              "value": "10,9 l"
             },
             {
               "key": "hydraulicPressure",
@@ -588,19 +614,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,649 mm"
+              "value": "1 649 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,380 mm"
+              "value": "2 380 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 703 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "1 694 mm"
             }
           ]
         },
@@ -609,7 +635,7 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "3,158 mm"
+              "value": "3 158 mm"
             },
             {
               "key": "width",
@@ -617,7 +643,7 @@
             },
             {
               "key": "heightWithCabin",
-              "value": "2,144 mm"
+              "value": "2 144 mm"
             },
             {
               "key": "counterweightClearance",
@@ -636,73 +662,70 @@
       ]
     },
     "upcoming": {
-      "subtitle": "Нові моделі — вже скоро",
+      "subtitle": "Нові моделі — незабаром",
       "description": "У цьому розділі з’являться наступні моделі Bergson Machines."
     },
     "bm13": {
-      "subtitle": "Мініекскаватор 1,2 тонни · Компактна модель з розсувними гусеницями",
+      "subtitle": "Мініекскаватор 1,2 тонни · KOOP 192F · розсувні гусениці",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,200 kg"
+          "value": "1 200 kg"
         },
         {
           "key": "engine",
-          "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+          "value": "KOOP 192F Diesel · 10 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,750 mm"
+          "value": "1 750 mm"
         },
         {
           "key": "trackExpansion",
           "value": "850-1050 mm"
         }
       ],
-      "description": "BM13 — це компактний мініекскаватор робочою масою 1,2 тонни для земляних, монтажних і садових робіт. Розсувні гусениці полегшують проїзд у вузькі місця та покращують стійкість під час роботи.",
+      "description": "BM13 — компактний мініекскаватор 1,2 т з двигуном KOOP 192F, підготовлений для земляних, монтажних і садових робіт. Розсувні гусениці 850–1050 мм полегшують проїзд через вузькі місця, а глибина копання до 1 750 мм добре підходить для щоденної роботи біля ділянок і на малих будівництвах.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
             {
-              "key": "totalWeight",
-              "value": "930 kg"
-            },
-            {
               "key": "operatingWeight",
-              "value": "1,200 kg"
+              "value": "1 200 kg"
             },
             {
-              "key": "engine",
-              "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+              "key": "certificate",
+              "value": "Так"
             },
             {
-              "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "key": "condition",
+              "value": "Нова"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "KOOP"
             },
             {
-              "key": "trackWidth",
-              "value": "180 mm"
+              "key": "engineModel",
+              "value": "KOOP 192F Diesel"
             },
             {
-              "key": "supportRollers",
-              "value": "4 шт."
+              "key": "power",
+              "value": "10 KM"
             },
             {
-              "key": "rotationSpeed",
-              "value": "9 об/хв"
+              "key": "cylinders",
+              "value": "1 (один)"
             },
             {
-              "key": "fuelTank",
-              "value": "6.6 l"
-            },
-            {
-              "key": "hydraulicOilTank",
-              "value": "10.9 l"
-            },
-            {
-              "key": "hydraulicPressure",
-              "value": "18 MPa"
+              "key": "fuelType",
+              "value": "Diesel"
             }
           ]
         },
@@ -711,19 +734,98 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,750 mm"
-            },
-            {
-              "key": "maxDiggingHeight",
-              "value": "2,380 mm"
-            },
-            {
-              "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 750 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "2 750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 350 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 800 mm"
+            },
+            {
+              "key": "diggingForce",
+              "value": "14 kN"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bladeHeight",
+              "value": "300 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "undercarriage",
+          "rows": [
+            {
+              "key": "trackExpansion",
+              "value": "850-1050 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "trackGroundContactLength",
+              "value": "1250 mm"
+            },
+            {
+              "key": "trackMaterial",
+              "value": "Гума"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "0-2,5 km/h"
+            },
+            {
+              "key": "gradeability",
+              "value": "30 градусів"
+            }
+          ]
+        },
+        {
+          "titleKey": "hydraulics",
+          "rows": [
+            {
+              "key": "auxHydraulics",
+              "value": "Так"
+            },
+            {
+              "key": "oilCooler",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "operatorCab",
+          "rows": [
+            {
+              "key": "joystickControl",
+              "value": "Так"
+            },
+            {
+              "key": "boomSwing",
+              "value": "Так"
+            },
+            {
+              "key": "operatorStructure",
+              "value": "Навіс"
+            },
+            {
+              "key": "cabinHeating",
+              "value": "Ні"
+            },
+            {
+              "key": "workLights",
+              "value": "Так"
             }
           ]
         },
@@ -731,97 +833,78 @@
           "titleKey": "dimensionsAndWeight",
           "rows": [
             {
-              "key": "transportLength",
-              "value": "3,158 mm"
+              "key": "overallDimensions",
+              "value": "2870 x 1000 x 2200 mm"
             },
             {
-              "key": "trackExpansion",
-              "value": "850-1050 mm"
-            },
-            {
-              "key": "height",
-              "value": "2,144 mm"
-            },
-            {
-              "key": "counterweightClearance",
-              "value": "364 mm"
-            },
-            {
-              "key": "minGroundClearance",
-              "value": "129 mm"
-            },
-            {
-              "key": "trackWheelbase",
-              "value": "753 mm"
+              "key": "fitsTrailer",
+              "value": "Так"
             }
           ]
         }
       ]
     },
     "bm13-kubota": {
-      "subtitle": "Мініекскаватор 1,2 тонни · Версія з двигуном Kubota",
+      "subtitle": "Мініекскаватор 1,2 тонни · Kubota D722 · розсувні гусениці",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,200 kg"
+          "value": "1 200 kg"
         },
         {
           "key": "engine",
-          "value": "Kubota Diesel · 14 HP"
+          "value": "Kubota D722 Diesel · 14 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,750 mm"
+          "value": "1 750 mm"
         },
         {
           "key": "trackExpansion",
           "value": "850-1050 mm"
         }
       ],
-      "description": "BM13 Kubota побудований на тій самій платформі, що й BM13, але оснащений двигуном Kubota. Це варіант для клієнтів, які хочуть зберегти компактні габарити та розсувні гусениці, але обрати брендовий силовий агрегат.",
+      "description": "BM13 Kubota використовує ту саму компактну платформу 1,2 т, що й стандартний BM13, але працює на двигуні Kubota D722. Це варіант для клієнтів, які хочуть зберегти малі габарити машини та обрати брендований 3-циліндровий агрегат.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
             {
-              "key": "totalWeight",
-              "value": "930 kg"
-            },
-            {
               "key": "operatingWeight",
-              "value": "1,200 kg"
+              "value": "1 200 kg"
             },
             {
-              "key": "engine",
-              "value": "Kubota Diesel · 14 HP"
+              "key": "certificate",
+              "value": "Так"
             },
             {
-              "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "key": "condition",
+              "value": "Нова"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Kubota"
             },
             {
-              "key": "trackWidth",
-              "value": "180 mm"
+              "key": "engineModel",
+              "value": "Kubota D722 Diesel"
             },
             {
-              "key": "supportRollers",
-              "value": "4 шт."
+              "key": "power",
+              "value": "14 KM"
             },
             {
-              "key": "rotationSpeed",
-              "value": "9 об/хв"
+              "key": "cylinders",
+              "value": "3 (три)"
             },
             {
-              "key": "fuelTank",
-              "value": "6.6 l"
-            },
-            {
-              "key": "hydraulicOilTank",
-              "value": "10.9 l"
-            },
-            {
-              "key": "hydraulicPressure",
-              "value": "18 MPa"
+              "key": "fuelType",
+              "value": "Diesel"
             }
           ]
         },
@@ -830,19 +913,98 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,750 mm"
-            },
-            {
-              "key": "maxDiggingHeight",
-              "value": "2,380 mm"
-            },
-            {
-              "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 750 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "2 750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 350 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 800 mm"
+            },
+            {
+              "key": "diggingForce",
+              "value": "14 kN"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bladeHeight",
+              "value": "300 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "undercarriage",
+          "rows": [
+            {
+              "key": "trackExpansion",
+              "value": "850-1050 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "trackGroundContactLength",
+              "value": "1250 mm"
+            },
+            {
+              "key": "trackMaterial",
+              "value": "Гума"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "0-2,5 km/h"
+            },
+            {
+              "key": "gradeability",
+              "value": "30 градусів"
+            }
+          ]
+        },
+        {
+          "titleKey": "hydraulics",
+          "rows": [
+            {
+              "key": "auxHydraulics",
+              "value": "Так"
+            },
+            {
+              "key": "oilCooler",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "operatorCab",
+          "rows": [
+            {
+              "key": "joystickControl",
+              "value": "Так"
+            },
+            {
+              "key": "boomSwing",
+              "value": "Так"
+            },
+            {
+              "key": "operatorStructure",
+              "value": "Навіс"
+            },
+            {
+              "key": "cabinHeating",
+              "value": "Ні"
+            },
+            {
+              "key": "workLights",
+              "value": "Так"
             }
           ]
         },
@@ -850,93 +1012,78 @@
           "titleKey": "dimensionsAndWeight",
           "rows": [
             {
-              "key": "transportLength",
-              "value": "3,158 mm"
+              "key": "overallDimensions",
+              "value": "2870 x 1000 x 2200 mm"
             },
             {
-              "key": "trackExpansion",
-              "value": "850-1050 mm"
-            },
-            {
-              "key": "height",
-              "value": "2,144 mm"
-            },
-            {
-              "key": "counterweightClearance",
-              "value": "364 mm"
-            },
-            {
-              "key": "minGroundClearance",
-              "value": "129 mm"
-            },
-            {
-              "key": "trackWheelbase",
-              "value": "753 mm"
+              "key": "fitsTrailer",
+              "value": "Так"
             }
           ]
         }
       ]
     },
     "bm16": {
-      "subtitle": "Мініекскаватор 1,6 тонни · Більша стійкість і потужніший двигун",
+      "subtitle": "Мініекскаватор 1,6 тонни · Laidong 385 · більший робочий радіус",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,600 kg"
+          "value": "1 600 kg"
         },
         {
           "key": "engine",
-          "value": "Laidong 385 · 25 HP"
+          "value": "Laidong 385 Diesel · 25 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,750 mm"
+          "value": "1 800 mm"
         },
         {
           "key": "trackExpansion",
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16 — це більша модель для більш вимогливих земляних робіт. Ширший діапазон розсування гусениць покращує стійкість, а двигун Laidong 385 25 HP дає більший запас потужності у щоденній роботі.",
+      "description": "BM16 — більша платформа 1,6 т з двигуном Laidong 385, ширшим розведенням гусениць 1100–1300 мм і глибиною копання до 1 800 мм. Модель підготовлена для вимогливіших земляних, монтажних і будівельних робіт, де важливі більша стабільність і робочий радіус.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
             {
               "key": "operatingWeight",
-              "value": "1,600 kg"
+              "value": "1 600 kg"
             },
             {
-              "key": "engine",
-              "value": "Laidong 385 · 25 HP"
+              "key": "certificate",
+              "value": "Так"
             },
             {
-              "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "key": "condition",
+              "value": "Нова"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Laidong"
             },
             {
-              "key": "trackWidth",
-              "value": "180 mm"
+              "key": "engineModel",
+              "value": "Laidong 385 Diesel"
             },
             {
-              "key": "supportRollers",
-              "value": "4 шт."
+              "key": "power",
+              "value": "25 KM"
             },
             {
-              "key": "rotationSpeed",
-              "value": "9 об/хв"
+              "key": "cylinders",
+              "value": "3 (три)"
             },
             {
-              "key": "fuelTank",
-              "value": "6.6 l"
-            },
-            {
-              "key": "hydraulicOilTank",
-              "value": "10.9 l"
-            },
-            {
-              "key": "hydraulicPressure",
-              "value": "18 MPa"
+              "key": "fuelType",
+              "value": "Diesel"
             }
           ]
         },
@@ -945,19 +1092,98 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,750 mm"
-            },
-            {
-              "key": "maxDiggingHeight",
-              "value": "2,380 mm"
-            },
-            {
-              "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 800 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "2 900 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 580 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 850 mm"
+            },
+            {
+              "key": "diggingForce",
+              "value": "15 kN"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bladeHeight",
+              "value": "300 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "undercarriage",
+          "rows": [
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "trackGroundContactLength",
+              "value": "1350 mm"
+            },
+            {
+              "key": "trackMaterial",
+              "value": "Гума"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "0-2,5 km/h"
+            },
+            {
+              "key": "gradeability",
+              "value": "30 градусів"
+            }
+          ]
+        },
+        {
+          "titleKey": "hydraulics",
+          "rows": [
+            {
+              "key": "auxHydraulics",
+              "value": "Так"
+            },
+            {
+              "key": "oilCooler",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "operatorCab",
+          "rows": [
+            {
+              "key": "joystickControl",
+              "value": "Так"
+            },
+            {
+              "key": "boomSwing",
+              "value": "Так"
+            },
+            {
+              "key": "operatorStructure",
+              "value": "Навіс"
+            },
+            {
+              "key": "cabinHeating",
+              "value": "Ні"
+            },
+            {
+              "key": "workLights",
+              "value": "Так"
             }
           ]
         },
@@ -965,93 +1191,78 @@
           "titleKey": "dimensionsAndWeight",
           "rows": [
             {
-              "key": "transportLength",
-              "value": "3,158 mm"
+              "key": "overallDimensions",
+              "value": "2870 x 1100 x 2200 mm"
             },
             {
-              "key": "trackExpansion",
-              "value": "1100-1300 mm"
-            },
-            {
-              "key": "height",
-              "value": "2,144 mm"
-            },
-            {
-              "key": "counterweightClearance",
-              "value": "364 mm"
-            },
-            {
-              "key": "minGroundClearance",
-              "value": "129 mm"
-            },
-            {
-              "key": "trackWheelbase",
-              "value": "753 mm"
+              "key": "fitsTrailer",
+              "value": "Так"
             }
           ]
         }
       ]
     },
     "bm16-kubota": {
-      "subtitle": "Мініекскаватор 1,6 тонни · Версія з двигуном Kubota",
+      "subtitle": "Мініекскаватор 1,6 тонни · Kubota D722 · більший робочий радіус",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,600 kg"
+          "value": "1 600 kg"
         },
         {
           "key": "engine",
-          "value": "Kubota Diesel · 14 HP"
+          "value": "Kubota D722 Diesel · 15 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,750 mm"
+          "value": "1 800 mm"
         },
         {
           "key": "trackExpansion",
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16 Kubota — це версія BM16 для клієнтів, яким потрібна більша машина з розсувними гусеницями та двигуном Kubota. Вона зберігає ту саму робочу геометрію та концепцію ходової частини, але використовує інший силовий агрегат.",
+      "description": "BM16 Kubota базується на платформі 1,6 т і робочій геометрії BM16, але використовує двигун Kubota D722. Це варіант для клієнтів, які хочуть поєднати більший робочий радіус із компактною машиною на брендованому силовому агрегаті.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
             {
               "key": "operatingWeight",
-              "value": "1,600 kg"
+              "value": "1 600 kg"
             },
             {
-              "key": "engine",
-              "value": "Kubota Diesel · 14 HP"
+              "key": "certificate",
+              "value": "Так"
             },
             {
-              "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "key": "condition",
+              "value": "Нова"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Kubota"
             },
             {
-              "key": "trackWidth",
-              "value": "180 mm"
+              "key": "engineModel",
+              "value": "Kubota D722 Diesel"
             },
             {
-              "key": "supportRollers",
-              "value": "4 шт."
+              "key": "power",
+              "value": "15 KM"
             },
             {
-              "key": "rotationSpeed",
-              "value": "9 об/хв"
+              "key": "cylinders",
+              "value": "3 (три)"
             },
             {
-              "key": "fuelTank",
-              "value": "6.6 l"
-            },
-            {
-              "key": "hydraulicOilTank",
-              "value": "10.9 l"
-            },
-            {
-              "key": "hydraulicPressure",
-              "value": "18 MPa"
+              "key": "fuelType",
+              "value": "Diesel"
             }
           ]
         },
@@ -1060,19 +1271,98 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,750 mm"
-            },
-            {
-              "key": "maxDiggingHeight",
-              "value": "2,380 mm"
-            },
-            {
-              "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 800 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "2 900 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 580 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 850 mm"
+            },
+            {
+              "key": "diggingForce",
+              "value": "15 kN"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bladeHeight",
+              "value": "300 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "undercarriage",
+          "rows": [
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "trackGroundContactLength",
+              "value": "1350 mm"
+            },
+            {
+              "key": "trackMaterial",
+              "value": "Гума"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "0-2,5 km/h"
+            },
+            {
+              "key": "gradeability",
+              "value": "30 градусів"
+            }
+          ]
+        },
+        {
+          "titleKey": "hydraulics",
+          "rows": [
+            {
+              "key": "auxHydraulics",
+              "value": "Так"
+            },
+            {
+              "key": "oilCooler",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "operatorCab",
+          "rows": [
+            {
+              "key": "joystickControl",
+              "value": "Так"
+            },
+            {
+              "key": "boomSwing",
+              "value": "Так"
+            },
+            {
+              "key": "operatorStructure",
+              "value": "Навіс"
+            },
+            {
+              "key": "cabinHeating",
+              "value": "Ні"
+            },
+            {
+              "key": "workLights",
+              "value": "Так"
             }
           ]
         },
@@ -1080,98 +1370,78 @@
           "titleKey": "dimensionsAndWeight",
           "rows": [
             {
-              "key": "transportLength",
-              "value": "3,158 mm"
+              "key": "overallDimensions",
+              "value": "2870 x 1100 x 2200 mm"
             },
             {
-              "key": "trackExpansion",
-              "value": "1100-1300 mm"
-            },
-            {
-              "key": "height",
-              "value": "2,144 mm"
-            },
-            {
-              "key": "counterweightClearance",
-              "value": "364 mm"
-            },
-            {
-              "key": "minGroundClearance",
-              "value": "129 mm"
-            },
-            {
-              "key": "trackWheelbase",
-              "value": "753 mm"
+              "key": "fitsTrailer",
+              "value": "Так"
             }
           ]
         }
       ]
     },
     "bm16c": {
-      "subtitle": "Мініекскаватор 1,6 тонни з кабіною · Комфорт оператора протягом усього року",
-      "badge": "Бестселер",
+      "subtitle": "Мініекскаватор 1,6 тонни з кабіною · Laidong 385 · комфорт цілий рік",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,600 kg"
+          "value": "1 600 kg"
         },
         {
           "key": "engine",
-          "value": "Laidong 385 · 25 HP"
+          "value": "Laidong 385 Diesel · 25 KM"
         },
         {
-          "key": "cabin",
-          "value": "Так"
+          "key": "diggingDepth",
+          "value": "1 800 mm"
         },
         {
           "key": "trackExpansion",
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16C — це версія BM16 з кабіною для цілорічної роботи та складніших погодних умов. Вона зберігає розсувні гусениці та потужнішу платформу, а також підвищує комфорт оператора.",
+      "description": "BM16C поєднує платформу 1,6 т з повною кабіною оператора і двигуном Laidong 385. Це варіант для користувачів, які хочуть зберегти робочі параметри BM16 і водночас працювати зручніше в холод, дощ і під час довших змін.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
             {
               "key": "operatingWeight",
-              "value": "1,600 kg"
+              "value": "1 600 kg"
             },
             {
-              "key": "engine",
-              "value": "Laidong 385 · 25 HP"
-            },
-            {
-              "key": "cabin",
+              "key": "certificate",
               "value": "Так"
             },
             {
-              "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "key": "condition",
+              "value": "Нова"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Laidong"
             },
             {
-              "key": "trackWidth",
-              "value": "180 mm"
+              "key": "engineModel",
+              "value": "Laidong 385 Diesel"
             },
             {
-              "key": "supportRollers",
-              "value": "4 шт."
+              "key": "power",
+              "value": "25 KM"
             },
             {
-              "key": "rotationSpeed",
-              "value": "9 об/хв"
+              "key": "cylinders",
+              "value": "3 (три)"
             },
             {
-              "key": "fuelTank",
-              "value": "6.6 l"
-            },
-            {
-              "key": "hydraulicOilTank",
-              "value": "10.9 l"
-            },
-            {
-              "key": "hydraulicPressure",
-              "value": "18 MPa"
+              "key": "fuelType",
+              "value": "Diesel"
             }
           ]
         },
@@ -1180,19 +1450,98 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,750 mm"
-            },
-            {
-              "key": "maxDiggingHeight",
-              "value": "2,380 mm"
-            },
-            {
-              "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 800 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "2 900 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 580 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 850 mm"
+            },
+            {
+              "key": "diggingForce",
+              "value": "15 kN"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bladeHeight",
+              "value": "300 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "undercarriage",
+          "rows": [
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "trackGroundContactLength",
+              "value": "1350 mm"
+            },
+            {
+              "key": "trackMaterial",
+              "value": "Гума"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "0-2,5 km/h"
+            },
+            {
+              "key": "gradeability",
+              "value": "30 градусів"
+            }
+          ]
+        },
+        {
+          "titleKey": "hydraulics",
+          "rows": [
+            {
+              "key": "auxHydraulics",
+              "value": "Так"
+            },
+            {
+              "key": "oilCooler",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "operatorCab",
+          "rows": [
+            {
+              "key": "joystickControl",
+              "value": "Так"
+            },
+            {
+              "key": "boomSwing",
+              "value": "Так"
+            },
+            {
+              "key": "operatorStructure",
+              "value": "Повна кабіна"
+            },
+            {
+              "key": "cabinHeating",
+              "value": "Так"
+            },
+            {
+              "key": "workLights",
+              "value": "Так"
             }
           ]
         },
@@ -1200,97 +1549,79 @@
           "titleKey": "dimensionsAndWeight",
           "rows": [
             {
-              "key": "transportLength",
-              "value": "3,158 mm"
+              "key": "overallDimensions",
+              "value": "2870 x 1100 x 2200 mm"
             },
             {
-              "key": "trackExpansion",
-              "value": "1100-1300 mm"
-            },
-            {
-              "key": "heightWithCabin",
-              "value": "2,144 mm"
-            },
-            {
-              "key": "counterweightClearance",
-              "value": "364 mm"
-            },
-            {
-              "key": "minGroundClearance",
-              "value": "129 mm"
-            },
-            {
-              "key": "trackWheelbase",
-              "value": "753 mm"
+              "key": "fitsTrailer",
+              "value": "Так"
             }
           ]
         }
-      ]
+      ],
+      "badge": "Бестселер"
     },
     "bm16c-kubota": {
-      "subtitle": "Мініекскаватор 1,6 тонни з кабіною · Версія з двигуном Kubota",
+      "subtitle": "Мініекскаватор 1,6 тонни з кабіною · Kubota D722 · комфорт цілий рік",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,600 kg"
+          "value": "1 600 kg"
         },
         {
           "key": "engine",
-          "value": "Kubota Diesel · 14 HP"
+          "value": "Kubota D722 Diesel · 15 KM"
         },
         {
-          "key": "cabin",
-          "value": "Так"
+          "key": "diggingDepth",
+          "value": "1 800 mm"
         },
         {
           "key": "trackExpansion",
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16C Kubota — це преміальна версія з кабіною на платформі BM16C. Вона поєднує закриту кабіну, розсувні гусениці та двигун Kubota, тому добре підходить для регулярної цілорічної роботи.",
+      "description": "BM16C Kubota — кабінний варіант платформи 1,6 т з двигуном Kubota D722. Модель підготовлена для клієнтів, які очікують поєднання повної кабіни оператора, розсувних гусениць і брендованого двигуна в одній конфігурації.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
             {
               "key": "operatingWeight",
-              "value": "1,600 kg"
+              "value": "1 600 kg"
             },
             {
-              "key": "engine",
-              "value": "Kubota Diesel · 14 HP"
-            },
-            {
-              "key": "cabin",
+              "key": "certificate",
               "value": "Так"
             },
             {
-              "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "key": "condition",
+              "value": "Нова"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Kubota"
             },
             {
-              "key": "trackWidth",
-              "value": "180 mm"
+              "key": "engineModel",
+              "value": "Kubota D722 Diesel"
             },
             {
-              "key": "supportRollers",
-              "value": "4 шт."
+              "key": "power",
+              "value": "15 KM"
             },
             {
-              "key": "rotationSpeed",
-              "value": "9 об/хв"
+              "key": "cylinders",
+              "value": "3 (три)"
             },
             {
-              "key": "fuelTank",
-              "value": "6.6 l"
-            },
-            {
-              "key": "hydraulicOilTank",
-              "value": "10.9 l"
-            },
-            {
-              "key": "hydraulicPressure",
-              "value": "18 MPa"
+              "key": "fuelType",
+              "value": "Diesel"
             }
           ]
         },
@@ -1299,19 +1630,98 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,750 mm"
-            },
-            {
-              "key": "maxDiggingHeight",
-              "value": "2,380 mm"
-            },
-            {
-              "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 800 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "2 900 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 580 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 850 mm"
+            },
+            {
+              "key": "diggingForce",
+              "value": "15 kN"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bladeHeight",
+              "value": "300 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "undercarriage",
+          "rows": [
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "trackGroundContactLength",
+              "value": "1350 mm"
+            },
+            {
+              "key": "trackMaterial",
+              "value": "Гума"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "0-2,5 km/h"
+            },
+            {
+              "key": "gradeability",
+              "value": "30 градусів"
+            }
+          ]
+        },
+        {
+          "titleKey": "hydraulics",
+          "rows": [
+            {
+              "key": "auxHydraulics",
+              "value": "Так"
+            },
+            {
+              "key": "oilCooler",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "operatorCab",
+          "rows": [
+            {
+              "key": "joystickControl",
+              "value": "Так"
+            },
+            {
+              "key": "boomSwing",
+              "value": "Так"
+            },
+            {
+              "key": "operatorStructure",
+              "value": "Повна кабіна"
+            },
+            {
+              "key": "cabinHeating",
+              "value": "Так"
+            },
+            {
+              "key": "workLights",
+              "value": "Так"
             }
           ]
         },
@@ -1319,28 +1729,12 @@
           "titleKey": "dimensionsAndWeight",
           "rows": [
             {
-              "key": "transportLength",
-              "value": "3,158 mm"
+              "key": "overallDimensions",
+              "value": "2870 x 1100 x 2200 mm"
             },
             {
-              "key": "trackExpansion",
-              "value": "1100-1300 mm"
-            },
-            {
-              "key": "heightWithCabin",
-              "value": "2,144 mm"
-            },
-            {
-              "key": "counterweightClearance",
-              "value": "364 mm"
-            },
-            {
-              "key": "minGroundClearance",
-              "value": "129 mm"
-            },
-            {
-              "key": "trackWheelbase",
-              "value": "753 mm"
+              "key": "fitsTrailer",
+              "value": "Так"
             }
           ]
         }
@@ -1350,158 +1744,2644 @@
   "aggregates": {
     "bm25-ricardo": {
       "name": "Генератор BM25",
-      "subtitle": "Двигун Ricardo 25KW · Тихий генератор",
+      "subtitle": "Двигун Ricardo · 25 кВт · шумоізольований генератор",
+      "heroSubtitle": "Шумоізольований генератор · ATS + AVR · доставка 15 днів",
       "cardSpecs": [
         {
           "key": "engineBrand",
           "value": "Ricardo"
         },
         {
+          "key": "ratedPower",
+          "value": "25 kW"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15 днів"
+        },
+        {
           "key": "atsSystem",
-          "value": "Автоматичне перемикання живлення"
+          "value": "У стандартній комплектації"
+        }
+      ],
+      "quickSpecs": [
+        {
+          "key": "ratedPower",
+          "value": "25 kW / 31,25 kVA"
         },
         {
-          "key": "avrRegulator",
-          "value": "Автоматичне регулювання напруги"
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
         },
         {
-          "key": "alternator",
-          "value": "Stamford STF-25"
+          "key": "deliveryTime",
+          "value": "15 днів"
         },
         {
-          "key": "controlPanel",
-          "value": "SmartGen 6120 · Інтерфейс польською"
+          "key": "startingVoltage",
+          "value": "12 V"
+        }
+      ],
+      "features": [
+        "ATS у стандарті",
+        "AVR у стандарті",
+        "SmartGen HGM6120",
+        "Корпус Silent"
+      ],
+      "description": "BM25 Ricardo — шумоізольований генератор 25 кВт для резервного живлення та польових робіт. У стандарті ви отримуєте ATS, AVR, контролер SmartGen HGM6120 і заявлений строк доставки 15 днів.",
+      "accordions": [
+        {
+          "titleKey": "general",
+          "rows": [
+            {
+              "key": "factoryModel",
+              "value": "KVD-RD25S"
+            },
+            {
+              "key": "ratedPower",
+              "value": "25 kW / 31,25 kVA"
+            },
+            {
+              "key": "maxPower",
+              "value": "28 kW / 35 kVA"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ratedCurrent",
+              "value": "45 A"
+            },
+            {
+              "key": "powerFactor",
+              "value": "0,8"
+            },
+            {
+              "key": "deliveryTime",
+              "value": "15 днів"
+            },
+            {
+              "key": "startingVoltage",
+              "value": "12 V"
+            },
+            {
+              "key": "housingType",
+              "value": "Шумоізольований (Silent Type)"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Ricardo"
+            },
+            {
+              "key": "engineModel",
+              "value": "Ricardo 4100D"
+            },
+            {
+              "key": "engineRatedPower",
+              "value": "30 kW"
+            },
+            {
+              "key": "enginePeakPower",
+              "value": "33 kW"
+            },
+            {
+              "key": "cylinders",
+              "value": "4"
+            },
+            {
+              "key": "displacement",
+              "value": "3,61 l"
+            },
+            {
+              "key": "boreStroke",
+              "value": "100 x 115 mm"
+            },
+            {
+              "key": "compressionRatio",
+              "value": "16,5:1"
+            },
+            {
+              "key": "aspiration",
+              "value": "Атмосферний"
+            },
+            {
+              "key": "cycle",
+              "value": "4-тактний"
+            },
+            {
+              "key": "rpm",
+              "value": "1500 RPM"
+            },
+            {
+              "key": "governor",
+              "value": "Механічний"
+            },
+            {
+              "key": "fuelSystem",
+              "value": "Direct injection"
+            },
+            {
+              "key": "fuelConsumption",
+              "value": "210 g/kWh"
+            },
+            {
+              "key": "fuelTank",
+              "value": "50 l"
+            },
+            {
+              "key": "runtime",
+              "value": "min. 8 h"
+            },
+            {
+              "key": "coolingType",
+              "value": "Водяне, закритий контур, вентилятор від двигуна, радіатор 50°C"
+            },
+            {
+              "key": "exhaustSystem",
+              "value": "Промисловий + гнучкі з’єднання"
+            },
+            {
+              "key": "serviceFilters",
+              "value": "Змінні"
+            },
+            {
+              "key": "batteryAndCharger",
+              "value": "Так (необслуговуваний)"
+            }
+          ]
+        },
+        {
+          "titleKey": "alternator",
+          "rows": [
+            {
+              "key": "alternator",
+              "value": "Stamford STF-25"
+            },
+            {
+              "key": "alternatorType",
+              "value": "Безщітковий, повністю мідний"
+            },
+            {
+              "key": "insulationClass",
+              "value": "H"
+            },
+            {
+              "key": "phasesConnection",
+              "value": "3-фазний, 4-жильний"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ipClass",
+              "value": "IP23"
+            },
+            {
+              "key": "avrRegulator",
+              "value": "Так (у стандарті)"
+            },
+            {
+              "key": "stator",
+              "value": "2/3 Pitch"
+            },
+            {
+              "key": "excitation",
+              "value": "Самозбудження (self-excitation)"
+            },
+            {
+              "key": "voltageStability",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "frequencyRegulation",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "radioSuppression",
+              "value": "<= 50"
+            }
+          ]
+        },
+        {
+          "titleKey": "controller",
+          "rows": [
+            {
+              "key": "controlPanel",
+              "value": "SmartGen HGM6120 / 6120MKII"
+            },
+            {
+              "key": "interfaceLanguage",
+              "value": "Польська"
+            },
+            {
+              "key": "controllerType",
+              "value": "AMF — автоматичний запуск при зникненні живлення"
+            },
+            {
+              "key": "workModes",
+              "value": "STOP / RESET / MANUAL / AUTO / TEST / START"
+            },
+            {
+              "key": "atsSystem",
+              "value": "Так"
+            },
+            {
+              "key": "lockedAts",
+              "value": "Опція"
+            },
+            {
+              "key": "staticBatteryCharger",
+              "value": "Так"
+            },
+            {
+              "key": "emergencyStop",
+              "value": "Так (зовнішній + на панелі)"
+            },
+            {
+              "key": "lcdGrid",
+              "value": "L-L і L-N (міжфазні та фазні напруги)"
+            },
+            {
+              "key": "lcdGenerator",
+              "value": "L1, L2, L3 (струм), частота, cos φ"
+            },
+            {
+              "key": "lcdEngine",
+              "value": "RPM, температура, тиск оливи, мотогодини, акумулятор"
+            },
+            {
+              "key": "autoAlarms",
+              "value": "Перевищення/заниження швидкості, помилка запуску/зупинки, висока температура, низький тиск оливи, помилка заряджання, перевищення/заниження напруги генератора, частота, напруга мережі, аварійна зупинка"
+            }
+          ]
+        },
+        {
+          "titleKey": "standardEquipment",
+          "rows": [
+            {
+              "key": "circuitBreaker",
+              "value": "100A CHNT"
+            },
+            {
+              "key": "vibrationIsolators",
+              "value": "Так"
+            },
+            {
+              "key": "baseFrame",
+              "value": "Так"
+            },
+            {
+              "key": "integratedFuelTank",
+              "value": "Так"
+            },
+            {
+              "key": "drainValves",
+              "value": "Так (зливні крани)"
+            },
+            {
+              "key": "liftingPoints",
+              "value": "Так"
+            },
+            {
+              "key": "fuelGauge",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "housingAndNoise",
+          "rows": [
+            {
+              "key": "housingConstruction",
+              "value": "Металева, модульна, порошкове фарбування"
+            },
+            {
+              "key": "housingColor",
+              "value": "Біла (стандарт)"
+            },
+            {
+              "key": "acousticFoam",
+              "value": "Так"
+            },
+            {
+              "key": "weatherResistance",
+              "value": "Так"
+            },
+            {
+              "key": "serviceDoors",
+              "value": "Так (з обох боків)"
+            },
+            {
+              "key": "panelWindow",
+              "value": "Так"
+            },
+            {
+              "key": "insulatedExhaust",
+              "value": "Так"
+            },
+            {
+              "key": "externalEmergencyStop",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "optionalEquipment",
+          "rows": [
+            {
+              "key": "dailyFuelTank",
+              "value": "Опція"
+            },
+            {
+              "key": "engineHeater",
+              "value": "Опція"
+            },
+            {
+              "key": "waterHeater",
+              "value": "Опція"
+            },
+            {
+              "key": "parallelPanel",
+              "value": "Опція"
+            },
+            {
+              "key": "pmg",
+              "value": "Опція"
+            },
+            {
+              "key": "remotePanel",
+              "value": "Опція"
+            },
+            {
+              "key": "atsCabinet",
+              "value": "Опція"
+            },
+            {
+              "key": "trailerType",
+              "value": "Опція"
+            },
+            {
+              "key": "sparePartsFirstService",
+              "value": "Опція"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsWeight",
+          "rows": [
+            {
+              "key": "overallDimensions",
+              "value": "2100 x 950 x 1250 mm"
+            },
+            {
+              "key": "grossWeight",
+              "value": "850 kg"
+            }
+          ]
+        },
+        {
+          "titleKey": "purchaseService",
+          "rows": [
+            {
+              "key": "condition",
+              "value": "Новий"
+            },
+            {
+              "key": "certificate",
+              "value": "Так"
+            },
+            {
+              "key": "warranty",
+              "value": "12 місяців від доставки"
+            },
+            {
+              "key": "countryOfOrigin",
+              "value": "Китай"
+            }
+          ]
         }
       ]
     },
     "bm30-ricardo": {
       "name": "Генератор BM30",
-      "subtitle": "Двигун Ricardo 30KW · Тихий генератор",
+      "subtitle": "Двигун Ricardo · 30 кВт · шумоізольований генератор",
+      "heroSubtitle": "Шумоізольований генератор · ATS + AVR · доставка 15 днів",
       "cardSpecs": [
         {
           "key": "engineBrand",
           "value": "Ricardo"
         },
         {
+          "key": "ratedPower",
+          "value": "30 kW"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15 днів"
+        },
+        {
           "key": "atsSystem",
-          "value": "Автоматичне перемикання живлення"
+          "value": "У стандартній комплектації"
+        }
+      ],
+      "quickSpecs": [
+        {
+          "key": "ratedPower",
+          "value": "30 kW / 37,5 kVA"
         },
         {
-          "key": "avrRegulator",
-          "value": "Автоматичне регулювання напруги"
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
         },
         {
-          "key": "alternator",
-          "value": "Stamford STF-30"
+          "key": "deliveryTime",
+          "value": "15 днів"
         },
         {
-          "key": "controlPanel",
-          "value": "SmartGen 6120 · Інтерфейс польською"
+          "key": "startingVoltage",
+          "value": "12 V"
+        }
+      ],
+      "features": [
+        "ATS у стандарті",
+        "AVR у стандарті",
+        "SmartGen HGM6120",
+        "Корпус Silent"
+      ],
+      "description": "BM30 Ricardo — шумоізольований генератор 30 кВт, підготовлений для резервного живлення та безперервної роботи в компанії, на будівництві й у господарстві. Модель має повне оснащення ATS + AVR і заявлений строк доставки 15 днів.",
+      "accordions": [
+        {
+          "titleKey": "general",
+          "rows": [
+            {
+              "key": "factoryModel",
+              "value": "KVD-RD30S"
+            },
+            {
+              "key": "ratedPower",
+              "value": "30 kW / 37,5 kVA"
+            },
+            {
+              "key": "maxPower",
+              "value": "33 kW / 42 kVA"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ratedCurrent",
+              "value": "54 A"
+            },
+            {
+              "key": "powerFactor",
+              "value": "0,8"
+            },
+            {
+              "key": "deliveryTime",
+              "value": "15 днів"
+            },
+            {
+              "key": "startingVoltage",
+              "value": "12 V"
+            },
+            {
+              "key": "housingType",
+              "value": "Шумоізольований (Silent Type)"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Ricardo"
+            },
+            {
+              "key": "engineModel",
+              "value": "Ricardo 4100ZD"
+            },
+            {
+              "key": "engineRatedPower",
+              "value": "42 kW"
+            },
+            {
+              "key": "enginePeakPower",
+              "value": "46 kW"
+            },
+            {
+              "key": "cylinders",
+              "value": "4"
+            },
+            {
+              "key": "displacement",
+              "value": "3,61 l"
+            },
+            {
+              "key": "boreStroke",
+              "value": "100 x 115 mm"
+            },
+            {
+              "key": "compressionRatio",
+              "value": "16,5:1"
+            },
+            {
+              "key": "aspiration",
+              "value": "Атмосферний"
+            },
+            {
+              "key": "cycle",
+              "value": "4-тактний"
+            },
+            {
+              "key": "rpm",
+              "value": "1500 RPM"
+            },
+            {
+              "key": "governor",
+              "value": "Механічний"
+            },
+            {
+              "key": "fuelSystem",
+              "value": "Direct injection"
+            },
+            {
+              "key": "fuelConsumption",
+              "value": "210 g/kWh"
+            },
+            {
+              "key": "fuelTank",
+              "value": "60 l"
+            },
+            {
+              "key": "runtime",
+              "value": "min. 8 h"
+            },
+            {
+              "key": "coolingType",
+              "value": "Водяне, закритий контур, вентилятор від двигуна, радіатор 50°C"
+            },
+            {
+              "key": "exhaustSystem",
+              "value": "Промисловий + гнучкі з’єднання"
+            },
+            {
+              "key": "serviceFilters",
+              "value": "Змінні"
+            },
+            {
+              "key": "batteryAndCharger",
+              "value": "Так (необслуговуваний)"
+            }
+          ]
+        },
+        {
+          "titleKey": "alternator",
+          "rows": [
+            {
+              "key": "alternator",
+              "value": "Stamford STF-30"
+            },
+            {
+              "key": "alternatorType",
+              "value": "Безщітковий, повністю мідний"
+            },
+            {
+              "key": "insulationClass",
+              "value": "H"
+            },
+            {
+              "key": "phasesConnection",
+              "value": "3-фазний, 4-жильний"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ipClass",
+              "value": "IP23"
+            },
+            {
+              "key": "avrRegulator",
+              "value": "Так (у стандарті)"
+            },
+            {
+              "key": "stator",
+              "value": "2/3 Pitch"
+            },
+            {
+              "key": "excitation",
+              "value": "Самозбудження (self-excitation)"
+            },
+            {
+              "key": "voltageStability",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "frequencyRegulation",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "radioSuppression",
+              "value": "<= 50"
+            }
+          ]
+        },
+        {
+          "titleKey": "controller",
+          "rows": [
+            {
+              "key": "controlPanel",
+              "value": "SmartGen HGM6120 / 6120MKII"
+            },
+            {
+              "key": "interfaceLanguage",
+              "value": "Польська"
+            },
+            {
+              "key": "controllerType",
+              "value": "AMF — автоматичний запуск при зникненні живлення"
+            },
+            {
+              "key": "workModes",
+              "value": "STOP / RESET / MANUAL / AUTO / TEST / START"
+            },
+            {
+              "key": "atsSystem",
+              "value": "Так"
+            },
+            {
+              "key": "lockedAts",
+              "value": "Опція"
+            },
+            {
+              "key": "staticBatteryCharger",
+              "value": "Так"
+            },
+            {
+              "key": "emergencyStop",
+              "value": "Так (зовнішній + на панелі)"
+            },
+            {
+              "key": "lcdGrid",
+              "value": "L-L і L-N (міжфазні та фазні напруги)"
+            },
+            {
+              "key": "lcdGenerator",
+              "value": "L1, L2, L3 (струм), частота, cos φ"
+            },
+            {
+              "key": "lcdEngine",
+              "value": "RPM, температура, тиск оливи, мотогодини, акумулятор"
+            },
+            {
+              "key": "autoAlarms",
+              "value": "Перевищення/заниження швидкості, помилка запуску/зупинки, висока температура, низький тиск оливи, помилка заряджання, перевищення/заниження напруги генератора, частота, напруга мережі, аварійна зупинка"
+            }
+          ]
+        },
+        {
+          "titleKey": "standardEquipment",
+          "rows": [
+            {
+              "key": "circuitBreaker",
+              "value": "100A CHNT"
+            },
+            {
+              "key": "vibrationIsolators",
+              "value": "Так"
+            },
+            {
+              "key": "baseFrame",
+              "value": "Так"
+            },
+            {
+              "key": "integratedFuelTank",
+              "value": "Так"
+            },
+            {
+              "key": "drainValves",
+              "value": "Так (зливні крани)"
+            },
+            {
+              "key": "liftingPoints",
+              "value": "Так"
+            },
+            {
+              "key": "fuelGauge",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "housingAndNoise",
+          "rows": [
+            {
+              "key": "housingConstruction",
+              "value": "Металева, модульна, порошкове фарбування"
+            },
+            {
+              "key": "housingColor",
+              "value": "Біла (стандарт)"
+            },
+            {
+              "key": "acousticFoam",
+              "value": "Так"
+            },
+            {
+              "key": "weatherResistance",
+              "value": "Так"
+            },
+            {
+              "key": "serviceDoors",
+              "value": "Так (з обох боків)"
+            },
+            {
+              "key": "panelWindow",
+              "value": "Так"
+            },
+            {
+              "key": "insulatedExhaust",
+              "value": "Так"
+            },
+            {
+              "key": "externalEmergencyStop",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "optionalEquipment",
+          "rows": [
+            {
+              "key": "dailyFuelTank",
+              "value": "Опція"
+            },
+            {
+              "key": "engineHeater",
+              "value": "Опція"
+            },
+            {
+              "key": "waterHeater",
+              "value": "Опція"
+            },
+            {
+              "key": "parallelPanel",
+              "value": "Опція"
+            },
+            {
+              "key": "pmg",
+              "value": "Опція"
+            },
+            {
+              "key": "remotePanel",
+              "value": "Опція"
+            },
+            {
+              "key": "atsCabinet",
+              "value": "Опція"
+            },
+            {
+              "key": "trailerType",
+              "value": "Опція"
+            },
+            {
+              "key": "sparePartsFirstService",
+              "value": "Опція"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsWeight",
+          "rows": [
+            {
+              "key": "overallDimensions",
+              "value": "2100 x 950 x 1250 mm"
+            },
+            {
+              "key": "grossWeight",
+              "value": "870 kg"
+            }
+          ]
+        },
+        {
+          "titleKey": "purchaseService",
+          "rows": [
+            {
+              "key": "condition",
+              "value": "Новий"
+            },
+            {
+              "key": "certificate",
+              "value": "Так"
+            },
+            {
+              "key": "warranty",
+              "value": "12 місяців від доставки"
+            },
+            {
+              "key": "countryOfOrigin",
+              "value": "Китай"
+            }
+          ]
         }
       ]
     },
     "bm25-weichai": {
       "name": "Генератор BM25",
-      "subtitle": "Двигун Weichai 25KW · Тихий генератор",
-      "badge": "Бестселер",
+      "subtitle": "Двигун Weichai · 25 кВт · шумоізольований генератор",
+      "heroSubtitle": "Шумоізольований генератор · ATS + AVR · доставка 15–20 днів",
       "cardSpecs": [
         {
           "key": "engineBrand",
           "value": "Weichai"
         },
         {
+          "key": "ratedPower",
+          "value": "25 kW"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15–20 днів"
+        },
+        {
           "key": "atsSystem",
-          "value": "Автоматичне перемикання живлення"
-        },
-        {
-          "key": "avrRegulator",
-          "value": "Автоматичне регулювання напруги"
-        },
-        {
-          "key": "alternator",
-          "value": "Stamford STF-25"
-        },
-        {
-          "key": "controlPanel",
-          "value": "SmartGen 6120 · Інтерфейс польською"
+          "value": "У стандартній комплектації"
         }
-      ]
+      ],
+      "quickSpecs": [
+        {
+          "key": "ratedPower",
+          "value": "25 kW / 31,25 kVA"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15–20 днів"
+        },
+        {
+          "key": "startingVoltage",
+          "value": "24 V"
+        }
+      ],
+      "features": [
+        "ATS у стандарті",
+        "AVR у стандарті",
+        "SmartGen HGM6120",
+        "Корпус Silent"
+      ],
+      "description": "BM25 Weichai — шумоізольований генератор 25 кВт для клієнтів, які хочуть компактний агрегат з двигуном Weichai, ATS, AVR і панеллю SmartGen HGM6120. Згідно з поточною пропозицією, строк доставки становить 15–20 днів.",
+      "accordions": [
+        {
+          "titleKey": "general",
+          "rows": [
+            {
+              "key": "factoryModel",
+              "value": "KVD-W25S"
+            },
+            {
+              "key": "ratedPower",
+              "value": "25 kW / 31,25 kVA"
+            },
+            {
+              "key": "maxPower",
+              "value": "28 kW / 35 kVA"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ratedCurrent",
+              "value": "45 A"
+            },
+            {
+              "key": "powerFactor",
+              "value": "0,8"
+            },
+            {
+              "key": "deliveryTime",
+              "value": "15–20 днів"
+            },
+            {
+              "key": "startingVoltage",
+              "value": "24 V"
+            },
+            {
+              "key": "housingType",
+              "value": "Шумоізольований (Silent Type)"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Weichai"
+            },
+            {
+              "key": "engineModel",
+              "value": "Weichai WP2.3D33E200"
+            },
+            {
+              "key": "engineRatedPower",
+              "value": "30 kW"
+            },
+            {
+              "key": "enginePeakPower",
+              "value": "33 kW"
+            },
+            {
+              "key": "cylinders",
+              "value": "4"
+            },
+            {
+              "key": "displacement",
+              "value": "2,3 l"
+            },
+            {
+              "key": "boreStroke",
+              "value": "89 x 92 mm"
+            },
+            {
+              "key": "compressionRatio",
+              "value": "17,3:1"
+            },
+            {
+              "key": "aspiration",
+              "value": "Атмосферний"
+            },
+            {
+              "key": "cycle",
+              "value": "4-тактний"
+            },
+            {
+              "key": "rpm",
+              "value": "1500 RPM"
+            },
+            {
+              "key": "governor",
+              "value": "Електронний"
+            },
+            {
+              "key": "fuelSystem",
+              "value": "Direct injection"
+            },
+            {
+              "key": "fuelConsumption",
+              "value": "210 g/kWh"
+            },
+            {
+              "key": "fuelTank",
+              "value": "50 l"
+            },
+            {
+              "key": "runtime",
+              "value": "min. 8 h"
+            },
+            {
+              "key": "coolingType",
+              "value": "Водяне, закритий контур, вентилятор від двигуна, радіатор 50°C"
+            },
+            {
+              "key": "exhaustSystem",
+              "value": "Промисловий + гнучкі з’єднання"
+            },
+            {
+              "key": "serviceFilters",
+              "value": "Змінні"
+            },
+            {
+              "key": "batteryAndCharger",
+              "value": "Так (необслуговуваний)"
+            }
+          ]
+        },
+        {
+          "titleKey": "alternator",
+          "rows": [
+            {
+              "key": "alternator",
+              "value": "Stamford STF-25"
+            },
+            {
+              "key": "alternatorType",
+              "value": "Безщітковий, повністю мідний"
+            },
+            {
+              "key": "insulationClass",
+              "value": "H"
+            },
+            {
+              "key": "phasesConnection",
+              "value": "3-фазний, 4-жильний"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ipClass",
+              "value": "IP23"
+            },
+            {
+              "key": "avrRegulator",
+              "value": "Так (у стандарті)"
+            },
+            {
+              "key": "stator",
+              "value": "2/3 Pitch"
+            },
+            {
+              "key": "excitation",
+              "value": "Самозбудження (self-excitation)"
+            },
+            {
+              "key": "voltageStability",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "frequencyRegulation",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "radioSuppression",
+              "value": "<= 50"
+            }
+          ]
+        },
+        {
+          "titleKey": "controller",
+          "rows": [
+            {
+              "key": "controlPanel",
+              "value": "SmartGen HGM6120 / 6120MKII"
+            },
+            {
+              "key": "interfaceLanguage",
+              "value": "Польська"
+            },
+            {
+              "key": "controllerType",
+              "value": "AMF — автоматичний запуск при зникненні живлення"
+            },
+            {
+              "key": "workModes",
+              "value": "STOP / RESET / MANUAL / AUTO / TEST / START"
+            },
+            {
+              "key": "atsSystem",
+              "value": "Так"
+            },
+            {
+              "key": "lockedAts",
+              "value": "Опція"
+            },
+            {
+              "key": "staticBatteryCharger",
+              "value": "Так"
+            },
+            {
+              "key": "emergencyStop",
+              "value": "Так (зовнішній + на панелі)"
+            },
+            {
+              "key": "lcdGrid",
+              "value": "L-L і L-N (міжфазні та фазні напруги)"
+            },
+            {
+              "key": "lcdGenerator",
+              "value": "L1, L2, L3 (струм), частота, cos φ"
+            },
+            {
+              "key": "lcdEngine",
+              "value": "RPM, температура, тиск оливи, мотогодини, акумулятор"
+            },
+            {
+              "key": "autoAlarms",
+              "value": "Перевищення/заниження швидкості, помилка запуску/зупинки, висока температура, низький тиск оливи, помилка заряджання, перевищення/заниження напруги генератора, частота, напруга мережі, аварійна зупинка"
+            }
+          ]
+        },
+        {
+          "titleKey": "standardEquipment",
+          "rows": [
+            {
+              "key": "circuitBreaker",
+              "value": "100A CHNT"
+            },
+            {
+              "key": "vibrationIsolators",
+              "value": "Так"
+            },
+            {
+              "key": "baseFrame",
+              "value": "Так"
+            },
+            {
+              "key": "integratedFuelTank",
+              "value": "Так"
+            },
+            {
+              "key": "drainValves",
+              "value": "Так (зливні крани)"
+            },
+            {
+              "key": "liftingPoints",
+              "value": "Так"
+            },
+            {
+              "key": "fuelGauge",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "housingAndNoise",
+          "rows": [
+            {
+              "key": "housingConstruction",
+              "value": "Металева, модульна, порошкове фарбування"
+            },
+            {
+              "key": "housingColor",
+              "value": "Опціональний"
+            },
+            {
+              "key": "acousticFoam",
+              "value": "Так"
+            },
+            {
+              "key": "weatherResistance",
+              "value": "Так"
+            },
+            {
+              "key": "serviceDoors",
+              "value": "Так (з обох боків)"
+            },
+            {
+              "key": "panelWindow",
+              "value": "Так"
+            },
+            {
+              "key": "insulatedExhaust",
+              "value": "Так"
+            },
+            {
+              "key": "externalEmergencyStop",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "optionalEquipment",
+          "rows": [
+            {
+              "key": "dailyFuelTank",
+              "value": "Опція"
+            },
+            {
+              "key": "engineHeater",
+              "value": "Опція"
+            },
+            {
+              "key": "waterHeater",
+              "value": "Опція"
+            },
+            {
+              "key": "parallelPanel",
+              "value": "Опція"
+            },
+            {
+              "key": "pmg",
+              "value": "Опція"
+            },
+            {
+              "key": "remotePanel",
+              "value": "Опція"
+            },
+            {
+              "key": "atsCabinet",
+              "value": "Опція"
+            },
+            {
+              "key": "trailerType",
+              "value": "Опція"
+            },
+            {
+              "key": "sparePartsFirstService",
+              "value": "Опція"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsWeight",
+          "rows": [
+            {
+              "key": "overallDimensions",
+              "value": "2100 x 950 x 1250 mm"
+            },
+            {
+              "key": "grossWeight",
+              "value": "850 kg"
+            }
+          ]
+        },
+        {
+          "titleKey": "purchaseService",
+          "rows": [
+            {
+              "key": "condition",
+              "value": "Новий"
+            },
+            {
+              "key": "certificate",
+              "value": "Так"
+            },
+            {
+              "key": "warranty",
+              "value": "12 місяців від доставки"
+            },
+            {
+              "key": "countryOfOrigin",
+              "value": "Китай"
+            }
+          ]
+        }
+      ],
+      "badge": "Бестселер"
     },
     "bm30-weichai": {
       "name": "Генератор BM30",
-      "subtitle": "Двигун Weichai 30KW · Тихий генератор",
+      "subtitle": "Двигун Weichai · 30 кВт · шумоізольований генератор",
+      "heroSubtitle": "Шумоізольований генератор · ATS + AVR · доставка 15–20 днів",
       "cardSpecs": [
         {
           "key": "engineBrand",
           "value": "Weichai"
         },
         {
+          "key": "ratedPower",
+          "value": "30 kW"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15–20 днів"
+        },
+        {
           "key": "atsSystem",
-          "value": "Автоматичне перемикання живлення"
+          "value": "У стандартній комплектації"
+        }
+      ],
+      "quickSpecs": [
+        {
+          "key": "ratedPower",
+          "value": "30 kW / 37,5 kVA"
         },
         {
-          "key": "avrRegulator",
-          "value": "Автоматичне регулювання напруги"
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
         },
         {
-          "key": "alternator",
-          "value": "Stamford STF-30"
+          "key": "deliveryTime",
+          "value": "15–20 днів"
         },
         {
-          "key": "controlPanel",
-          "value": "SmartGen 6120 · Інтерфейс польською"
+          "key": "startingVoltage",
+          "value": "24 V"
+        }
+      ],
+      "features": [
+        "ATS у стандарті",
+        "AVR у стандарті",
+        "SmartGen HGM6120",
+        "Корпус Silent"
+      ],
+      "description": "BM30 Weichai — шумоізольований генератор 30 кВт з двигуном Weichai, контролером SmartGen HGM6120 і повним оснащенням ATS + AVR. Модель добре підходить як джерело резервного живлення для компанії та технічної бази, а поточний строк доставки становить 15–20 днів.",
+      "accordions": [
+        {
+          "titleKey": "general",
+          "rows": [
+            {
+              "key": "factoryModel",
+              "value": "KVD-W30S"
+            },
+            {
+              "key": "ratedPower",
+              "value": "30 kW / 37,5 kVA"
+            },
+            {
+              "key": "maxPower",
+              "value": "33 kW / 42 kVA"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ratedCurrent",
+              "value": "54 A"
+            },
+            {
+              "key": "powerFactor",
+              "value": "0,8"
+            },
+            {
+              "key": "deliveryTime",
+              "value": "15–20 днів"
+            },
+            {
+              "key": "startingVoltage",
+              "value": "24 V"
+            },
+            {
+              "key": "housingType",
+              "value": "Шумоізольований (Silent Type)"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Weichai"
+            },
+            {
+              "key": "engineModel",
+              "value": "Weichai WP2.3D40E200"
+            },
+            {
+              "key": "engineRatedPower",
+              "value": "36 kW"
+            },
+            {
+              "key": "enginePeakPower",
+              "value": "40 kW"
+            },
+            {
+              "key": "cylinders",
+              "value": "4"
+            },
+            {
+              "key": "displacement",
+              "value": "2,3 l"
+            },
+            {
+              "key": "boreStroke",
+              "value": "89 x 92 mm"
+            },
+            {
+              "key": "compressionRatio",
+              "value": "17,3:1"
+            },
+            {
+              "key": "aspiration",
+              "value": "Атмосферний"
+            },
+            {
+              "key": "cycle",
+              "value": "4-тактний"
+            },
+            {
+              "key": "rpm",
+              "value": "1500 RPM"
+            },
+            {
+              "key": "governor",
+              "value": "Електронний"
+            },
+            {
+              "key": "fuelSystem",
+              "value": "Direct injection"
+            },
+            {
+              "key": "fuelConsumption",
+              "value": "210 g/kWh"
+            },
+            {
+              "key": "fuelTank",
+              "value": "60 l"
+            },
+            {
+              "key": "runtime",
+              "value": "min. 8 h"
+            },
+            {
+              "key": "coolingType",
+              "value": "Водяне, закритий контур, вентилятор від двигуна, радіатор 50°C"
+            },
+            {
+              "key": "exhaustSystem",
+              "value": "Промисловий + гнучкі з’єднання"
+            },
+            {
+              "key": "serviceFilters",
+              "value": "Змінні"
+            },
+            {
+              "key": "batteryAndCharger",
+              "value": "Так (необслуговуваний)"
+            }
+          ]
+        },
+        {
+          "titleKey": "alternator",
+          "rows": [
+            {
+              "key": "alternator",
+              "value": "Stamford STF-30"
+            },
+            {
+              "key": "alternatorType",
+              "value": "Безщітковий, повністю мідний"
+            },
+            {
+              "key": "insulationClass",
+              "value": "H"
+            },
+            {
+              "key": "phasesConnection",
+              "value": "3-фазний, 4-жильний"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ipClass",
+              "value": "IP23"
+            },
+            {
+              "key": "avrRegulator",
+              "value": "Так (у стандарті)"
+            },
+            {
+              "key": "stator",
+              "value": "2/3 Pitch"
+            },
+            {
+              "key": "excitation",
+              "value": "Самозбудження (self-excitation)"
+            },
+            {
+              "key": "voltageStability",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "frequencyRegulation",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "radioSuppression",
+              "value": "<= 50"
+            }
+          ]
+        },
+        {
+          "titleKey": "controller",
+          "rows": [
+            {
+              "key": "controlPanel",
+              "value": "SmartGen HGM6120 / 6120MKII"
+            },
+            {
+              "key": "interfaceLanguage",
+              "value": "Польська"
+            },
+            {
+              "key": "controllerType",
+              "value": "AMF — автоматичний запуск при зникненні живлення"
+            },
+            {
+              "key": "workModes",
+              "value": "STOP / RESET / MANUAL / AUTO / TEST / START"
+            },
+            {
+              "key": "atsSystem",
+              "value": "Так"
+            },
+            {
+              "key": "lockedAts",
+              "value": "Опція"
+            },
+            {
+              "key": "staticBatteryCharger",
+              "value": "Так"
+            },
+            {
+              "key": "emergencyStop",
+              "value": "Так (зовнішній + на панелі)"
+            },
+            {
+              "key": "lcdGrid",
+              "value": "L-L і L-N (міжфазні та фазні напруги)"
+            },
+            {
+              "key": "lcdGenerator",
+              "value": "L1, L2, L3 (струм), частота, cos φ"
+            },
+            {
+              "key": "lcdEngine",
+              "value": "RPM, температура, тиск оливи, мотогодини, акумулятор"
+            },
+            {
+              "key": "autoAlarms",
+              "value": "Перевищення/заниження швидкості, помилка запуску/зупинки, висока температура, низький тиск оливи, помилка заряджання, перевищення/заниження напруги генератора, частота, напруга мережі, аварійна зупинка"
+            }
+          ]
+        },
+        {
+          "titleKey": "standardEquipment",
+          "rows": [
+            {
+              "key": "circuitBreaker",
+              "value": "100A CHNT"
+            },
+            {
+              "key": "vibrationIsolators",
+              "value": "Так"
+            },
+            {
+              "key": "baseFrame",
+              "value": "Так"
+            },
+            {
+              "key": "integratedFuelTank",
+              "value": "Так"
+            },
+            {
+              "key": "drainValves",
+              "value": "Так (зливні крани)"
+            },
+            {
+              "key": "liftingPoints",
+              "value": "Так"
+            },
+            {
+              "key": "fuelGauge",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "housingAndNoise",
+          "rows": [
+            {
+              "key": "housingConstruction",
+              "value": "Металева, модульна, порошкове фарбування"
+            },
+            {
+              "key": "housingColor",
+              "value": "Опціональний"
+            },
+            {
+              "key": "acousticFoam",
+              "value": "Так"
+            },
+            {
+              "key": "weatherResistance",
+              "value": "Так"
+            },
+            {
+              "key": "serviceDoors",
+              "value": "Так (з обох боків)"
+            },
+            {
+              "key": "panelWindow",
+              "value": "Так"
+            },
+            {
+              "key": "insulatedExhaust",
+              "value": "Так"
+            },
+            {
+              "key": "externalEmergencyStop",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "optionalEquipment",
+          "rows": [
+            {
+              "key": "dailyFuelTank",
+              "value": "Опція"
+            },
+            {
+              "key": "engineHeater",
+              "value": "Опція"
+            },
+            {
+              "key": "waterHeater",
+              "value": "Опція"
+            },
+            {
+              "key": "parallelPanel",
+              "value": "Опція"
+            },
+            {
+              "key": "pmg",
+              "value": "Опція"
+            },
+            {
+              "key": "remotePanel",
+              "value": "Опція"
+            },
+            {
+              "key": "atsCabinet",
+              "value": "Опція"
+            },
+            {
+              "key": "trailerType",
+              "value": "Опція"
+            },
+            {
+              "key": "sparePartsFirstService",
+              "value": "Опція"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsWeight",
+          "rows": [
+            {
+              "key": "overallDimensions",
+              "value": "2100 x 950 x 1250 mm"
+            },
+            {
+              "key": "grossWeight",
+              "value": "870 kg"
+            }
+          ]
+        },
+        {
+          "titleKey": "purchaseService",
+          "rows": [
+            {
+              "key": "condition",
+              "value": "Новий"
+            },
+            {
+              "key": "certificate",
+              "value": "Так"
+            },
+            {
+              "key": "warranty",
+              "value": "12 місяців від доставки"
+            },
+            {
+              "key": "countryOfOrigin",
+              "value": "Китай"
+            }
+          ]
         }
       ]
     },
     "bm30-cummins": {
       "name": "Генератор BM30",
-      "subtitle": "Двигун Cummins 30KW · Тихий генератор",
+      "subtitle": "Двигун Cummins · 30 кВт · шумоізольований генератор",
+      "heroSubtitle": "Шумоізольований генератор · ATS + AVR · доставка 15 днів",
       "cardSpecs": [
         {
           "key": "engineBrand",
           "value": "Cummins"
         },
         {
+          "key": "ratedPower",
+          "value": "30 kW"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15 днів"
+        },
+        {
           "key": "atsSystem",
-          "value": "Автоматичне перемикання живлення"
+          "value": "У стандартній комплектації"
+        }
+      ],
+      "quickSpecs": [
+        {
+          "key": "ratedPower",
+          "value": "30 kW / 37,5 kVA"
         },
         {
-          "key": "avrRegulator",
-          "value": "Автоматичне регулювання напруги"
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
         },
         {
-          "key": "alternator",
-          "value": "Stamford STF-30"
+          "key": "deliveryTime",
+          "value": "15 днів"
         },
         {
-          "key": "controlPanel",
-          "value": "SmartGen 6120 · Інтерфейс польською"
+          "key": "startingVoltage",
+          "value": "24 V"
+        }
+      ],
+      "features": [
+        "ATS у стандарті",
+        "AVR у стандарті",
+        "SmartGen HGM6120",
+        "Корпус Silent"
+      ],
+      "description": "BM30 Cummins — шумоізольований генератор 30 кВт з двигуном Cummins, запуском 24 В і повним оснащенням ATS + AVR. Модель підготовлена для корпоративних застосувань і резервного живлення об’єктів із заявленим строком доставки 15 днів.",
+      "accordions": [
+        {
+          "titleKey": "general",
+          "rows": [
+            {
+              "key": "factoryModel",
+              "value": "KVD-C30S"
+            },
+            {
+              "key": "ratedPower",
+              "value": "30 kW / 37,5 kVA"
+            },
+            {
+              "key": "maxPower",
+              "value": "33 kW / 42 kVA"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ratedCurrent",
+              "value": "54 A"
+            },
+            {
+              "key": "powerFactor",
+              "value": "0,8"
+            },
+            {
+              "key": "deliveryTime",
+              "value": "15 днів"
+            },
+            {
+              "key": "startingVoltage",
+              "value": "24 V"
+            },
+            {
+              "key": "housingType",
+              "value": "Шумоізольований (Silent Type)"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Cummins"
+            },
+            {
+              "key": "engineModel",
+              "value": "Cummins 4BT3.9-G2"
+            },
+            {
+              "key": "engineRatedPower",
+              "value": "36 kW"
+            },
+            {
+              "key": "enginePeakPower",
+              "value": "40 kW"
+            },
+            {
+              "key": "cylinders",
+              "value": "4"
+            },
+            {
+              "key": "displacement",
+              "value": "3,9 l"
+            },
+            {
+              "key": "boreStroke",
+              "value": "102 x 120 mm"
+            },
+            {
+              "key": "compressionRatio",
+              "value": "16,5:1"
+            },
+            {
+              "key": "aspiration",
+              "value": "Turbo"
+            },
+            {
+              "key": "cycle",
+              "value": "4-тактний"
+            },
+            {
+              "key": "rpm",
+              "value": "1500 RPM"
+            },
+            {
+              "key": "governor",
+              "value": "Електронний"
+            },
+            {
+              "key": "fuelSystem",
+              "value": "PT type"
+            },
+            {
+              "key": "fuelConsumption",
+              "value": "210 g/kWh"
+            },
+            {
+              "key": "fuelTank",
+              "value": "60 l"
+            },
+            {
+              "key": "runtime",
+              "value": "min. 8 h"
+            },
+            {
+              "key": "coolingType",
+              "value": "Водяне, закритий контур, вентилятор від двигуна, радіатор 50°C"
+            },
+            {
+              "key": "exhaustSystem",
+              "value": "Промисловий + гнучкі з’єднання"
+            },
+            {
+              "key": "serviceFilters",
+              "value": "Змінні"
+            },
+            {
+              "key": "batteryAndCharger",
+              "value": "Так (необслуговуваний)"
+            }
+          ]
+        },
+        {
+          "titleKey": "alternator",
+          "rows": [
+            {
+              "key": "alternator",
+              "value": "Stamford STF-30"
+            },
+            {
+              "key": "alternatorType",
+              "value": "Безщітковий, повністю мідний"
+            },
+            {
+              "key": "insulationClass",
+              "value": "H"
+            },
+            {
+              "key": "phasesConnection",
+              "value": "3-фазний, 4-жильний"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ipClass",
+              "value": "IP23"
+            },
+            {
+              "key": "avrRegulator",
+              "value": "Так (у стандарті)"
+            },
+            {
+              "key": "stator",
+              "value": "2/3 Pitch"
+            },
+            {
+              "key": "excitation",
+              "value": "Самозбудження (self-excitation)"
+            },
+            {
+              "key": "voltageStability",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "frequencyRegulation",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "radioSuppression",
+              "value": "<= 50"
+            }
+          ]
+        },
+        {
+          "titleKey": "controller",
+          "rows": [
+            {
+              "key": "controlPanel",
+              "value": "SmartGen HGM6120 / 6120MKII"
+            },
+            {
+              "key": "interfaceLanguage",
+              "value": "Польська"
+            },
+            {
+              "key": "controllerType",
+              "value": "AMF — автоматичний запуск при зникненні живлення"
+            },
+            {
+              "key": "workModes",
+              "value": "STOP / RESET / MANUAL / AUTO / TEST / START"
+            },
+            {
+              "key": "atsSystem",
+              "value": "Так"
+            },
+            {
+              "key": "lockedAts",
+              "value": "Опція"
+            },
+            {
+              "key": "staticBatteryCharger",
+              "value": "Так"
+            },
+            {
+              "key": "emergencyStop",
+              "value": "Так (зовнішній + на панелі)"
+            },
+            {
+              "key": "lcdGrid",
+              "value": "L-L і L-N (міжфазні та фазні напруги)"
+            },
+            {
+              "key": "lcdGenerator",
+              "value": "L1, L2, L3 (струм), частота, cos φ"
+            },
+            {
+              "key": "lcdEngine",
+              "value": "RPM, температура, тиск оливи, мотогодини, акумулятор"
+            },
+            {
+              "key": "autoAlarms",
+              "value": "Перевищення/заниження швидкості, помилка запуску/зупинки, висока температура, низький тиск оливи, помилка заряджання, перевищення/заниження напруги генератора, частота, напруга мережі, аварійна зупинка"
+            }
+          ]
+        },
+        {
+          "titleKey": "standardEquipment",
+          "rows": [
+            {
+              "key": "circuitBreaker",
+              "value": "100A CHNT"
+            },
+            {
+              "key": "vibrationIsolators",
+              "value": "Так"
+            },
+            {
+              "key": "baseFrame",
+              "value": "Так"
+            },
+            {
+              "key": "integratedFuelTank",
+              "value": "Так"
+            },
+            {
+              "key": "drainValves",
+              "value": "Так (зливні крани)"
+            },
+            {
+              "key": "liftingPoints",
+              "value": "Так"
+            },
+            {
+              "key": "fuelGauge",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "housingAndNoise",
+          "rows": [
+            {
+              "key": "housingConstruction",
+              "value": "Металева, модульна, порошкове фарбування"
+            },
+            {
+              "key": "housingColor",
+              "value": "Біла (стандарт)"
+            },
+            {
+              "key": "acousticFoam",
+              "value": "Так"
+            },
+            {
+              "key": "weatherResistance",
+              "value": "Так"
+            },
+            {
+              "key": "serviceDoors",
+              "value": "Так (з обох боків)"
+            },
+            {
+              "key": "panelWindow",
+              "value": "Так"
+            },
+            {
+              "key": "insulatedExhaust",
+              "value": "Так"
+            },
+            {
+              "key": "externalEmergencyStop",
+              "value": "Так"
+            },
+            {
+              "key": "noiseLevel",
+              "value": "70 dB @ 7 m"
+            }
+          ]
+        },
+        {
+          "titleKey": "optionalEquipment",
+          "rows": [
+            {
+              "key": "dailyFuelTank",
+              "value": "Опція"
+            },
+            {
+              "key": "engineHeater",
+              "value": "Опція"
+            },
+            {
+              "key": "waterHeater",
+              "value": "Опція"
+            },
+            {
+              "key": "parallelPanel",
+              "value": "Опція"
+            },
+            {
+              "key": "pmg",
+              "value": "Опція"
+            },
+            {
+              "key": "remotePanel",
+              "value": "Опція"
+            },
+            {
+              "key": "atsCabinet",
+              "value": "Опція"
+            },
+            {
+              "key": "trailerType",
+              "value": "Опція"
+            },
+            {
+              "key": "sparePartsFirstService",
+              "value": "Опція"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsWeight",
+          "rows": [
+            {
+              "key": "overallDimensions",
+              "value": "2100 x 950 x 1250 mm"
+            },
+            {
+              "key": "grossWeight",
+              "value": "890 kg"
+            }
+          ]
+        },
+        {
+          "titleKey": "purchaseService",
+          "rows": [
+            {
+              "key": "condition",
+              "value": "Новий"
+            },
+            {
+              "key": "certificate",
+              "value": "Так"
+            },
+            {
+              "key": "warranty",
+              "value": "12 місяців від доставки"
+            },
+            {
+              "key": "countryOfOrigin",
+              "value": "Китай"
+            }
+          ]
         }
       ]
     },
     "bm40-cummins": {
       "name": "Генератор BM40",
-      "subtitle": "Двигун Cummins 40KW · Тихий генератор",
+      "subtitle": "Двигун Cummins · 40 кВт · шумоізольований генератор",
+      "heroSubtitle": "Шумоізольований генератор · ATS + AVR · доставка 15 днів",
       "cardSpecs": [
         {
           "key": "engineBrand",
           "value": "Cummins"
         },
         {
+          "key": "ratedPower",
+          "value": "40 kW"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15 днів"
+        },
+        {
           "key": "atsSystem",
-          "value": "Автоматичне перемикання живлення"
+          "value": "У стандартній комплектації"
+        }
+      ],
+      "quickSpecs": [
+        {
+          "key": "ratedPower",
+          "value": "40 kW / 50 kVA"
         },
         {
-          "key": "avrRegulator",
-          "value": "Автоматичне регулювання напруги"
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
         },
         {
-          "key": "alternator",
-          "value": "Stamford STF-40"
+          "key": "deliveryTime",
+          "value": "15 днів"
         },
         {
-          "key": "controlPanel",
-          "value": "SmartGen 6120 · Інтерфейс польською"
+          "key": "startingVoltage",
+          "value": "24 V"
+        }
+      ],
+      "features": [
+        "ATS у стандарті",
+        "AVR у стандарті",
+        "SmartGen HGM6120",
+        "Корпус Silent"
+      ],
+      "description": "BM40 Cummins — найпотужніший генератор у польській пропозиції, підготовлений для роботи як шумоізольоване джерело живлення для вимогливіших навантажень. Конфігурація включає двигун Cummins, ATS, AVR, контролер SmartGen HGM6120 і заявлену доставку за 15 днів.",
+      "accordions": [
+        {
+          "titleKey": "general",
+          "rows": [
+            {
+              "key": "factoryModel",
+              "value": "KVD-C40S"
+            },
+            {
+              "key": "ratedPower",
+              "value": "40 kW / 50 kVA"
+            },
+            {
+              "key": "maxPower",
+              "value": "44 kW / 55 kVA"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ratedCurrent",
+              "value": "72 A"
+            },
+            {
+              "key": "powerFactor",
+              "value": "0,8"
+            },
+            {
+              "key": "deliveryTime",
+              "value": "15 днів"
+            },
+            {
+              "key": "startingVoltage",
+              "value": "24 V"
+            },
+            {
+              "key": "housingType",
+              "value": "Шумоізольований (Silent Type)"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Cummins"
+            },
+            {
+              "key": "engineModel",
+              "value": "Cummins 4BTA3.9-G2"
+            },
+            {
+              "key": "engineRatedPower",
+              "value": "50 kW"
+            },
+            {
+              "key": "enginePeakPower",
+              "value": "55 kW"
+            },
+            {
+              "key": "cylinders",
+              "value": "4"
+            },
+            {
+              "key": "displacement",
+              "value": "3,9 l"
+            },
+            {
+              "key": "boreStroke",
+              "value": "102 x 120 mm"
+            },
+            {
+              "key": "compressionRatio",
+              "value": "16,5:1"
+            },
+            {
+              "key": "aspiration",
+              "value": "Turbo + intercooler"
+            },
+            {
+              "key": "cycle",
+              "value": "4-тактний"
+            },
+            {
+              "key": "rpm",
+              "value": "1500 RPM"
+            },
+            {
+              "key": "governor",
+              "value": "Електронний"
+            },
+            {
+              "key": "fuelSystem",
+              "value": "PT type"
+            },
+            {
+              "key": "fuelConsumption",
+              "value": "210 g/kWh"
+            },
+            {
+              "key": "fuelTank",
+              "value": "80 l"
+            },
+            {
+              "key": "runtime",
+              "value": "min. 8 h"
+            },
+            {
+              "key": "coolingType",
+              "value": "Водяне, закритий контур, вентилятор від двигуна, радіатор 50°C"
+            },
+            {
+              "key": "exhaustSystem",
+              "value": "Промисловий + гнучкі з’єднання"
+            },
+            {
+              "key": "serviceFilters",
+              "value": "Змінні"
+            },
+            {
+              "key": "batteryAndCharger",
+              "value": "Так (необслуговуваний)"
+            }
+          ]
+        },
+        {
+          "titleKey": "alternator",
+          "rows": [
+            {
+              "key": "alternator",
+              "value": "Stamford STF-40"
+            },
+            {
+              "key": "alternatorType",
+              "value": "Безщітковий, повністю мідний"
+            },
+            {
+              "key": "insulationClass",
+              "value": "H"
+            },
+            {
+              "key": "phasesConnection",
+              "value": "3-фазний, 4-жильний"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ipClass",
+              "value": "IP23"
+            },
+            {
+              "key": "avrRegulator",
+              "value": "Так (у стандарті)"
+            },
+            {
+              "key": "stator",
+              "value": "2/3 Pitch"
+            },
+            {
+              "key": "excitation",
+              "value": "Самозбудження (self-excitation)"
+            },
+            {
+              "key": "voltageStability",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "frequencyRegulation",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "radioSuppression",
+              "value": "<= 50"
+            }
+          ]
+        },
+        {
+          "titleKey": "controller",
+          "rows": [
+            {
+              "key": "controlPanel",
+              "value": "SmartGen HGM6120 / 6120MKII"
+            },
+            {
+              "key": "interfaceLanguage",
+              "value": "Польська"
+            },
+            {
+              "key": "controllerType",
+              "value": "AMF — автоматичний запуск при зникненні живлення"
+            },
+            {
+              "key": "workModes",
+              "value": "STOP / RESET / MANUAL / AUTO / TEST / START"
+            },
+            {
+              "key": "atsSystem",
+              "value": "Так"
+            },
+            {
+              "key": "lockedAts",
+              "value": "Опція"
+            },
+            {
+              "key": "staticBatteryCharger",
+              "value": "Так"
+            },
+            {
+              "key": "emergencyStop",
+              "value": "Так (зовнішній + на панелі)"
+            },
+            {
+              "key": "lcdGrid",
+              "value": "L-L і L-N (міжфазні та фазні напруги)"
+            },
+            {
+              "key": "lcdGenerator",
+              "value": "L1, L2, L3 (струм), частота, cos φ"
+            },
+            {
+              "key": "lcdEngine",
+              "value": "RPM, температура, тиск оливи, мотогодини, акумулятор"
+            },
+            {
+              "key": "autoAlarms",
+              "value": "Перевищення/заниження швидкості, помилка запуску/зупинки, висока температура, низький тиск оливи, помилка заряджання, перевищення/заниження напруги генератора, частота, напруга мережі, аварійна зупинка"
+            }
+          ]
+        },
+        {
+          "titleKey": "standardEquipment",
+          "rows": [
+            {
+              "key": "circuitBreaker",
+              "value": "100A CHNT"
+            },
+            {
+              "key": "vibrationIsolators",
+              "value": "Так"
+            },
+            {
+              "key": "baseFrame",
+              "value": "Так"
+            },
+            {
+              "key": "integratedFuelTank",
+              "value": "Так"
+            },
+            {
+              "key": "drainValves",
+              "value": "Так (зливні крани)"
+            },
+            {
+              "key": "liftingPoints",
+              "value": "Так"
+            },
+            {
+              "key": "fuelGauge",
+              "value": "Так"
+            }
+          ]
+        },
+        {
+          "titleKey": "housingAndNoise",
+          "rows": [
+            {
+              "key": "housingConstruction",
+              "value": "Металева, модульна, порошкове фарбування"
+            },
+            {
+              "key": "housingColor",
+              "value": "Біла (стандарт)"
+            },
+            {
+              "key": "acousticFoam",
+              "value": "Так"
+            },
+            {
+              "key": "weatherResistance",
+              "value": "Так"
+            },
+            {
+              "key": "serviceDoors",
+              "value": "Так (з обох боків)"
+            },
+            {
+              "key": "panelWindow",
+              "value": "Так"
+            },
+            {
+              "key": "insulatedExhaust",
+              "value": "Так"
+            },
+            {
+              "key": "externalEmergencyStop",
+              "value": "Так"
+            },
+            {
+              "key": "noiseLevel",
+              "value": "70 dB @ 7 m"
+            }
+          ]
+        },
+        {
+          "titleKey": "optionalEquipment",
+          "rows": [
+            {
+              "key": "dailyFuelTank",
+              "value": "Опція"
+            },
+            {
+              "key": "engineHeater",
+              "value": "Опція"
+            },
+            {
+              "key": "waterHeater",
+              "value": "Опція"
+            },
+            {
+              "key": "parallelPanel",
+              "value": "Опція"
+            },
+            {
+              "key": "pmg",
+              "value": "Опція"
+            },
+            {
+              "key": "remotePanel",
+              "value": "Опція"
+            },
+            {
+              "key": "atsCabinet",
+              "value": "Опція"
+            },
+            {
+              "key": "trailerType",
+              "value": "Опція"
+            },
+            {
+              "key": "sparePartsFirstService",
+              "value": "Опція"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsWeight",
+          "rows": [
+            {
+              "key": "overallDimensions",
+              "value": "2200 x 1000 x 1300 mm"
+            },
+            {
+              "key": "grossWeight",
+              "value": "1030 kg"
+            }
+          ]
+        },
+        {
+          "titleKey": "purchaseService",
+          "rows": [
+            {
+              "key": "condition",
+              "value": "Новий"
+            },
+            {
+              "key": "certificate",
+              "value": "Так"
+            },
+            {
+              "key": "warranty",
+              "value": "12 місяців від доставки"
+            },
+            {
+              "key": "countryOfOrigin",
+              "value": "Китай"
+            }
+          ]
         }
       ]
     }
@@ -1511,25 +4391,25 @@
       "name": "Розпушувач"
     },
     "quick-coupler": {
-      "name": "Швидкозчіп"
+      "name": "Швидкозчіпка"
     },
     "hydraulic-auger": {
-      "name": "Гідравлічний шнек"
+      "name": "Гідравлічний бур"
     },
     "hydraulic-hammer": {
       "name": "Гідравлічний молот"
     },
     "bucket-20": {
-      "name": "Ківш 200 mm"
+      "name": "Ківш 200 мм"
     },
     "bucket-30": {
-      "name": "Ківш 300 mm"
+      "name": "Ківш 300 мм"
     },
     "bucket-60": {
-      "name": "Ківш 600 mm"
+      "name": "Ківш 600 мм"
     },
     "rake-80": {
-      "name": "Граблі 800 mm"
+      "name": "Граблі 800 мм"
     },
     "grapple": {
       "name": "Захват"
@@ -1538,18 +4418,18 @@
       "name": "Гідравлічний поворотний планувальний ківш"
     },
     "hydraulic-thumb": {
-      "name": "Гідравлічний великий палець"
+      "name": "Гідравлічний палець"
     },
     "ditch-bucket-50": {
-      "name": "Планувальний ківш 500 mm"
+      "name": "Планувальний ківш 500 мм"
     },
     "ditch-bucket-100": {
-      "name": "Планувальний ківш 1000 mm"
+      "name": "Планувальний ківш 1000 мм"
     }
   },
   "parts": {
     "oil-filter-koop-192f": {
-      "name": "Масляний фільтр двигуна KOOP 192F"
+      "name": "Фільтр моторної оливи KOOP 192F"
     },
     "air-filter-koop-192f": {
       "name": "Повітряний фільтр KOOP 192F"
@@ -1570,10 +4450,118 @@
       "name": "Дизельний двигун KOOP 192F"
     },
     "alternator-stator": {
-      "name": "Статор генератора"
+      "name": "Статор альтернатора"
     },
     "front-bucket-tooth": {
       "name": "Передній зуб ковша"
     }
+  },
+  "aggregateAccordionTitles": {
+    "general": "Загальні дані",
+    "engine": "Двигун",
+    "alternatorController": "Альтернатор і контролер",
+    "dimensionsWeight": "Габарити і маса",
+    "alternator": "Альтернатор",
+    "controller": "Панель керування та ATS",
+    "standardEquipment": "Стандартне обладнання",
+    "housingAndNoise": "Корпус і шумоізоляція",
+    "optionalEquipment": "Додаткові опції",
+    "purchaseService": "Купівля і сервіс"
+  },
+  "aggregateSpecLabels": {
+    "ratedPower": "Номінальна потужність",
+    "maxPower": "Максимальна потужність",
+    "outputVoltage": "Вихідна напруга",
+    "frequency": "Частота",
+    "equipment": "Оснащення",
+    "engineBrand": "Марка двигуна",
+    "engineModel": "Модель двигуна",
+    "coolingType": "Тип охолодження",
+    "fuelType": "Тип палива",
+    "firstOilChange": "Заміна моторної оливи (перша)",
+    "nextOilChange": "Заміна моторної оливи (наступні)",
+    "fuelFilterChange": "Заміна паливного фільтра",
+    "fanBeltTension": "Натяг ременя вентилятора",
+    "fanBeltDeflection": "Прогин ременя вентилятора",
+    "alternator": "Альтернатор",
+    "alternatorType": "Тип альтернатора",
+    "avrRegulator": "Регулятор напруги AVR",
+    "controlPanel": "Модель контролера",
+    "atsSystem": "Система ATS",
+    "socket32a": "Розетка 32A",
+    "socket16a": "Розетка 16A",
+    "rpm": "Швидкість обертання",
+    "powerFactor": "Коефіцієнт потужності (cos φ)",
+    "housingType": "Тип корпусу",
+    "noiseLevel": "Рівень шуму (7 м)",
+    "certificate": "Сертифікат",
+    "warranty": "Гарантія",
+    "length": "Довжина",
+    "width": "Ширина",
+    "height": "Висота",
+    "grossWeight": "Повна вага",
+    "deliveryTime": "Час доставки",
+    "startingVoltage": "Напруга запуску",
+    "factoryModel": "Заводська модель",
+    "ratedCurrent": "Номінальний струм",
+    "engineRatedPower": "Номінальна потужність двигуна",
+    "enginePeakPower": "Пікова потужність двигуна",
+    "cylinders": "Кількість циліндрів",
+    "displacement": "Робочий об’єм",
+    "boreStroke": "Діаметр x хід циліндра",
+    "compressionRatio": "Ступінь стиснення",
+    "aspiration": "Наддув",
+    "cycle": "Цикл",
+    "governor": "Регулятор обертів",
+    "fuelSystem": "Паливна система",
+    "fuelConsumption": "Витрата палива",
+    "fuelTank": "Місткість паливного бака",
+    "runtime": "Час безперервної роботи",
+    "exhaustSystem": "Глушник вихлопу",
+    "serviceFilters": "Фільтри (паливо/олива/повітря)",
+    "batteryAndCharger": "Акумулятор + зарядний пристрій",
+    "alternatorModel": "Модель альтернатора",
+    "insulationClass": "Клас ізоляції",
+    "phasesConnection": "Фази / підключення",
+    "ipClass": "Клас захисту",
+    "voltageStability": "Стабільність напруги",
+    "frequencyRegulation": "Регулювання частоти (steady)",
+    "radioSuppression": "Придушення радіоперешкод",
+    "interfaceLanguage": "Мова інтерфейсу",
+    "controllerType": "Тип контролера",
+    "workModes": "Режими роботи",
+    "lockedAts": "4-полюсний блокований ATS",
+    "staticBatteryCharger": "Статичний зарядний пристрій акумулятора",
+    "emergencyStop": "Emergency stop",
+    "lcdGrid": "LCD-дисплей — параметри мережі",
+    "lcdGenerator": "LCD-дисплей — генератор",
+    "lcdEngine": "LCD-дисплей — двигун",
+    "autoAlarms": "Аварійні сигнали / автоматичні вимкнення",
+    "circuitBreaker": "Автоматичний вимикач",
+    "vibrationIsolators": "Віброізолятори",
+    "baseFrame": "Сталева базова рама",
+    "integratedFuelTank": "Вбудований паливний бак у рамі",
+    "drainValves": "Зливи палива/оливи/охолоджувача",
+    "liftingPoints": "Точки підйому / транспортування",
+    "fuelGauge": "Індикатор палива",
+    "housingConstruction": "Конструкція корпусу",
+    "housingColor": "Колір корпусу",
+    "acousticFoam": "Шумоізоляційна піна всередині",
+    "weatherResistance": "Стійкість до атмосферних умов",
+    "serviceDoors": "Сервісні двері із замком",
+    "panelWindow": "Оглядове вікно панелі керування",
+    "insulatedExhaust": "Термічно ізольована вихлопна система",
+    "externalEmergencyStop": "Зовнішня кнопка аварійної зупинки",
+    "dailyFuelTank": "Daily Fuel Tank (зовнішній добовий бак)",
+    "engineHeater": "Engine Heater (підігрівач двигуна)",
+    "waterHeater": "Water Heater (підігрівач охолоджувача)",
+    "parallelPanel": "Parallel Panel (паралельна робота)",
+    "pmg": "PMG (Permanent Magnet Generator)",
+    "remotePanel": "Remote Control Panel (дистанційна панель)",
+    "atsCabinet": "ATS Cabinet (зовнішня шафа ATS)",
+    "trailerType": "Trailer Type (версія на причепі)",
+    "sparePartsFirstService": "Запчастини (перший сервіс)",
+    "overallDimensions": "Габарити (Д x Ш x В)",
+    "countryOfOrigin": "Країна виробництва"
   }
 }

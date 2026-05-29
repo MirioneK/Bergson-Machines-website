@@ -19,7 +19,7 @@ import {
 } from '../modelPresentation'
 import styles from './ModelPage.module.css'
 
-const ACCESSORY_PLACEHOLDER = '/images/placeholders/product-placeholder.png'
+const ACCESSORY_PLACEHOLDER = '/images/optimized/placeholders/product-placeholder.webp'
 
 function SafeImage({ src, alt, className, fallbackSrc = ACCESSORY_PLACEHOLDER }) {
   const [imgSrc, setImgSrc] = useState(src || fallbackSrc)

@@ -1,8 +1,12 @@
 {
   "modelAccordionTitles": {
-    "specification": "Specification",
-    "workingRange": "Working range",
-    "dimensionsAndWeight": "Dimensions and weight"
+    "specification": "General data",
+    "workingRange": "Working parameters",
+    "dimensionsAndWeight": "Dimensions and transport",
+    "engine": "Engine",
+    "undercarriage": "Undercarriage",
+    "hydraulics": "Hydraulics",
+    "operatorCab": "Cab and comfort"
   },
   "modelSpecs": {
     "totalWeight": "Total weight",
@@ -10,7 +14,7 @@
     "engine": "Engine",
     "diggingDepth": "Digging depth",
     "trackWidth": "Track width",
-    "cabin": "Cabin",
+    "cabin": "Cab",
     "bucketCapacity": "Bucket capacity",
     "hydraulicPressure": "Hydraulic pressure",
     "fuelTank": "Fuel tank",
@@ -19,39 +23,61 @@
     "maxDiggingHeight": "Max. digging height",
     "maxDumpingHeight": "Max. dumping height",
     "maxDiggingRadius": "Max. digging radius",
-    "transportLength": "Length (transport)",
+    "transportLength": "Length (in transport)",
     "width": "Width",
     "height": "Height",
-    "heightWithCabin": "Height (with cabin)",
-    "trackWheelbase": "Track roller base",
+    "heightWithCabin": "Height (with cab)",
+    "trackWheelbase": "Roller wheelbase",
     "counterweightClearance": "Counterweight clearance",
     "minGroundClearance": "Minimum ground clearance",
     "supportRollers": "Number of support rollers",
     "rotationSpeed": "Rotation speed",
-    "trackExpansion": "Track expansion"
+    "trackExpansion": "Track expansion",
+    "certificate": "CE certificate",
+    "condition": "Condition",
+    "engineBrand": "Engine manufacturer",
+    "engineModel": "Engine model",
+    "power": "Power",
+    "cylinders": "Number of cylinders",
+    "fuelType": "Fuel",
+    "diggingForce": "Bucket digging force",
+    "bladeHeight": "Blade height",
+    "trackGroundContactLength": "Track ground contact length",
+    "trackMaterial": "Track material",
+    "travelSpeed": "Travel speed",
+    "gradeability": "Gradeability",
+    "auxHydraulics": "Auxiliary hydraulic line",
+    "oilCooler": "Hydraulic oil cooler",
+    "joystickControl": "Joystick control",
+    "boomSwing": "Boom swing",
+    "operatorStructure": "Operator structure type",
+    "cabinHeating": "Cab heating",
+    "workLights": "Work lights",
+    "overallDimensions": "Overall dimensions (L x W x H)",
+    "fitsTrailer": "Fits on a trailer up to 3.5 t GVW"
   },
   "models": {
     "bm10": {
-      "subtitle": "1-ton mini excavator · Ideal for light work and tight spaces",
+      "subtitle": "1-tonne mini excavator · Ideal for light work and tight spaces",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,000 kg"
+          "value": "1 000 kg"
         },
         {
           "key": "engine",
-          "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+          "value": "KOOP 192F DIESEL · 7 kW / 10 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,652 mm"
+          "value": "1 652 mm"
         },
         {
           "key": "width",
           "value": "933 mm"
         }
       ],
-      "description": "BM10 is a compact mini excavator for light earthworks, garden and installation jobs. Thanks to its small dimensions, it performs well wherever a larger machine would have limited access. It is a simple and practical model for everyday work around properties, foundations, utility lines and small excavations.",
+      "description": "BM10 is a compact mini excavator for light earthworks, gardening and installation work. Thanks to its small dimensions, it works well wherever a larger machine would have limited access. It is a simple and practical model for everyday work around properties, foundations, cables and small excavations.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -62,15 +88,15 @@
             },
             {
               "key": "operatingWeight",
-              "value": "1,000 kg"
+              "value": "1 000 kg"
             },
             {
               "key": "engine",
-              "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+              "value": "KOOP 192F DIESEL · 7 kW / 10 KM"
             },
             {
               "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "value": "0,018 m³"
             },
             {
               "key": "trackWidth",
@@ -78,7 +104,7 @@
             },
             {
               "key": "supportRollers",
-              "value": "4 pcs."
+              "value": "4 pcs"
             },
             {
               "key": "rotationSpeed",
@@ -86,11 +112,11 @@
             },
             {
               "key": "fuelTank",
-              "value": "6.6 l"
+              "value": "6,6 l"
             },
             {
               "key": "hydraulicOilTank",
-              "value": "10.9 l"
+              "value": "10,9 l"
             },
             {
               "key": "hydraulicPressure",
@@ -103,19 +129,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,652 mm"
+              "value": "1 652 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,376 mm"
+              "value": "2 376 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,698 mm"
+              "value": "1 698 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,659 mm"
+              "value": "1 659 mm"
             }
           ]
         },
@@ -124,7 +150,7 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "3,119 mm"
+              "value": "3 119 mm"
             },
             {
               "key": "width",
@@ -132,7 +158,7 @@
             },
             {
               "key": "height",
-              "value": "2,149 mm"
+              "value": "2 149 mm"
             },
             {
               "key": "counterweightClearance",
@@ -151,27 +177,27 @@
       ]
     },
     "bm12": {
-      "subtitle": "1.2-ton mini excavator · More weight, the same compact format",
+      "subtitle": "1.2-tonne mini excavator · More weight, the same compact format",
       "badge": "Bestseller",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,200 kg"
+          "value": "1 200 kg"
         },
         {
           "key": "engine",
-          "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+          "value": "KOOP 192F DIESEL · 7 kW / 10 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,649 mm"
+          "value": "1 649 mm"
         },
         {
           "key": "width",
           "value": "933 mm"
         }
       ],
-      "description": "BM12 is a model with greater operating weight, designed for more demanding earthworks while maintaining compact transport dimensions. It is a good compromise between mobility and work stability, suitable both for installation jobs and everyday construction work.",
+      "description": "BM12 is a model with a higher operating weight, designed for more demanding earthworks while maintaining compact transport dimensions. It offers a good compromise between mobility and working stability and performs well both in installation work and everyday construction tasks.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -182,15 +208,15 @@
             },
             {
               "key": "operatingWeight",
-              "value": "1,200 kg"
+              "value": "1 200 kg"
             },
             {
               "key": "engine",
-              "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+              "value": "KOOP 192F DIESEL · 7 kW / 10 KM"
             },
             {
               "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "value": "0,018 m³"
             },
             {
               "key": "trackWidth",
@@ -198,7 +224,7 @@
             },
             {
               "key": "supportRollers",
-              "value": "4 pcs."
+              "value": "4 pcs"
             },
             {
               "key": "rotationSpeed",
@@ -206,11 +232,11 @@
             },
             {
               "key": "fuelTank",
-              "value": "6.6 l"
+              "value": "6,6 l"
             },
             {
               "key": "hydraulicOilTank",
-              "value": "10.9 l"
+              "value": "10,9 l"
             },
             {
               "key": "hydraulicPressure",
@@ -223,19 +249,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,649 mm"
+              "value": "1 649 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,380 mm"
+              "value": "2 380 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 703 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "1 694 mm"
             }
           ]
         },
@@ -244,7 +270,7 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "3,158 mm"
+              "value": "3 158 mm"
             },
             {
               "key": "width",
@@ -252,7 +278,7 @@
             },
             {
               "key": "height",
-              "value": "2,144 mm"
+              "value": "2 144 mm"
             },
             {
               "key": "counterweightClearance",
@@ -271,15 +297,15 @@
       ]
     },
     "bm12c": {
-      "subtitle": "1.2-ton mini excavator with cabin · Operator comfort all year round",
+      "subtitle": "1.2-tonne mini excavator with cab · Operator comfort all year round",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,200 kg"
+          "value": "1 200 kg"
         },
         {
           "key": "engine",
-          "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+          "value": "KOOP 192F DIESEL · 7 kW / 10 KM"
         },
         {
           "key": "cabin",
@@ -290,7 +316,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12C is the BM12 variant with a cabin, designed for work in less favorable weather conditions and wherever the operator expects greater comfort. The base platform parameters remain in line with the BM12, while the difference concerns the body version and the way the machine is used.",
+      "description": "BM12C is the cab version of BM12, designed for work in less favourable weather conditions and wherever the operator expects greater comfort. The base platform parameters remain consistent with BM12; the difference is the body version and usage style.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -301,11 +327,11 @@
             },
             {
               "key": "operatingWeight",
-              "value": "1,200 kg"
+              "value": "1 200 kg"
             },
             {
               "key": "engine",
-              "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+              "value": "KOOP 192F DIESEL · 7 kW / 10 KM"
             },
             {
               "key": "cabin",
@@ -313,7 +339,7 @@
             },
             {
               "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "value": "0,018 m³"
             },
             {
               "key": "trackWidth",
@@ -321,7 +347,7 @@
             },
             {
               "key": "supportRollers",
-              "value": "4 pcs."
+              "value": "4 pcs"
             },
             {
               "key": "rotationSpeed",
@@ -329,11 +355,11 @@
             },
             {
               "key": "fuelTank",
-              "value": "6.6 l"
+              "value": "6,6 l"
             },
             {
               "key": "hydraulicOilTank",
-              "value": "10.9 l"
+              "value": "10,9 l"
             },
             {
               "key": "hydraulicPressure",
@@ -346,19 +372,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,649 mm"
+              "value": "1 649 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,380 mm"
+              "value": "2 380 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 703 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "1 694 mm"
             }
           ]
         },
@@ -367,7 +393,7 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "3,158 mm"
+              "value": "3 158 mm"
             },
             {
               "key": "width",
@@ -375,7 +401,7 @@
             },
             {
               "key": "heightWithCabin",
-              "value": "2,144 mm"
+              "value": "2 144 mm"
             },
             {
               "key": "counterweightClearance",
@@ -394,26 +420,26 @@
       ]
     },
     "bm12-kubota": {
-      "subtitle": "1.2-ton mini excavator · Version with Kubota Diesel engine",
+      "subtitle": "1.2-tonne mini excavator · Version with Kubota Diesel engine",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,200 kg"
+          "value": "1 200 kg"
         },
         {
           "key": "engine",
-          "value": "Kubota Diesel 10.2 kW / 13.9 HP"
+          "value": "Kubota Diesel 10,2 kW / 13,9 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,649 mm"
+          "value": "1 649 mm"
         },
         {
           "key": "width",
           "value": "933 mm"
         }
       ],
-      "description": "BM12 Kubota is a variant of the BM12 model with the same technical parameters and working geometry, but equipped with a Kubota Diesel engine. It is a version for customers who want to keep the compact dimensions of the BM12 while choosing a stronger engine brand.",
+      "description": "BM12 Kubota is a variant of the BM12 model with the same technical parameters and working geometry, but equipped with a Kubota Diesel engine. It is a version for customers who want to keep the compact dimensions of BM12 while choosing a stronger engine brand.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -424,15 +450,15 @@
             },
             {
               "key": "operatingWeight",
-              "value": "1,200 kg"
+              "value": "1 200 kg"
             },
             {
               "key": "engine",
-              "value": "Kubota Diesel 10.2 kW / 13.9 HP"
+              "value": "Kubota Diesel 10,2 kW / 13,9 KM"
             },
             {
               "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "value": "0,018 m³"
             },
             {
               "key": "trackWidth",
@@ -440,7 +466,7 @@
             },
             {
               "key": "supportRollers",
-              "value": "4 pcs."
+              "value": "4 pcs"
             },
             {
               "key": "rotationSpeed",
@@ -448,11 +474,11 @@
             },
             {
               "key": "fuelTank",
-              "value": "6.6 l"
+              "value": "6,6 l"
             },
             {
               "key": "hydraulicOilTank",
-              "value": "10.9 l"
+              "value": "10,9 l"
             },
             {
               "key": "hydraulicPressure",
@@ -465,19 +491,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,649 mm"
+              "value": "1 649 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,380 mm"
+              "value": "2 380 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 703 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "1 694 mm"
             }
           ]
         },
@@ -486,7 +512,7 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "3,158 mm"
+              "value": "3 158 mm"
             },
             {
               "key": "width",
@@ -494,7 +520,7 @@
             },
             {
               "key": "height",
-              "value": "2,144 mm"
+              "value": "2 144 mm"
             },
             {
               "key": "counterweightClearance",
@@ -513,15 +539,15 @@
       ]
     },
     "bm12c-kubota": {
-      "subtitle": "1.2-ton mini excavator with cabin · Version with Kubota Diesel engine",
+      "subtitle": "1.2-tonne mini excavator with cab · Version with Kubota Diesel engine",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,200 kg"
+          "value": "1 200 kg"
         },
         {
           "key": "engine",
-          "value": "Kubota Diesel 10.2 kW / 13.9 HP"
+          "value": "Kubota Diesel 10,2 kW / 13,9 KM"
         },
         {
           "key": "cabin",
@@ -532,7 +558,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12C Kubota is the BM12C equivalent with the same working parameters, but with a Kubota Diesel engine. It is a premium variant for customers who want to combine an operator cabin with a higher-class power unit.",
+      "description": "BM12C Kubota is the counterpart of BM12C with the same working parameters, but with a Kubota Diesel engine. It is a premium variant for customers who want to combine an operator cab with a higher-class power unit.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -543,11 +569,11 @@
             },
             {
               "key": "operatingWeight",
-              "value": "1,200 kg"
+              "value": "1 200 kg"
             },
             {
               "key": "engine",
-              "value": "Kubota Diesel 10.2 kW / 13.9 HP"
+              "value": "Kubota Diesel 10,2 kW / 13,9 KM"
             },
             {
               "key": "cabin",
@@ -555,7 +581,7 @@
             },
             {
               "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "value": "0,018 m³"
             },
             {
               "key": "trackWidth",
@@ -563,7 +589,7 @@
             },
             {
               "key": "supportRollers",
-              "value": "4 pcs."
+              "value": "4 pcs"
             },
             {
               "key": "rotationSpeed",
@@ -571,11 +597,11 @@
             },
             {
               "key": "fuelTank",
-              "value": "6.6 l"
+              "value": "6,6 l"
             },
             {
               "key": "hydraulicOilTank",
-              "value": "10.9 l"
+              "value": "10,9 l"
             },
             {
               "key": "hydraulicPressure",
@@ -588,19 +614,19 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,649 mm"
+              "value": "1 649 mm"
             },
             {
               "key": "maxDiggingHeight",
-              "value": "2,380 mm"
+              "value": "2 380 mm"
             },
             {
               "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 703 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "1 694 mm"
             }
           ]
         },
@@ -609,7 +635,7 @@
           "rows": [
             {
               "key": "transportLength",
-              "value": "3,158 mm"
+              "value": "3 158 mm"
             },
             {
               "key": "width",
@@ -617,7 +643,7 @@
             },
             {
               "key": "heightWithCabin",
-              "value": "2,144 mm"
+              "value": "2 144 mm"
             },
             {
               "key": "counterweightClearance",
@@ -636,73 +662,70 @@
       ]
     },
     "upcoming": {
-      "subtitle": "New models - coming soon",
+      "subtitle": "New models — coming soon",
       "description": "More Bergson Machines models will appear in this section."
     },
     "bm13": {
-      "subtitle": "1.2-ton mini excavator · Compact model with expandable tracks",
+      "subtitle": "1.2-tonne mini excavator · KOOP 192F · expandable tracks",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,200 kg"
+          "value": "1 200 kg"
         },
         {
           "key": "engine",
-          "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+          "value": "KOOP 192F Diesel · 10 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,750 mm"
+          "value": "1 750 mm"
         },
         {
           "key": "trackExpansion",
           "value": "850-1050 mm"
         }
       ],
-      "description": "BM13 is a compact 1.2-ton mini excavator built for earthworks, installation jobs and garden work. Expandable tracks make it easier to pass through tighter access points and improve stability during operation.",
+      "description": "BM13 is a compact 1.2 t mini excavator with a KOOP 192F engine, prepared for earthworks, installation and garden jobs. Expandable 850-1050 mm tracks make it easier to pass through narrower spaces, while digging depth up to 1,750 mm works well for everyday work around properties and on small construction sites.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
             {
-              "key": "totalWeight",
-              "value": "930 kg"
-            },
-            {
               "key": "operatingWeight",
-              "value": "1,200 kg"
+              "value": "1 200 kg"
             },
             {
-              "key": "engine",
-              "value": "KOOP 192F DIESEL · 7 kW / 10 HP"
+              "key": "certificate",
+              "value": "Yes"
             },
             {
-              "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "key": "condition",
+              "value": "New"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "KOOP"
             },
             {
-              "key": "trackWidth",
-              "value": "180 mm"
+              "key": "engineModel",
+              "value": "KOOP 192F Diesel"
             },
             {
-              "key": "supportRollers",
-              "value": "4 pcs."
+              "key": "power",
+              "value": "10 KM"
             },
             {
-              "key": "rotationSpeed",
-              "value": "9 rpm"
+              "key": "cylinders",
+              "value": "1 (single)"
             },
             {
-              "key": "fuelTank",
-              "value": "6.6 l"
-            },
-            {
-              "key": "hydraulicOilTank",
-              "value": "10.9 l"
-            },
-            {
-              "key": "hydraulicPressure",
-              "value": "18 MPa"
+              "key": "fuelType",
+              "value": "Diesel"
             }
           ]
         },
@@ -711,19 +734,98 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,750 mm"
-            },
-            {
-              "key": "maxDiggingHeight",
-              "value": "2,380 mm"
-            },
-            {
-              "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 750 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "2 750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 350 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 800 mm"
+            },
+            {
+              "key": "diggingForce",
+              "value": "14 kN"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bladeHeight",
+              "value": "300 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "undercarriage",
+          "rows": [
+            {
+              "key": "trackExpansion",
+              "value": "850-1050 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "trackGroundContactLength",
+              "value": "1250 mm"
+            },
+            {
+              "key": "trackMaterial",
+              "value": "Rubber"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "0-2,5 km/h"
+            },
+            {
+              "key": "gradeability",
+              "value": "30 degrees"
+            }
+          ]
+        },
+        {
+          "titleKey": "hydraulics",
+          "rows": [
+            {
+              "key": "auxHydraulics",
+              "value": "Yes"
+            },
+            {
+              "key": "oilCooler",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "operatorCab",
+          "rows": [
+            {
+              "key": "joystickControl",
+              "value": "Yes"
+            },
+            {
+              "key": "boomSwing",
+              "value": "Yes"
+            },
+            {
+              "key": "operatorStructure",
+              "value": "Canopy"
+            },
+            {
+              "key": "cabinHeating",
+              "value": "No"
+            },
+            {
+              "key": "workLights",
+              "value": "Yes"
             }
           ]
         },
@@ -731,97 +833,78 @@
           "titleKey": "dimensionsAndWeight",
           "rows": [
             {
-              "key": "transportLength",
-              "value": "3,158 mm"
+              "key": "overallDimensions",
+              "value": "2870 x 1000 x 2200 mm"
             },
             {
-              "key": "trackExpansion",
-              "value": "850-1050 mm"
-            },
-            {
-              "key": "height",
-              "value": "2,144 mm"
-            },
-            {
-              "key": "counterweightClearance",
-              "value": "364 mm"
-            },
-            {
-              "key": "minGroundClearance",
-              "value": "129 mm"
-            },
-            {
-              "key": "trackWheelbase",
-              "value": "753 mm"
+              "key": "fitsTrailer",
+              "value": "Yes"
             }
           ]
         }
       ]
     },
     "bm13-kubota": {
-      "subtitle": "1.2-ton mini excavator · Version with Kubota engine",
+      "subtitle": "1.2-tonne mini excavator · Kubota D722 · expandable tracks",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,200 kg"
+          "value": "1 200 kg"
         },
         {
           "key": "engine",
-          "value": "Kubota Diesel · 14 HP"
+          "value": "Kubota D722 Diesel · 14 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,750 mm"
+          "value": "1 750 mm"
         },
         {
           "key": "trackExpansion",
           "value": "850-1050 mm"
         }
       ],
-      "description": "BM13 Kubota uses the same platform as the BM13, but with a Kubota engine. It is aimed at customers who want a compact footprint and expandable tracks while choosing a branded power unit.",
+      "description": "BM13 Kubota uses the same compact 1.2 t platform as the standard BM13, but runs on a Kubota D722 engine. It is a variant for customers who want to keep the machine’s small dimensions and choose a branded 3-cylinder unit.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
             {
-              "key": "totalWeight",
-              "value": "930 kg"
-            },
-            {
               "key": "operatingWeight",
-              "value": "1,200 kg"
+              "value": "1 200 kg"
             },
             {
-              "key": "engine",
-              "value": "Kubota Diesel · 14 HP"
+              "key": "certificate",
+              "value": "Yes"
             },
             {
-              "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "key": "condition",
+              "value": "New"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Kubota"
             },
             {
-              "key": "trackWidth",
-              "value": "180 mm"
+              "key": "engineModel",
+              "value": "Kubota D722 Diesel"
             },
             {
-              "key": "supportRollers",
-              "value": "4 pcs."
+              "key": "power",
+              "value": "14 KM"
             },
             {
-              "key": "rotationSpeed",
-              "value": "9 rpm"
+              "key": "cylinders",
+              "value": "3 (triple)"
             },
             {
-              "key": "fuelTank",
-              "value": "6.6 l"
-            },
-            {
-              "key": "hydraulicOilTank",
-              "value": "10.9 l"
-            },
-            {
-              "key": "hydraulicPressure",
-              "value": "18 MPa"
+              "key": "fuelType",
+              "value": "Diesel"
             }
           ]
         },
@@ -830,19 +913,98 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,750 mm"
-            },
-            {
-              "key": "maxDiggingHeight",
-              "value": "2,380 mm"
-            },
-            {
-              "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 750 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "2 750 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 350 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 800 mm"
+            },
+            {
+              "key": "diggingForce",
+              "value": "14 kN"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bladeHeight",
+              "value": "300 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "undercarriage",
+          "rows": [
+            {
+              "key": "trackExpansion",
+              "value": "850-1050 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "trackGroundContactLength",
+              "value": "1250 mm"
+            },
+            {
+              "key": "trackMaterial",
+              "value": "Rubber"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "0-2,5 km/h"
+            },
+            {
+              "key": "gradeability",
+              "value": "30 degrees"
+            }
+          ]
+        },
+        {
+          "titleKey": "hydraulics",
+          "rows": [
+            {
+              "key": "auxHydraulics",
+              "value": "Yes"
+            },
+            {
+              "key": "oilCooler",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "operatorCab",
+          "rows": [
+            {
+              "key": "joystickControl",
+              "value": "Yes"
+            },
+            {
+              "key": "boomSwing",
+              "value": "Yes"
+            },
+            {
+              "key": "operatorStructure",
+              "value": "Canopy"
+            },
+            {
+              "key": "cabinHeating",
+              "value": "No"
+            },
+            {
+              "key": "workLights",
+              "value": "Yes"
             }
           ]
         },
@@ -850,93 +1012,78 @@
           "titleKey": "dimensionsAndWeight",
           "rows": [
             {
-              "key": "transportLength",
-              "value": "3,158 mm"
+              "key": "overallDimensions",
+              "value": "2870 x 1000 x 2200 mm"
             },
             {
-              "key": "trackExpansion",
-              "value": "850-1050 mm"
-            },
-            {
-              "key": "height",
-              "value": "2,144 mm"
-            },
-            {
-              "key": "counterweightClearance",
-              "value": "364 mm"
-            },
-            {
-              "key": "minGroundClearance",
-              "value": "129 mm"
-            },
-            {
-              "key": "trackWheelbase",
-              "value": "753 mm"
+              "key": "fitsTrailer",
+              "value": "Yes"
             }
           ]
         }
       ]
     },
     "bm16": {
-      "subtitle": "1.6-ton mini excavator · More stability and a stronger power unit",
+      "subtitle": "1.6-tonne mini excavator · Laidong 385 · greater working reach",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,600 kg"
+          "value": "1 600 kg"
         },
         {
           "key": "engine",
-          "value": "Laidong 385 · 25 HP"
+          "value": "Laidong 385 Diesel · 25 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,750 mm"
+          "value": "1 800 mm"
         },
         {
           "key": "trackExpansion",
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16 is a larger model for more demanding earthmoving work. The wider track expansion range improves stability, while the 25 HP Laidong 385 engine provides more power for everyday operation.",
+      "description": "BM16 is a larger 1.6 t platform with a Laidong 385 engine, wider 1100-1300 mm track spacing and digging depth up to 1,800 mm. The model is designed for more demanding earthworks, installation and construction jobs where greater stability and working reach matter.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
             {
               "key": "operatingWeight",
-              "value": "1,600 kg"
+              "value": "1 600 kg"
             },
             {
-              "key": "engine",
-              "value": "Laidong 385 · 25 HP"
+              "key": "certificate",
+              "value": "Yes"
             },
             {
-              "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "key": "condition",
+              "value": "New"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Laidong"
             },
             {
-              "key": "trackWidth",
-              "value": "180 mm"
+              "key": "engineModel",
+              "value": "Laidong 385 Diesel"
             },
             {
-              "key": "supportRollers",
-              "value": "4 pcs."
+              "key": "power",
+              "value": "25 KM"
             },
             {
-              "key": "rotationSpeed",
-              "value": "9 rpm"
+              "key": "cylinders",
+              "value": "3 (triple)"
             },
             {
-              "key": "fuelTank",
-              "value": "6.6 l"
-            },
-            {
-              "key": "hydraulicOilTank",
-              "value": "10.9 l"
-            },
-            {
-              "key": "hydraulicPressure",
-              "value": "18 MPa"
+              "key": "fuelType",
+              "value": "Diesel"
             }
           ]
         },
@@ -945,19 +1092,98 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,750 mm"
-            },
-            {
-              "key": "maxDiggingHeight",
-              "value": "2,380 mm"
-            },
-            {
-              "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 800 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "2 900 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 580 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 850 mm"
+            },
+            {
+              "key": "diggingForce",
+              "value": "15 kN"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bladeHeight",
+              "value": "300 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "undercarriage",
+          "rows": [
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "trackGroundContactLength",
+              "value": "1350 mm"
+            },
+            {
+              "key": "trackMaterial",
+              "value": "Rubber"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "0-2,5 km/h"
+            },
+            {
+              "key": "gradeability",
+              "value": "30 degrees"
+            }
+          ]
+        },
+        {
+          "titleKey": "hydraulics",
+          "rows": [
+            {
+              "key": "auxHydraulics",
+              "value": "Yes"
+            },
+            {
+              "key": "oilCooler",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "operatorCab",
+          "rows": [
+            {
+              "key": "joystickControl",
+              "value": "Yes"
+            },
+            {
+              "key": "boomSwing",
+              "value": "Yes"
+            },
+            {
+              "key": "operatorStructure",
+              "value": "Canopy"
+            },
+            {
+              "key": "cabinHeating",
+              "value": "No"
+            },
+            {
+              "key": "workLights",
+              "value": "Yes"
             }
           ]
         },
@@ -965,93 +1191,78 @@
           "titleKey": "dimensionsAndWeight",
           "rows": [
             {
-              "key": "transportLength",
-              "value": "3,158 mm"
+              "key": "overallDimensions",
+              "value": "2870 x 1100 x 2200 mm"
             },
             {
-              "key": "trackExpansion",
-              "value": "1100-1300 mm"
-            },
-            {
-              "key": "height",
-              "value": "2,144 mm"
-            },
-            {
-              "key": "counterweightClearance",
-              "value": "364 mm"
-            },
-            {
-              "key": "minGroundClearance",
-              "value": "129 mm"
-            },
-            {
-              "key": "trackWheelbase",
-              "value": "753 mm"
+              "key": "fitsTrailer",
+              "value": "Yes"
             }
           ]
         }
       ]
     },
     "bm16-kubota": {
-      "subtitle": "1.6-ton mini excavator · Version with Kubota engine",
+      "subtitle": "1.6-tonne mini excavator · Kubota D722 · greater working reach",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,600 kg"
+          "value": "1 600 kg"
         },
         {
           "key": "engine",
-          "value": "Kubota Diesel · 14 HP"
+          "value": "Kubota D722 Diesel · 15 KM"
         },
         {
           "key": "diggingDepth",
-          "value": "1,750 mm"
+          "value": "1 800 mm"
         },
         {
           "key": "trackExpansion",
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16 Kubota is the BM16 variant for customers who want a larger machine with expandable tracks and a Kubota engine. It keeps the same working geometry and undercarriage concept while switching to a different power unit.",
+      "description": "BM16 Kubota is based on the 1.6 t platform and working geometry of BM16, but uses a Kubota D722 engine. It is a variant for customers who want to combine greater working reach with a compact machine powered by a branded engine.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
             {
               "key": "operatingWeight",
-              "value": "1,600 kg"
+              "value": "1 600 kg"
             },
             {
-              "key": "engine",
-              "value": "Kubota Diesel · 14 HP"
+              "key": "certificate",
+              "value": "Yes"
             },
             {
-              "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "key": "condition",
+              "value": "New"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Kubota"
             },
             {
-              "key": "trackWidth",
-              "value": "180 mm"
+              "key": "engineModel",
+              "value": "Kubota D722 Diesel"
             },
             {
-              "key": "supportRollers",
-              "value": "4 pcs."
+              "key": "power",
+              "value": "15 KM"
             },
             {
-              "key": "rotationSpeed",
-              "value": "9 rpm"
+              "key": "cylinders",
+              "value": "3 (triple)"
             },
             {
-              "key": "fuelTank",
-              "value": "6.6 l"
-            },
-            {
-              "key": "hydraulicOilTank",
-              "value": "10.9 l"
-            },
-            {
-              "key": "hydraulicPressure",
-              "value": "18 MPa"
+              "key": "fuelType",
+              "value": "Diesel"
             }
           ]
         },
@@ -1060,19 +1271,98 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,750 mm"
-            },
-            {
-              "key": "maxDiggingHeight",
-              "value": "2,380 mm"
-            },
-            {
-              "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 800 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "2 900 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 580 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 850 mm"
+            },
+            {
+              "key": "diggingForce",
+              "value": "15 kN"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bladeHeight",
+              "value": "300 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "undercarriage",
+          "rows": [
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "trackGroundContactLength",
+              "value": "1350 mm"
+            },
+            {
+              "key": "trackMaterial",
+              "value": "Rubber"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "0-2,5 km/h"
+            },
+            {
+              "key": "gradeability",
+              "value": "30 degrees"
+            }
+          ]
+        },
+        {
+          "titleKey": "hydraulics",
+          "rows": [
+            {
+              "key": "auxHydraulics",
+              "value": "Yes"
+            },
+            {
+              "key": "oilCooler",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "operatorCab",
+          "rows": [
+            {
+              "key": "joystickControl",
+              "value": "Yes"
+            },
+            {
+              "key": "boomSwing",
+              "value": "Yes"
+            },
+            {
+              "key": "operatorStructure",
+              "value": "Canopy"
+            },
+            {
+              "key": "cabinHeating",
+              "value": "No"
+            },
+            {
+              "key": "workLights",
+              "value": "Yes"
             }
           ]
         },
@@ -1080,98 +1370,78 @@
           "titleKey": "dimensionsAndWeight",
           "rows": [
             {
-              "key": "transportLength",
-              "value": "3,158 mm"
+              "key": "overallDimensions",
+              "value": "2870 x 1100 x 2200 mm"
             },
             {
-              "key": "trackExpansion",
-              "value": "1100-1300 mm"
-            },
-            {
-              "key": "height",
-              "value": "2,144 mm"
-            },
-            {
-              "key": "counterweightClearance",
-              "value": "364 mm"
-            },
-            {
-              "key": "minGroundClearance",
-              "value": "129 mm"
-            },
-            {
-              "key": "trackWheelbase",
-              "value": "753 mm"
+              "key": "fitsTrailer",
+              "value": "Yes"
             }
           ]
         }
       ]
     },
     "bm16c": {
-      "subtitle": "1.6-ton mini excavator with cabin · Operator comfort all year round",
-      "badge": "Bestseller",
+      "subtitle": "1.6-tonne mini excavator with cab · Laidong 385 · year-round comfort",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,600 kg"
+          "value": "1 600 kg"
         },
         {
           "key": "engine",
-          "value": "Laidong 385 · 25 HP"
+          "value": "Laidong 385 Diesel · 25 KM"
         },
         {
-          "key": "cabin",
-          "value": "Yes"
+          "key": "diggingDepth",
+          "value": "1 800 mm"
         },
         {
           "key": "trackExpansion",
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16C is the cab-equipped version of the BM16, designed for year-round work and more demanding weather conditions. It keeps the expandable tracks and stronger working platform while improving operator comfort.",
+      "description": "BM16C combines a 1.6 t platform with a full operator cab and Laidong 385 engine. It is a variant for users who want to keep BM16 working parameters while working more comfortably in cold weather, rain and during longer shifts.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
             {
               "key": "operatingWeight",
-              "value": "1,600 kg"
+              "value": "1 600 kg"
             },
             {
-              "key": "engine",
-              "value": "Laidong 385 · 25 HP"
-            },
-            {
-              "key": "cabin",
+              "key": "certificate",
               "value": "Yes"
             },
             {
-              "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "key": "condition",
+              "value": "New"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Laidong"
             },
             {
-              "key": "trackWidth",
-              "value": "180 mm"
+              "key": "engineModel",
+              "value": "Laidong 385 Diesel"
             },
             {
-              "key": "supportRollers",
-              "value": "4 pcs."
+              "key": "power",
+              "value": "25 KM"
             },
             {
-              "key": "rotationSpeed",
-              "value": "9 rpm"
+              "key": "cylinders",
+              "value": "3 (triple)"
             },
             {
-              "key": "fuelTank",
-              "value": "6.6 l"
-            },
-            {
-              "key": "hydraulicOilTank",
-              "value": "10.9 l"
-            },
-            {
-              "key": "hydraulicPressure",
-              "value": "18 MPa"
+              "key": "fuelType",
+              "value": "Diesel"
             }
           ]
         },
@@ -1180,19 +1450,98 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,750 mm"
-            },
-            {
-              "key": "maxDiggingHeight",
-              "value": "2,380 mm"
-            },
-            {
-              "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 800 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "2 900 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 580 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 850 mm"
+            },
+            {
+              "key": "diggingForce",
+              "value": "15 kN"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bladeHeight",
+              "value": "300 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "undercarriage",
+          "rows": [
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "trackGroundContactLength",
+              "value": "1350 mm"
+            },
+            {
+              "key": "trackMaterial",
+              "value": "Rubber"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "0-2,5 km/h"
+            },
+            {
+              "key": "gradeability",
+              "value": "30 degrees"
+            }
+          ]
+        },
+        {
+          "titleKey": "hydraulics",
+          "rows": [
+            {
+              "key": "auxHydraulics",
+              "value": "Yes"
+            },
+            {
+              "key": "oilCooler",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "operatorCab",
+          "rows": [
+            {
+              "key": "joystickControl",
+              "value": "Yes"
+            },
+            {
+              "key": "boomSwing",
+              "value": "Yes"
+            },
+            {
+              "key": "operatorStructure",
+              "value": "Full cab"
+            },
+            {
+              "key": "cabinHeating",
+              "value": "Yes"
+            },
+            {
+              "key": "workLights",
+              "value": "Yes"
             }
           ]
         },
@@ -1200,97 +1549,79 @@
           "titleKey": "dimensionsAndWeight",
           "rows": [
             {
-              "key": "transportLength",
-              "value": "3,158 mm"
+              "key": "overallDimensions",
+              "value": "2870 x 1100 x 2200 mm"
             },
             {
-              "key": "trackExpansion",
-              "value": "1100-1300 mm"
-            },
-            {
-              "key": "heightWithCabin",
-              "value": "2,144 mm"
-            },
-            {
-              "key": "counterweightClearance",
-              "value": "364 mm"
-            },
-            {
-              "key": "minGroundClearance",
-              "value": "129 mm"
-            },
-            {
-              "key": "trackWheelbase",
-              "value": "753 mm"
+              "key": "fitsTrailer",
+              "value": "Yes"
             }
           ]
         }
-      ]
+      ],
+      "badge": "Bestseller"
     },
     "bm16c-kubota": {
-      "subtitle": "1.6-ton mini excavator with cabin · Version with Kubota engine",
+      "subtitle": "1.6-tonne mini excavator with cab · Kubota D722 · year-round comfort",
       "cardSpecs": [
         {
           "key": "operatingWeight",
-          "value": "1,600 kg"
+          "value": "1 600 kg"
         },
         {
           "key": "engine",
-          "value": "Kubota Diesel · 14 HP"
+          "value": "Kubota D722 Diesel · 15 KM"
         },
         {
-          "key": "cabin",
-          "value": "Yes"
+          "key": "diggingDepth",
+          "value": "1 800 mm"
         },
         {
           "key": "trackExpansion",
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16C Kubota is the premium cab version built on the BM16C platform. It combines an enclosed cabin, expandable tracks and a Kubota engine, making it well suited to regular all-year work.",
+      "description": "BM16C Kubota is the cab variant of the 1.6 t platform with a Kubota D722 engine. The model is prepared for customers who expect a full operator cab, expandable tracks and a branded engine in one configuration.",
       "accordions": [
         {
           "titleKey": "specification",
           "rows": [
             {
               "key": "operatingWeight",
-              "value": "1,600 kg"
+              "value": "1 600 kg"
             },
             {
-              "key": "engine",
-              "value": "Kubota Diesel · 14 HP"
-            },
-            {
-              "key": "cabin",
+              "key": "certificate",
               "value": "Yes"
             },
             {
-              "key": "bucketCapacity",
-              "value": "0.018 m³"
+              "key": "condition",
+              "value": "New"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Kubota"
             },
             {
-              "key": "trackWidth",
-              "value": "180 mm"
+              "key": "engineModel",
+              "value": "Kubota D722 Diesel"
             },
             {
-              "key": "supportRollers",
-              "value": "4 pcs."
+              "key": "power",
+              "value": "15 KM"
             },
             {
-              "key": "rotationSpeed",
-              "value": "9 rpm"
+              "key": "cylinders",
+              "value": "3 (triple)"
             },
             {
-              "key": "fuelTank",
-              "value": "6.6 l"
-            },
-            {
-              "key": "hydraulicOilTank",
-              "value": "10.9 l"
-            },
-            {
-              "key": "hydraulicPressure",
-              "value": "18 MPa"
+              "key": "fuelType",
+              "value": "Diesel"
             }
           ]
         },
@@ -1299,19 +1630,98 @@
           "rows": [
             {
               "key": "maxDiggingDepth",
-              "value": "1,750 mm"
-            },
-            {
-              "key": "maxDiggingHeight",
-              "value": "2,380 mm"
-            },
-            {
-              "key": "maxDumpingHeight",
-              "value": "1,703 mm"
+              "value": "1 800 mm"
             },
             {
               "key": "maxDiggingRadius",
-              "value": "1,694 mm"
+              "value": "2 900 mm"
+            },
+            {
+              "key": "maxDiggingHeight",
+              "value": "2 580 mm"
+            },
+            {
+              "key": "maxDumpingHeight",
+              "value": "1 850 mm"
+            },
+            {
+              "key": "diggingForce",
+              "value": "15 kN"
+            },
+            {
+              "key": "bucketCapacity",
+              "value": "0,025 m³"
+            },
+            {
+              "key": "bladeHeight",
+              "value": "300 mm"
+            }
+          ]
+        },
+        {
+          "titleKey": "undercarriage",
+          "rows": [
+            {
+              "key": "trackExpansion",
+              "value": "1100-1300 mm"
+            },
+            {
+              "key": "trackWidth",
+              "value": "180 mm"
+            },
+            {
+              "key": "trackGroundContactLength",
+              "value": "1350 mm"
+            },
+            {
+              "key": "trackMaterial",
+              "value": "Rubber"
+            },
+            {
+              "key": "travelSpeed",
+              "value": "0-2,5 km/h"
+            },
+            {
+              "key": "gradeability",
+              "value": "30 degrees"
+            }
+          ]
+        },
+        {
+          "titleKey": "hydraulics",
+          "rows": [
+            {
+              "key": "auxHydraulics",
+              "value": "Yes"
+            },
+            {
+              "key": "oilCooler",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "operatorCab",
+          "rows": [
+            {
+              "key": "joystickControl",
+              "value": "Yes"
+            },
+            {
+              "key": "boomSwing",
+              "value": "Yes"
+            },
+            {
+              "key": "operatorStructure",
+              "value": "Full cab"
+            },
+            {
+              "key": "cabinHeating",
+              "value": "Yes"
+            },
+            {
+              "key": "workLights",
+              "value": "Yes"
             }
           ]
         },
@@ -1319,28 +1729,12 @@
           "titleKey": "dimensionsAndWeight",
           "rows": [
             {
-              "key": "transportLength",
-              "value": "3,158 mm"
+              "key": "overallDimensions",
+              "value": "2870 x 1100 x 2200 mm"
             },
             {
-              "key": "trackExpansion",
-              "value": "1100-1300 mm"
-            },
-            {
-              "key": "heightWithCabin",
-              "value": "2,144 mm"
-            },
-            {
-              "key": "counterweightClearance",
-              "value": "364 mm"
-            },
-            {
-              "key": "minGroundClearance",
-              "value": "129 mm"
-            },
-            {
-              "key": "trackWheelbase",
-              "value": "753 mm"
+              "key": "fitsTrailer",
+              "value": "Yes"
             }
           ]
         }
@@ -1349,159 +1743,2645 @@
   },
   "aggregates": {
     "bm25-ricardo": {
-      "name": "Generator BM25",
-      "subtitle": "Ricardo engine 25KW · Silent generator",
+      "name": "BM25 generator",
+      "subtitle": "Ricardo engine · 25 kW · silent generator",
+      "heroSubtitle": "Silent generator · ATS + AVR · 15-day delivery",
       "cardSpecs": [
         {
           "key": "engineBrand",
           "value": "Ricardo"
         },
         {
+          "key": "ratedPower",
+          "value": "25 kW"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15 days"
+        },
+        {
           "key": "atsSystem",
-          "value": "Automatic transfer switching"
+          "value": "Included as standard"
+        }
+      ],
+      "quickSpecs": [
+        {
+          "key": "ratedPower",
+          "value": "25 kW / 31,25 kVA"
         },
         {
-          "key": "avrRegulator",
-          "value": "Automatic voltage regulation"
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
         },
         {
-          "key": "alternator",
-          "value": "Stamford STF-25"
+          "key": "deliveryTime",
+          "value": "15 days"
         },
         {
-          "key": "controlPanel",
-          "value": "SmartGen 6120 · Polish-language interface"
+          "key": "startingVoltage",
+          "value": "12 V"
+        }
+      ],
+      "features": [
+        "ATS as standard",
+        "AVR as standard",
+        "SmartGen HGM6120",
+        "Silent enclosure"
+      ],
+      "description": "BM25 Ricardo is a silent 25 kW generator for backup power and field work. As standard, you receive ATS, AVR, a SmartGen HGM6120 controller and a declared delivery time of 15 days.",
+      "accordions": [
+        {
+          "titleKey": "general",
+          "rows": [
+            {
+              "key": "factoryModel",
+              "value": "KVD-RD25S"
+            },
+            {
+              "key": "ratedPower",
+              "value": "25 kW / 31,25 kVA"
+            },
+            {
+              "key": "maxPower",
+              "value": "28 kW / 35 kVA"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ratedCurrent",
+              "value": "45 A"
+            },
+            {
+              "key": "powerFactor",
+              "value": "0,8"
+            },
+            {
+              "key": "deliveryTime",
+              "value": "15 days"
+            },
+            {
+              "key": "startingVoltage",
+              "value": "12 V"
+            },
+            {
+              "key": "housingType",
+              "value": "Silent type"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Ricardo"
+            },
+            {
+              "key": "engineModel",
+              "value": "Ricardo 4100D"
+            },
+            {
+              "key": "engineRatedPower",
+              "value": "30 kW"
+            },
+            {
+              "key": "enginePeakPower",
+              "value": "33 kW"
+            },
+            {
+              "key": "cylinders",
+              "value": "4"
+            },
+            {
+              "key": "displacement",
+              "value": "3,61 l"
+            },
+            {
+              "key": "boreStroke",
+              "value": "100 x 115 mm"
+            },
+            {
+              "key": "compressionRatio",
+              "value": "16,5:1"
+            },
+            {
+              "key": "aspiration",
+              "value": "Naturally aspirated"
+            },
+            {
+              "key": "cycle",
+              "value": "4-stroke"
+            },
+            {
+              "key": "rpm",
+              "value": "1500 RPM"
+            },
+            {
+              "key": "governor",
+              "value": "Mechanical"
+            },
+            {
+              "key": "fuelSystem",
+              "value": "Direct injection"
+            },
+            {
+              "key": "fuelConsumption",
+              "value": "210 g/kWh"
+            },
+            {
+              "key": "fuelTank",
+              "value": "50 l"
+            },
+            {
+              "key": "runtime",
+              "value": "min. 8 h"
+            },
+            {
+              "key": "coolingType",
+              "value": "Water cooling, closed circuit, engine-driven fan, 50°C radiator"
+            },
+            {
+              "key": "exhaustSystem",
+              "value": "Industrial + flexible connections"
+            },
+            {
+              "key": "serviceFilters",
+              "value": "Replaceable"
+            },
+            {
+              "key": "batteryAndCharger",
+              "value": "Yes (maintenance-free)"
+            }
+          ]
+        },
+        {
+          "titleKey": "alternator",
+          "rows": [
+            {
+              "key": "alternator",
+              "value": "Stamford STF-25"
+            },
+            {
+              "key": "alternatorType",
+              "value": "Brushless, all-copper"
+            },
+            {
+              "key": "insulationClass",
+              "value": "H"
+            },
+            {
+              "key": "phasesConnection",
+              "value": "3-phase, 4-wire"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ipClass",
+              "value": "IP23"
+            },
+            {
+              "key": "avrRegulator",
+              "value": "Yes (as standard)"
+            },
+            {
+              "key": "stator",
+              "value": "2/3 Pitch"
+            },
+            {
+              "key": "excitation",
+              "value": "Self-excited"
+            },
+            {
+              "key": "voltageStability",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "frequencyRegulation",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "radioSuppression",
+              "value": "<= 50"
+            }
+          ]
+        },
+        {
+          "titleKey": "controller",
+          "rows": [
+            {
+              "key": "controlPanel",
+              "value": "SmartGen HGM6120 / 6120MKII"
+            },
+            {
+              "key": "interfaceLanguage",
+              "value": "Polish"
+            },
+            {
+              "key": "controllerType",
+              "value": "AMF - automatic start on mains power failure"
+            },
+            {
+              "key": "workModes",
+              "value": "STOP / RESET / MANUAL / AUTO / TEST / START"
+            },
+            {
+              "key": "atsSystem",
+              "value": "Yes"
+            },
+            {
+              "key": "lockedAts",
+              "value": "Option"
+            },
+            {
+              "key": "staticBatteryCharger",
+              "value": "Yes"
+            },
+            {
+              "key": "emergencyStop",
+              "value": "Yes (external + on panel)"
+            },
+            {
+              "key": "lcdGrid",
+              "value": "L-L and L-N (line-to-line and line-to-neutral voltages)"
+            },
+            {
+              "key": "lcdGenerator",
+              "value": "L1, L2, L3 (current), frequency, cos φ"
+            },
+            {
+              "key": "lcdEngine",
+              "value": "RPM, temperature, oil pressure, engine hours, battery"
+            },
+            {
+              "key": "autoAlarms",
+              "value": "Overspeed/underspeed, start/stop failure, high temperature, low oil pressure, charging fault, generator over/under voltage, frequency, mains voltage, emergency stop"
+            }
+          ]
+        },
+        {
+          "titleKey": "standardEquipment",
+          "rows": [
+            {
+              "key": "circuitBreaker",
+              "value": "100A CHNT"
+            },
+            {
+              "key": "vibrationIsolators",
+              "value": "Yes"
+            },
+            {
+              "key": "baseFrame",
+              "value": "Yes"
+            },
+            {
+              "key": "integratedFuelTank",
+              "value": "Yes"
+            },
+            {
+              "key": "drainValves",
+              "value": "Yes (drain cocks)"
+            },
+            {
+              "key": "liftingPoints",
+              "value": "Yes"
+            },
+            {
+              "key": "fuelGauge",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "housingAndNoise",
+          "rows": [
+            {
+              "key": "housingConstruction",
+              "value": "Sheet-metal, modular, powder-coated"
+            },
+            {
+              "key": "housingColor",
+              "value": "White (standard)"
+            },
+            {
+              "key": "acousticFoam",
+              "value": "Yes"
+            },
+            {
+              "key": "weatherResistance",
+              "value": "Yes"
+            },
+            {
+              "key": "serviceDoors",
+              "value": "Yes (on both sides)"
+            },
+            {
+              "key": "panelWindow",
+              "value": "Yes"
+            },
+            {
+              "key": "insulatedExhaust",
+              "value": "Yes"
+            },
+            {
+              "key": "externalEmergencyStop",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "optionalEquipment",
+          "rows": [
+            {
+              "key": "dailyFuelTank",
+              "value": "Option"
+            },
+            {
+              "key": "engineHeater",
+              "value": "Option"
+            },
+            {
+              "key": "waterHeater",
+              "value": "Option"
+            },
+            {
+              "key": "parallelPanel",
+              "value": "Option"
+            },
+            {
+              "key": "pmg",
+              "value": "Option"
+            },
+            {
+              "key": "remotePanel",
+              "value": "Option"
+            },
+            {
+              "key": "atsCabinet",
+              "value": "Option"
+            },
+            {
+              "key": "trailerType",
+              "value": "Option"
+            },
+            {
+              "key": "sparePartsFirstService",
+              "value": "Option"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsWeight",
+          "rows": [
+            {
+              "key": "overallDimensions",
+              "value": "2100 x 950 x 1250 mm"
+            },
+            {
+              "key": "grossWeight",
+              "value": "850 kg"
+            }
+          ]
+        },
+        {
+          "titleKey": "purchaseService",
+          "rows": [
+            {
+              "key": "condition",
+              "value": "New"
+            },
+            {
+              "key": "certificate",
+              "value": "Yes"
+            },
+            {
+              "key": "warranty",
+              "value": "12 months from delivery"
+            },
+            {
+              "key": "countryOfOrigin",
+              "value": "China"
+            }
+          ]
         }
       ]
     },
     "bm30-ricardo": {
       "name": "Generator BM30",
-      "subtitle": "Ricardo engine 30KW · Silent generator",
+      "subtitle": "Ricardo engine · 30 kW · silent generator",
+      "heroSubtitle": "Silent generator · ATS + AVR · 15-day delivery",
       "cardSpecs": [
         {
           "key": "engineBrand",
           "value": "Ricardo"
         },
         {
+          "key": "ratedPower",
+          "value": "30 kW"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15 days"
+        },
+        {
           "key": "atsSystem",
-          "value": "Automatic transfer switching"
+          "value": "Included as standard"
+        }
+      ],
+      "quickSpecs": [
+        {
+          "key": "ratedPower",
+          "value": "30 kW / 37,5 kVA"
         },
         {
-          "key": "avrRegulator",
-          "value": "Automatic voltage regulation"
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
         },
         {
-          "key": "alternator",
-          "value": "Stamford STF-30"
+          "key": "deliveryTime",
+          "value": "15 days"
         },
         {
-          "key": "controlPanel",
-          "value": "SmartGen 6120 · Polish-language interface"
+          "key": "startingVoltage",
+          "value": "12 V"
+        }
+      ],
+      "features": [
+        "ATS as standard",
+        "AVR as standard",
+        "SmartGen HGM6120",
+        "Silent enclosure"
+      ],
+      "description": "BM30 Ricardo is a silent 30 kW generator prepared for backup power and continuous operation in a company, on a construction site and on a farm. The model retains complete ATS + AVR equipment and a declared delivery time of 15 days.",
+      "accordions": [
+        {
+          "titleKey": "general",
+          "rows": [
+            {
+              "key": "factoryModel",
+              "value": "KVD-RD30S"
+            },
+            {
+              "key": "ratedPower",
+              "value": "30 kW / 37,5 kVA"
+            },
+            {
+              "key": "maxPower",
+              "value": "33 kW / 42 kVA"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ratedCurrent",
+              "value": "54 A"
+            },
+            {
+              "key": "powerFactor",
+              "value": "0,8"
+            },
+            {
+              "key": "deliveryTime",
+              "value": "15 days"
+            },
+            {
+              "key": "startingVoltage",
+              "value": "12 V"
+            },
+            {
+              "key": "housingType",
+              "value": "Silent type"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Ricardo"
+            },
+            {
+              "key": "engineModel",
+              "value": "Ricardo 4100ZD"
+            },
+            {
+              "key": "engineRatedPower",
+              "value": "42 kW"
+            },
+            {
+              "key": "enginePeakPower",
+              "value": "46 kW"
+            },
+            {
+              "key": "cylinders",
+              "value": "4"
+            },
+            {
+              "key": "displacement",
+              "value": "3,61 l"
+            },
+            {
+              "key": "boreStroke",
+              "value": "100 x 115 mm"
+            },
+            {
+              "key": "compressionRatio",
+              "value": "16,5:1"
+            },
+            {
+              "key": "aspiration",
+              "value": "Naturally aspirated"
+            },
+            {
+              "key": "cycle",
+              "value": "4-stroke"
+            },
+            {
+              "key": "rpm",
+              "value": "1500 RPM"
+            },
+            {
+              "key": "governor",
+              "value": "Mechanical"
+            },
+            {
+              "key": "fuelSystem",
+              "value": "Direct injection"
+            },
+            {
+              "key": "fuelConsumption",
+              "value": "210 g/kWh"
+            },
+            {
+              "key": "fuelTank",
+              "value": "60 l"
+            },
+            {
+              "key": "runtime",
+              "value": "min. 8 h"
+            },
+            {
+              "key": "coolingType",
+              "value": "Water cooling, closed circuit, engine-driven fan, 50°C radiator"
+            },
+            {
+              "key": "exhaustSystem",
+              "value": "Industrial + flexible connections"
+            },
+            {
+              "key": "serviceFilters",
+              "value": "Replaceable"
+            },
+            {
+              "key": "batteryAndCharger",
+              "value": "Yes (maintenance-free)"
+            }
+          ]
+        },
+        {
+          "titleKey": "alternator",
+          "rows": [
+            {
+              "key": "alternator",
+              "value": "Stamford STF-30"
+            },
+            {
+              "key": "alternatorType",
+              "value": "Brushless, all-copper"
+            },
+            {
+              "key": "insulationClass",
+              "value": "H"
+            },
+            {
+              "key": "phasesConnection",
+              "value": "3-phase, 4-wire"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ipClass",
+              "value": "IP23"
+            },
+            {
+              "key": "avrRegulator",
+              "value": "Yes (as standard)"
+            },
+            {
+              "key": "stator",
+              "value": "2/3 Pitch"
+            },
+            {
+              "key": "excitation",
+              "value": "Self-excited"
+            },
+            {
+              "key": "voltageStability",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "frequencyRegulation",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "radioSuppression",
+              "value": "<= 50"
+            }
+          ]
+        },
+        {
+          "titleKey": "controller",
+          "rows": [
+            {
+              "key": "controlPanel",
+              "value": "SmartGen HGM6120 / 6120MKII"
+            },
+            {
+              "key": "interfaceLanguage",
+              "value": "Polish"
+            },
+            {
+              "key": "controllerType",
+              "value": "AMF - automatic start on mains power failure"
+            },
+            {
+              "key": "workModes",
+              "value": "STOP / RESET / MANUAL / AUTO / TEST / START"
+            },
+            {
+              "key": "atsSystem",
+              "value": "Yes"
+            },
+            {
+              "key": "lockedAts",
+              "value": "Option"
+            },
+            {
+              "key": "staticBatteryCharger",
+              "value": "Yes"
+            },
+            {
+              "key": "emergencyStop",
+              "value": "Yes (external + on panel)"
+            },
+            {
+              "key": "lcdGrid",
+              "value": "L-L and L-N (line-to-line and line-to-neutral voltages)"
+            },
+            {
+              "key": "lcdGenerator",
+              "value": "L1, L2, L3 (current), frequency, cos φ"
+            },
+            {
+              "key": "lcdEngine",
+              "value": "RPM, temperature, oil pressure, engine hours, battery"
+            },
+            {
+              "key": "autoAlarms",
+              "value": "Overspeed/underspeed, start/stop failure, high temperature, low oil pressure, charging fault, generator over/under voltage, frequency, mains voltage, emergency stop"
+            }
+          ]
+        },
+        {
+          "titleKey": "standardEquipment",
+          "rows": [
+            {
+              "key": "circuitBreaker",
+              "value": "100A CHNT"
+            },
+            {
+              "key": "vibrationIsolators",
+              "value": "Yes"
+            },
+            {
+              "key": "baseFrame",
+              "value": "Yes"
+            },
+            {
+              "key": "integratedFuelTank",
+              "value": "Yes"
+            },
+            {
+              "key": "drainValves",
+              "value": "Yes (drain cocks)"
+            },
+            {
+              "key": "liftingPoints",
+              "value": "Yes"
+            },
+            {
+              "key": "fuelGauge",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "housingAndNoise",
+          "rows": [
+            {
+              "key": "housingConstruction",
+              "value": "Sheet-metal, modular, powder-coated"
+            },
+            {
+              "key": "housingColor",
+              "value": "White (standard)"
+            },
+            {
+              "key": "acousticFoam",
+              "value": "Yes"
+            },
+            {
+              "key": "weatherResistance",
+              "value": "Yes"
+            },
+            {
+              "key": "serviceDoors",
+              "value": "Yes (on both sides)"
+            },
+            {
+              "key": "panelWindow",
+              "value": "Yes"
+            },
+            {
+              "key": "insulatedExhaust",
+              "value": "Yes"
+            },
+            {
+              "key": "externalEmergencyStop",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "optionalEquipment",
+          "rows": [
+            {
+              "key": "dailyFuelTank",
+              "value": "Option"
+            },
+            {
+              "key": "engineHeater",
+              "value": "Option"
+            },
+            {
+              "key": "waterHeater",
+              "value": "Option"
+            },
+            {
+              "key": "parallelPanel",
+              "value": "Option"
+            },
+            {
+              "key": "pmg",
+              "value": "Option"
+            },
+            {
+              "key": "remotePanel",
+              "value": "Option"
+            },
+            {
+              "key": "atsCabinet",
+              "value": "Option"
+            },
+            {
+              "key": "trailerType",
+              "value": "Option"
+            },
+            {
+              "key": "sparePartsFirstService",
+              "value": "Option"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsWeight",
+          "rows": [
+            {
+              "key": "overallDimensions",
+              "value": "2100 x 950 x 1250 mm"
+            },
+            {
+              "key": "grossWeight",
+              "value": "870 kg"
+            }
+          ]
+        },
+        {
+          "titleKey": "purchaseService",
+          "rows": [
+            {
+              "key": "condition",
+              "value": "New"
+            },
+            {
+              "key": "certificate",
+              "value": "Yes"
+            },
+            {
+              "key": "warranty",
+              "value": "12 months from delivery"
+            },
+            {
+              "key": "countryOfOrigin",
+              "value": "China"
+            }
+          ]
         }
       ]
     },
     "bm25-weichai": {
-      "name": "Generator BM25",
-      "subtitle": "Weichai engine 25KW · Silent generator",
-      "badge": "Bestseller",
+      "name": "BM25 generator",
+      "subtitle": "Weichai engine · 25 kW · silent generator",
+      "heroSubtitle": "Silent generator · ATS + AVR · 15-20 day delivery",
       "cardSpecs": [
         {
           "key": "engineBrand",
           "value": "Weichai"
         },
         {
+          "key": "ratedPower",
+          "value": "25 kW"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15-20 days"
+        },
+        {
           "key": "atsSystem",
-          "value": "Automatic transfer switching"
-        },
-        {
-          "key": "avrRegulator",
-          "value": "Automatic voltage regulation"
-        },
-        {
-          "key": "alternator",
-          "value": "Stamford STF-25"
-        },
-        {
-          "key": "controlPanel",
-          "value": "SmartGen 6120 · Polish-language interface"
+          "value": "Included as standard"
         }
-      ]
+      ],
+      "quickSpecs": [
+        {
+          "key": "ratedPower",
+          "value": "25 kW / 31,25 kVA"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15-20 days"
+        },
+        {
+          "key": "startingVoltage",
+          "value": "24 V"
+        }
+      ],
+      "features": [
+        "ATS as standard",
+        "AVR as standard",
+        "SmartGen HGM6120",
+        "Silent enclosure"
+      ],
+      "description": "BM25 Weichai is a silent 25 kW generator for customers who want a compact unit with a Weichai engine, ATS, AVR and SmartGen HGM6120 panel. According to the current offer, delivery time is 15-20 days.",
+      "accordions": [
+        {
+          "titleKey": "general",
+          "rows": [
+            {
+              "key": "factoryModel",
+              "value": "KVD-W25S"
+            },
+            {
+              "key": "ratedPower",
+              "value": "25 kW / 31,25 kVA"
+            },
+            {
+              "key": "maxPower",
+              "value": "28 kW / 35 kVA"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ratedCurrent",
+              "value": "45 A"
+            },
+            {
+              "key": "powerFactor",
+              "value": "0,8"
+            },
+            {
+              "key": "deliveryTime",
+              "value": "15-20 days"
+            },
+            {
+              "key": "startingVoltage",
+              "value": "24 V"
+            },
+            {
+              "key": "housingType",
+              "value": "Silent type"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Weichai"
+            },
+            {
+              "key": "engineModel",
+              "value": "Weichai WP2.3D33E200"
+            },
+            {
+              "key": "engineRatedPower",
+              "value": "30 kW"
+            },
+            {
+              "key": "enginePeakPower",
+              "value": "33 kW"
+            },
+            {
+              "key": "cylinders",
+              "value": "4"
+            },
+            {
+              "key": "displacement",
+              "value": "2,3 l"
+            },
+            {
+              "key": "boreStroke",
+              "value": "89 x 92 mm"
+            },
+            {
+              "key": "compressionRatio",
+              "value": "17,3:1"
+            },
+            {
+              "key": "aspiration",
+              "value": "Naturally aspirated"
+            },
+            {
+              "key": "cycle",
+              "value": "4-stroke"
+            },
+            {
+              "key": "rpm",
+              "value": "1500 RPM"
+            },
+            {
+              "key": "governor",
+              "value": "Electronic"
+            },
+            {
+              "key": "fuelSystem",
+              "value": "Direct injection"
+            },
+            {
+              "key": "fuelConsumption",
+              "value": "210 g/kWh"
+            },
+            {
+              "key": "fuelTank",
+              "value": "50 l"
+            },
+            {
+              "key": "runtime",
+              "value": "min. 8 h"
+            },
+            {
+              "key": "coolingType",
+              "value": "Water cooling, closed circuit, engine-driven fan, 50°C radiator"
+            },
+            {
+              "key": "exhaustSystem",
+              "value": "Industrial + flexible connections"
+            },
+            {
+              "key": "serviceFilters",
+              "value": "Replaceable"
+            },
+            {
+              "key": "batteryAndCharger",
+              "value": "Yes (maintenance-free)"
+            }
+          ]
+        },
+        {
+          "titleKey": "alternator",
+          "rows": [
+            {
+              "key": "alternator",
+              "value": "Stamford STF-25"
+            },
+            {
+              "key": "alternatorType",
+              "value": "Brushless, all-copper"
+            },
+            {
+              "key": "insulationClass",
+              "value": "H"
+            },
+            {
+              "key": "phasesConnection",
+              "value": "3-phase, 4-wire"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ipClass",
+              "value": "IP23"
+            },
+            {
+              "key": "avrRegulator",
+              "value": "Yes (as standard)"
+            },
+            {
+              "key": "stator",
+              "value": "2/3 Pitch"
+            },
+            {
+              "key": "excitation",
+              "value": "Self-excited"
+            },
+            {
+              "key": "voltageStability",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "frequencyRegulation",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "radioSuppression",
+              "value": "<= 50"
+            }
+          ]
+        },
+        {
+          "titleKey": "controller",
+          "rows": [
+            {
+              "key": "controlPanel",
+              "value": "SmartGen HGM6120 / 6120MKII"
+            },
+            {
+              "key": "interfaceLanguage",
+              "value": "Polish"
+            },
+            {
+              "key": "controllerType",
+              "value": "AMF - automatic start on mains power failure"
+            },
+            {
+              "key": "workModes",
+              "value": "STOP / RESET / MANUAL / AUTO / TEST / START"
+            },
+            {
+              "key": "atsSystem",
+              "value": "Yes"
+            },
+            {
+              "key": "lockedAts",
+              "value": "Option"
+            },
+            {
+              "key": "staticBatteryCharger",
+              "value": "Yes"
+            },
+            {
+              "key": "emergencyStop",
+              "value": "Yes (external + on panel)"
+            },
+            {
+              "key": "lcdGrid",
+              "value": "L-L and L-N (line-to-line and line-to-neutral voltages)"
+            },
+            {
+              "key": "lcdGenerator",
+              "value": "L1, L2, L3 (current), frequency, cos φ"
+            },
+            {
+              "key": "lcdEngine",
+              "value": "RPM, temperature, oil pressure, engine hours, battery"
+            },
+            {
+              "key": "autoAlarms",
+              "value": "Overspeed/underspeed, start/stop failure, high temperature, low oil pressure, charging fault, generator over/under voltage, frequency, mains voltage, emergency stop"
+            }
+          ]
+        },
+        {
+          "titleKey": "standardEquipment",
+          "rows": [
+            {
+              "key": "circuitBreaker",
+              "value": "100A CHNT"
+            },
+            {
+              "key": "vibrationIsolators",
+              "value": "Yes"
+            },
+            {
+              "key": "baseFrame",
+              "value": "Yes"
+            },
+            {
+              "key": "integratedFuelTank",
+              "value": "Yes"
+            },
+            {
+              "key": "drainValves",
+              "value": "Yes (drain cocks)"
+            },
+            {
+              "key": "liftingPoints",
+              "value": "Yes"
+            },
+            {
+              "key": "fuelGauge",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "housingAndNoise",
+          "rows": [
+            {
+              "key": "housingConstruction",
+              "value": "Sheet-metal, modular, powder-coated"
+            },
+            {
+              "key": "housingColor",
+              "value": "Optional"
+            },
+            {
+              "key": "acousticFoam",
+              "value": "Yes"
+            },
+            {
+              "key": "weatherResistance",
+              "value": "Yes"
+            },
+            {
+              "key": "serviceDoors",
+              "value": "Yes (on both sides)"
+            },
+            {
+              "key": "panelWindow",
+              "value": "Yes"
+            },
+            {
+              "key": "insulatedExhaust",
+              "value": "Yes"
+            },
+            {
+              "key": "externalEmergencyStop",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "optionalEquipment",
+          "rows": [
+            {
+              "key": "dailyFuelTank",
+              "value": "Option"
+            },
+            {
+              "key": "engineHeater",
+              "value": "Option"
+            },
+            {
+              "key": "waterHeater",
+              "value": "Option"
+            },
+            {
+              "key": "parallelPanel",
+              "value": "Option"
+            },
+            {
+              "key": "pmg",
+              "value": "Option"
+            },
+            {
+              "key": "remotePanel",
+              "value": "Option"
+            },
+            {
+              "key": "atsCabinet",
+              "value": "Option"
+            },
+            {
+              "key": "trailerType",
+              "value": "Option"
+            },
+            {
+              "key": "sparePartsFirstService",
+              "value": "Option"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsWeight",
+          "rows": [
+            {
+              "key": "overallDimensions",
+              "value": "2100 x 950 x 1250 mm"
+            },
+            {
+              "key": "grossWeight",
+              "value": "850 kg"
+            }
+          ]
+        },
+        {
+          "titleKey": "purchaseService",
+          "rows": [
+            {
+              "key": "condition",
+              "value": "New"
+            },
+            {
+              "key": "certificate",
+              "value": "Yes"
+            },
+            {
+              "key": "warranty",
+              "value": "12 months from delivery"
+            },
+            {
+              "key": "countryOfOrigin",
+              "value": "China"
+            }
+          ]
+        }
+      ],
+      "badge": "Bestseller"
     },
     "bm30-weichai": {
       "name": "Generator BM30",
-      "subtitle": "Weichai engine 30KW · Silent generator",
+      "subtitle": "Weichai engine · 30 kW · silent generator",
+      "heroSubtitle": "Silent generator · ATS + AVR · 15-20 day delivery",
       "cardSpecs": [
         {
           "key": "engineBrand",
           "value": "Weichai"
         },
         {
+          "key": "ratedPower",
+          "value": "30 kW"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15-20 days"
+        },
+        {
           "key": "atsSystem",
-          "value": "Automatic transfer switching"
+          "value": "Included as standard"
+        }
+      ],
+      "quickSpecs": [
+        {
+          "key": "ratedPower",
+          "value": "30 kW / 37,5 kVA"
         },
         {
-          "key": "avrRegulator",
-          "value": "Automatic voltage regulation"
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
         },
         {
-          "key": "alternator",
-          "value": "Stamford STF-30"
+          "key": "deliveryTime",
+          "value": "15-20 days"
         },
         {
-          "key": "controlPanel",
-          "value": "SmartGen 6120 · Polish-language interface"
+          "key": "startingVoltage",
+          "value": "24 V"
+        }
+      ],
+      "features": [
+        "ATS as standard",
+        "AVR as standard",
+        "SmartGen HGM6120",
+        "Silent enclosure"
+      ],
+      "description": "BM30 Weichai is a silent 30 kW generator with a Weichai engine, SmartGen HGM6120 controller and full ATS + AVR equipment. The model works well as a backup power source for a company and technical facilities, and the current delivery time is 15-20 days.",
+      "accordions": [
+        {
+          "titleKey": "general",
+          "rows": [
+            {
+              "key": "factoryModel",
+              "value": "KVD-W30S"
+            },
+            {
+              "key": "ratedPower",
+              "value": "30 kW / 37,5 kVA"
+            },
+            {
+              "key": "maxPower",
+              "value": "33 kW / 42 kVA"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ratedCurrent",
+              "value": "54 A"
+            },
+            {
+              "key": "powerFactor",
+              "value": "0,8"
+            },
+            {
+              "key": "deliveryTime",
+              "value": "15-20 days"
+            },
+            {
+              "key": "startingVoltage",
+              "value": "24 V"
+            },
+            {
+              "key": "housingType",
+              "value": "Silent type"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Weichai"
+            },
+            {
+              "key": "engineModel",
+              "value": "Weichai WP2.3D40E200"
+            },
+            {
+              "key": "engineRatedPower",
+              "value": "36 kW"
+            },
+            {
+              "key": "enginePeakPower",
+              "value": "40 kW"
+            },
+            {
+              "key": "cylinders",
+              "value": "4"
+            },
+            {
+              "key": "displacement",
+              "value": "2,3 l"
+            },
+            {
+              "key": "boreStroke",
+              "value": "89 x 92 mm"
+            },
+            {
+              "key": "compressionRatio",
+              "value": "17,3:1"
+            },
+            {
+              "key": "aspiration",
+              "value": "Naturally aspirated"
+            },
+            {
+              "key": "cycle",
+              "value": "4-stroke"
+            },
+            {
+              "key": "rpm",
+              "value": "1500 RPM"
+            },
+            {
+              "key": "governor",
+              "value": "Electronic"
+            },
+            {
+              "key": "fuelSystem",
+              "value": "Direct injection"
+            },
+            {
+              "key": "fuelConsumption",
+              "value": "210 g/kWh"
+            },
+            {
+              "key": "fuelTank",
+              "value": "60 l"
+            },
+            {
+              "key": "runtime",
+              "value": "min. 8 h"
+            },
+            {
+              "key": "coolingType",
+              "value": "Water cooling, closed circuit, engine-driven fan, 50°C radiator"
+            },
+            {
+              "key": "exhaustSystem",
+              "value": "Industrial + flexible connections"
+            },
+            {
+              "key": "serviceFilters",
+              "value": "Replaceable"
+            },
+            {
+              "key": "batteryAndCharger",
+              "value": "Yes (maintenance-free)"
+            }
+          ]
+        },
+        {
+          "titleKey": "alternator",
+          "rows": [
+            {
+              "key": "alternator",
+              "value": "Stamford STF-30"
+            },
+            {
+              "key": "alternatorType",
+              "value": "Brushless, all-copper"
+            },
+            {
+              "key": "insulationClass",
+              "value": "H"
+            },
+            {
+              "key": "phasesConnection",
+              "value": "3-phase, 4-wire"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ipClass",
+              "value": "IP23"
+            },
+            {
+              "key": "avrRegulator",
+              "value": "Yes (as standard)"
+            },
+            {
+              "key": "stator",
+              "value": "2/3 Pitch"
+            },
+            {
+              "key": "excitation",
+              "value": "Self-excited"
+            },
+            {
+              "key": "voltageStability",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "frequencyRegulation",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "radioSuppression",
+              "value": "<= 50"
+            }
+          ]
+        },
+        {
+          "titleKey": "controller",
+          "rows": [
+            {
+              "key": "controlPanel",
+              "value": "SmartGen HGM6120 / 6120MKII"
+            },
+            {
+              "key": "interfaceLanguage",
+              "value": "Polish"
+            },
+            {
+              "key": "controllerType",
+              "value": "AMF - automatic start on mains power failure"
+            },
+            {
+              "key": "workModes",
+              "value": "STOP / RESET / MANUAL / AUTO / TEST / START"
+            },
+            {
+              "key": "atsSystem",
+              "value": "Yes"
+            },
+            {
+              "key": "lockedAts",
+              "value": "Option"
+            },
+            {
+              "key": "staticBatteryCharger",
+              "value": "Yes"
+            },
+            {
+              "key": "emergencyStop",
+              "value": "Yes (external + on panel)"
+            },
+            {
+              "key": "lcdGrid",
+              "value": "L-L and L-N (line-to-line and line-to-neutral voltages)"
+            },
+            {
+              "key": "lcdGenerator",
+              "value": "L1, L2, L3 (current), frequency, cos φ"
+            },
+            {
+              "key": "lcdEngine",
+              "value": "RPM, temperature, oil pressure, engine hours, battery"
+            },
+            {
+              "key": "autoAlarms",
+              "value": "Overspeed/underspeed, start/stop failure, high temperature, low oil pressure, charging fault, generator over/under voltage, frequency, mains voltage, emergency stop"
+            }
+          ]
+        },
+        {
+          "titleKey": "standardEquipment",
+          "rows": [
+            {
+              "key": "circuitBreaker",
+              "value": "100A CHNT"
+            },
+            {
+              "key": "vibrationIsolators",
+              "value": "Yes"
+            },
+            {
+              "key": "baseFrame",
+              "value": "Yes"
+            },
+            {
+              "key": "integratedFuelTank",
+              "value": "Yes"
+            },
+            {
+              "key": "drainValves",
+              "value": "Yes (drain cocks)"
+            },
+            {
+              "key": "liftingPoints",
+              "value": "Yes"
+            },
+            {
+              "key": "fuelGauge",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "housingAndNoise",
+          "rows": [
+            {
+              "key": "housingConstruction",
+              "value": "Sheet-metal, modular, powder-coated"
+            },
+            {
+              "key": "housingColor",
+              "value": "Optional"
+            },
+            {
+              "key": "acousticFoam",
+              "value": "Yes"
+            },
+            {
+              "key": "weatherResistance",
+              "value": "Yes"
+            },
+            {
+              "key": "serviceDoors",
+              "value": "Yes (on both sides)"
+            },
+            {
+              "key": "panelWindow",
+              "value": "Yes"
+            },
+            {
+              "key": "insulatedExhaust",
+              "value": "Yes"
+            },
+            {
+              "key": "externalEmergencyStop",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "optionalEquipment",
+          "rows": [
+            {
+              "key": "dailyFuelTank",
+              "value": "Option"
+            },
+            {
+              "key": "engineHeater",
+              "value": "Option"
+            },
+            {
+              "key": "waterHeater",
+              "value": "Option"
+            },
+            {
+              "key": "parallelPanel",
+              "value": "Option"
+            },
+            {
+              "key": "pmg",
+              "value": "Option"
+            },
+            {
+              "key": "remotePanel",
+              "value": "Option"
+            },
+            {
+              "key": "atsCabinet",
+              "value": "Option"
+            },
+            {
+              "key": "trailerType",
+              "value": "Option"
+            },
+            {
+              "key": "sparePartsFirstService",
+              "value": "Option"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsWeight",
+          "rows": [
+            {
+              "key": "overallDimensions",
+              "value": "2100 x 950 x 1250 mm"
+            },
+            {
+              "key": "grossWeight",
+              "value": "870 kg"
+            }
+          ]
+        },
+        {
+          "titleKey": "purchaseService",
+          "rows": [
+            {
+              "key": "condition",
+              "value": "New"
+            },
+            {
+              "key": "certificate",
+              "value": "Yes"
+            },
+            {
+              "key": "warranty",
+              "value": "12 months from delivery"
+            },
+            {
+              "key": "countryOfOrigin",
+              "value": "China"
+            }
+          ]
         }
       ]
     },
     "bm30-cummins": {
       "name": "Generator BM30",
-      "subtitle": "Cummins engine 30KW · Silent generator",
+      "subtitle": "Cummins engine · 30 kW · silent generator",
+      "heroSubtitle": "Silent generator · ATS + AVR · 15-day delivery",
       "cardSpecs": [
         {
           "key": "engineBrand",
           "value": "Cummins"
         },
         {
+          "key": "ratedPower",
+          "value": "30 kW"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15 days"
+        },
+        {
           "key": "atsSystem",
-          "value": "Automatic transfer switching"
+          "value": "Included as standard"
+        }
+      ],
+      "quickSpecs": [
+        {
+          "key": "ratedPower",
+          "value": "30 kW / 37,5 kVA"
         },
         {
-          "key": "avrRegulator",
-          "value": "Automatic voltage regulation"
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
         },
         {
-          "key": "alternator",
-          "value": "Stamford STF-30"
+          "key": "deliveryTime",
+          "value": "15 days"
         },
         {
-          "key": "controlPanel",
-          "value": "SmartGen 6120 · Polish-language interface"
+          "key": "startingVoltage",
+          "value": "24 V"
+        }
+      ],
+      "features": [
+        "ATS as standard",
+        "AVR as standard",
+        "SmartGen HGM6120",
+        "Silent enclosure"
+      ],
+      "description": "BM30 Cummins is a silent 30 kW generator with a Cummins engine, 24 V starting and full ATS + AVR equipment. The model is prepared for business applications and backup power for facilities, with a declared delivery time of 15 days.",
+      "accordions": [
+        {
+          "titleKey": "general",
+          "rows": [
+            {
+              "key": "factoryModel",
+              "value": "KVD-C30S"
+            },
+            {
+              "key": "ratedPower",
+              "value": "30 kW / 37,5 kVA"
+            },
+            {
+              "key": "maxPower",
+              "value": "33 kW / 42 kVA"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ratedCurrent",
+              "value": "54 A"
+            },
+            {
+              "key": "powerFactor",
+              "value": "0,8"
+            },
+            {
+              "key": "deliveryTime",
+              "value": "15 days"
+            },
+            {
+              "key": "startingVoltage",
+              "value": "24 V"
+            },
+            {
+              "key": "housingType",
+              "value": "Silent type"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Cummins"
+            },
+            {
+              "key": "engineModel",
+              "value": "Cummins 4BT3.9-G2"
+            },
+            {
+              "key": "engineRatedPower",
+              "value": "36 kW"
+            },
+            {
+              "key": "enginePeakPower",
+              "value": "40 kW"
+            },
+            {
+              "key": "cylinders",
+              "value": "4"
+            },
+            {
+              "key": "displacement",
+              "value": "3,9 l"
+            },
+            {
+              "key": "boreStroke",
+              "value": "102 x 120 mm"
+            },
+            {
+              "key": "compressionRatio",
+              "value": "16,5:1"
+            },
+            {
+              "key": "aspiration",
+              "value": "Turbo"
+            },
+            {
+              "key": "cycle",
+              "value": "4-stroke"
+            },
+            {
+              "key": "rpm",
+              "value": "1500 RPM"
+            },
+            {
+              "key": "governor",
+              "value": "Electronic"
+            },
+            {
+              "key": "fuelSystem",
+              "value": "PT type"
+            },
+            {
+              "key": "fuelConsumption",
+              "value": "210 g/kWh"
+            },
+            {
+              "key": "fuelTank",
+              "value": "60 l"
+            },
+            {
+              "key": "runtime",
+              "value": "min. 8 h"
+            },
+            {
+              "key": "coolingType",
+              "value": "Water cooling, closed circuit, engine-driven fan, 50°C radiator"
+            },
+            {
+              "key": "exhaustSystem",
+              "value": "Industrial + flexible connections"
+            },
+            {
+              "key": "serviceFilters",
+              "value": "Replaceable"
+            },
+            {
+              "key": "batteryAndCharger",
+              "value": "Yes (maintenance-free)"
+            }
+          ]
+        },
+        {
+          "titleKey": "alternator",
+          "rows": [
+            {
+              "key": "alternator",
+              "value": "Stamford STF-30"
+            },
+            {
+              "key": "alternatorType",
+              "value": "Brushless, all-copper"
+            },
+            {
+              "key": "insulationClass",
+              "value": "H"
+            },
+            {
+              "key": "phasesConnection",
+              "value": "3-phase, 4-wire"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ipClass",
+              "value": "IP23"
+            },
+            {
+              "key": "avrRegulator",
+              "value": "Yes (as standard)"
+            },
+            {
+              "key": "stator",
+              "value": "2/3 Pitch"
+            },
+            {
+              "key": "excitation",
+              "value": "Self-excited"
+            },
+            {
+              "key": "voltageStability",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "frequencyRegulation",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "radioSuppression",
+              "value": "<= 50"
+            }
+          ]
+        },
+        {
+          "titleKey": "controller",
+          "rows": [
+            {
+              "key": "controlPanel",
+              "value": "SmartGen HGM6120 / 6120MKII"
+            },
+            {
+              "key": "interfaceLanguage",
+              "value": "Polish"
+            },
+            {
+              "key": "controllerType",
+              "value": "AMF - automatic start on mains power failure"
+            },
+            {
+              "key": "workModes",
+              "value": "STOP / RESET / MANUAL / AUTO / TEST / START"
+            },
+            {
+              "key": "atsSystem",
+              "value": "Yes"
+            },
+            {
+              "key": "lockedAts",
+              "value": "Option"
+            },
+            {
+              "key": "staticBatteryCharger",
+              "value": "Yes"
+            },
+            {
+              "key": "emergencyStop",
+              "value": "Yes (external + on panel)"
+            },
+            {
+              "key": "lcdGrid",
+              "value": "L-L and L-N (line-to-line and line-to-neutral voltages)"
+            },
+            {
+              "key": "lcdGenerator",
+              "value": "L1, L2, L3 (current), frequency, cos φ"
+            },
+            {
+              "key": "lcdEngine",
+              "value": "RPM, temperature, oil pressure, engine hours, battery"
+            },
+            {
+              "key": "autoAlarms",
+              "value": "Overspeed/underspeed, start/stop failure, high temperature, low oil pressure, charging fault, generator over/under voltage, frequency, mains voltage, emergency stop"
+            }
+          ]
+        },
+        {
+          "titleKey": "standardEquipment",
+          "rows": [
+            {
+              "key": "circuitBreaker",
+              "value": "100A CHNT"
+            },
+            {
+              "key": "vibrationIsolators",
+              "value": "Yes"
+            },
+            {
+              "key": "baseFrame",
+              "value": "Yes"
+            },
+            {
+              "key": "integratedFuelTank",
+              "value": "Yes"
+            },
+            {
+              "key": "drainValves",
+              "value": "Yes (drain cocks)"
+            },
+            {
+              "key": "liftingPoints",
+              "value": "Yes"
+            },
+            {
+              "key": "fuelGauge",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "housingAndNoise",
+          "rows": [
+            {
+              "key": "housingConstruction",
+              "value": "Sheet-metal, modular, powder-coated"
+            },
+            {
+              "key": "housingColor",
+              "value": "White (standard)"
+            },
+            {
+              "key": "acousticFoam",
+              "value": "Yes"
+            },
+            {
+              "key": "weatherResistance",
+              "value": "Yes"
+            },
+            {
+              "key": "serviceDoors",
+              "value": "Yes (on both sides)"
+            },
+            {
+              "key": "panelWindow",
+              "value": "Yes"
+            },
+            {
+              "key": "insulatedExhaust",
+              "value": "Yes"
+            },
+            {
+              "key": "externalEmergencyStop",
+              "value": "Yes"
+            },
+            {
+              "key": "noiseLevel",
+              "value": "70 dB @ 7 m"
+            }
+          ]
+        },
+        {
+          "titleKey": "optionalEquipment",
+          "rows": [
+            {
+              "key": "dailyFuelTank",
+              "value": "Option"
+            },
+            {
+              "key": "engineHeater",
+              "value": "Option"
+            },
+            {
+              "key": "waterHeater",
+              "value": "Option"
+            },
+            {
+              "key": "parallelPanel",
+              "value": "Option"
+            },
+            {
+              "key": "pmg",
+              "value": "Option"
+            },
+            {
+              "key": "remotePanel",
+              "value": "Option"
+            },
+            {
+              "key": "atsCabinet",
+              "value": "Option"
+            },
+            {
+              "key": "trailerType",
+              "value": "Option"
+            },
+            {
+              "key": "sparePartsFirstService",
+              "value": "Option"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsWeight",
+          "rows": [
+            {
+              "key": "overallDimensions",
+              "value": "2100 x 950 x 1250 mm"
+            },
+            {
+              "key": "grossWeight",
+              "value": "890 kg"
+            }
+          ]
+        },
+        {
+          "titleKey": "purchaseService",
+          "rows": [
+            {
+              "key": "condition",
+              "value": "New"
+            },
+            {
+              "key": "certificate",
+              "value": "Yes"
+            },
+            {
+              "key": "warranty",
+              "value": "12 months from delivery"
+            },
+            {
+              "key": "countryOfOrigin",
+              "value": "China"
+            }
+          ]
         }
       ]
     },
     "bm40-cummins": {
       "name": "Generator BM40",
-      "subtitle": "Cummins engine 40KW · Silent generator",
+      "subtitle": "Cummins engine · 40 kW · silent generator",
+      "heroSubtitle": "Silent generator · ATS + AVR · 15-day delivery",
       "cardSpecs": [
         {
           "key": "engineBrand",
           "value": "Cummins"
         },
         {
+          "key": "ratedPower",
+          "value": "40 kW"
+        },
+        {
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
+        },
+        {
+          "key": "deliveryTime",
+          "value": "15 days"
+        },
+        {
           "key": "atsSystem",
-          "value": "Automatic transfer switching"
+          "value": "Included as standard"
+        }
+      ],
+      "quickSpecs": [
+        {
+          "key": "ratedPower",
+          "value": "40 kW / 50 kVA"
         },
         {
-          "key": "avrRegulator",
-          "value": "Automatic voltage regulation"
+          "key": "outputVoltage",
+          "value": "400 / 230 V"
         },
         {
-          "key": "alternator",
-          "value": "Stamford STF-40"
+          "key": "deliveryTime",
+          "value": "15 days"
         },
         {
-          "key": "controlPanel",
-          "value": "SmartGen 6120 · Polish-language interface"
+          "key": "startingVoltage",
+          "value": "24 V"
+        }
+      ],
+      "features": [
+        "ATS as standard",
+        "AVR as standard",
+        "SmartGen HGM6120",
+        "Silent enclosure"
+      ],
+      "description": "BM40 Cummins is the most powerful generator in the Polish offer, prepared to operate as a silent power source for more demanding loads. The configuration includes a Cummins engine, ATS, AVR, SmartGen HGM6120 controller and declared delivery within 15 days.",
+      "accordions": [
+        {
+          "titleKey": "general",
+          "rows": [
+            {
+              "key": "factoryModel",
+              "value": "KVD-C40S"
+            },
+            {
+              "key": "ratedPower",
+              "value": "40 kW / 50 kVA"
+            },
+            {
+              "key": "maxPower",
+              "value": "44 kW / 55 kVA"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ratedCurrent",
+              "value": "72 A"
+            },
+            {
+              "key": "powerFactor",
+              "value": "0,8"
+            },
+            {
+              "key": "deliveryTime",
+              "value": "15 days"
+            },
+            {
+              "key": "startingVoltage",
+              "value": "24 V"
+            },
+            {
+              "key": "housingType",
+              "value": "Silent type"
+            }
+          ]
+        },
+        {
+          "titleKey": "engine",
+          "rows": [
+            {
+              "key": "engineBrand",
+              "value": "Cummins"
+            },
+            {
+              "key": "engineModel",
+              "value": "Cummins 4BTA3.9-G2"
+            },
+            {
+              "key": "engineRatedPower",
+              "value": "50 kW"
+            },
+            {
+              "key": "enginePeakPower",
+              "value": "55 kW"
+            },
+            {
+              "key": "cylinders",
+              "value": "4"
+            },
+            {
+              "key": "displacement",
+              "value": "3,9 l"
+            },
+            {
+              "key": "boreStroke",
+              "value": "102 x 120 mm"
+            },
+            {
+              "key": "compressionRatio",
+              "value": "16,5:1"
+            },
+            {
+              "key": "aspiration",
+              "value": "Turbo + intercooler"
+            },
+            {
+              "key": "cycle",
+              "value": "4-stroke"
+            },
+            {
+              "key": "rpm",
+              "value": "1500 RPM"
+            },
+            {
+              "key": "governor",
+              "value": "Electronic"
+            },
+            {
+              "key": "fuelSystem",
+              "value": "PT type"
+            },
+            {
+              "key": "fuelConsumption",
+              "value": "210 g/kWh"
+            },
+            {
+              "key": "fuelTank",
+              "value": "80 l"
+            },
+            {
+              "key": "runtime",
+              "value": "min. 8 h"
+            },
+            {
+              "key": "coolingType",
+              "value": "Water cooling, closed circuit, engine-driven fan, 50°C radiator"
+            },
+            {
+              "key": "exhaustSystem",
+              "value": "Industrial + flexible connections"
+            },
+            {
+              "key": "serviceFilters",
+              "value": "Replaceable"
+            },
+            {
+              "key": "batteryAndCharger",
+              "value": "Yes (maintenance-free)"
+            }
+          ]
+        },
+        {
+          "titleKey": "alternator",
+          "rows": [
+            {
+              "key": "alternator",
+              "value": "Stamford STF-40"
+            },
+            {
+              "key": "alternatorType",
+              "value": "Brushless, all-copper"
+            },
+            {
+              "key": "insulationClass",
+              "value": "H"
+            },
+            {
+              "key": "phasesConnection",
+              "value": "3-phase, 4-wire"
+            },
+            {
+              "key": "outputVoltage",
+              "value": "400 / 230 V"
+            },
+            {
+              "key": "frequency",
+              "value": "50 Hz"
+            },
+            {
+              "key": "ipClass",
+              "value": "IP23"
+            },
+            {
+              "key": "avrRegulator",
+              "value": "Yes (as standard)"
+            },
+            {
+              "key": "stator",
+              "value": "2/3 Pitch"
+            },
+            {
+              "key": "excitation",
+              "value": "Self-excited"
+            },
+            {
+              "key": "voltageStability",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "frequencyRegulation",
+              "value": "+/- 0,5%"
+            },
+            {
+              "key": "radioSuppression",
+              "value": "<= 50"
+            }
+          ]
+        },
+        {
+          "titleKey": "controller",
+          "rows": [
+            {
+              "key": "controlPanel",
+              "value": "SmartGen HGM6120 / 6120MKII"
+            },
+            {
+              "key": "interfaceLanguage",
+              "value": "Polish"
+            },
+            {
+              "key": "controllerType",
+              "value": "AMF - automatic start on mains power failure"
+            },
+            {
+              "key": "workModes",
+              "value": "STOP / RESET / MANUAL / AUTO / TEST / START"
+            },
+            {
+              "key": "atsSystem",
+              "value": "Yes"
+            },
+            {
+              "key": "lockedAts",
+              "value": "Option"
+            },
+            {
+              "key": "staticBatteryCharger",
+              "value": "Yes"
+            },
+            {
+              "key": "emergencyStop",
+              "value": "Yes (external + on panel)"
+            },
+            {
+              "key": "lcdGrid",
+              "value": "L-L and L-N (line-to-line and line-to-neutral voltages)"
+            },
+            {
+              "key": "lcdGenerator",
+              "value": "L1, L2, L3 (current), frequency, cos φ"
+            },
+            {
+              "key": "lcdEngine",
+              "value": "RPM, temperature, oil pressure, engine hours, battery"
+            },
+            {
+              "key": "autoAlarms",
+              "value": "Overspeed/underspeed, start/stop failure, high temperature, low oil pressure, charging fault, generator over/under voltage, frequency, mains voltage, emergency stop"
+            }
+          ]
+        },
+        {
+          "titleKey": "standardEquipment",
+          "rows": [
+            {
+              "key": "circuitBreaker",
+              "value": "100A CHNT"
+            },
+            {
+              "key": "vibrationIsolators",
+              "value": "Yes"
+            },
+            {
+              "key": "baseFrame",
+              "value": "Yes"
+            },
+            {
+              "key": "integratedFuelTank",
+              "value": "Yes"
+            },
+            {
+              "key": "drainValves",
+              "value": "Yes (drain cocks)"
+            },
+            {
+              "key": "liftingPoints",
+              "value": "Yes"
+            },
+            {
+              "key": "fuelGauge",
+              "value": "Yes"
+            }
+          ]
+        },
+        {
+          "titleKey": "housingAndNoise",
+          "rows": [
+            {
+              "key": "housingConstruction",
+              "value": "Sheet-metal, modular, powder-coated"
+            },
+            {
+              "key": "housingColor",
+              "value": "White (standard)"
+            },
+            {
+              "key": "acousticFoam",
+              "value": "Yes"
+            },
+            {
+              "key": "weatherResistance",
+              "value": "Yes"
+            },
+            {
+              "key": "serviceDoors",
+              "value": "Yes (on both sides)"
+            },
+            {
+              "key": "panelWindow",
+              "value": "Yes"
+            },
+            {
+              "key": "insulatedExhaust",
+              "value": "Yes"
+            },
+            {
+              "key": "externalEmergencyStop",
+              "value": "Yes"
+            },
+            {
+              "key": "noiseLevel",
+              "value": "70 dB @ 7 m"
+            }
+          ]
+        },
+        {
+          "titleKey": "optionalEquipment",
+          "rows": [
+            {
+              "key": "dailyFuelTank",
+              "value": "Option"
+            },
+            {
+              "key": "engineHeater",
+              "value": "Option"
+            },
+            {
+              "key": "waterHeater",
+              "value": "Option"
+            },
+            {
+              "key": "parallelPanel",
+              "value": "Option"
+            },
+            {
+              "key": "pmg",
+              "value": "Option"
+            },
+            {
+              "key": "remotePanel",
+              "value": "Option"
+            },
+            {
+              "key": "atsCabinet",
+              "value": "Option"
+            },
+            {
+              "key": "trailerType",
+              "value": "Option"
+            },
+            {
+              "key": "sparePartsFirstService",
+              "value": "Option"
+            }
+          ]
+        },
+        {
+          "titleKey": "dimensionsWeight",
+          "rows": [
+            {
+              "key": "overallDimensions",
+              "value": "2200 x 1000 x 1300 mm"
+            },
+            {
+              "key": "grossWeight",
+              "value": "1030 kg"
+            }
+          ]
+        },
+        {
+          "titleKey": "purchaseService",
+          "rows": [
+            {
+              "key": "condition",
+              "value": "New"
+            },
+            {
+              "key": "certificate",
+              "value": "Yes"
+            },
+            {
+              "key": "warranty",
+              "value": "12 months from delivery"
+            },
+            {
+              "key": "countryOfOrigin",
+              "value": "China"
+            }
+          ]
         }
       ]
     }
@@ -1517,7 +4397,7 @@
       "name": "Hydraulic auger"
     },
     "hydraulic-hammer": {
-      "name": "Hydraulic breaker"
+      "name": "Hydraulic hammer"
     },
     "bucket-20": {
       "name": "200 mm bucket"
@@ -1535,16 +4415,16 @@
       "name": "Grapple"
     },
     "hydraulic-tilting-ditch-bucket": {
-      "name": "Hydraulic tilting ditch bucket"
+      "name": "Hydraulic tilting ditching bucket"
     },
     "hydraulic-thumb": {
       "name": "Hydraulic thumb"
     },
     "ditch-bucket-50": {
-      "name": "500 mm ditch bucket"
+      "name": "500 mm ditching bucket"
     },
     "ditch-bucket-100": {
-      "name": "1000 mm ditch bucket"
+      "name": "1000 mm ditching bucket"
     }
   },
   "parts": {
@@ -1575,5 +4455,113 @@
     "front-bucket-tooth": {
       "name": "Front bucket tooth"
     }
+  },
+  "aggregateAccordionTitles": {
+    "general": "General data",
+    "engine": "Engine",
+    "alternatorController": "Alternator and controller",
+    "dimensionsWeight": "Dimensions and weight",
+    "alternator": "Alternator",
+    "controller": "Control panel and ATS",
+    "standardEquipment": "Standard equipment",
+    "housingAndNoise": "Enclosure and soundproofing",
+    "optionalEquipment": "Additional options",
+    "purchaseService": "Purchase and service"
+  },
+  "aggregateSpecLabels": {
+    "ratedPower": "Rated power",
+    "maxPower": "Maximum power",
+    "outputVoltage": "Output voltage",
+    "frequency": "Frequency",
+    "equipment": "Equipment",
+    "engineBrand": "Engine brand",
+    "engineModel": "Engine model",
+    "coolingType": "Cooling type",
+    "fuelType": "Fuel type",
+    "firstOilChange": "Engine oil change (first)",
+    "nextOilChange": "Engine oil change (next)",
+    "fuelFilterChange": "Fuel filter change",
+    "fanBeltTension": "Fan belt tension",
+    "fanBeltDeflection": "Fan belt deflection",
+    "alternator": "Alternator",
+    "alternatorType": "Alternator type",
+    "avrRegulator": "AVR voltage regulator",
+    "controlPanel": "Controller model",
+    "atsSystem": "ATS system",
+    "socket32a": "32A socket",
+    "socket16a": "16A socket",
+    "rpm": "Rotational speed",
+    "powerFactor": "Power factor (cos φ)",
+    "housingType": "Enclosure type",
+    "noiseLevel": "Noise level (7 m)",
+    "certificate": "Certificate",
+    "warranty": "Warranty",
+    "length": "Length",
+    "width": "Width",
+    "height": "Height",
+    "grossWeight": "Gross weight",
+    "deliveryTime": "Delivery time",
+    "startingVoltage": "Starting voltage",
+    "factoryModel": "Factory model",
+    "ratedCurrent": "Rated current",
+    "engineRatedPower": "Engine rated power",
+    "enginePeakPower": "Engine peak power",
+    "cylinders": "Number of cylinders",
+    "displacement": "Displacement",
+    "boreStroke": "Bore x stroke",
+    "compressionRatio": "Compression ratio",
+    "aspiration": "Aspiration",
+    "cycle": "Cycle",
+    "governor": "Governor",
+    "fuelSystem": "Fuel system",
+    "fuelConsumption": "Fuel consumption",
+    "fuelTank": "Fuel tank capacity",
+    "runtime": "Continuous runtime",
+    "exhaustSystem": "Exhaust silencer",
+    "serviceFilters": "Filters (fuel/oil/air)",
+    "batteryAndCharger": "Battery + charger",
+    "alternatorModel": "Alternator model",
+    "insulationClass": "Insulation class",
+    "phasesConnection": "Phases / connection",
+    "ipClass": "IP rating",
+    "voltageStability": "Voltage stability",
+    "frequencyRegulation": "Frequency regulation (steady)",
+    "radioSuppression": "Radio interference suppression",
+    "interfaceLanguage": "Interface language",
+    "controllerType": "Controller type",
+    "workModes": "Work modes",
+    "lockedAts": "4-pole locked ATS",
+    "staticBatteryCharger": "Static battery charger",
+    "emergencyStop": "Emergency stop",
+    "lcdGrid": "LCD display - grid parameters",
+    "lcdGenerator": "LCD display - generator",
+    "lcdEngine": "LCD display - engine",
+    "autoAlarms": "Alarms / automatic shutdowns",
+    "circuitBreaker": "Circuit breaker",
+    "vibrationIsolators": "Vibration isolators",
+    "baseFrame": "Steel base frame",
+    "integratedFuelTank": "Integrated fuel tank in frame",
+    "drainValves": "Fuel/oil/coolant drains",
+    "liftingPoints": "Lifting / transport points",
+    "fuelGauge": "Fuel gauge",
+    "housingConstruction": "Enclosure construction",
+    "housingColor": "Enclosure colour",
+    "acousticFoam": "Acoustic foam inside",
+    "weatherResistance": "Weather resistance",
+    "serviceDoors": "Lockable service doors",
+    "panelWindow": "Control panel viewing window",
+    "insulatedExhaust": "Thermally insulated exhaust system",
+    "externalEmergencyStop": "External emergency stop button",
+    "dailyFuelTank": "Daily Fuel Tank (external daily tank)",
+    "engineHeater": "Engine Heater",
+    "waterHeater": "Water Heater",
+    "parallelPanel": "Parallel Panel",
+    "pmg": "PMG (Permanent Magnet Generator)",
+    "remotePanel": "Remote Control Panel",
+    "atsCabinet": "ATS Cabinet (external ATS cabinet)",
+    "trailerType": "Trailer Type",
+    "sparePartsFirstService": "Spare parts (first service)",
+    "overallDimensions": "Dimensions (L x W x H)",
+    "countryOfOrigin": "Country of manufacture"
   }
 }

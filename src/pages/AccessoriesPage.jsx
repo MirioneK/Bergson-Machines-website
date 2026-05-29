@@ -10,7 +10,7 @@ import { useReveal } from '../hooks/useReveal'
 import { usePageMeta } from '../hooks/usePageMeta'
 import styles from './AccessoriesPage.module.css'
 
-const PRODUCT_PLACEHOLDER = '/images/placeholders/product-placeholder.png'
+const PRODUCT_PLACEHOLDER = '/images/optimized/placeholders/product-placeholder.webp'
 
 function SafeImage({ src, alt, className, fallbackSrc = PRODUCT_PLACEHOLDER }) {
   const [imgSrc, setImgSrc] = useState(src || fallbackSrc)

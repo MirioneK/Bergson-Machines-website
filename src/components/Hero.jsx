@@ -23,7 +23,7 @@ export default function Hero() {
     titleLine2: t('hero.titleLine2'),
     titlePrice: t('hero.titlePrice'),
     lead: t('hero.lead'),
-    image: '/images/optimized/hero.png',
+    image: '/images/optimized/hero.webp',
     imageAlt: t('hero.imageAlt'),
     primaryLabel: t('hero.actions.models'),
     primaryHash: '#modele',

@@ -353,7 +353,7 @@ function SideGalleryCard({ src, name, index }) {
         decoding="async"
         onError={() => {
           if (imgSrc !== src) return
-          setImgSrc('/images/optimized/aggregates/aggregate-silent.png')
+          setImgSrc('/images/optimized/aggregates/aggregate-silent.webp')
         }}
       />
     </div>

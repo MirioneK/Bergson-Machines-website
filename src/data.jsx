@@ -68,8 +68,6 @@ export const MODELS = [
     name: 'BM12',
     image: '/images/optimized/BM12.webp',
     gallery: [
-      '/images/optimized/bm12-gal1.webp',
-      '/images/optimized/bm12-gal2.webp',
     ],
     techDrawing: '/images/optimized/bm12-technical.webp',
     priceNetto: 20244,
@@ -79,8 +77,6 @@ export const MODELS = [
     name: 'BM12C',
     image: '/images/optimized/BM12C.webp',
     gallery: [
-      '/images/optimized/bm12c-gal1.webp',
-      '/images/optimized/gal3.webp',
     ],
     techDrawing: '/images/optimized/bm12-technical.webp',
     priceNetto: 23496,
@@ -88,10 +84,10 @@ export const MODELS = [
   {
     id: 'bm13',
     name: 'BM13',
-    image: '/images/optimized/bm13.png',
+    image: '/images/optimized/BM13.webp',
     gallery: [
-      '/images/optimized/bm13.png',
-      '/images/optimized/bm13.png',
+      '/images/optimized/BM13.webp',
+      '/images/optimized/BM13.webp',
     ],
     techDrawing: null,
     priceNetto: 24309,
@@ -99,10 +95,10 @@ export const MODELS = [
   {
     id: 'bm13-kubota',
     name: 'BM13',
-    image: '/images/optimized/bm13.png',
+    image: '/images/optimized/BM13.webp',
     gallery: [
-      '/images/optimized/bm13.png',
-      '/images/optimized/bm13.png',
+      '/images/optimized/BM13.webp',
+      '/images/optimized/BM13.webp',
     ],
     techDrawing: null,
     priceNetto: 36585,
@@ -110,10 +106,10 @@ export const MODELS = [
   {
     id: 'bm13c',
     name: 'BM13C',
-    image: '/images/optimized/bm13.png',
+    image: '/images/optimized/BM13.webp',
     gallery: [
-      '/images/optimized/bm13.png',
-      '/images/optimized/bm13.png',
+      '/images/optimized/BM13.webp',
+      '/images/optimized/BM13.webp',
     ],
     techDrawing: null,
     priceNetto: 27561,
@@ -121,10 +117,10 @@ export const MODELS = [
   {
     id: 'bm13c-kubota',
     name: 'BM13C',
-    image: '/images/optimized/bm13.png',
+    image: '/images/optimized/BM13.webp',
     gallery: [
-      '/images/optimized/bm13.png',
-      '/images/optimized/bm13.png',
+      '/images/optimized/BM13.webp',
+      '/images/optimized/BM13.webp',
     ],
     techDrawing: null,
     priceNetto: 39756,
@@ -132,10 +128,10 @@ export const MODELS = [
   {
     id: 'bm16',
     name: 'BM16',
-    image: '/images/optimized/bm16.png',
+    image: '/images/optimized/BM16.webp',
     gallery: [
-      '/images/optimized/bm16.png',
-      '/images/optimized/bm16.png',
+      '/images/optimized/BM16.webp',
+      '/images/optimized/BM16.webp',
     ],
     techDrawing: null,
     priceNetto: 37805,
@@ -143,10 +139,10 @@ export const MODELS = [
   {
     id: 'bm16-kubota',
     name: 'BM16',
-    image: '/images/optimized/bm16.png',
+    image: '/images/optimized/BM16.webp',
     gallery: [
-      '/images/optimized/bm16.png',
-      '/images/optimized/bm16.png',
+      '/images/optimized/BM16.webp',
+      '/images/optimized/BM16.webp',
     ],
     techDrawing: null,
     priceNetto: 43821,
@@ -154,10 +150,10 @@ export const MODELS = [
   {
     id: 'bm16c',
     name: 'BM16C',
-    image: '/images/optimized/bm16C.png',
+    image: '/images/optimized/BM16C.webp',
     gallery: [
-      '/images/optimized/bm16C.png',
-      '/images/optimized/bm16C.png',
+      '/images/optimized/BM16C.webp',
+      '/images/optimized/BM16C.webp',
     ],
     techDrawing: null,
     priceNetto: 39756,
@@ -165,10 +161,10 @@ export const MODELS = [
   {
     id: 'bm16c-kubota',
     name: 'BM16C',
-    image: '/images/optimized/bm16C.png',
+    image: '/images/optimized/BM16C.webp',
     gallery: [
-      '/images/optimized/bm16C.png',
-      '/images/optimized/bm16C.png',
+      '/images/optimized/BM16C.webp',
+      '/images/optimized/BM16C.webp',
     ],
     techDrawing: null,
     priceNetto: 47073,
@@ -186,32 +182,32 @@ export const MODELS = [
 export const AGGREGATES = [
   {
     id: 'bm25-ricardo',
-    image: '/images/optimized/aggregates/aggregate-silent.png',
+    image: '/images/optimized/aggregates/aggregate-silent.webp',
     priceNetto: 21870,
   },
   {
     id: 'bm30-ricardo',
-    image: '/images/optimized/aggregates/aggregate-silent.png',
+    image: '/images/optimized/aggregates/aggregate-silent.webp',
     priceNetto: 23984,
   },
   {
     id: 'bm25-weichai',
-    image: '/images/optimized/aggregates/aggregate-silent.png',
+    image: '/images/optimized/aggregates/aggregate-silent.webp',
     priceNetto: 23984,
   },
   {
     id: 'bm30-weichai',
-    image: '/images/optimized/aggregates/aggregate-silent.png',
+    image: '/images/optimized/aggregates/aggregate-silent.webp',
     priceNetto: 25935,
   },
   {
     id: 'bm30-cummins',
-    image: '/images/optimized/aggregates/aggregate-silent.png',
+    image: '/images/optimized/aggregates/aggregate-silent.webp',
     priceNetto: 39756,
   },
   {
     id: 'bm40-cummins',
-    image: '/images/optimized/aggregates/aggregate-silent.png',
+    image: '/images/optimized/aggregates/aggregate-silent.webp',
     priceNetto: 44634,
   },
 ]
