@@ -197,7 +197,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12 to model o większej masie roboczej, przeznaczony do bardziej wymagających prac ziemnych przy zachowaniu kompaktowych wymiarów transportowych. Stanowi dobry kompromis między mobilnością a stabilnością pracy i sprawdzi się zarówno przy robotach instalacyjnych, jak i przy codziennych pracach budowlanych.",
+      "description": "BM10 to model o większej masie roboczej, przeznaczony do bardziej wymagających prac ziemnych przy zachowaniu kompaktowych wymiarów transportowych. Stanowi dobry kompromis między mobilnością a stabilnością pracy i sprawdzi się zarówno przy robotach instalacyjnych, jak i przy codziennych pracach budowlanych.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -316,7 +316,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12C to wariant BM12 z kabiną, przeznaczony do pracy w mniej sprzyjających warunkach pogodowych oraz tam, gdzie operator oczekuje większego komfortu. Parametry bazowe platformy pozostają zgodne z BM12, a różnica dotyczy wersji zabudowy i sposobu użytkowania.",
+      "description": "BM10C to wariant BM10 z kabiną, przeznaczony do pracy w mniej sprzyjających warunkach pogodowych oraz tam, gdzie operator oczekuje większego komfortu. Parametry bazowe platformy pozostają zgodne z BM10, a różnica dotyczy wersji zabudowy i sposobu użytkowania.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -439,7 +439,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12 Kubota to wariant modelu BM12 o tych samych parametrach technicznych i geometrii roboczej, ale wyposażony w silnik Kubota Diesel. To wersja dla klientów, którzy chcą zachować kompaktowe gabaryty BM12, a jednocześnie postawić na mocniejszą markę jednostki napędowej.",
+      "description": "BM10 Kubota to wariant modelu BM10 o tych samych parametrach technicznych i geometrii roboczej, ale wyposażony w silnik Kubota Diesel. To wersja dla klientów, którzy chcą zachować kompaktowe gabaryty BM10, a jednocześnie postawić na mocniejszą markę jednostki napędowej.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -558,7 +558,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12C Kubota to odpowiednik BM12C z tymi samymi parametrami roboczymi, ale z silnikiem Kubota Diesel. To wariant premium dla klientów, którzy chcą połączyć kabinę operatora z wyższą klasą jednostki napędowej.",
+      "description": "BM10C Kubota to odpowiednik BM10C z tymi samymi parametrami roboczymi, ale z silnikiem Kubota Diesel. To wariant premium dla klientów, którzy chcą połączyć kabinę operatora z wyższą klasą jednostki napędowej.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -685,7 +685,7 @@
           "value": "850-1050 mm"
         }
       ],
-      "description": "BM13 to kompaktowa minikoparka 1,2 t z silnikiem KOOP 192F, przygotowana do prac ziemnych, instalacyjnych i ogrodowych. Rozszerzane gąsienice 850-1050 mm ułatwiają przejazd przez węższe miejsca, a głębokość kopania do 1 750 mm dobrze sprawdza się przy codziennej pracy wokół posesji i na małych budowach.",
+      "description": "BM11 to kompaktowa minikoparka 1,2 t z silnikiem KOOP 192F, przygotowana do prac ziemnych, instalacyjnych i ogrodowych. Rozszerzane gąsienice 850-1050 mm ułatwiają przejazd przez węższe miejsca, a głębokość kopania do 1 750 mm dobrze sprawdza się przy codziennej pracy wokół posesji i na małych budowach.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -864,7 +864,7 @@
           "value": "850-1050 mm"
         }
       ],
-      "description": "BM13 Kubota wykorzystuje tę samą kompaktową platformę 1,2 t co standardowy BM13, ale pracuje na silniku Kubota D722. To wariant dla klientów, którzy chcą zachować małe gabaryty maszyny i postawić na markową jednostkę 3-cylindrową.",
+      "description": "BM11 Kubota wykorzystuje tę samą kompaktową platformę 1,2 t co standardowy BM11, ale pracuje na silniku Kubota D722. To wariant dla klientów, którzy chcą zachować małe gabaryty maszyny i postawić na markową jednostkę 3-cylindrową.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -1043,7 +1043,7 @@
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16 to większa platforma 1,6 t z silnikiem Laidong 385, szerszym rozstawem gąsienic 1100-1300 mm i głębokością kopania do 1 800 mm. Model został przygotowany do bardziej wymagających prac ziemnych, instalacyjnych i budowlanych, gdzie liczy się większa stabilność i zasięg roboczy.",
+      "description": "BM15 to większa platforma 1,6 t z silnikiem Laidong 385, szerszym rozstawem gąsienic 1100-1300 mm i głębokością kopania do 1 800 mm. Model został przygotowany do bardziej wymagających prac ziemnych, instalacyjnych i budowlanych, gdzie liczy się większa stabilność i zasięg roboczy.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -1222,7 +1222,7 @@
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16 Kubota bazuje na platformie 1,6 t i geometrii roboczej BM16, ale wykorzystuje silnik Kubota D722. To wariant dla klientów, którzy chcą połączyć większy zasięg pracy z kompaktową maszyną na markowej jednostce napędowej.",
+      "description": "BM15 Kubota bazuje na platformie 1,6 t i geometrii roboczej BM15, ale wykorzystuje silnik Kubota D722. To wariant dla klientów, którzy chcą połączyć większy zasięg pracy z kompaktową maszyną na markowej jednostce napędowej.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -1401,7 +1401,7 @@
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16C łączy platformę 1,6 t z pełną kabiną operatora i silnikiem Laidong 385. To wariant dla użytkowników, którzy chcą zachować parametry robocze BM16, a jednocześnie pracować wygodniej w chłodzie, deszczu i podczas dłuższych zmian.",
+      "description": "BM15C łączy platformę 1,6 t z pełną kabiną operatora i silnikiem Laidong 385. To wariant dla użytkowników, którzy chcą zachować parametry robocze BM15, a jednocześnie pracować wygodniej w chłodzie, deszczu i podczas dłuższych zmian.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -1581,7 +1581,7 @@
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16C Kubota to kabinowy wariant platformy 1,6 t z silnikiem Kubota D722. Model został przygotowany dla klientów, którzy oczekują połączenia pełnej kabiny operatora, rozszerzanych gąsienic i markowego silnika w jednej konfiguracji.",
+      "description": "BM15C Kubota to kabinowy wariant platformy 1,6 t z silnikiem Kubota D722. Model został przygotowany dla klientów, którzy oczekują połączenia pełnej kabiny operatora, rozszerzanych gąsienic i markowego silnika w jednej konfiguracji.",
       "accordions": [
         {
           "titleKey": "specification",

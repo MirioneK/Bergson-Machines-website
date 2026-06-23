@@ -14,7 +14,7 @@ export const MODELS = [
   },
   {
     id: 'bm12',
-    name: 'BM12',
+    name: 'BM10',
     image: '/images/optimized/BM12.webp',
     gallery: [
       '/images/optimized/bm12-gal1.webp',
@@ -25,7 +25,7 @@ export const MODELS = [
   },
   {
     id: 'bm12c',
-    name: 'BM12C',
+    name: 'BM10C',
     image: '/images/optimized/BM12C.webp',
     gallery: [
       '/images/optimized/bm12c-gal1.webp',
@@ -36,7 +36,7 @@ export const MODELS = [
   },
   {
     id: 'bm12-kubota',
-    name: 'BM12',
+    name: 'BM10',
     image: '/images/optimized/BM12.webp',
     gallery: [
       '/images/optimized/bm12-gal1.webp',
@@ -47,7 +47,7 @@ export const MODELS = [
   },
   {
     id: 'bm12c-kubota',
-    name: 'BM12C',
+    name: 'BM10C',
     image: '/images/optimized/BM12C.webp',
     gallery: [
       '/images/optimized/bm12c-gal1.webp',
@@ -65,7 +65,7 @@ export const MODELS = [
   */
   {
     id: 'bm12',
-    name: 'BM12',
+    name: 'BM10',
     image: '/images/optimized/BM12.webp',
     gallery: [
     ],
@@ -74,7 +74,7 @@ export const MODELS = [
   },
   {
     id: 'bm12c',
-    name: 'BM12C',
+    name: 'BM10C',
     image: '/images/optimized/BM12C.webp',
     gallery: [
     ],
@@ -83,7 +83,7 @@ export const MODELS = [
   },
   {
     id: 'bm13',
-    name: 'BM13',
+    name: 'BM11',
     image: '/images/optimized/BM13.webp',
     gallery: [
       '/images/optimized/BM13.webp',
@@ -94,7 +94,7 @@ export const MODELS = [
   },
   {
     id: 'bm13-kubota',
-    name: 'BM13',
+    name: 'BM11',
     image: '/images/optimized/BM13.webp',
     gallery: [
       '/images/optimized/BM13.webp',
@@ -105,7 +105,7 @@ export const MODELS = [
   },
   {
     id: 'bm13c',
-    name: 'BM13C',
+    name: 'BM11C',
     image: '/images/optimized/BM13.webp',
     gallery: [
       '/images/optimized/BM13.webp',
@@ -116,7 +116,7 @@ export const MODELS = [
   },
   {
     id: 'bm13c-kubota',
-    name: 'BM13C',
+    name: 'BM11C',
     image: '/images/optimized/BM13.webp',
     gallery: [
       '/images/optimized/BM13.webp',
@@ -127,18 +127,18 @@ export const MODELS = [
   },
   {
     id: 'bm16',
-    name: 'BM16',
+    name: 'BM15',
     image: '/images/optimized/BM16.webp',
     gallery: [
       '/images/optimized/BM16.webp',
       '/images/optimized/BM16.webp',
     ],
     techDrawing: null,
-    priceNetto: 37805,
+    priceNetto: 35691,
   },
   {
     id: 'bm16-kubota',
-    name: 'BM16',
+    name: 'BM15',
     image: '/images/optimized/BM16.webp',
     gallery: [
       '/images/optimized/BM16.webp',
@@ -149,18 +149,18 @@ export const MODELS = [
   },
   {
     id: 'bm16c',
-    name: 'BM16C',
+    name: 'BM15C',
     image: '/images/optimized/BM16C.webp',
     gallery: [
       '/images/optimized/BM16C.webp',
       '/images/optimized/BM16C.webp',
     ],
     techDrawing: null,
-    priceNetto: 39756,
+    priceNetto: 38943,
   },
   {
     id: 'bm16c-kubota',
-    name: 'BM16C',
+    name: 'BM15C',
     image: '/images/optimized/BM16C.webp',
     gallery: [
       '/images/optimized/BM16C.webp',

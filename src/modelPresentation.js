@@ -50,9 +50,9 @@ const MODEL_TEXT_OVERRIDES = {
       'Мініекскаватор 1,2 тонни з кабіною · KOOP 192F · комфорт протягом усього року'
     ),
     description: localized(
-      'BM13C łączy kompaktową platformę 1,2 t z pełną kabiną operatora. To wariant dla użytkowników, którzy chcą zachować zwinność BM13 i jednocześnie pracować wygodniej w deszczu, chłodzie i podczas dłuższych zmian.',
-      'BM13C combines the compact 1.2-ton platform with a full operator cabin. It is built for buyers who want the agility of the BM13 while working more comfortably in rain, cold weather and during longer shifts.',
-      'BM13C поєднує компактну платформу 1,2 тонни з повною кабіною оператора. Це варіант для тих, хто хоче зберегти маневреність BM13 і водночас працювати комфортніше під дощем, у холоді та під час довших змін.'
+      'BM11C łączy kompaktową platformę 1,2 t z pełną kabiną operatora. To wariant dla użytkowników, którzy chcą zachować zwinność BM11 i jednocześnie pracować wygodniej w deszczu, chłodzie i podczas dłuższych zmian.',
+      'BM11C combines the compact 1.2-ton platform with a full operator cabin. It is built for buyers who want the agility of the BM11 while working more comfortably in rain, cold weather and during longer shifts.',
+      'BM11C поєднує компактну платформу 1,2 тонни з повною кабіною оператора. Це варіант для тих, хто хоче зберегти маневреність BM11 і водночас працювати комфортніше під дощем, у холоді та під час довших змін.'
     ),
   },
   'bm13c-kubota': {
@@ -62,9 +62,9 @@ const MODEL_TEXT_OVERRIDES = {
       'Мініекскаватор 1,2 тонни з кабіною · Kubota D722 · комфорт протягом усього року'
     ),
     description: localized(
-      'BM13C Kubota to kabinowy wariant platformy 1,2 t z silnikiem Kubota D722. Model powstał dla klientów, którzy chcą połączyć markową jednostkę 3-cylindrową, kompaktowe gabaryty i pełną kabinę operatora w jednej konfiguracji.',
-      'BM13C Kubota is the cab-equipped 1.2-ton platform version with a Kubota D722 engine. It is aimed at customers who want a branded 3-cylinder engine, compact dimensions and a full operator cabin in one configuration.',
-      'BM13C Kubota — це кабінна версія платформи 1,2 тонни з двигуном Kubota D722. Модель створена для клієнтів, яким потрібні брендований 3-циліндровий двигун, компактні габарити та повна кабіна оператора в одній конфігурації.'
+      'BM11C Kubota to kabinowy wariant platformy 1,2 t z silnikiem Kubota D722. Model powstał dla klientów, którzy chcą połączyć markową jednostkę 3-cylindrową, kompaktowe gabaryty i pełną kabinę operatora w jednej konfiguracji.',
+      'BM11C Kubota is the cab-equipped 1.2-ton platform version with a Kubota D722 engine. It is aimed at customers who want a branded 3-cylinder engine, compact dimensions and a full operator cabin in one configuration.',
+      'BM11C Kubota — це кабінна версія платформи 1,2 тонни з двигуном Kubota D722. Модель створена для клієнтів, яким потрібні брендований 3-циліндровий двигун, компактні габарити та повна кабіна оператора в одній конфігурації.'
     ),
   },
 }

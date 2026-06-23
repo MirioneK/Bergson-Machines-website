@@ -21,9 +21,9 @@
   "hero": {
     "badge": "Delivery in Poland · 1-year warranty · Mobile service",
     "titleLine1": "Professional",
-    "titleLine2": "BM16C mini excavator",
-    "titlePrice": "From PLN 48,900 gross",
-    "titlePriceSub": "PLN 39,756 net",
+    "titleLine2": "BM15C mini excavator",
+    "titlePrice": "From PLN 47,900 gross",
+    "titlePriceSub": "PLN 38,943 net",
     "lead": "Stop renting. <strong>Buy a machine that can pay for itself after the first season.</strong> Bergson Machines - full service support, parts always in stock, door-to-door delivery.",
     "sliderAriaLabel": "Switch hero slide",
     "actions": {
@@ -51,9 +51,9 @@
         "id": "excavators",
         "label": "Mini excavators",
         "titleLine1": "Professional",
-        "titleLine2": "BM16C mini excavator",
-        "titlePrice": "From PLN 48,900 gross",
-        "titlePriceSub": "PLN 39,756 net",
+        "titleLine2": "BM15C mini excavator",
+        "titlePrice": "From PLN 47,900 gross",
+        "titlePriceSub": "PLN 38,943 net",
         "lead": "Stop renting. <strong>Buy a machine that can pay for itself after the first season.</strong> Bergson Machines - full service support, parts always in stock, door-to-door delivery.",
         "image": "/images/optimized/hero.webp",
         "imageAlt": "Bergson Machines mini excavator",
@@ -120,7 +120,7 @@
   "models": {
     "label": "Our machines",
     "title": "Choose your mini excavator",
-    "sub": "Ten currently available configurations, from the compact BM12 to cab versions with Kubota and Laidong engines.",
+    "sub": "Ten currently available configurations, from the compact BM10 to cab versions with Kubota and Laidong engines.",
     "compareLink": "Compare models",
     "filters": {
       "all": "All",
@@ -234,9 +234,9 @@
     "closePreviewAriaLabel": "Close photo preview",
     "photos": {
       "bm12cPhoto": {
-        "alt": "BM12C mini excavator with cab",
-        "tag": "BM12C · With cab",
-        "label": "BM12C - work in any weather"
+        "alt": "BM10C mini excavator with cab",
+        "tag": "BM10C · With cab",
+        "label": "BM10C - work in any weather"
       },
       "bm10Photo": {
         "alt": "BM10 mini excavator",
@@ -244,9 +244,9 @@
         "label": "BM10 - narrow entrances, gardens"
       },
       "bm12Photo": {
-        "alt": "Mini excavator BM12",
-        "tag": "BM12 · Bestseller",
-        "label": "BM12 - the best choice"
+        "alt": "Mini excavator BM10",
+        "tag": "BM10 · Bestseller",
+        "label": "BM10 - the best choice"
       }
     },
     "infoTiles": {
@@ -417,7 +417,7 @@
       {
         "id": "leasing",
         "q": "Can I buy for a company and use leasing?",
-        "a": "Yes. We issue a VAT invoice, work with leasing companies and help with the paperwork. The instalment for BM13 starts from about PLN 480 net per month with 60-month leasing."
+        "a": "Yes. We issue a VAT invoice, work with leasing companies and help with the paperwork. The instalment for BM11 starts from about PLN 480 net per month with 60-month leasing."
       },
       {
         "id": "after-warranty",
@@ -467,27 +467,27 @@
       "modelOptions": [
         {
           "value": "bm13",
-          "label": "BM13"
+          "label": "BM11"
         },
         {
           "value": "bm13-kubota",
-          "label": "BM13 Kubota"
+          "label": "BM11 Kubota"
         },
         {
           "value": "bm16",
-          "label": "BM16"
+          "label": "BM15"
         },
         {
           "value": "bm16-kubota",
-          "label": "BM16 Kubota"
+          "label": "BM15 Kubota"
         },
         {
           "value": "bm16c",
-          "label": "BM16C"
+          "label": "BM15C"
         },
         {
           "value": "bm16c-kubota",
-          "label": "BM16C Kubota"
+          "label": "BM15C Kubota"
         },
         {
           "value": "bm25-ricardo",
@@ -638,7 +638,7 @@
               {
                 "type": "list",
                 "items": [
-                  "BM10, BM12, BM12C mini excavators - 12 months from the date the Goods are released to the Buyer;",
+                  "BM10, BM10C, BM11 mini excavators - 12 months from the date the Goods are released to the Buyer;",
                   "working attachments (buckets, hammers, augers) - 12 months from the date of release;",
                   "spare parts supplied as part of a warranty repair - 3 months or until the end of the original warranty period, whichever expires later."
                 ]

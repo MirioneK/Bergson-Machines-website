@@ -59,7 +59,7 @@ export default function Models() {
           <p className={styles.sub}>
             {t('models.sub', {
               defaultValue:
-                'Dziesięć aktualnie dostępnych konfiguracji, od kompaktowego BM12 po wersje kabinowe z silnikiem Kubota i Laidong.',
+                'Dziesięć aktualnie dostępnych konfiguracji, od kompaktowego BM10 po wersje kabinowe z silnikiem Kubota i Laidong.',
             })}
           </p>
         </header>

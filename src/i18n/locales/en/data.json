@@ -197,7 +197,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12 is a model with a higher operating weight, designed for more demanding earthworks while maintaining compact transport dimensions. It offers a good compromise between mobility and working stability and performs well both in installation work and everyday construction tasks.",
+      "description": "BM10 is a model with a higher operating weight, designed for more demanding earthworks while maintaining compact transport dimensions. It offers a good compromise between mobility and working stability and performs well both in installation work and everyday construction tasks.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -316,7 +316,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12C is the cab version of BM12, designed for work in less favourable weather conditions and wherever the operator expects greater comfort. The base platform parameters remain consistent with BM12; the difference is the body version and usage style.",
+      "description": "BM10C is the cab version of BM10, designed for work in less favourable weather conditions and wherever the operator expects greater comfort. The base platform parameters remain consistent with BM10; the difference is the body version and usage style.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -439,7 +439,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12 Kubota is a variant of the BM12 model with the same technical parameters and working geometry, but equipped with a Kubota Diesel engine. It is a version for customers who want to keep the compact dimensions of BM12 while choosing a stronger engine brand.",
+      "description": "BM10 Kubota is a variant of the BM10 model with the same technical parameters and working geometry, but equipped with a Kubota Diesel engine. It is a version for customers who want to keep the compact dimensions of BM10 while choosing a stronger engine brand.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -558,7 +558,7 @@
           "value": "933 mm"
         }
       ],
-      "description": "BM12C Kubota is the counterpart of BM12C with the same working parameters, but with a Kubota Diesel engine. It is a premium variant for customers who want to combine an operator cab with a higher-class power unit.",
+      "description": "BM10C Kubota is the counterpart of BM10C with the same working parameters, but with a Kubota Diesel engine. It is a premium variant for customers who want to combine an operator cab with a higher-class power unit.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -685,7 +685,7 @@
           "value": "850-1050 mm"
         }
       ],
-      "description": "BM13 is a compact 1.2 t mini excavator with a KOOP 192F engine, prepared for earthworks, installation and garden jobs. Expandable 850-1050 mm tracks make it easier to pass through narrower spaces, while digging depth up to 1,750 mm works well for everyday work around properties and on small construction sites.",
+      "description": "BM11 is a compact 1.2 t mini excavator with a KOOP 192F engine, prepared for earthworks, installation and garden jobs. Expandable 850-1050 mm tracks make it easier to pass through narrower spaces, while digging depth up to 1,750 mm works well for everyday work around properties and on small construction sites.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -864,7 +864,7 @@
           "value": "850-1050 mm"
         }
       ],
-      "description": "BM13 Kubota uses the same compact 1.2 t platform as the standard BM13, but runs on a Kubota D722 engine. It is a variant for customers who want to keep the machine’s small dimensions and choose a branded 3-cylinder unit.",
+      "description": "BM11 Kubota uses the same compact 1.2 t platform as the standard BM11, but runs on a Kubota D722 engine. It is a variant for customers who want to keep the machine’s small dimensions and choose a branded 3-cylinder unit.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -1043,7 +1043,7 @@
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16 is a larger 1.6 t platform with a Laidong 385 engine, wider 1100-1300 mm track spacing and digging depth up to 1,800 mm. The model is designed for more demanding earthworks, installation and construction jobs where greater stability and working reach matter.",
+      "description": "BM15 is a larger 1.6 t platform with a Laidong 385 engine, wider 1100-1300 mm track spacing and digging depth up to 1,800 mm. The model is designed for more demanding earthworks, installation and construction jobs where greater stability and working reach matter.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -1222,7 +1222,7 @@
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16 Kubota is based on the 1.6 t platform and working geometry of BM16, but uses a Kubota D722 engine. It is a variant for customers who want to combine greater working reach with a compact machine powered by a branded engine.",
+      "description": "BM15 Kubota is based on the 1.6 t platform and working geometry of BM15, but uses a Kubota D722 engine. It is a variant for customers who want to combine greater working reach with a compact machine powered by a branded engine.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -1401,7 +1401,7 @@
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16C combines a 1.6 t platform with a full operator cab and Laidong 385 engine. It is a variant for users who want to keep BM16 working parameters while working more comfortably in cold weather, rain and during longer shifts.",
+      "description": "BM15C combines a 1.6 t platform with a full operator cab and Laidong 385 engine. It is a variant for users who want to keep BM15 working parameters while working more comfortably in cold weather, rain and during longer shifts.",
       "accordions": [
         {
           "titleKey": "specification",
@@ -1581,7 +1581,7 @@
           "value": "1100-1300 mm"
         }
       ],
-      "description": "BM16C Kubota is the cab variant of the 1.6 t platform with a Kubota D722 engine. The model is prepared for customers who expect a full operator cab, expandable tracks and a branded engine in one configuration.",
+      "description": "BM15C Kubota is the cab variant of the 1.6 t platform with a Kubota D722 engine. The model is prepared for customers who expect a full operator cab, expandable tracks and a branded engine in one configuration.",
       "accordions": [
         {
           "titleKey": "specification",

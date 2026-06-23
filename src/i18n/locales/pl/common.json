@@ -21,9 +21,9 @@
   "hero": {
     "badge": "Dostawa w Polsce · Gwarancja 1 rok · Serwis mobilny",
     "titleLine1": "Profesjonalna",
-    "titleLine2": "Minikoparka BM16C",
-    "titlePrice": "Od 48 900 zł brutto",
-    "titlePriceSub": "39 756 zł netto",
+    "titleLine2": "Minikoparka BM15C",
+    "titlePrice": "Od 47 900 zł brutto",
+    "titlePriceSub": "38 943 zł netto",
     "lead": "Przestań wynajmować. <strong>Kup maszynę, która zwróci się po pierwszym sezonie.</strong> Bergson Machines - pełna obsługa serwisowa, części zawsze na stanie, dostawa pod drzwi.",
     "sliderAriaLabel": "Przełącz planszę hero",
     "actions": {
@@ -51,9 +51,9 @@
         "id": "excavators",
         "label": "Minikoparki",
         "titleLine1": "Profesjonalna",
-        "titleLine2": "Minikoparka BM16C",
-        "titlePrice": "Od 48 900 zł brutto",
-        "titlePriceSub": "39 756 zł netto",
+        "titleLine2": "Minikoparka BM15C",
+        "titlePrice": "Od 47 900 zł brutto",
+        "titlePriceSub": "38 943 zł netto",
         "lead": "Przestań wynajmować. <strong>Kup maszynę, która zwróci się po pierwszym sezonie.</strong> Bergson Machines - pełna obsługa serwisowa, części zawsze na stanie, dostawa pod drzwi.",
         "image": "/images/optimized/hero.webp",
         "imageAlt": "Minikoparka Bergson Machines",
@@ -120,7 +120,7 @@
   "models": {
     "label": "Nasze maszyny",
     "title": "Wybierz swoją minikoparkę",
-    "sub": "Dziesięć aktualnie dostępnych konfiguracji, od kompaktowego BM12 po wersje kabinowe z silnikiem Kubota i Laidong.",
+    "sub": "Dziesięć aktualnie dostępnych konfiguracji, od kompaktowego BM10 po wersje kabinowe z silnikiem Kubota i Laidong.",
     "compareLink": "Porównaj modele",
     "filters": {
       "all": "Wszystkie",
@@ -234,9 +234,9 @@
     "closePreviewAriaLabel": "Zamknij podgląd zdjęcia",
     "photos": {
       "bm12cPhoto": {
-        "alt": "Minikoparka BM12C z kabiną",
-        "tag": "BM12C · Z kabiną",
-        "label": "BM12C - praca w każdą pogodę"
+        "alt": "Minikoparka BM10C z kabiną",
+        "tag": "BM10C · Z kabiną",
+        "label": "BM10C - praca w każdą pogodę"
       },
       "bm10Photo": {
         "alt": "Minikoparka BM10",
@@ -244,9 +244,9 @@
         "label": "BM10 - wąskie wjazdy, ogrody"
       },
       "bm12Photo": {
-        "alt": "Minikoparka BM12",
-        "tag": "BM12 · Bestseller",
-        "label": "BM12 - najlepszy wybór"
+        "alt": "Minikoparka BM10",
+        "tag": "BM10 · Bestseller",
+        "label": "BM10 - najlepszy wybór"
       }
     },
     "infoTiles": {
@@ -417,7 +417,7 @@
       {
         "id": "leasing",
         "q": "Czy mogę kupić na firmę i skorzystać z leasingu?",
-        "a": "Tak. Wystawiamy fakturę VAT, współpracujemy z firmami leasingowymi i pomagamy przejść przez formalności. Rata za BM13 zaczyna się od około 480 zł netto miesięcznie przy leasingu 60-miesięcznym."
+        "a": "Tak. Wystawiamy fakturę VAT, współpracujemy z firmami leasingowymi i pomagamy przejść przez formalności. Rata za BM11 zaczyna się od około 480 zł netto miesięcznie przy leasingu 60-miesięcznym."
       },
       {
         "id": "after-warranty",
@@ -467,27 +467,27 @@
       "modelOptions": [
         {
           "value": "bm13",
-          "label": "BM13"
+          "label": "BM11"
         },
         {
           "value": "bm13-kubota",
-          "label": "BM13 Kubota"
+          "label": "BM11 Kubota"
         },
         {
           "value": "bm16",
-          "label": "BM16"
+          "label": "BM15"
         },
         {
           "value": "bm16-kubota",
-          "label": "BM16 Kubota"
+          "label": "BM15 Kubota"
         },
         {
           "value": "bm16c",
-          "label": "BM16C"
+          "label": "BM15C"
         },
         {
           "value": "bm16c-kubota",
-          "label": "BM16C Kubota"
+          "label": "BM15C Kubota"
         },
         {
           "value": "bm25-ricardo",
@@ -638,7 +638,7 @@
               {
                 "type": "list",
                 "items": [
-                  "minikoparki BM10, BM12, BM12C - 12 miesięcy od daty wydania Towaru Kupującemu;",
+                  "minikoparki BM10, BM10C, BM11 - 12 miesięcy od daty wydania Towaru Kupującemu;",
                   "osprzęt roboczy (łyżki, młoty, wiertnice) - 12 miesięcy od daty wydania;",
                   "części zamienne dostarczone w ramach naprawy gwarancyjnej - 3 miesiące lub do końca pierwotnego okresu gwarancji, w zależności od tego, który termin upływa później."
                 ]
