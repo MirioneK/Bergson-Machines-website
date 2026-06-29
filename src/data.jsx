@@ -161,7 +161,7 @@ export const MODELS = [
   {
     id: 'bm16c-kubota',
     name: 'BM15C KUBOTA',
-    image: '/images/optimized/BM17C.webp',
+    image: '/images/optimized/BM15C.webp',
     gallery: [
       '/images/optimized/BM17C.webp',
       '/images/optimized/BM17C.webp',
