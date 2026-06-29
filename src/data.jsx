@@ -15,7 +15,7 @@ export const MODELS = [
   {
     id: 'bm12',
     name: 'BM10',
-    image: '/images/optimized/BM12.webp',
+    image: '/images/optimized/BM10.webp',
     gallery: [
       '/images/optimized/bm12-gal1.webp',
       '/images/optimized/bm12-gal2.webp',
@@ -26,7 +26,7 @@ export const MODELS = [
   {
     id: 'bm12c',
     name: 'BM10C',
-    image: '/images/optimized/BM12C.webp',
+    image: '/images/optimized/BM10C.webp',
     gallery: [
       '/images/optimized/bm12c-gal1.webp',
       '/images/optimized/gal3.webp',
@@ -37,7 +37,7 @@ export const MODELS = [
   {
     id: 'bm12-kubota',
     name: 'BM10',
-    image: '/images/optimized/BM12.webp',
+    image: '/images/optimized/BM10.webp',
     gallery: [
       '/images/optimized/bm12-gal1.webp',
       '/images/optimized/bm12-gal2.webp',
@@ -48,7 +48,7 @@ export const MODELS = [
   {
     id: 'bm12c-kubota',
     name: 'BM10C',
-    image: '/images/optimized/BM12C.webp',
+    image: '/images/optimized/BM10C.webp',
     gallery: [
       '/images/optimized/bm12c-gal1.webp',
       '/images/optimized/gal3.webp',
@@ -66,7 +66,7 @@ export const MODELS = [
   {
     id: 'bm12',
     name: 'BM10',
-    image: '/images/optimized/BM12.webp',
+    image: '/images/optimized/BM10.webp',
     gallery: [
     ],
     techDrawing: '/images/optimized/bm12-technical.webp',
@@ -75,7 +75,7 @@ export const MODELS = [
   {
     id: 'bm12c',
     name: 'BM10C',
-    image: '/images/optimized/BM12C.webp',
+    image: '/images/optimized/BM10C.webp',
     gallery: [
     ],
     techDrawing: '/images/optimized/bm12-technical.webp',
@@ -84,21 +84,21 @@ export const MODELS = [
   {
     id: 'bm13',
     name: 'BM11',
-    image: '/images/optimized/BM13.webp',
+    image: '/images/optimized/BM11.webp',
     gallery: [
-      '/images/optimized/BM13.webp',
-      '/images/optimized/BM13.webp',
+      '/images/optimized/BM11.webp',
+      '/images/optimized/BM11.webp',
     ],
     techDrawing: null,
     priceNetto: 24309,
   },
   {
     id: 'bm13-kubota',
-    name: 'BM11',
-    image: '/images/optimized/BM13.webp',
+    name: 'BM11 KUBOTA',
+    image: '/images/optimized/BM11.webp',
     gallery: [
-      '/images/optimized/BM13.webp',
-      '/images/optimized/BM13.webp',
+      '/images/optimized/BM11.webp',
+      '/images/optimized/BM11.webp',
     ],
     techDrawing: null,
     priceNetto: 36585,
@@ -106,65 +106,65 @@ export const MODELS = [
   {
     id: 'bm13c',
     name: 'BM11C',
-    image: '/images/optimized/BM13.webp',
+    image: '/images/optimized/BM11.webp',
     gallery: [
-      '/images/optimized/BM13.webp',
-      '/images/optimized/BM13.webp',
+      '/images/optimized/BM11.webp',
+      '/images/optimized/BM11.webp',
     ],
     techDrawing: null,
     priceNetto: 27561,
   },
   {
     id: 'bm13c-kubota',
-    name: 'BM11C',
-    image: '/images/optimized/BM13.webp',
+    name: 'BM11C KUBOTA',
+    image: '/images/optimized/BM11.webp',
     gallery: [
-      '/images/optimized/BM13.webp',
-      '/images/optimized/BM13.webp',
+      '/images/optimized/BM11.webp',
+      '/images/optimized/BM11.webp',
     ],
     techDrawing: null,
     priceNetto: 39756,
   },
   {
     id: 'bm16',
-    name: 'BM15',
-    image: '/images/optimized/BM16.webp',
+    name: 'BM15 LAIDONG',
+    image: '/images/optimized/BM15.webp',
     gallery: [
-      '/images/optimized/BM16.webp',
-      '/images/optimized/BM16.webp',
+      '/images/optimized/BM15.webp',
+      '/images/optimized/BM15.webp',
     ],
     techDrawing: null,
     priceNetto: 35691,
   },
   {
     id: 'bm16-kubota',
-    name: 'BM15',
-    image: '/images/optimized/BM16.webp',
+    name: 'BM15 KUBOTA',
+    image: '/images/optimized/BM15.webp',
     gallery: [
-      '/images/optimized/BM16.webp',
-      '/images/optimized/BM16.webp',
+      '/images/optimized/BM15.webp',
+      '/images/optimized/BM15.webp',
     ],
     techDrawing: null,
     priceNetto: 43821,
   },
   {
     id: 'bm16c',
-    name: 'BM15C',
-    image: '/images/optimized/BM16C.webp',
+    name: 'BM15C LAIDONG',
+    image: '/images/optimized/BM15C.webp',
     gallery: [
-      '/images/optimized/BM16C.webp',
-      '/images/optimized/BM16C.webp',
+      '/images/optimized/BM15C.webp',
+      '/images/optimized/BM15C.webp',
     ],
     techDrawing: null,
     priceNetto: 38943,
   },
   {
     id: 'bm16c-kubota',
-    name: 'BM15C',
-    image: '/images/optimized/BM16C.webp',
+    name: 'BM15C KUBOTA',
+    image: '/images/optimized/BM17C.webp',
     gallery: [
-      '/images/optimized/BM16C.webp',
-      '/images/optimized/BM16C.webp',
+      '/images/optimized/BM17C.webp',
+      '/images/optimized/BM17C.webp',
     ],
     techDrawing: null,
     priceNetto: 47073,

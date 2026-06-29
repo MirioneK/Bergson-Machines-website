@@ -85,7 +85,7 @@ const COMPARE_MODELS = [
   },
   {
     id: 'bm13-kubota',
-    name: MODEL_LOOKUP['bm13-kubota']?.name ?? 'BM11 Kubota',
+    name: MODEL_LOOKUP['bm13-kubota']?.name ?? 'BM11 KUBOTA',
     priceNetto: MODEL_LOOKUP['bm13-kubota']?.priceNetto ?? 36585,
     bestseller: false,
     engine: 'Kubota D722 Diesel',
@@ -133,7 +133,7 @@ const COMPARE_MODELS = [
   },
   {
     id: 'bm13c-kubota',
-    name: MODEL_LOOKUP['bm13c-kubota']?.name ?? 'BM11C Kubota',
+    name: MODEL_LOOKUP['bm13c-kubota']?.name ?? 'BM11C KUBOTA',
     priceNetto: MODEL_LOOKUP['bm13c-kubota']?.priceNetto ?? 39756,
     bestseller: false,
     engine: 'Kubota D722 Diesel',
@@ -157,7 +157,7 @@ const COMPARE_MODELS = [
   },
   {
     id: 'bm16',
-    name: MODEL_LOOKUP['bm16']?.name ?? 'BM15 Laidong',
+    name: MODEL_LOOKUP['bm16']?.name ?? 'BM15 LAIDONG',
     priceNetto: MODEL_LOOKUP['bm16']?.priceNetto ?? 35691,
     bestseller: false,
     engine: 'Laidong 385 Diesel',
@@ -181,7 +181,7 @@ const COMPARE_MODELS = [
   },
   {
     id: 'bm16-kubota',
-    name: MODEL_LOOKUP['bm16-kubota']?.name ?? 'BM15 Kubota',
+    name: MODEL_LOOKUP['bm16-kubota']?.name ?? 'BM15 KUBOTA',
     priceNetto: MODEL_LOOKUP['bm16-kubota']?.priceNetto ?? 43821,
     bestseller: false,
     engine: 'Kubota D722 Diesel',
@@ -205,7 +205,7 @@ const COMPARE_MODELS = [
   },
   {
     id: 'bm16c',
-    name: MODEL_LOOKUP['bm16c']?.name ?? 'BM15C Laidong',
+    name: MODEL_LOOKUP['bm16c']?.name ?? 'BM15C LAIDONG',
     priceNetto: MODEL_LOOKUP['bm16c']?.priceNetto ?? 38943,
     bestseller: true,
     engine: 'Laidong 385 Diesel',
@@ -229,7 +229,7 @@ const COMPARE_MODELS = [
   },
   {
     id: 'bm16c-kubota',
-    name: MODEL_LOOKUP['bm16c-kubota']?.name ?? 'BM15C Kubota',
+    name: MODEL_LOOKUP['bm16c-kubota']?.name ?? 'BM15C KUBOTA',
     priceNetto: MODEL_LOOKUP['bm16c-kubota']?.priceNetto ?? 47073,
     bestseller: false,
     engine: 'Kubota D722 Diesel',

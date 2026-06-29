@@ -21,7 +21,7 @@
   "hero": {
     "badge": "Delivery in Poland · 1-year warranty · Mobile service",
     "titleLine1": "Professional",
-    "titleLine2": "BM15C mini excavator",
+    "titleLine2": "BM15C LAIDONG mini excavator",
     "titlePrice": "From PLN 47,900 gross",
     "titlePriceSub": "PLN 38,943 net",
     "lead": "Stop renting. <strong>Buy a machine that can pay for itself after the first season.</strong> Bergson Machines - full service support, parts always in stock, door-to-door delivery.",
@@ -51,7 +51,7 @@
         "id": "excavators",
         "label": "Mini excavators",
         "titleLine1": "Professional",
-        "titleLine2": "BM15C mini excavator",
+        "titleLine2": "BM15C LAIDONG mini excavator",
         "titlePrice": "From PLN 47,900 gross",
         "titlePriceSub": "PLN 38,943 net",
         "lead": "Stop renting. <strong>Buy a machine that can pay for itself after the first season.</strong> Bergson Machines - full service support, parts always in stock, door-to-door delivery.",
@@ -471,23 +471,23 @@
         },
         {
           "value": "bm13-kubota",
-          "label": "BM11 Kubota"
+          "label": "BM11 KUBOTA"
         },
         {
           "value": "bm16",
-          "label": "BM15"
+          "label": "BM15 LAIDONG"
         },
         {
           "value": "bm16-kubota",
-          "label": "BM15 Kubota"
+          "label": "BM15 KUBOTA"
         },
         {
           "value": "bm16c",
-          "label": "BM15C"
+          "label": "BM15C LAIDONG"
         },
         {
           "value": "bm16c-kubota",
-          "label": "BM15C Kubota"
+          "label": "BM15C KUBOTA"
         },
         {
           "value": "bm25-ricardo",

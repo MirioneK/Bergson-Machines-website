@@ -21,7 +21,7 @@
   "hero": {
     "badge": "Доставка в Польщі · Гарантія 1 рік · Мобільний сервіс",
     "titleLine1": "Професійний",
-    "titleLine2": "Мініекскаватор BM15C",
+    "titleLine2": "Мініекскаватор BM15C LAIDONG",
     "titlePrice": "Від 47 900 злотих брутто",
     "titlePriceSub": "38 943 злотих нетто",
     "lead": "Припиніть орендувати. <strong>Купіть машину, яка може окупитися після першого сезону.</strong> Bergson Machines — повне сервісне обслуговування, запчастини завжди в наявності, доставка до дверей.",
@@ -51,7 +51,7 @@
         "id": "excavators",
         "label": "Мініекскаватори",
         "titleLine1": "Професійний",
-        "titleLine2": "Мініекскаватор BM15C",
+        "titleLine2": "Мініекскаватор BM15C LAIDONG",
         "titlePrice": "Від 47 900 злотих брутто",
         "titlePriceSub": "38 943 злотих нетто",
         "lead": "Припиніть орендувати. <strong>Купіть машину, яка може окупитися після першого сезону.</strong> Bergson Machines — повне сервісне обслуговування, запчастини завжди в наявності, доставка до дверей.",
@@ -471,23 +471,23 @@
         },
         {
           "value": "bm13-kubota",
-          "label": "BM11 Kubota"
+          "label": "BM11 KUBOTA"
         },
         {
           "value": "bm16",
-          "label": "BM15"
+          "label": "BM15 LAIDONG"
         },
         {
           "value": "bm16-kubota",
-          "label": "BM15 Kubota"
+          "label": "BM15 KUBOTA"
         },
         {
           "value": "bm16c",
-          "label": "BM15C"
+          "label": "BM15C LAIDONG"
         },
         {
           "value": "bm16c-kubota",
-          "label": "BM15C Kubota"
+          "label": "BM15C KUBOTA"
         },
         {
           "value": "bm25-ricardo",
