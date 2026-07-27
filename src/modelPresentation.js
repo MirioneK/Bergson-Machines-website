@@ -43,6 +43,19 @@ const MODEL_CONTENT_FALLBACKS = {
 }
 
 const MODEL_TEXT_OVERRIDES = {
+  'bm17c-laidong': {
+    subtitle: localized(
+      'Minikoparka 1,7 t · Laidong · pełna kabina z ogrzewaniem i klimatyzacją',
+      '1.7-ton mini excavator · Laidong · full cabin with heating and air conditioning',
+      'Мініекскаватор 1,7 т · Laidong · повна кабіна з опаленням і кондиціонером'
+    ),
+    badge: localized('Nowość', 'New', 'Новинка'),
+    description: localized(
+      'BM17C to kompaktowa minikoparka o masie 1,7 t, zbudowana z myślą o pracy w ciasnych przestrzeniach i w każdych warunkach pogodowych. Pełna, zamknięta kabina z ogrzewaniem i klimatyzacją zapewnia operatorowi komfort niezależnie od pory roku. Idealna do prac przy zagospodarowaniu terenu, remontach, rozbiórkach wewnętrznych, w rolnictwie i mikroinżynierii komunalnej.',
+      'BM17C is a compact 1.7-ton mini excavator built for work in tight spaces and all weather conditions. A full enclosed cabin with heating and air conditioning keeps the operator comfortable throughout the year. It is suited to landscaping, renovation work, indoor demolition, agriculture and municipal micro-engineering.',
+      'BM17C — компактний мініекскаватор масою 1,7 т для роботи в тісних просторах і за будь-яких погодних умов. Повна закрита кабіна з опаленням і кондиціонером забезпечує комфорт оператора протягом року.'
+    ),
+  },
   bm13c: {
     subtitle: localized(
       'Minikoparka 1,2 tony z kabiną · KOOP 192F · komfort całoroczny',
@@ -70,6 +83,64 @@ const MODEL_TEXT_OVERRIDES = {
 }
 
 const MODEL_OVERRIDES = {
+  'bm17c-laidong': {
+    totalWeight: localized('1 700 kg'),
+    operatingWeight: localized('1 700 kg'),
+    cabin: FULL_CAB,
+    operatorStructure: FULL_CAB,
+    cabinHeating: YES,
+    cardSpecs: buildCardSpecs({
+      operatingWeight: localized('1 700 kg'),
+      engine: localized('Laidong D722 / D902D · 25 KM', 'Laidong D722 / D902D · 25 HP'),
+    }),
+    accordionRows: {
+      specification: [
+        { key: 'operatingWeight', value: localized('1 700 kg') },
+        { key: 'certificate', value: YES },
+        { key: 'condition', value: CONDITION_NEW },
+      ],
+      engine: [
+        { key: 'engineBrand', value: localized('Laidong') },
+        { key: 'engineModel', value: localized('Laidong D722 / D902D') },
+        { key: 'power', value: localized('25 KM (~18,4 kW)', '25 HP (~18.4 kW)') },
+        { key: 'cylinders', value: localized('3 (potrójny)', '3') },
+        { key: 'fuelType', value: localized('Diesel') },
+      ],
+      workingRange: [
+        { key: 'maxDiggingDepth', value: localized('2 030 mm') },
+        { key: 'maxDiggingRadius', value: localized('3 000 mm') },
+        { key: 'maxDiggingHeight', value: localized('2 750 mm') },
+        { key: 'maxDumpingHeight', value: localized('2 100 mm') },
+        { key: 'diggingForce', value: localized('18 kN') },
+        { key: 'bucketCapacity', value: localized('0,03 m³', '0.03 m³') },
+        { key: 'bladeHeight', value: localized('350 mm') },
+      ],
+      undercarriage: [
+        { key: 'trackWidth', value: localized('230 mm') },
+        { key: 'trackGroundContactLength', value: localized('1 550 mm') },
+        { key: 'trackMaterial', value: RUBBER },
+        { key: 'travelSpeed', value: localized('0-3,5 km/h', '0-3.5 km/h') },
+        { key: 'gradeability', value: localized('30°') },
+      ],
+      hydraulics: [
+        { key: 'hydraulicPump', value: localized('Dwustrumieniowa', 'Dual-flow', 'Двопотокова') },
+        { key: 'auxHydraulics', value: YES },
+        { key: 'hydraulicHoseCover', value: YES },
+      ],
+      operatorCab: [
+        { key: 'joystickControl', value: YES },
+        { key: 'seatBelts', value: YES },
+        { key: 'operatorStructure', value: FULL_CAB },
+        { key: 'cabinHeating', value: YES },
+        { key: 'airConditioning', value: YES },
+        { key: 'workLights', value: localized('Tak (LED)', 'Yes (LED)', 'Так (LED)') },
+      ],
+      dimensionsAndWeight: [
+        { key: 'overallDimensions', value: localized('2 950 x 1 150 x 2 300 mm') },
+        { key: 'fitsTrailer', value: YES },
+      ],
+    },
+  },
   bm12: {
     totalWeight: localized('1 100 kg'),
     operatingWeight: localized('1 200 kg'),

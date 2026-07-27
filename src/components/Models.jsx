@@ -34,7 +34,7 @@ export default function Models() {
       MODEL_FILTERS[0]
 
     const visibleModels = MODELS.filter(
-      (model) => !model.comingSoon && selectedFilter.predicate(model)
+      (model) => !model.comingSoon && !model.hidden && selectedFilter.predicate(model)
     )
 
     if (activeFilter !== 'all') {

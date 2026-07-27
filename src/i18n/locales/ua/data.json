@@ -47,11 +47,14 @@
     "travelSpeed": "Швидкість руху",
     "gradeability": "Здатність долати підйоми",
     "auxHydraulics": "Гідравлічна лінія для обладнання",
+    "hydraulicHoseCover": "Захист гідравлічних шлангів",
     "oilCooler": "Охолоджувач гідравлічної оливи",
     "joystickControl": "Керування джойстиками",
+    "seatBelts": "Ремені безпеки",
     "boomSwing": "Поворотна стріла (boom swing)",
     "operatorStructure": "Тип конструкції над оператором",
     "cabinHeating": "Опалення кабіни",
+    "airConditioning": "Кондиціонер",
     "workLights": "Робоче освітлення",
     "overallDimensions": "Габаритні розміри (Д x Ш x В)",
     "fitsTrailer": "Поміщається на причіп до 3,5 т повної маси"
@@ -4396,9 +4399,6 @@
     "hydraulic-auger": {
       "name": "Гідравлічний бур"
     },
-    "hydraulic-hammer": {
-      "name": "Гідравлічний молот"
-    },
     "bucket-20": {
       "name": "Ківш 200 мм"
     },
@@ -4410,9 +4410,6 @@
     },
     "rake-80": {
       "name": "Граблі 800 мм"
-    },
-    "grapple": {
-      "name": "Захват"
     },
     "hydraulic-tilting-ditch-bucket": {
       "name": "Гідравлічний поворотний планувальний ківш"

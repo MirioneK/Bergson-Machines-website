@@ -4,6 +4,7 @@ import TrustBar from '../components/TrustBar'
 import Models from '../components/Models'
 import Aggregates from '../components/Aggregates'
 import LeasingCalculatorSection from '../components/LeasingCalculatorSection'
+import HomeMachineVideo from '../components/HomeMachineVideo'
 import Gallery from '../components/Gallery'
 import Accessories from '../components/Accessories'
 import WhyUs from '../components/WhyUs'
@@ -26,16 +27,17 @@ export default function HomePage() {
     <main>
       <Hero />
       <TrustBar />
+      <Gallery />
+      <HomeMachineVideo />
       <Models />
-      <Aggregates />
       <LeasingCalculatorSection />
       <WhyUs />
       <TestimonialsSection />
       <Accessories />
-      <Gallery />
       <FAQ />
       <Contact />
       <SeoContent />
+      <Aggregates />
     </main>
   )
 }

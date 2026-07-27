@@ -234,19 +234,19 @@
     "closePreviewAriaLabel": "Close photo preview",
     "photos": {
       "bm12cPhoto": {
-        "alt": "BM10C mini excavator with cab",
-        "tag": "BM10C · With cab",
-        "label": "BM10C - work in any weather"
+        "alt": "BM15C Laidong mini excavator with cab",
+        "tag": "BM15C LAIDONG · With cab",
+        "label": "BM15C Laidong - work in any weather"
       },
       "bm10Photo": {
-        "alt": "BM10 mini excavator",
-        "tag": "BM10 · 1 tonne",
-        "label": "BM10 - narrow entrances, gardens"
+        "alt": "BM11 mini excavator",
+        "tag": "BM11 · 1.2 t",
+        "label": "BM11 - narrow entrances, gardens"
       },
       "bm12Photo": {
-        "alt": "Mini excavator BM10",
-        "tag": "BM10 · Bestseller",
-        "label": "BM10 - the best choice"
+        "alt": "BM17C Laidong mini excavator",
+        "tag": "BM17C LAIDONG · New",
+        "label": "BM17C Laidong - new model"
       }
     },
     "infoTiles": {
@@ -638,8 +638,8 @@
               {
                 "type": "list",
                 "items": [
-                  "BM10, BM10C, BM11 mini excavators - 12 months from the date the Goods are released to the Buyer;",
-                  "working attachments (buckets, hammers, augers) - 12 months from the date of release;",
+                  "BM11, BM15 and BM17C mini excavators - 12 months from the date the Goods are released to the Buyer;",
+                  "working attachments (buckets, augers) - 12 months from the date of release;",
                   "spare parts supplied as part of a warranty repair - 3 months or until the end of the original warranty period, whichever expires later."
                 ]
               }

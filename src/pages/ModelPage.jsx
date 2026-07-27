@@ -11,6 +11,10 @@ import {
 import { useLangPath } from '../hooks/useLangPath'
 import { useReveal } from '../hooks/useReveal'
 import { getProductGalleryImages } from '../galleryUtils'
+import LazyYouTube from '../components/LazyYouTube'
+import PhotoLightbox from '../components/PhotoLightbox'
+import LeasingCalculatorSection from '../components/LeasingCalculatorSection'
+import Contact from '../components/Contact'
 import {
   getModelAccordions,
   getModelCardSpecs,
@@ -59,15 +63,16 @@ export default function ModelPage() {
   const [heroMediaRef, heroMediaVisible] = useReveal()
   const [heroInfoRef, heroInfoVisible] = useReveal()
   const [overviewDescRef, overviewDescVisible] = useReveal()
+  const [productGalleryRef, productGalleryVisible] = useReveal()
+  const [productMediaRef, productMediaVisible] = useReveal()
   const [specsHeaderRef, specsHeaderVisible] = useReveal()
   const [drawingRef, drawingVisible] = useReveal()
   const [accessoriesHeaderRef, accessoriesHeaderVisible] = useReveal()
-  const [otherInnerRef, otherInnerVisible] = useReveal()
   const [ctaBarRef, ctaBarVisible] = useReveal()
+  const [productLightboxIndex, setProductLightboxIndex] = useState(null)
 
   if (!model) return <Navigate to={langPath('/')} replace />
 
-  const others = MODELS.filter((m) => m.id !== id && m.id !== 'upcoming')
   const priceBrutto = calcBrutto(model.priceNetto)
   const contentId = getModelContentId(id)
 
@@ -110,8 +115,34 @@ export default function ModelPage() {
     Array.isArray(accordionsRaw) ? accordionsRaw : []
   )
 
-  const sideImages = getProductGalleryImages(model.image, model.gallery)
+  const sideImages = getProductGalleryImages(model.image, model.gallery, 24)
   const hasSideGallery = sideImages.length > 0
+  const shouldShowProductVideo = Boolean(model.videos && model.videos.length > 0)
+  const shouldShowFeatureImage = Boolean(model.featureImage)
+  const hasEnhancedMedia = shouldShowProductVideo || shouldShowFeatureImage
+  const productPreviewPhotos = [
+    ...(shouldShowFeatureImage
+      ? [{
+          src: model.featureImage,
+          alt: t('modelPage.galleryImageAlt', { name: model.name, index: 1 }),
+        }]
+      : []),
+    ...sideImages
+      .filter((src) => src !== model.featureImage)
+      .map((src, index) => ({
+        src,
+        alt: t('modelPage.galleryImageAlt', {
+          name: model.name,
+          index: shouldShowFeatureImage ? index + 2 : index + 1,
+        }),
+      })),
+  ]
+  const openProductLightbox = (src) => {
+    const nextIndex = productPreviewPhotos.findIndex((photo) => photo.src === src)
+    if (nextIndex >= 0) {
+      setProductLightboxIndex(nextIndex)
+    }
+  }
 
   const formattedNetto = formatPrice(model.priceNetto, i18n.resolvedLanguage)
   const formattedBrutto = formatPrice(priceBrutto, i18n.resolvedLanguage)
@@ -197,13 +228,13 @@ export default function ModelPage() {
             <p className={styles.heroSubtitle}>{modelSubtitle}</p>
 
             <div className={styles.priceBlock}>
-              <div className={styles.priceNetto}>
+              <div className={styles.priceMain}>
                 <span className={styles.pricePrefix}>{t('modelPage.pricePrefix')}</span>
-                {formattedNetto}
-                <span className={styles.priceUnit}>{t('modelPage.priceNettoUnit')}</span>
+                {formattedBrutto}
+                <span className={styles.priceUnit}>{t('modelCard.priceGrossLabel')}</span>
               </div>
-              <div className={styles.priceBrutto}>
-                {t('modelPage.priceGross', { price: formattedBrutto })}
+              <div className={styles.priceSub}>
+                {t('modelCard.priceNetto', { price: formattedNetto })}
               </div>
             </div>
 
@@ -219,9 +250,9 @@ export default function ModelPage() {
             </div>
 
             <div className={styles.heroCtas}>
-              <Link to={langPath('/', '#kontakt')} className="btn-primary">
+              <a href="#kontakt" className="btn-primary">
                 {t('modelPage.actions.contact')}
-              </Link>
+              </a>
               <Link to={langPath('/', '#modele')} className="btn-outline">
                 {t('modelPage.actions.allModels')}
               </Link>
@@ -231,9 +262,7 @@ export default function ModelPage() {
       </section>
 
       <section className={styles.overviewSection}>
-        <div
-          className={`page-shell ${styles.overviewInner} ${!hasSideGallery ? styles.overviewInnerSingle : ''}`}
-        >
+        <div className={`page-shell ${styles.overviewInner}`}>
           <div
             ref={overviewDescRef}
             className={`${styles.descCard} reveal ${overviewDescVisible ? 'visible' : ''}`}
@@ -241,22 +270,80 @@ export default function ModelPage() {
             <h2 className={styles.descTitle}>{t('modelPage.overviewTitle', { name: model.name })}</h2>
             <p className={styles.descText}>{modelDescription}</p>
           </div>
+        </div>
+      </section>
 
-          {hasSideGallery ? (
+      {hasSideGallery && (
+        <section className={styles.productGallerySection}>
+          <div
+            ref={productGalleryRef}
+            className={`page-shell ${styles.productGalleryInner} reveal ${productGalleryVisible ? 'visible' : ''}`}
+          >
             <div className={styles.sideGallery}>
               {sideImages.map((src, index) => (
                 <SideGalleryCard
                   key={`${src}-${index}`}
                   src={src}
                   modelName={model.name}
-                  index={index}
+                  imageNumber={shouldShowFeatureImage ? index + 2 : index + 1}
                   delay={120 + index * 100}
+                  onOpen={() => openProductLightbox(src)}
                 />
               ))}
             </div>
-          ) : null}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
+
+      {hasEnhancedMedia && (
+        <section className={styles.productMediaSection}>
+          <div
+            ref={productMediaRef}
+            className={`page-shell ${styles.productMediaInner} reveal ${productMediaVisible ? 'visible' : ''}`}
+          >
+            {shouldShowProductVideo && (
+              <div className={styles.videoStack}>
+                {(model.videos || []).map((video, index) => (
+                  <LazyYouTube
+                    key={video.videoId || index}
+                    videoId={video.videoId}
+                    title={video.title || `${model.name} - film`}
+                    poster={sideImages[0] || model.image}
+                    placeholderText="Film produktowy zostanie podpięty po publikacji na YouTube"
+                  />
+                ))}
+              </div>
+            )}
+
+            {shouldShowFeatureImage && (
+              <button
+                type="button"
+                className={styles.featureImageButton}
+                onClick={() => openProductLightbox(model.featureImage)}
+                aria-label={t('gallery.openPhotoAriaLabel', {
+                  defaultValue: 'Powiększ zdjęcie',
+                })}
+              >
+                <img
+                  src={model.featureImage}
+                  alt={t('modelPage.galleryImageAlt', { name: model.name, index: 1 })}
+                  className={styles.featureImage}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+            )}
+          </div>
+        </section>
+      )}
+
+      {productLightboxIndex !== null && (
+        <PhotoLightbox
+          photos={productPreviewPhotos}
+          initialIndex={productLightboxIndex}
+          onClose={() => setProductLightboxIndex(null)}
+        />
+      )}
 
       <section className={styles.specsSection}>
         <div className={`page-shell ${styles.specsInner}`}>
@@ -270,7 +357,7 @@ export default function ModelPage() {
 
           <div className={styles.specAccordions}>
             {accordions.map((acc, index) => (
-              <RevealAccordion
+              <RevealSpecGroup
                 key={`${acc.titleKey}-${index}`}
                 title={t(`modelAccordionTitles.${acc.titleKey}`, {
                   ns: 'data',
@@ -281,8 +368,6 @@ export default function ModelPage() {
                   label: resolveModelSpecLabel(row.key),
                   value: row.value,
                 }))}
-                defaultOpen={index === 0}
-                delay={120 + index * 100}
               />
             ))}
           </div>
@@ -335,24 +420,9 @@ export default function ModelPage() {
         </div>
       </section>
 
-      <section className={styles.otherSection}>
-        <div
-          ref={otherInnerRef}
-          className={`page-shell ${styles.otherInner} reveal ${otherInnerVisible ? 'visible' : ''}`}
-        >
-          <span className={styles.otherLabel}>{t('modelPage.otherLabel')}</span>
+      <LeasingCalculatorSection defaultProductId={model.id} />
 
-          <div className={styles.otherGrid}>
-            {others.map((other, index) => (
-              <OtherModelCard
-                key={other.id}
-                other={other}
-                delay={120 + index * 100}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <Contact defaultModelId={model.id} />
 
       <section className={styles.ctaBar}>
         <div
@@ -368,9 +438,9 @@ export default function ModelPage() {
             </div>
           </div>
 
-          <Link to={langPath('/', '#kontakt')} className={styles.ctaBarBtn}>
+          <a href="#kontakt" className={styles.ctaBarBtn}>
             {t('modelPage.ctaBarButton')}
-          </Link>
+          </a>
         </div>
       </section>
     </main>
@@ -392,35 +462,41 @@ function QuickSpecCell({ label, value, delay }) {
   )
 }
 
-function SideGalleryCard({ src, modelName, index, delay }) {
+function SideGalleryCard({ src, modelName, imageNumber, delay, onOpen }) {
   const { t } = useTranslation()
   const [ref, visible] = useReveal()
 
   return (
-    <div
+    <button
+      type="button"
       ref={ref}
       className={`${styles.galleryCard} reveal ${visible ? 'visible' : ''}`}
       style={{ transitionDelay: `${delay}ms` }}
+      onClick={onOpen}
+      aria-label={t('gallery.openPhotoAriaLabel', {
+        defaultValue: 'Powiększ zdjęcie',
+      })}
     >
       <img
         src={src}
-        alt={t('modelPage.galleryImageAlt', { name: modelName, index: index + 1 })}
+        alt={t('modelPage.galleryImageAlt', { name: modelName, index: imageNumber })}
         className={styles.galleryImage}
+        loading="lazy"
+        decoding="async"
       />
-    </div>
+    </button>
   )
 }
 
-function RevealAccordion({ title, rows, defaultOpen = false, delay }) {
+function RevealSpecGroup({ title, rows }) {
   const [ref, visible] = useReveal()
 
   return (
     <div
       ref={ref}
       className={`reveal ${visible ? 'visible' : ''}`}
-      style={{ transitionDelay: `${delay}ms` }}
     >
-      <Accordion title={title} rows={rows} defaultOpen={defaultOpen} />
+      <SpecGroup title={title} rows={rows} />
     </div>
   )
 }
@@ -460,84 +536,23 @@ function AccessoryPreviewCard({ item, delay }) {
   )
 }
 
-function OtherModelCard({ other, delay }) {
-  const { t, i18n } = useTranslation()
-  const langPath = useLangPath()
-  const [ref, visible] = useReveal()
-
-  const badge = t(`models.${other.id}.badge`, {
-    ns: 'data',
-    defaultValue: '',
-  })
-
-  const subtitle = t(`models.${other.id}.subtitle`, {
-    ns: 'data',
-    defaultValue: '',
-  })
-
+function SpecGroup({ title, rows }) {
   return (
-    <Link
-      ref={ref}
-      to={langPath(`/modele/${other.id}`)}
-      className={`${styles.otherCard} reveal ${visible ? 'visible' : ''}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      <div className={styles.otherImgWrap}>
-        <img
-          src={other.image}
-          alt={t('modelPage.otherModelImageAlt', { name: other.name })}
-          className={styles.otherImg}
-        />
-      </div>
-
-      <div className={styles.otherBody}>
-        {badge && (
-          <span className={styles.otherBadge}>
-            <span className={styles.badgeStar} aria-hidden="true">★</span>
-            {badge}
-          </span>
-        )}
-
-        <div className={styles.otherName}>{other.name}</div>
-        <div className={styles.otherSub}>{subtitle}</div>
-        <div className={styles.otherPrice}>
-          {t('modelPage.otherPrice', {
-            price: formatPrice(other.priceNetto, i18n.resolvedLanguage),
-          })}
-        </div>
-        <span className={styles.otherCta}>{t('modelPage.otherCta')}</span>
-      </div>
-    </Link>
-  )
-}
-
-function Accordion({ title, rows, defaultOpen = false }) {
-  const [open, setOpen] = useState(defaultOpen)
-
-  return (
-    <div className={`${styles.acc} ${open ? styles.accOpen : ''}`}>
-      <button
-        type="button"
-        className={styles.accHead}
-        onClick={() => setOpen((prev) => !prev)}
-        aria-expanded={open}
-      >
+    <section className={`${styles.acc} ${styles.accOpen}`}>
+      <div className={styles.accHead}>
         <span>{title}</span>
-        <span className={styles.accIcon}>{open ? '−' : '+'}</span>
-      </button>
+      </div>
 
-      {open && (
-        <div className={styles.accBody}>
-          <div className={styles.specRows}>
-            {rows.map(({ key, label, value }, index) => (
-              <div key={`${key}-${index}`} className={styles.specRow}>
-                <div className={styles.specKey}>{label}</div>
-                <div className={styles.specVal}>{value}</div>
-              </div>
-            ))}
-          </div>
+      <div className={styles.accBody}>
+        <div className={styles.specRows}>
+          {rows.map(({ key, label, value }, index) => (
+            <div key={`${key}-${index}`} className={styles.specRow}>
+              <div className={styles.specKey}>{label}</div>
+              <div className={styles.specVal}>{value}</div>
+            </div>
+          ))}
         </div>
-      )}
-    </div>
+      </div>
+    </section>
   )
 }

@@ -56,6 +56,7 @@
 }
 
 .mainImageButton {
+  position: relative;
   width: 100%;
   height: 100%;
   display: block;
@@ -65,7 +66,28 @@
   cursor: zoom-in;
 }
 
+.mainImageButton::before,
+.thumbBtn::before {
+  content: "Ładowanie zdjęcia";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  color: rgba(255, 255, 255, 0.58);
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  background: var(--bg-base);
+}
+
 .mainImage {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -141,6 +163,8 @@
 }
 
 .thumbImage {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -369,11 +393,7 @@
   }
 
   .thumbRow {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .thumbBtn {
-    height: 64px;
+    display: none;
   }
 
   .infoGrid {

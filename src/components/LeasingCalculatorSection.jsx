@@ -25,7 +25,7 @@ function getAggregateEngineBrand(cardSpecs) {
   )
 }
 
-export default function LeasingCalculatorSection() {
+export default function LeasingCalculatorSection({ defaultProductId } = {}) {
   const { t, i18n } = useTranslation()
   const langPath = useLangPath()
   const handleHashScroll = useHashScroll()
@@ -33,7 +33,7 @@ export default function LeasingCalculatorSection() {
   const [headerRef, headerVisible] = useReveal()
   const [widgetRef, widgetVisible] = useReveal()
 
-  const [selectedId, setSelectedId] = useState('bm13')
+  const [selectedId, setSelectedId] = useState(defaultProductId || 'bm13')
   const [downIndex, setDownIndex] = useState(1)
   const [months, setMonths] = useState(60)
   const [residual, setResidual] = useState(1)
@@ -42,7 +42,7 @@ export default function LeasingCalculatorSection() {
   const downPayment = DOWN_PAYMENT_OPTIONS[downIndex]
 
   const productOptions = useMemo(() => {
-    const modelOptions = MODELS.filter((model) => !model.comingSoon).map(
+    const modelOptions = MODELS.filter((model) => !model.comingSoon && !model.hidden).map(
       (model) => ({
         id: model.id,
         type: 'model',

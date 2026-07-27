@@ -47,11 +47,14 @@
     "travelSpeed": "Travel speed",
     "gradeability": "Gradeability",
     "auxHydraulics": "Auxiliary hydraulic line",
+    "hydraulicHoseCover": "Hydraulic hose cover",
     "oilCooler": "Hydraulic oil cooler",
     "joystickControl": "Joystick control",
+    "seatBelts": "Seat belts",
     "boomSwing": "Boom swing",
     "operatorStructure": "Operator structure type",
     "cabinHeating": "Cab heating",
+    "airConditioning": "Air conditioning",
     "workLights": "Work lights",
     "overallDimensions": "Overall dimensions (L x W x H)",
     "fitsTrailer": "Fits on a trailer up to 3.5 t GVW"
@@ -4396,9 +4399,6 @@
     "hydraulic-auger": {
       "name": "Hydraulic auger"
     },
-    "hydraulic-hammer": {
-      "name": "Hydraulic hammer"
-    },
     "bucket-20": {
       "name": "200 mm bucket"
     },
@@ -4410,9 +4410,6 @@
     },
     "rake-80": {
       "name": "800 mm rake"
-    },
-    "grapple": {
-      "name": "Grapple"
     },
     "hydraulic-tilting-ditch-bucket": {
       "name": "Hydraulic tilting ditching bucket"

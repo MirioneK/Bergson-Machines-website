@@ -26,6 +26,11 @@ SetEnv SMTP_USER website@bergsonmachines.pl
   # Nie przepisywuj endpointów backendu - mają trafić do Node/Passenger
   RewriteRule ^api(/|$) - [L]
 
+  RewriteRule ^pl/(osprzet/)?(hydraulic-hammer|mlot-hydrauliczny)/?$ /pl/osprzet [R=301,L]
+  RewriteRule ^en/(accessories/)?hydraulic-hammer/?$ /en/accessories [R=301,L]
+  RewriteRule ^ua/(accessories/)?hydraulic-hammer/?$ /ua/accessories [R=301,L]
+  RewriteRule ^(hydraulic-hammer|mlot-hydrauliczny)/?$ /pl/osprzet [R=301,L]
+
   RewriteRule ^index\.html$ - [L]
 
   RewriteCond %{REQUEST_FILENAME} -f [OR]

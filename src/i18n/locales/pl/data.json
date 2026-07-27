@@ -47,11 +47,14 @@
     "travelSpeed": "Prędkość jazdy",
     "gradeability": "Zdolność pokonywania wzniesień",
     "auxHydraulics": "Linia hydrauliczna pod osprzęt",
+    "hydraulicHoseCover": "Obudowa węży hydraulicznych",
     "oilCooler": "Chłodnica oleju hydraulicznego",
     "joystickControl": "Sterowanie joystickami",
+    "seatBelts": "Pasy bezpieczeństwa",
     "boomSwing": "Ramię skrętne (boom swing)",
     "operatorStructure": "Typ konstrukcji nad operatorem",
     "cabinHeating": "Ogrzewanie kabiny",
+    "airConditioning": "Klimatyzacja",
     "workLights": "Światła robocze",
     "overallDimensions": "Wymiary całkowite (dł. x szer. x wys.)",
     "fitsTrailer": "Mieści się na przyczepie do 3,5 t DMC"
@@ -4396,9 +4399,6 @@
     "hydraulic-auger": {
       "name": "Świder hydrauliczny"
     },
-    "hydraulic-hammer": {
-      "name": "Młot hydrauliczny"
-    },
     "bucket-20": {
       "name": "Łyżka 200 mm"
     },
@@ -4410,9 +4410,6 @@
     },
     "rake-80": {
       "name": "Grabie 800 mm"
-    },
-    "grapple": {
-      "name": "Chwytak"
     },
     "hydraulic-tilting-ditch-bucket": {
       "name": "Łyżka przechylna hydrauliczna skarpowa"

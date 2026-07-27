@@ -1,3 +1,8 @@
+const rangeImages = (folder, count) =>
+  Array.from({ length: count }, (_, index) => (
+    `/images/optimized/july-2026/${folder}/${String(index + 1).padStart(2, '0')}.webp`
+  ))
+
 // ─── MODELS ──────────────────────────────────────────────────────────────────
 export const MODELS = [
   /*
@@ -67,6 +72,7 @@ export const MODELS = [
     id: 'bm12',
     name: 'BM10',
     image: '/images/optimized/BM10.webp',
+    hidden: true,
     gallery: [
     ],
     techDrawing: '/images/optimized/bm12-technical.webp',
@@ -76,6 +82,7 @@ export const MODELS = [
     id: 'bm12c',
     name: 'BM10C',
     image: '/images/optimized/BM10C.webp',
+    hidden: true,
     gallery: [
     ],
     techDrawing: '/images/optimized/bm12-technical.webp',
@@ -85,10 +92,13 @@ export const MODELS = [
     id: 'bm13',
     name: 'BM11',
     image: '/images/optimized/BM11.webp',
-    gallery: [
-      '/images/optimized/BM11.webp',
-      '/images/optimized/BM11.webp',
+    videos: [
+      {
+        videoId: 'E3DKPAPvGiA',
+        title: 'Prezentacja BM11 Koop',
+      },
     ],
+    gallery: rangeImages('bm11-koop', 11),
     techDrawing: null,
     priceNetto: 24309,
   },
@@ -96,10 +106,13 @@ export const MODELS = [
     id: 'bm13-kubota',
     name: 'BM11 KUBOTA',
     image: '/images/optimized/BM11.webp',
-    gallery: [
-      '/images/optimized/BM11.webp',
-      '/images/optimized/BM11.webp',
+    videos: [
+      {
+        videoId: 'K4fmG8z4Zuc',
+        title: 'Prezentacja BM11 Kubota',
+      },
     ],
+    gallery: rangeImages('bm11-kubota', 10),
     techDrawing: null,
     priceNetto: 36585,
   },
@@ -107,6 +120,7 @@ export const MODELS = [
     id: 'bm13c',
     name: 'BM11C',
     image: '/images/optimized/BM11.webp',
+    hidden: true,
     gallery: [
       '/images/optimized/BM11.webp',
       '/images/optimized/BM11.webp',
@@ -118,6 +132,7 @@ export const MODELS = [
     id: 'bm13c-kubota',
     name: 'BM11C KUBOTA',
     image: '/images/optimized/BM11.webp',
+    hidden: true,
     gallery: [
       '/images/optimized/BM11.webp',
       '/images/optimized/BM11.webp',
@@ -151,10 +166,13 @@ export const MODELS = [
     id: 'bm16c',
     name: 'BM15C LAIDONG',
     image: '/images/optimized/BM15C.webp',
-    gallery: [
-      '/images/optimized/BM15C.webp',
-      '/images/optimized/BM15C.webp',
+    videos: [
+      {
+        videoId: 'K8v_k6L9y7I',
+        title: 'Prezentacja BM15C Laidong',
+      },
     ],
+    gallery: rangeImages('bm15c-laidong', 15),
     techDrawing: null,
     priceNetto: 38943,
   },
@@ -162,12 +180,23 @@ export const MODELS = [
     id: 'bm16c-kubota',
     name: 'BM15C KUBOTA',
     image: '/images/optimized/BM15C.webp',
-    gallery: [
-      '/images/optimized/BM17C.webp',
-      '/images/optimized/BM17C.webp',
+    videos: [
+      {
+        videoId: 'qzuxYElCQ7w',
+        title: 'BM15C Kubota w akcji',
+      },
     ],
+    gallery: rangeImages('bm15c-kubota', 9),
     techDrawing: null,
     priceNetto: 47073,
+  },
+  {
+    id: 'bm17c-laidong',
+    name: 'BM17C LAIDONG',
+    image: '/images/optimized/july-2026/bm17c/bm17c-laidong.webp',
+    gallery: [],
+    techDrawing: null,
+    priceNetto: 44715.45,
   },
   {
     id: 'upcoming',
@@ -229,11 +258,6 @@ export const ACCESSORY_PREVIEW = [
     priceNetto: 1999,
   },
   {
-    id: 'hydraulic-hammer',
-    image: '/images/optimized/accessories/hydraulic-hammer.webp',
-    priceNetto: 4499,
-  },
-  {
     id: 'bucket-20',
     image: '/images/optimized/accessories/bucket-20-cm.webp',
     priceNetto: 449,
@@ -252,11 +276,6 @@ export const ACCESSORY_PREVIEW = [
     id: 'rake-80',
     image: '/images/optimized/accessories/rake-80-cm.webp',
     priceNetto: 799,
-  },
-  {
-    id: 'grapple',
-    image: '/images/optimized/accessories/grapple.webp',
-    priceNetto: 899,
   },
   {
     id: 'hydraulic-tilting-ditch-bucket',
@@ -340,46 +359,11 @@ export const PARTS_PREVIEW = [
 
 // ─── GALLERY PHOTOS ──────────────────────────────────────────────────────────
 export const GALLERY_PHOTOS = [
-  {
-    id: 'bm12cPhoto',
-    src: '/images/optimized/gal1.webp',
-  },
-  {
-    id: 'bm10Photo',
-    src: '/images/optimized/gal2.webp',
-  },
-  {
-    id: 'bm12Photo',
-    src: '/images/optimized/gal3.webp',
-  },
-  {
-    id: 'Accessories',
-    src: '/images/optimized/gal2old.webp',
-  },
-  {
-    id: 'bm12-gal2',
-    src: '/images/optimized/bm12-gal2.webp',
-  },
-  {
-    id: 'bm10-gal1',
-    src: '/images/optimized/bm10-gal1.webp',
-  },
-  {
-    id: 'bm12c-gal1',
-    src: '/images/optimized/bm12c-gal1.webp',
-  },
-  {
-    id: 'gal4',
-    src: '/images/optimized/gal4.webp',
-  },
-  {
-    id: 'gal5',
-    src: '/images/optimized/gal5.webp',
-  },
-  {
-    id: 'gal6',
-    src: '/images/optimized/gal6.webp',
-  },
+  ...rangeImages('home-full', 26).map((src, index) => ({
+    id: `homeClosePhoto${index + 1}`,
+    src,
+    alt: `Minikoparka Bergson Machines z bliska - zdjęcie ${index + 1}`,
+  })),
 ]
 
 // ─── TRUST BAR ───────────────────────────────────────────────────────────────

@@ -234,19 +234,19 @@
     "closePreviewAriaLabel": "Zamknij podgląd zdjęcia",
     "photos": {
       "bm12cPhoto": {
-        "alt": "Minikoparka BM10C z kabiną",
-        "tag": "BM10C · Z kabiną",
-        "label": "BM10C - praca w każdą pogodę"
+        "alt": "Minikoparka BM15C Laidong z kabiną",
+        "tag": "BM15C LAIDONG · Z kabiną",
+        "label": "BM15C Laidong - praca w każdą pogodę"
       },
       "bm10Photo": {
-        "alt": "Minikoparka BM10",
-        "tag": "BM10 · 1 tona",
-        "label": "BM10 - wąskie wjazdy, ogrody"
+        "alt": "Minikoparka BM11",
+        "tag": "BM11 · 1,2 t",
+        "label": "BM11 - wąskie wjazdy, ogrody"
       },
       "bm12Photo": {
-        "alt": "Minikoparka BM10",
-        "tag": "BM10 · Bestseller",
-        "label": "BM10 - najlepszy wybór"
+        "alt": "Minikoparka BM17C Laidong",
+        "tag": "BM17C LAIDONG · Nowość",
+        "label": "BM17C Laidong - nowy model"
       }
     },
     "infoTiles": {
@@ -638,8 +638,8 @@
               {
                 "type": "list",
                 "items": [
-                  "minikoparki BM10, BM10C, BM11 - 12 miesięcy od daty wydania Towaru Kupującemu;",
-                  "osprzęt roboczy (łyżki, młoty, wiertnice) - 12 miesięcy od daty wydania;",
+                  "minikoparki BM11, BM15 i BM17C - 12 miesięcy od daty wydania Towaru Kupującemu;",
+                  "osprzęt roboczy (łyżki, wiertnice) - 12 miesięcy od daty wydania;",
                   "części zamienne dostarczone w ramach naprawy gwarancyjnej - 3 miesiące lub do końca pierwotnego okresu gwarancji, w zależności od tego, który termin upływa później."
                 ]
               }

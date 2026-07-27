@@ -37,7 +37,7 @@ function getAggregateEngineBrand(cardSpecs) {
   return cardSpecs.find((item) => item.key === 'engineBrand')?.value ?? 'Agregat'
 }
 
-export default function Contact() {
+export default function Contact({ defaultModelId } = {}) {
   const { t } = useTranslation()
   const locations = CONTACT_INFO.locations?.length
     ? CONTACT_INFO.locations
@@ -54,7 +54,10 @@ export default function Contact() {
   const [formRef, formVisible] = useReveal()
   const [infoRef, infoVisible] = useReveal()
 
-  const [form, setForm] = useState(INITIAL_FORM)
+  const [form, setForm] = useState(() => ({
+    ...INITIAL_FORM,
+    model: defaultModelId || '',
+  }))
   const [status, setStatus] = useState('idle')
   const [fieldErrors, setFieldErrors] = useState({})
   const [globalError, setGlobalError] = useState('')

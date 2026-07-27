@@ -251,10 +251,36 @@ const COMPARE_MODELS = [
     dimensions: '2870 × 1100 × 2200 mm',
     tracks: '1100-1300 mm',
   },
+  {
+    id: 'bm17c-laidong',
+    name: MODEL_LOOKUP['bm17c-laidong']?.name ?? 'BM17C LAIDONG',
+    priceNetto: MODEL_LOOKUP['bm17c-laidong']?.priceNetto ?? 50000,
+    bestseller: false,
+    engine: 'Laidong D722 / D902D',
+    enginePower: '25 KM',
+    enginePowerNum: 25,
+    cylinders: '3',
+    mass: '1 700 kg',
+    depth: '2 030 mm',
+    depthNum: 2030,
+    reach: '3 000 mm',
+    reachNum: 3000,
+    digForce: '18 kN',
+    digForceNum: 18,
+    hydraulicPump: 'Dwustrumieniowa',
+    additionalEquipment: 'Pełna kabina',
+    oilCooler: 'Tak',
+    cabin: 'Pełna kabina',
+    heating: 'Tak',
+    dimensions: '2950 × 1150 × 2300 mm',
+    tracks: 'Stałe 1150 mm',
+  },
 ]
 
+const ACTIVE_COMPARE_MODELS = COMPARE_MODELS.filter((model) => !MODEL_LOOKUP[model.id]?.hidden)
+
 const COMPARE_MODEL_LOOKUP = Object.fromEntries(
-  COMPARE_MODELS.map((model) => [model.id, model])
+  ACTIVE_COMPARE_MODELS.map((model) => [model.id, model])
 )
 
 const ROWS = [
@@ -303,7 +329,7 @@ export default function ModelComparatorSection() {
 
   const [headerRef, headerVisible] = useReveal()
   const [tableRef, tableVisible] = useReveal()
-  const [selectedIds, setSelectedIds] = useState(['bm12', 'bm13c', 'bm16c-kubota'])
+  const [selectedIds, setSelectedIds] = useState(['bm13-kubota', 'bm16c', 'bm17c-laidong'])
 
   const contactLink = langPath('/', '#kontakt')
 
@@ -374,7 +400,7 @@ export default function ModelComparatorSection() {
                   className={styles.select}
                   aria-label={`Model w kolumnie ${index + 1}`}
                 >
-                  {COMPARE_MODELS.map((model) => (
+                  {ACTIVE_COMPARE_MODELS.map((model) => (
                     <option key={model.id} value={model.id}>
                       {model.name}
                     </option>
