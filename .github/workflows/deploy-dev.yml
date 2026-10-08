@@ -1,0 +1,88 @@
+name: Build & Deploy DEV (Cyber_Folks)
+
+# Celowo tylko workflow_dispatch (ręczne uruchomienie), żeby nie wdrażać
+# automatycznie na każdy push, dopóki ścieżka docelowa nie jest potwierdzona.
+on:
+  workflow_dispatch:
+    inputs:
+      target_path:
+        description: 'Ścieżka na FTP dla dev.bergsonmachines.pl (względem roota konta FTP)'
+        required: true
+        default: 'domains/dev.bergsonmachines.pl/public_html/'
+      dry_run:
+        description: 'true = tylko wypisz zawartość katalogu docelowego (bez wgrywania/kasowania czegokolwiek)'
+        required: true
+        default: 'true'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build static
+        run: npm run build
+
+      - name: List build dir (debug)
+        run: ls -la dist
+
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: 'DRY RUN: list remote target directory only'
+        if: ${{ inputs.dry_run == 'true' }}
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+          TARGET_PATH: ${{ inputs.target_path }}
+        run: |
+          lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" -e "
+          set ssl:verify-certificate no;
+          set ftp:passive-mode true;
+          set net:max-retries 2;
+          set net:timeout 20;
+          set cmd:fail-exit true;
+          echo '--- pwd (ftp root) ---';
+          pwd;
+          echo '--- target dir attempt: $TARGET_PATH ---';
+          cd $TARGET_PATH;
+          pwd;
+          echo '--- contents ---';
+          ls -la;
+          bye
+          "
+
+      - name: 'DEPLOY: mirror dist/ to target directory'
+        if: ${{ inputs.dry_run != 'true' }}
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+          TARGET_PATH: ${{ inputs.target_path }}
+        run: |
+          lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" -e "
+          set ssl:verify-certificate no;
+          set ftp:passive-mode true;
+          set net:max-retries 2;
+          set net:timeout 20;
+          set cmd:fail-exit true;
+          cd $TARGET_PATH;
+          mirror --reverse --delete --verbose --parallel=4 \
+                 --exclude-glob .DS_Store \
+                 --exclude-glob .git* \
+                 --exclude-glob .htaccess \
+                 ./dist .;
+          bye
+          "
