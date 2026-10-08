@@ -44,8 +44,8 @@ jobs:
         if: ${{ inputs.dry_run == 'true' }}
         env:
           FTP_HOST: ${{ secrets.FTP_SERVER }}
-          FTP_USER: ${{ secrets.FTP_USERNAME }}
-          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+          FTP_USER: ${{ secrets.FTP_USERNAME_DEV }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD_DEV }}
           TARGET_PATH: ${{ inputs.target_path }}
         run: |
           CD_CMD=""
@@ -70,17 +70,21 @@ jobs:
         if: ${{ inputs.dry_run != 'true' }}
         env:
           FTP_HOST: ${{ secrets.FTP_SERVER }}
-          FTP_USER: ${{ secrets.FTP_USERNAME }}
-          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+          FTP_USER: ${{ secrets.FTP_USERNAME_DEV }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD_DEV }}
           TARGET_PATH: ${{ inputs.target_path }}
         run: |
+          CD_CMD=""
+          if [ -n "$TARGET_PATH" ]; then
+            CD_CMD="cd $TARGET_PATH;"
+          fi
           lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" -e "
           set ssl:verify-certificate no;
           set ftp:passive-mode true;
           set net:max-retries 2;
           set net:timeout 20;
           set cmd:fail-exit true;
-          cd $TARGET_PATH;
+          $CD_CMD
           mirror --reverse --delete --verbose --parallel=4 \
                  --exclude-glob .DS_Store \
                  --exclude-glob .git* \
