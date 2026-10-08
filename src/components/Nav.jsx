@@ -9,7 +9,7 @@ import { getPostAlternates } from '../lib/blog'
 
 const NAV_LINKS = [
   { key: 'nav.models', type: 'section', path: '/', hash: '#modele' },
-  { key: 'nav.aggregates', type: 'section', path: '/', hash: '#agregaty' },
+  { key: 'nav.aggregates', type: 'page', path: '/agregaty' },
   {
     key: 'nav.leasing',
     type: 'section',

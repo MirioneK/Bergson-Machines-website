@@ -1,6 +1,8 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { AGGREGATES, MODELS, formatPrice } from '../data'
+import { MODELS, formatPrice } from '../data'
+import { AGGREGATES_CATALOG } from '../data/aggregatesCatalog'
 import { useHashScroll } from '../hooks/useHashScroll'
 import { useLangPath } from '../hooks/useLangPath'
 import { useReveal } from '../hooks/useReveal'
@@ -18,25 +20,27 @@ const RESIDUAL_OPTIONS = [1, 10, 25]
 const LEASING_MONTHS = [24, 36, 48, 60]
 const VAT_RATE = 1.23
 
-function getAggregateEngineBrand(cardSpecs) {
-  return (
-    cardSpecs.find((item) => item.key === 'engineBrand')?.value ??
-    'Agregat'
-  )
-}
-
 export default function LeasingCalculatorSection({ defaultProductId } = {}) {
   const { t, i18n } = useTranslation()
   const langPath = useLangPath()
   const handleHashScroll = useHashScroll()
+  const location = useLocation()
 
   const [headerRef, headerVisible] = useReveal()
   const [widgetRef, widgetVisible] = useReveal()
 
-  const [selectedId, setSelectedId] = useState(defaultProductId || 'bm13')
+  const [selectedId, setSelectedId] = useState(
+    () => location.state?.calcModel || defaultProductId || 'bm13'
+  )
   const [downIndex, setDownIndex] = useState(1)
   const [months, setMonths] = useState(60)
   const [residual, setResidual] = useState(1)
+
+  useEffect(() => {
+    if (location.state?.calcModel) {
+      setSelectedId(location.state.calcModel)
+    }
+  }, [location.state?.calcModel])
 
   const contactLink = langPath('/', '#kontakt')
   const downPayment = DOWN_PAYMENT_OPTIONS[downIndex]
@@ -51,26 +55,12 @@ export default function LeasingCalculatorSection({ defaultProductId } = {}) {
       })
     )
 
-    const aggregateOptions = AGGREGATES.map((aggregate) => {
-      const cardSpecsRaw = t(`aggregates.${aggregate.id}.cardSpecs`, {
-        ns: 'data',
-        returnObjects: true,
-        defaultValue: [],
-      })
-      const cardSpecs = Array.isArray(cardSpecsRaw) ? cardSpecsRaw : []
-      const engineBrand = getAggregateEngineBrand(cardSpecs)
-      const name = t(`aggregates.${aggregate.id}.name`, {
-        ns: 'data',
-        defaultValue: aggregate.id,
-      })
-
-      return {
-        id: aggregate.id,
-        type: 'aggregate',
-        label: `${name} ${engineBrand}`,
-        priceNetto: aggregate.priceNetto,
-      }
-    })
+    const aggregateOptions = AGGREGATES_CATALOG.map((aggregate) => ({
+      id: aggregate.id,
+      type: 'aggregate',
+      label: `${t('aggregates.unitName')} ${aggregate.name} ${aggregate.engine}`,
+      priceNetto: aggregate.priceGross / VAT_RATE,
+    }))
 
     return [...modelOptions, ...aggregateOptions]
   }, [t])

@@ -129,15 +129,85 @@
     }
   },
   "aggregates": {
+    "unitName": "Agregat",
     "label": "Agregaty prądotwórcze",
-    "title": "Agregaty prądotwórcze 25-40 kW",
-    "sub": "Wersje 25-40 kW z silnikami Cummins, Ricardo i Weichai, gotowe do pracy jako agregaty wyciszone z ATS w standardzie.",
-    "filters": {
-      "all": "Wszystkie",
-      "cummins": "Cummins",
-      "ricardo": "Ricardo",
-      "weichai": "Weichai"
-    }
+    "title": "Agregaty",
+    "sub": "Agregaty 12–200 kW z silnikami Ricardo, Weichai, Cummins i Perkins. Filtry po mocy, marce silnika i cenie.",
+    "priceFrom": "Ceny brutto od {{price}}",
+    "cta": "Otwórz katalog"
+  },
+  "aggregatesCatalog": {
+    "breadcrumbHome": "Strona główna",
+    "breadcrumbCurrent": "Agregaty prądotwórcze",
+    "title": "Agregaty prądotwórcze",
+    "subtitle": "{{count}} modeli · 12–200 kW · Ricardo, Weichai, Cummins, Perkins, KDE",
+    "filtersTitle": "Filtry",
+    "showFilters": "Pokaż filtry",
+    "hideFilters": "Ukryj filtry",
+    "clear": "Wyczyść",
+    "priceGroupTitle": "Cena brutto, zł",
+    "priceFromPlaceholder": "od",
+    "priceToPlaceholder": "do",
+    "priceFromAria": "Cena od",
+    "priceToAria": "Cena do",
+    "powerGroupTitle": "Moc znamionowa",
+    "brandGroupTitle": "Marka silnika",
+    "coolingGroupTitle": "Chłodzenie",
+    "coolingLiquid": "Cieczą",
+    "coolingAir": "Powietrzem",
+    "resultsLabel": "Wyniki: {{count}} z {{total}}",
+    "sortLabel": "Sortuj",
+    "sort": {
+      "priceAsc": "Cena: od najniższej",
+      "priceDesc": "Cena: od najwyższej",
+      "powerAsc": "Moc: od najmniejszej",
+      "powerDesc": "Moc: od największej"
+    },
+    "chipPower": "Moc: {{label}}",
+    "chipEngine": "Silnik: {{label}}",
+    "chipCooling": "Chłodzenie {{label}}",
+    "chipPriceFrom": "Cena od {{price}} zł",
+    "chipPriceTo": "Cena do {{price}} zł",
+    "badgeAts": "ATS w zestawie",
+    "badgeAirCooled": "Chłodzony powietrzem",
+    "specPower": "Moc",
+    "specEngine": "Silnik",
+    "specAlternator": "Alternator",
+    "specWeight": "Waga",
+    "priceGrossSuffix": "brutto",
+    "leaseFrom": "rata od {{price}}/mies. netto",
+    "priceTbcNote": "cena orientacyjna, do potwierdzenia",
+    "ctaOffer": "Zapytaj o ofertę",
+    "ctaInstallment": "Rata",
+    "showMore": "Pokaż kolejne ({{batch}} z {{remaining}})",
+    "emptyTitle": "Brak modeli dla tych filtrów",
+    "emptyClear": "Wyczyść filtry"
+  },
+  "aggregateDetailPage": {
+    "breadcrumbHome": "Strona główna",
+    "breadcrumbCatalog": "Agregaty prądotwórcze",
+    "heroLabel": "Agregat prądotwórczy",
+    "priceGrossSuffix": "brutto",
+    "leaseFrom": "rata od {{price}}/mies. netto",
+    "priceTbcNote": "Cena orientacyjna — do potwierdzenia przez handlowca",
+    "specsTitle": "Specyfikacja",
+    "specPower": "Moc znamionowa",
+    "specEngine": "Silnik",
+    "specAlternator": "Alternator",
+    "specWeight": "Waga",
+    "specCooling": "Chłodzenie",
+    "specAts": "ATS",
+    "coolingLiquid": "Cieczą",
+    "coolingAir": "Powietrzem",
+    "atsYes": "W standardzie",
+    "atsNo": "Nie dotyczy (chłodzony powietrzem)",
+    "ctaOffer": "Zapytaj o ofertę",
+    "ctaInstallment": "Policz ratę",
+    "backToCatalog": "Wszystkie agregaty",
+    "otherLabel": "Zobacz też",
+    "ctaBarTitle": "Zainteresował Cię {{name}}?",
+    "ctaBarSub": "Napisz do nas — przygotujemy indywidualną ofertę i termin dostawy.",
+    "ctaBarButton": "Zapytaj o ofertę"
   },
   "modelCard": {
     "ariaLabel": "Poznaj model {{name}}",
@@ -987,6 +1057,14 @@
     },
     "aggregate": {
       "title": "{{name}} | Bergson Machines"
+    },
+    "aggregatesCatalog": {
+      "title": "Agregaty prądotwórcze 12–200 kW | Bergson Machines",
+      "description": "Agregaty wyciszone z silnikami Ricardo, Weichai, Cummins i Perkins. Filtruj po mocy, marce silnika i cenie."
+    },
+    "aggregateDetail": {
+      "title": "{{name}} | Bergson Machines",
+      "description": "{{name}} z silnikiem {{engine}} — moc {{kw}} kW, cena brutto {{price}}. Sprawdź dostępność i zapytaj o ofertę."
     }
   },
   "notFound": {

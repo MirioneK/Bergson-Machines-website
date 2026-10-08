@@ -15,7 +15,8 @@ import StickyCTA from './components/StickyCTA'
 
 import HomePage from './pages/HomePage'
 import ModelPage from './pages/ModelPage'
-import AggregatePage from './pages/AggregatePage'
+import AggregatesCatalogPage from './pages/AggregatesCatalogPage'
+import AggregateDetailPage from './pages/AggregateDetailPage'
 import LegalPage from './pages/LegalPage'
 import BlogPage from './pages/BlogPage'
 import BlogPostPage from './pages/BlogPostPage'
@@ -142,9 +143,17 @@ export default function App() {
 
         {aggregateRouteVariants.map((slug) => (
           <Route
+            key={`aggregates-list-${slug}`}
+            path={slug}
+            element={<AggregatesCatalogPage />}
+          />
+        ))}
+
+        {aggregateRouteVariants.map((slug) => (
+          <Route
             key={`aggregates-${slug}`}
             path={`${slug}/:id`}
-            element={<AggregatePage />}
+            element={<AggregateDetailPage />}
           />
         ))}
 

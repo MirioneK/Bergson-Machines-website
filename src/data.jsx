@@ -208,39 +208,6 @@ export const MODELS = [
 ]
 
 // ─── ACCESSORIES ─────────────────────────────────────────────────────────────
-export const AGGREGATES = [
-  {
-    id: 'bm25-ricardo',
-    image: '/images/optimized/aggregates/aggregate-silent.webp',
-    priceNetto: 21870,
-  },
-  {
-    id: 'bm30-ricardo',
-    image: '/images/optimized/aggregates/aggregate-silent.webp',
-    priceNetto: 23984,
-  },
-  {
-    id: 'bm25-weichai',
-    image: '/images/optimized/aggregates/aggregate-silent.webp',
-    priceNetto: 23984,
-  },
-  {
-    id: 'bm30-weichai',
-    image: '/images/optimized/aggregates/aggregate-silent.webp',
-    priceNetto: 25935,
-  },
-  {
-    id: 'bm30-cummins',
-    image: '/images/optimized/aggregates/aggregate-silent.webp',
-    priceNetto: 39756,
-  },
-  {
-    id: 'bm40-cummins',
-    image: '/images/optimized/aggregates/aggregate-silent.webp',
-    priceNetto: 44634,
-  },
-]
-
 export const ACCESSORY_PREVIEW = [
   {
     id: 'ripper',
