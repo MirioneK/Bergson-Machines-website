@@ -8,14 +8,15 @@ import {
   AGGREGATES_CATALOG,
   POWER_BANDS,
   ENGINE_BRANDS,
-  COOLING_TYPES,
+  MIN_KW,
+  MAX_KW,
   monthlyLeaseNet,
 } from '../data/aggregatesCatalog'
 import styles from './AggregatesCatalogPage.module.css'
 
 const PAGE_SIZE = 12
 
-const EMPTY = { bands: [], brands: [], coolings: [], priceMin: '', priceMax: '' }
+const EMPTY = { bands: [], brands: [], priceMin: '', priceMax: '' }
 
 const SORT_FNS = {
   priceAsc: (a, b) => a.priceGross - b.priceGross,
@@ -30,7 +31,6 @@ const DEFAULT_SORT = 'priceAsc'
 const QUERY_KEYS = {
   bands: 'moc',
   brands: 'silnik',
-  coolings: 'chlodzenie',
   priceMin: 'cena_od',
   priceMax: 'cena_do',
 }
@@ -45,7 +45,6 @@ function filtersFromSearchParams(params) {
   return {
     bands: getList(QUERY_KEYS.bands).filter((v) => POWER_BANDS.some((b) => b.id === v)),
     brands: getList(QUERY_KEYS.brands).filter((v) => ENGINE_BRANDS.includes(v)),
-    coolings: getList(QUERY_KEYS.coolings).filter((v) => COOLING_TYPES.some((c) => c.id === v)),
     priceMin: /^\d+$/.test(params.get(QUERY_KEYS.priceMin)) ? params.get(QUERY_KEYS.priceMin) : '',
     priceMax: /^\d+$/.test(params.get(QUERY_KEYS.priceMax)) ? params.get(QUERY_KEYS.priceMax) : '',
   }
@@ -60,7 +59,6 @@ function searchParamsFromState(filters, sort) {
   const params = new URLSearchParams()
   if (filters.bands.length) params.set(QUERY_KEYS.bands, filters.bands.join(','))
   if (filters.brands.length) params.set(QUERY_KEYS.brands, filters.brands.join(','))
-  if (filters.coolings.length) params.set(QUERY_KEYS.coolings, filters.coolings.join(','))
   if (filters.priceMin) params.set(QUERY_KEYS.priceMin, filters.priceMin)
   if (filters.priceMax) params.set(QUERY_KEYS.priceMax, filters.priceMax)
   if (sort !== DEFAULT_SORT) params.set(SORT_QUERY_KEY, sort)
@@ -71,7 +69,6 @@ function searchParamsFromState(filters, sort) {
 function matches(item, f, skip) {
   if (skip !== 'bands' && f.bands.length && !f.bands.includes(item.band)) return false
   if (skip !== 'brands' && f.brands.length && !f.brands.includes(item.engine)) return false
-  if (skip !== 'coolings' && f.coolings.length && !f.coolings.includes(item.cooling)) return false
   if (f.priceMin && item.priceGross < Number(f.priceMin)) return false
   if (f.priceMax && item.priceGross > Number(f.priceMax)) return false
   return true
@@ -103,8 +100,8 @@ export default function AggregatesCatalogPage() {
   }
 
   usePageMeta({
-    title: t('meta.aggregatesCatalog.title'),
-    description: t('meta.aggregatesCatalog.description'),
+    title: t('meta.aggregatesCatalog.title', { range: `${MIN_KW}–${MAX_KW} kW` }),
+    description: t('meta.aggregatesCatalog.description', { brands: ENGINE_BRANDS.join(', ') }),
   })
 
   const update = (patch) => {
@@ -119,7 +116,6 @@ export default function AggregatesCatalogPage() {
   const activeFilterCount =
     filters.bands.length +
     filters.brands.length +
-    filters.coolings.length +
     (filters.priceMin ? 1 : 0) +
     (filters.priceMax ? 1 : 0)
 
@@ -141,15 +137,6 @@ export default function AggregatesCatalogPage() {
       options: ENGINE_BRANDS.map((b) => ({ value: b, label: b })),
       field: 'engine',
     },
-    {
-      key: 'coolings',
-      title: t('aggregatesCatalog.coolingGroupTitle'),
-      options: COOLING_TYPES.map((c) => ({
-        value: c.id,
-        label: c.id === 'air' ? t('aggregatesCatalog.coolingAir') : t('aggregatesCatalog.coolingLiquid'),
-      })),
-      field: 'cooling',
-    },
   ]
 
   const labelFor = (key, value) => facetGroups.find((g) => g.key === key).options.find((o) => o.value === value).label
@@ -161,10 +148,6 @@ export default function AggregatesCatalogPage() {
     ...filters.brands.map((v) => ({
       label: t('aggregatesCatalog.chipEngine', { label: v }),
       remove: () => toggle('brands', v),
-    })),
-    ...filters.coolings.map((v) => ({
-      label: t('aggregatesCatalog.chipCooling', { label: labelFor('coolings', v).toLowerCase() }),
-      remove: () => toggle('coolings', v),
     })),
     ...(filters.priceMin
       ? [{ label: t('aggregatesCatalog.chipPriceFrom', { price: filters.priceMin }), remove: () => update({ priceMin: '' }) }]
@@ -184,7 +167,11 @@ export default function AggregatesCatalogPage() {
         </nav>
         <h1 className={styles.title}>{t('aggregatesCatalog.title')}</h1>
         <p className={styles.sub}>
-          {t('aggregatesCatalog.subtitle', { count: AGGREGATES_CATALOG.length })}
+          {t('aggregatesCatalog.subtitle', {
+            count: AGGREGATES_CATALOG.length,
+            range: `${MIN_KW}–${MAX_KW} kW`,
+            brands: ENGINE_BRANDS.join(', '),
+          })}
         </p>
       </section>
 
@@ -339,9 +326,9 @@ function AggregateCard({ item, fmt, t, langPath }) {
     >
       <div className={styles.media}>
         <img src={item.image} alt={name} loading="lazy" />
-        <span className={styles.badge}>
-          {item.ats ? t('aggregatesCatalog.badgeAts') : t('aggregatesCatalog.badgeAirCooled')}
-        </span>
+        {item.stamfordAlternator && (
+          <span className={styles.badge}>{t('aggregatesCatalog.badgeStamford')}</span>
+        )}
       </div>
       <div className={styles.body}>
         <h2 className={styles.name}>{name}</h2>
@@ -356,7 +343,6 @@ function AggregateCard({ item, fmt, t, langPath }) {
           <span className={styles.lease}>
             {t('aggregatesCatalog.priceGrossSuffix')} · {t('aggregatesCatalog.leaseFrom', { price: fmt(monthlyLeaseNet(item.priceGross)) })}
           </span>
-          {item.priceTbc && <span className={styles.tbc}>{t('aggregatesCatalog.priceTbcNote')}</span>}
         </div>
         <div className={styles.actions}>
           <Link

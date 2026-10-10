@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useLangPath } from '../hooks/useLangPath'
 import { useReveal } from '../hooks/useReveal'
-import { AGGREGATES_CATALOG } from '../data/aggregatesCatalog'
+import { AGGREGATES_CATALOG, ENGINE_BRANDS, MIN_KW, MAX_KW } from '../data/aggregatesCatalog'
 import { formatPrice } from '../data'
 import styles from './AggregatesTeaser.module.css'
 
@@ -35,7 +35,9 @@ export default function AggregatesTeaser() {
             <h2 className={styles.title} id="aggregates-title">
               {t('aggregates.title')}
             </h2>
-            <p className={styles.sub}>{t('aggregates.sub')}</p>
+            <p className={styles.sub}>
+              {t('aggregates.sub', { range: `${MIN_KW}–${MAX_KW} kW`, brands: ENGINE_BRANDS.join(', ') })}
+            </p>
             <p className={styles.priceFrom}>
               {t('aggregates.priceFrom', { price: formatPrice(minPrice, i18n.resolvedLanguage) })}
             </p>

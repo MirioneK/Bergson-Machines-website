@@ -132,7 +132,7 @@
     "unitName": "Generator",
     "label": "Power generators",
     "title": "Power generators",
-    "sub": "Power generators 12–200 kW with Ricardo, Weichai, Cummins and Perkins engines. Filter by power, engine brand and price.",
+    "sub": "Power generators {{range}} with {{brands}} engines. Filter by power, engine brand and price.",
     "priceFrom": "Gross prices from {{price}}",
     "cta": "Open catalog"
   },
@@ -140,7 +140,7 @@
     "breadcrumbHome": "Home",
     "breadcrumbCurrent": "Power generators",
     "title": "Power generators",
-    "subtitle": "{{count}} models · 12–200 kW · Ricardo, Weichai, Cummins, Perkins, KDE",
+    "subtitle": "{{count}} models · {{range}} · {{brands}}",
     "filtersTitle": "Filters",
     "showFilters": "Show filters",
     "hideFilters": "Hide filters",
@@ -152,9 +152,6 @@
     "priceToAria": "Price to",
     "powerGroupTitle": "Rated power",
     "brandGroupTitle": "Engine brand",
-    "coolingGroupTitle": "Cooling",
-    "coolingLiquid": "Liquid",
-    "coolingAir": "Air",
     "resultsLabel": "Results: {{count}} of {{total}}",
     "sortLabel": "Sort",
     "sort": {
@@ -165,23 +162,20 @@
     },
     "chipPower": "Power: {{label}}",
     "chipEngine": "Engine: {{label}}",
-    "chipCooling": "Cooling: {{label}}",
     "chipPriceFrom": "Price from {{price}} PLN",
     "chipPriceTo": "Price to {{price}} PLN",
-    "badgeAts": "ATS included",
-    "badgeAirCooled": "Air cooled",
     "specPower": "Power",
     "specEngine": "Engine",
     "specAlternator": "Alternator",
     "specWeight": "Weight",
     "priceGrossSuffix": "gross",
     "leaseFrom": "lease from {{price}}/mo net",
-    "priceTbcNote": "estimated price, to be confirmed",
     "ctaOffer": "Request a quote",
     "ctaInstallment": "Installment",
     "showMore": "Show more ({{batch}} of {{remaining}})",
     "emptyTitle": "No models match these filters",
-    "emptyClear": "Clear filters"
+    "emptyClear": "Clear filters",
+    "badgeStamford": "Stamford alternator"
   },
   "aggregateDetailPage": {
     "breadcrumbHome": "Home",
@@ -189,25 +183,20 @@
     "heroLabel": "Power generator",
     "priceGrossSuffix": "gross",
     "leaseFrom": "lease from {{price}}/mo net",
-    "priceTbcNote": "Estimated price — to be confirmed by sales",
     "specsTitle": "Specification",
     "specPower": "Rated power",
     "specEngine": "Engine",
     "specAlternator": "Alternator",
     "specWeight": "Weight",
-    "specCooling": "Cooling",
-    "specAts": "ATS",
-    "coolingLiquid": "Liquid",
-    "coolingAir": "Air",
-    "atsYes": "Included as standard",
-    "atsNo": "Not applicable (air cooled)",
     "ctaOffer": "Request a quote",
     "ctaInstallment": "Calculate installment",
     "backToCatalog": "All power generators",
     "otherLabel": "You may also like",
     "ctaBarTitle": "Interested in {{name}}?",
     "ctaBarSub": "Get in touch — we will prepare a tailored offer and delivery schedule.",
-    "ctaBarButton": "Request a quote"
+    "ctaBarButton": "Request a quote",
+    "specController": "Controller",
+    "specDimensions": "Dimensions (L × W × H)"
   },
   "modelCard": {
     "ariaLabel": "Explore model {{name}}",
@@ -1059,8 +1048,8 @@
       "title": "{{name}} | Bergson Machines"
     },
     "aggregatesCatalog": {
-      "title": "Power generators 12–200 kW | Bergson Machines",
-      "description": "Silent power generators with Ricardo, Weichai, Cummins and Perkins engines. Filter by power, engine brand and price."
+      "title": "Power generators {{range}} | Bergson Machines",
+      "description": "Silent power generators with {{brands}} engines. Filter by power, engine brand and price."
     },
     "aggregateDetail": {
       "title": "{{name}} | Bergson Machines",

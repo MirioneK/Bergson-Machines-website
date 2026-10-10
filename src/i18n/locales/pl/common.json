@@ -132,7 +132,7 @@
     "unitName": "Agregat",
     "label": "Agregaty prądotwórcze",
     "title": "Agregaty",
-    "sub": "Agregaty 12–200 kW z silnikami Ricardo, Weichai, Cummins i Perkins. Filtry po mocy, marce silnika i cenie.",
+    "sub": "Agregaty {{range}} z silnikami {{brands}}. Filtry po mocy, marce silnika i cenie.",
     "priceFrom": "Ceny brutto od {{price}}",
     "cta": "Otwórz katalog"
   },
@@ -140,7 +140,7 @@
     "breadcrumbHome": "Strona główna",
     "breadcrumbCurrent": "Agregaty prądotwórcze",
     "title": "Agregaty prądotwórcze",
-    "subtitle": "{{count}} modeli · 12–200 kW · Ricardo, Weichai, Cummins, Perkins, KDE",
+    "subtitle": "{{count}} modeli · {{range}} · {{brands}}",
     "filtersTitle": "Filtry",
     "showFilters": "Pokaż filtry",
     "hideFilters": "Ukryj filtry",
@@ -152,9 +152,6 @@
     "priceToAria": "Cena do",
     "powerGroupTitle": "Moc znamionowa",
     "brandGroupTitle": "Marka silnika",
-    "coolingGroupTitle": "Chłodzenie",
-    "coolingLiquid": "Cieczą",
-    "coolingAir": "Powietrzem",
     "resultsLabel": "Wyniki: {{count}} z {{total}}",
     "sortLabel": "Sortuj",
     "sort": {
@@ -165,23 +162,20 @@
     },
     "chipPower": "Moc: {{label}}",
     "chipEngine": "Silnik: {{label}}",
-    "chipCooling": "Chłodzenie {{label}}",
     "chipPriceFrom": "Cena od {{price}} zł",
     "chipPriceTo": "Cena do {{price}} zł",
-    "badgeAts": "ATS w zestawie",
-    "badgeAirCooled": "Chłodzony powietrzem",
     "specPower": "Moc",
     "specEngine": "Silnik",
     "specAlternator": "Alternator",
     "specWeight": "Waga",
     "priceGrossSuffix": "brutto",
     "leaseFrom": "rata od {{price}}/mies. netto",
-    "priceTbcNote": "cena orientacyjna, do potwierdzenia",
     "ctaOffer": "Zapytaj o ofertę",
     "ctaInstallment": "Rata",
     "showMore": "Pokaż kolejne ({{batch}} z {{remaining}})",
     "emptyTitle": "Brak modeli dla tych filtrów",
-    "emptyClear": "Wyczyść filtry"
+    "emptyClear": "Wyczyść filtry",
+    "badgeStamford": "Alternator Stamford"
   },
   "aggregateDetailPage": {
     "breadcrumbHome": "Strona główna",
@@ -189,25 +183,20 @@
     "heroLabel": "Agregat prądotwórczy",
     "priceGrossSuffix": "brutto",
     "leaseFrom": "rata od {{price}}/mies. netto",
-    "priceTbcNote": "Cena orientacyjna — do potwierdzenia przez handlowca",
     "specsTitle": "Specyfikacja",
     "specPower": "Moc znamionowa",
     "specEngine": "Silnik",
     "specAlternator": "Alternator",
     "specWeight": "Waga",
-    "specCooling": "Chłodzenie",
-    "specAts": "ATS",
-    "coolingLiquid": "Cieczą",
-    "coolingAir": "Powietrzem",
-    "atsYes": "W standardzie",
-    "atsNo": "Nie dotyczy (chłodzony powietrzem)",
     "ctaOffer": "Zapytaj o ofertę",
     "ctaInstallment": "Policz ratę",
     "backToCatalog": "Wszystkie agregaty",
     "otherLabel": "Zobacz też",
     "ctaBarTitle": "Zainteresował Cię {{name}}?",
     "ctaBarSub": "Napisz do nas — przygotujemy indywidualną ofertę i termin dostawy.",
-    "ctaBarButton": "Zapytaj o ofertę"
+    "ctaBarButton": "Zapytaj o ofertę",
+    "specController": "Sterownik",
+    "specDimensions": "Wymiary (dł. × szer. × wys.)"
   },
   "modelCard": {
     "ariaLabel": "Poznaj model {{name}}",
@@ -1059,8 +1048,8 @@
       "title": "{{name}} | Bergson Machines"
     },
     "aggregatesCatalog": {
-      "title": "Agregaty prądotwórcze 12–200 kW | Bergson Machines",
-      "description": "Agregaty wyciszone z silnikami Ricardo, Weichai, Cummins i Perkins. Filtruj po mocy, marce silnika i cenie."
+      "title": "Agregaty prądotwórcze {{range}} | Bergson Machines",
+      "description": "Agregaty wyciszone z silnikami {{brands}}. Filtruj po mocy, marce silnika i cenie."
     },
     "aggregateDetail": {
       "title": "{{name}} | Bergson Machines",

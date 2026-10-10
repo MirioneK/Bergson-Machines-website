@@ -60,11 +60,8 @@ export default function AggregateDetailPage() {
     { key: 'specEngine', value: `${item.engine}${item.engineModel ? ` ${item.engineModel}` : ''}` },
     { key: 'specAlternator', value: item.alternator },
     { key: 'specWeight', value: `${item.weight} kg` },
-    {
-      key: 'specCooling',
-      value: item.cooling === 'air' ? t('aggregateDetailPage.coolingAir') : t('aggregateDetailPage.coolingLiquid'),
-    },
-    { key: 'specAts', value: item.ats ? t('aggregateDetailPage.atsYes') : t('aggregateDetailPage.atsNo') },
+    { key: 'specController', value: item.controller },
+    { key: 'specDimensions', value: item.dimensions },
   ]
 
   return (
@@ -92,9 +89,9 @@ export default function AggregateDetailPage() {
             ref={heroMediaRef}
             className={`${styles.heroMedia} reveal ${heroMediaVisible ? 'visible' : ''}`}
           >
-            <span className={styles.heroBadge}>
-              {item.ats ? t('aggregatesCatalog.badgeAts') : t('aggregatesCatalog.badgeAirCooled')}
-            </span>
+            {item.stamfordAlternator && (
+              <span className={styles.heroBadge}>{t('aggregatesCatalog.badgeStamford')}</span>
+            )}
 
             <div className={styles.heroImageWrap}>
               <img src={item.image} alt={name} className={styles.heroImage} />
@@ -115,7 +112,6 @@ export default function AggregateDetailPage() {
                 {t('aggregateDetailPage.priceGrossSuffix')} ·{' '}
                 {t('aggregateDetailPage.leaseFrom', { price: priceLease })}
               </div>
-              {item.priceTbc && <div className={styles.priceTbc}>{t('aggregateDetailPage.priceTbcNote')}</div>}
             </div>
 
             <div className={styles.quickGrid}>
