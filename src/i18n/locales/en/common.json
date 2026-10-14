@@ -129,15 +129,74 @@
     }
   },
   "aggregates": {
+    "unitName": "Generator",
     "label": "Power generators",
-    "title": "25-40 kW power generators",
-    "sub": "25-40 kW versions with Cummins, Ricardo and Weichai engines, ready to operate as silent generator sets with ATS as standard.",
-    "filters": {
-      "all": "All",
-      "cummins": "Cummins",
-      "ricardo": "Ricardo",
-      "weichai": "Weichai"
-    }
+    "title": "Power generators",
+    "sub": "Power generators {{range}} with {{brands}} engines. Filter by power, engine brand and price.",
+    "priceFrom": "Gross prices from {{price}}",
+    "cta": "Open catalog"
+  },
+  "aggregatesCatalog": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "Power generators",
+    "title": "Power generators",
+    "subtitle": "{{count}} models · {{range}} · {{brands}}",
+    "filtersTitle": "Filters",
+    "showFilters": "Show filters",
+    "hideFilters": "Hide filters",
+    "clear": "Clear",
+    "priceGroupTitle": "Gross price, PLN",
+    "priceFromPlaceholder": "from",
+    "priceToPlaceholder": "to",
+    "priceFromAria": "Price from",
+    "priceToAria": "Price to",
+    "powerGroupTitle": "Rated power",
+    "brandGroupTitle": "Engine brand",
+    "resultsLabel": "Results: {{count}} of {{total}}",
+    "sortLabel": "Sort",
+    "sort": {
+      "priceAsc": "Price: lowest first",
+      "priceDesc": "Price: highest first",
+      "powerAsc": "Power: lowest first",
+      "powerDesc": "Power: highest first"
+    },
+    "chipPower": "Power: {{label}}",
+    "chipEngine": "Engine: {{label}}",
+    "chipPriceFrom": "Price from {{price}} PLN",
+    "chipPriceTo": "Price to {{price}} PLN",
+    "specPower": "Power",
+    "specEngine": "Engine",
+    "specAlternator": "Alternator",
+    "specWeight": "Weight",
+    "priceGrossSuffix": "gross",
+    "leaseFrom": "lease from {{price}}/mo net",
+    "ctaOffer": "Request a quote",
+    "ctaInstallment": "Installment",
+    "showMore": "Show more ({{batch}} of {{remaining}})",
+    "emptyTitle": "No models match these filters",
+    "emptyClear": "Clear filters",
+    "badgeStamford": "Stamford alternator"
+  },
+  "aggregateDetailPage": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCatalog": "Power generators",
+    "heroLabel": "Power generator",
+    "priceGrossSuffix": "gross",
+    "leaseFrom": "lease from {{price}}/mo net",
+    "specsTitle": "Specification",
+    "specPower": "Rated power",
+    "specEngine": "Engine",
+    "specAlternator": "Alternator",
+    "specWeight": "Weight",
+    "ctaOffer": "Request a quote",
+    "ctaInstallment": "Calculate installment",
+    "backToCatalog": "All power generators",
+    "otherLabel": "You may also like",
+    "ctaBarTitle": "Interested in {{name}}?",
+    "ctaBarSub": "Get in touch — we will prepare a tailored offer and delivery schedule.",
+    "ctaBarButton": "Request a quote",
+    "specController": "Controller",
+    "specDimensions": "Dimensions (L × W × H)"
   },
   "modelCard": {
     "ariaLabel": "Explore model {{name}}",
@@ -987,6 +1046,14 @@
     },
     "aggregate": {
       "title": "{{name}} | Bergson Machines"
+    },
+    "aggregatesCatalog": {
+      "title": "Power generators {{range}} | Bergson Machines",
+      "description": "Silent power generators with {{brands}} engines. Filter by power, engine brand and price."
+    },
+    "aggregateDetail": {
+      "title": "{{name}} | Bergson Machines",
+      "description": "{{name}} with {{engine}} engine — {{kw}} kW power, gross price {{price}}. Check availability and request a quote."
     }
   },
   "notFound": {

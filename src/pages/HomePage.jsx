@@ -2,7 +2,7 @@ import React from 'react'
 import Hero from '../components/Hero'
 import TrustBar from '../components/TrustBar'
 import Models from '../components/Models'
-import Aggregates from '../components/Aggregates'
+import AggregatesTeaser from '../components/AggregatesTeaser'
 import LeasingCalculatorSection from '../components/LeasingCalculatorSection'
 import HomeMachineVideo from '../components/HomeMachineVideo'
 import Gallery from '../components/Gallery'
@@ -30,6 +30,7 @@ export default function HomePage() {
       <Gallery />
       <HomeMachineVideo />
       <Models />
+      <AggregatesTeaser />
       <LeasingCalculatorSection />
       <WhyUs />
       <TestimonialsSection />
@@ -37,7 +38,6 @@ export default function HomePage() {
       <FAQ />
       <Contact />
       <SeoContent />
-      <Aggregates />
     </main>
   )
 }

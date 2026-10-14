@@ -1,6 +1,8 @@
 import React, { useMemo, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Trans, useTranslation } from 'react-i18next'
-import { AGGREGATES, CONTACT_INFO, MODELS } from '../data'
+import { CONTACT_INFO, MODELS } from '../data'
+import { AGGREGATES_CATALOG } from '../data/aggregatesCatalog'
 import { useReveal } from '../hooks/useReveal'
 import {
   validateContactForm,
@@ -33,12 +35,9 @@ function translateValidationErrors(errors, t) {
   return translated
 }
 
-function getAggregateEngineBrand(cardSpecs) {
-  return cardSpecs.find((item) => item.key === 'engineBrand')?.value ?? 'Agregat'
-}
-
 export default function Contact({ defaultModelId } = {}) {
   const { t } = useTranslation()
+  const location = useLocation()
   const locations = CONTACT_INFO.locations?.length
     ? CONTACT_INFO.locations
     : [
@@ -56,7 +55,7 @@ export default function Contact({ defaultModelId } = {}) {
 
   const [form, setForm] = useState(() => ({
     ...INITIAL_FORM,
-    model: defaultModelId || '',
+    model: defaultModelId || location.state?.machine || '',
   }))
   const [status, setStatus] = useState('idle')
   const [fieldErrors, setFieldErrors] = useState({})
@@ -77,24 +76,10 @@ export default function Contact({ defaultModelId } = {}) {
       label: model.name,
     }))
 
-    const aggregateOptions = AGGREGATES.map((aggregate) => {
-      const cardSpecsRaw = t(`aggregates.${aggregate.id}.cardSpecs`, {
-        ns: 'data',
-        returnObjects: true,
-        defaultValue: [],
-      })
-      const cardSpecs = Array.isArray(cardSpecsRaw) ? cardSpecsRaw : []
-      const engineBrand = getAggregateEngineBrand(cardSpecs)
-      const name = t(`aggregates.${aggregate.id}.name`, {
-        ns: 'data',
-        defaultValue: aggregate.id,
-      })
-
-      return {
-        value: aggregate.id,
-        label: `${name} ${engineBrand}`,
-      }
-    })
+    const aggregateOptions = AGGREGATES_CATALOG.map((aggregate) => ({
+      value: aggregate.id,
+      label: `${t('aggregates.unitName')} ${aggregate.name} ${aggregate.engine}`,
+    }))
 
     return [
       ...excavatorOptions,
